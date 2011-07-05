@@ -82,7 +82,7 @@ class Roll
 #++
 # To Integer method will return the result of the roll
 	def to_i
-		return @result.to_i
+		return result.to_i
 	end
 
 #-- -(roll2) ---------------------------------------------------------------------------#
