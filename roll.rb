@@ -133,6 +133,12 @@ class Roll
 		end
 		end
 	end
+#-- best(num) ----------------------------------------------------------------------------#
+#++
+# best returns the best m of n d6 rolls
+	def self.best(m, of_n)
+		eval(Array.new(of_n) {rand(6)+1}.sort.reverse.take(m).join("+"))
+	end
 end
 
 
@@ -145,3 +151,4 @@ print r1 +"\n"
 print r2 +"\n"
 print (r1+r2) +"\n"
 print (r1-r2) +"\n"
+print Array.new(6){ Roll.best(3,4) }
