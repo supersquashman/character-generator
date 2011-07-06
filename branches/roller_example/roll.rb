@@ -159,4 +159,8 @@ print r1 +"\n"
 print r2 +"\n"
 print (r1+r2) +"\n"
 print (r1-r2) +"\n"
-puts Roll.stats["int"]
+stats = Roll.stats
+mods= Hash.new
+stats.each {|key,value| mods[key] = (value-10)>0 ? ((value-10.0)/2).floor.to_i : ((value-10.0)/2).ceil.to_i}
+puts stats
+puts mods
