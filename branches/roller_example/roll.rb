@@ -133,11 +133,19 @@ class Roll
 		end
 		end
 	end
-#-- best(num) ----------------------------------------------------------------------------#
+#-- best(n, of_m) ------------------------------------------------------------------------#
 #++
 # best returns the best m of n d6 rolls
 	def self.best(m, of_n)
 		eval(Array.new(of_n) {rand(6)+1}.sort.reverse.take(m).join("+"))
+	end
+#-- stats --------------------------------------------------------------------------------#
+#++
+# rolls the hash of stats using the best 3 of 4d6 method
+	def self.stats
+		stats = Hash.new
+		["int","wis","cha","dex","str","con"].each {|k| stats[k] = Roll.best(3,4)}
+		return stats
 	end
 end
 
@@ -151,4 +159,4 @@ print r1 +"\n"
 print r2 +"\n"
 print (r1+r2) +"\n"
 print (r1-r2) +"\n"
-print Array.new(6){ Roll.best(3,4) }
+puts Roll.stats["int"]
