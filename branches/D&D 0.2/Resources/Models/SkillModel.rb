@@ -43,7 +43,6 @@ class SkillModel
 		@name=name
 		@ranks=ranks
 		@mod=mod
-		puts mod+","
 		@armor_check=armor_check ?  armor_check=="true"? true: false : false 
 		@description=description
 		@bonus_hash = Hash.new

@@ -48,7 +48,7 @@ class SkillList
 	
 	def self.load_skills(array)	
 		array.each do |skill|
-			puts "SkillList.push(SkillModel.new('" +skill.join("','")+"'))"
+			#puts "SkillList.push(SkillModel.new('" +skill.join("','")+"'))"
 			eval( "SkillList.push(SkillModel.new('" +skill.join("','")+"'))")
 		end
 	end
