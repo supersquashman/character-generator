@@ -1,5 +1,32 @@
+# SkillList - Manager of D&D skills[SkillModel], skill generation and container for related methods
+# Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
+
+# This file is part of [package title].
+
+# [package title] is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# [package title] is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with [package title].  If not, see <http://www.gnu.org/licenses/>.
+
+
 require_relative "../Models/SkillModel"
 require_relative "Skills"
+
+#--== SkillList ========================================================================#
+#++
+# Class lists available[static] D&D skills, character skills and provides functions for assignment and display
+
+# Members :
+
+# Methods :
 
 class SkillList
 	@@list=[] #default skills available
