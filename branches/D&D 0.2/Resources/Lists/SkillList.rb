@@ -8,6 +8,8 @@ class SkillList
 	def initialize
 		@skills=[]
 		@class_skills=[]
+		#load all skill lists here?
+		Skills.new
 	end
 	def list
 		return @@list
@@ -46,7 +48,7 @@ class SkillList
 	
 	def self.load_skills(array)	
 		array.each do |skill|
-			#print "SkillList.push('" +skill.join(",")+"')"
+			puts "SkillList.push(SkillModel.new('" +skill.join("','")+"'))"
 			eval( "SkillList.push(SkillModel.new('" +skill.join("','")+"'))")
 		end
 	end
