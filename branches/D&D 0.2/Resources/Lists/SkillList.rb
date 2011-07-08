@@ -100,40 +100,34 @@ class SkillList
 	end
 #-- roll_skills(ranks, perfered, level, perfer, orig_weight, weight, new) --------------#
 #++
-	def roll_skills(ranks, perfered=[],level=1,perfer=100, orig_weight=30, weight=5, new=1) 
+	def roll_skills(ranks, perfered=[],level=1,perfer=100, orig_weight=50, weight=5, new=1) 
 		ranks = [ranks,1].max 
 		points = ranks
 		
+		#randomly pick a subset of skills to assign to (weigh them according to each param)
 		skillnum = [(level==1? ranks/4:ranks)+rand(3)+1, ranks/(level+3)].max
-		perfernum = 0
-		(skillnum).times {rand(weight+perfer+new+orig_weight)<perfer ? perfernum+=1 :0}
-		perfernum = [perfernum,perfered.length].min
-		orignum=0
-		(skillnum-perfernum).times {rand(weight+new+orig_weight)<orig_weight ? orignum+=1 :0}
-		orignum = [orignum,skills.length].min
-		classnum=0
-		(skillnum-orignum-perfernum).times {rand(weight+new)<weight ? classnum+=1 :0}
-		classnum = [classnum, class_skills.length].min
-		newnum = [skillnum - classnum -orignum , list.length].min
-		subset = []
-		while subset.length < (classnum+newnum+orignum+perfernum)
-			if subset.length < perfernum
-				choice =perfered[rand(perfered.length)]
-			else if subset.length < orignum+perfernum
-				choice =skills[rand(skills.length)].name
-			else if subset.length <orignum+classnum+perfernum
-				choice =class_skills[rand(class_skills.length)]
-			else
-				choice =list[rand(list.length)]
-			end
-			end
-			end
-			
+		perfered.length>0 ? 0 : perfer=0
+		skills.length>0 ? 0 : orig_weight=0
+		puts orig_weight
+		subset=[]
+		while subset.length < skillnum
+			i=rand(weight+perfer+new+orig_weight)+1
+			case i
+				when 0..orig_weight
+					puts "."
+					choice =skills[rand(skills.length)].name
+				when orig_weight..orig_weight+weight
+					choice =class_skills[rand(class_skills.length)]
+				when orig_weight+weight..orig_weight+weight+perfer
+					choice =perfered[rand(perfered.length)]
+				else
+					choice =list[rand(list.length)].name
+			end	
 			if !subset.include?(choice)
 				subset.push(choice)
 			end
 		end
-
+		#randomly assign the ranks between the subset of skills upto the max rank.
 		options=subset
 		while points>0 do
 			pick = rand(options.length+new)
