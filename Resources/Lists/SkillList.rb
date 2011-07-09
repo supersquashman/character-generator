@@ -108,13 +108,11 @@ class SkillList
 		skillnum = [(level==1? ranks/4:ranks)+rand(3)+1, ranks/(level+3)].max
 		perfered.length>0 ? 0 : perfer=0
 		skills.length>0 ? 0 : orig_weight=0
-		puts orig_weight
 		subset=[]
 		while subset.length < skillnum
 			i=rand(weight+perfer+new+orig_weight)+1
 			case i
 				when 0..orig_weight
-					puts "."
 					choice =skills[rand(skills.length)].name
 				when orig_weight..orig_weight+weight
 					choice =class_skills[rand(class_skills.length)]
@@ -130,24 +128,29 @@ class SkillList
 		#randomly assign the ranks between the subset of skills upto the max rank.
 		options=subset
 		while points>0 do
-			pick = rand(options.length+new)
-			if pick <options.length
-			skill =options[pick]
+			if subset.length >0
+				skill =options[rand(options.length)]
+			else
+				puts "error"
+				skill =list[rand(list.length)]
+			end			
 			if skills.include?(skill) 
-				if skills[skills.index(skill)].ranks < level+3
+				if skills[skills.index(skill)].ranks <= level+3
 					assign_ranks(skill,1)
 					points+=-1
 				else
 					options.delete(skill)
 				end
 			else
-				assign_ranks(skill,1)
-				points+=-1
-			end
-			else
-				#Speak Language Skill
-				#add language
-				points+=-1
+				if(skill.downcase == "speak language")
+					#[TODO]add a language
+					#char.languages.roll_lang()
+					puts"Language"
+					points+=-1
+				else
+					assign_ranks(skill,1)
+					points+=-1
+				end
 			end
 		end	
 	end
@@ -167,12 +170,10 @@ class SkillList
 			skill.circumstance_hash.each { |key, value| circ += pm(value) +" "+key + (skill.circumstance_hash.keys.last !=key ? ", " : "")}
 			circ += skill.circumstance_hash.length >0 ? "]" : ""
 			total += skill.bonus(char).to_i + skill.ranks.to_i
-			#swim = skill.name == "Swim" ? 2 : 1
-			#armor = skill.armor_check&&char.armor_check < 0  ? " ["+(char.armor_check*swim).to_s+" Armor Check]" : ""
-			#atotal = skill.armor_check&&char.armor_check < 0 ? "["+pm(char.armor_check*swim+total)+"]" : ""
-			#ret += skill.name.rjust(40)+" "+(pm(total)+" "+atotal).ljust(9)+" ("+pm(skill.ranks)+" Rank, "+pm(skill.bonus(char).to_i)+ " "+skill.mod.capitalize+bonus+armor+circ+")\n"
-			#ret += skill.name.rjust(40) + " " + (pm(total)).ljust(9) + " (" + skill.mod.to_s + ")\n"
-			ret += skill.name.rjust(40) + " " + (pm(total)).ljust(9) + " (" + pm(skill.ranks) + " Rank, " + pm(skill.bonus(char).to_i) + " " + skill.mod.capitalize + bonus + circ + ")\n"
+			swim = skill.name == "Swim" ? 2 : 1
+			armor = skill.armor_check&&char.armor_check < 0  ? " ["+(char.armor_check*swim).to_s+" Armor Check]" : ""
+			atotal = skill.armor_check&&char.armor_check < 0 ? " ["+pm(char.armor_check*swim+total)+"]" : ""
+			ret += skill.name.rjust(40) + " " + (pm(total)+atotal).ljust(9) + " (" + pm(skill.ranks) + " Rank, " + pm(skill.bonus(char).to_i) + " " + skill.mod.capitalize + bonus + armor +circ + ")\n"
 		end
 		return ret
 	end

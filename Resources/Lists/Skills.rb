@@ -32,7 +32,7 @@ class Skills
 		["Search","int"],
 		["Sense Motive","wis"],
 		["Sleight of Hand","dex",true],
-		#["Speak Language","none"], #should add language to character
+		["Speak Language","none"], #should add language to character
 		["Spellcraft","int"],
 		["Spot","wis"],
 		["Survival","wis"],
