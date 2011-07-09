@@ -32,10 +32,12 @@ class SkillList
 	@@list=[] #default skills available
 	attr_accessor :skills #skills the character has ranks in or wants to be printed
 	attr_accessor :class_skills
+	attr_accessor :char
 	
 #-- initialize -------------------------------------------------------------------------#
 #++
-	def initialize
+	def initialize (character)
+		@char = character
 		@skills=[]
 		@class_skills=[]
 		#load all skill lists here?
@@ -65,7 +67,7 @@ class SkillList
 		if skills.include?(name) 
 		#increment skill character already has
 			skills[skills.index(name)].ranks += ranks
-		else if list.include? name 
+		elsif list.include? name 
 		#copy base skill from list to character's skills then increment that skill's ranks
 			skills.push(list[list.index(name)])
 			skills[skills.index(name)].ranks += ranks
@@ -73,7 +75,6 @@ class SkillList
 		#skill doesn't exist in database make a new skill only for the character
 			skills.push(SkillModel.new(name,""))
 			skills[skills.index(name)].ranks += ranks
-		end
 		end
 	end
 #-- assign_misc(name, bonus) -----------------------------------------------------------#
@@ -101,6 +102,10 @@ class SkillList
 #-- roll_skills(ranks, perfered, level, perfer, orig_weight, weight, new) --------------#
 #++
 	def roll_skills(ranks, perfered=[],level=1,perfer=100, orig_weight=50, weight=5, new=1) 
+		if char 
+			level = char.get_level
+		end
+		puts level
 		ranks = [ranks,1].max 
 		points = ranks
 		
@@ -132,10 +137,10 @@ class SkillList
 				skill =options[rand(options.length)]
 			else
 				puts "error"
-				skill =list[rand(list.length)]
+				skill =list[rand(list.length)].name
 			end			
 			if skills.include?(skill) 
-				if skills[skills.index(skill)].ranks <= level+3
+				if skills[skills.index(skill)].ranks < level+3
 					assign_ranks(skill,1)
 					points+=-1
 				else
@@ -144,7 +149,7 @@ class SkillList
 			else
 				if(skill.downcase == "speak language")
 					#[TODO]add a language
-					#char.languages.roll_lang()
+					char.languages.roll_lang()
 					puts"Language"
 					points+=-1
 				else
@@ -156,7 +161,7 @@ class SkillList
 	end
 #-- to_s(char) -------------------------------------------------------------------------#
 #++
-	def to_s(char)
+	def to_s
 		ret =""
 		skills.sort! { |a,b| a.name <=> b.name }
 		skills.each do |skill|

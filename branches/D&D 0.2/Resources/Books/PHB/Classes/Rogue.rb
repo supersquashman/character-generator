@@ -2,35 +2,36 @@
 require 'pathname' 
 require Pathname(__FILE__).ascend{|d| h=d+'ClassList.rb'; break h if h.file?} 
 class Rogue < ClassModel
-	def self.Class_skills
-	["Appraise","Balance","Bluff","Climb","Craft",
-	"Decipher Script","Diplomacy","Disable Device","Disguise",
-	"Escape Artist","Forgery","Gather Information","Hide",
-	"Intimidate","Jump","Knowledge(Local)","Listen",
-	"Move Silently","Open Lock","Perform", "Profession",
-	"Search","Sense Motive", "Sleight of Hand","Spot",
-	"Swim","Tumble","Use Magic Device","Use Rope"]
-	end
 	@@hd = "1d6"
-	def self.Skill_mul
-		8
+	def initialize (character)
+		super(character)
+		@hd_type="1d6"
+		@base_skill_num = 8
+		@will = BAD_SAVE
+		@fort = BAD_SAVE
+		@reflex = GOOD_SAVE
+		@bab = MID_BAB
+		@class_skills = ["Appraise","Balance","Bluff","Climb","Craft",
+						"Decipher Script","Diplomacy","Disable Device","Disguise",
+						"Escape Artist","Forgery","Gather Information","Hide",
+						"Intimidate","Jump","Knowledge(Local)","Listen",
+						"Move Silently","Open Lock","Perform", "Profession",
+						"Search","Sense Motive", "Sleight of Hand","Spot",
+						"Swim","Tumble","Use Magic Device","Use Rope"]
+		
 	end
 	def self.apply(char)
-		super(char)
-		class_level = self.class_level(char)
-		char.fort_save["base"] += Bad_save[class_level-1]
-		char.will_save["base"] += Bad_save[class_level-1]
-		char.ref_save["base"] += Good_save[class_level-1]
-		char.BAB += Mid_bab[class_level-1]
-		char.HP += (rand(6)+1) + char.stat_mod["con"]
+		level = super(char)
+		class_level = level.class_level #for visibility
 		#Class Features :
 		#sneak attack		
-		class_level%2>0 ? char.inc_ability("Sneak Attack") : 0
+		class_level %2>0 ? char.inc_ability("Sneak Attack") : 0
 		#trap sense
 		if [3,6,9,12,15,18].include?(class_level)
 			char.inc_ability("Trap Sense",1,false)
 			#AC dodge bonus against traps?
 		end
+
 		#class abilities
 		case class_level
 			when 1 then char.add_ability("Trapfinding")
@@ -44,9 +45,10 @@ class Rogue < ClassModel
 				while !selected 
 					spability = sp_abilities[rand(sp_abilities.length)]
 					if spability =="Feat"
+						# [TODO] add feat to character
 						char.add_ability(spability) #replace with random feat method
 						selected = true
-					else if spability=="Skill Mastery"
+					elsif spability=="Skill Mastery"
 					# randomly select skills that havent been selected
 						forbid_skills =[] 
 						skills =[]
@@ -69,11 +71,9 @@ class Rogue < ClassModel
 						end
 						char.add_ability(spability+"("+skills.join(", ")+")")	
 						selected = true
-					else if !char.abilities.include?(spability) then
+					elsif !char.abilities.include?(spability) then
 						char.add_ability(spability)
 						selected = true
-					end 
-					end
 					end
 				end
 		end
