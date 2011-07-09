@@ -6,15 +6,15 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require fi
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
 
 
-1.times do |i|
+4.times do |i|
 panda = Character.new(temp)
 panda.stat_mod["int"].times {panda.languages.roll_lang()} # move this to race and use bonus_languages
 		
-	(rand(20)+1).times do |i|
-		panda.level_up.each {|p| p.call panda,i}
+	i.times do |j|
+		panda.level_up.each {|p| p.call panda,j}
 	end
 
-puts (i+1).to_s + ".) " + panda.classes.to_s
+puts (i+1).to_s + ".) " + panda.classes.to_s + ":" + panda.HP.to_s
 ["str","dex","con","int","wis","cha"].each do |stat|
 	if (panda.stat_mod[stat] >= 0)
 		puts stat + "	" + panda.stats[stat].to_s + " (+" + panda.stat_mod[stat].to_s + ")"
@@ -22,7 +22,7 @@ puts (i+1).to_s + ".) " + panda.classes.to_s
 		puts stat + "	" + panda.stats[stat].to_s + " (" + panda.stat_mod[stat].to_s + ")"
 	end
 end
-puts panda.skill_list.to_s(panda)
+puts panda.skill_list
 puts panda.languages
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end

@@ -21,7 +21,7 @@ class Character
 		@classes = []
 		@abilities = []
 		@level = 1
-		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
+		@stats = Roll.stats #{"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
 		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>0,"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}
 		@armor_check = 0
@@ -37,11 +37,11 @@ class Character
 		@race = "Fish Tornado"
 		@age = 0
 		@languages = LanguageList.new
-		@skill_list = SkillList.new
+		@skill_list = SkillList.new(self)
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		RaceList.list.values[rand(RaceList.list.length)].apply(self)
+		#RaceList.list.values[rand(RaceList.list.length)].apply(self)
 		#get info based on race
 		#get class from list
 		#get info based on class
@@ -52,8 +52,10 @@ class Character
 			#i==0||(i+1)%3==0 ? c.feats.roll_feats(c,1):0
 			sel = ClassList.list.values[rand(ClassList.list.length)]
 			sel.apply(c)
+=begin
 			c.skill_list.class_skills |= sel.Class_skills
-			c.skill_list.roll_skills(sel.skill_ranks(c),[],c.classes.length)
+			c.skill_list.roll_skills(sel.skill_ranks(c))
+=end
 			calculate_mods
 		end]
 	end
@@ -112,5 +114,8 @@ class Character
 			sum += i.to_i
 		end
 		return sum
+	end
+	def get_level
+		return classes.length
 	end
 end

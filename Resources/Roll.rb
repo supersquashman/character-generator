@@ -144,6 +144,24 @@ class Roll
 		end
 		end
 	end
+#-- max ----------------------------------------------------------------------------------#
+#++
+# sets a roll with the max result
+	def max
+		new_roll = self.dup
+		new_roll.result = 0
+		new_roll.dice.each  {|sides, mul| new_roll.result += mul*sides }
+		return new_roll
+	end
+#-- min ----------------------------------------------------------------------------------#
+#++
+# returns a roll with the min result
+	def min
+		new_roll = self.dup
+		new_roll.result = 0
+		new_roll.dice.each  {|sides, mul| new_roll.result += mul }
+		return new_roll
+	end
 #-- best(n, of_m) ------------------------------------------------------------------------#
 #++
 # best returns the best m of n d6 rolls
@@ -164,16 +182,16 @@ end
 	##-------------##
 	##-- EXAMPLE --##
 	##-------------##
-r1 = Roll.new("2d6+3d6 -10d2 -5")
-r2 = Roll.new("2d8+3d10 -10d2 -5")
-print r1 +"\n"
-print r2 +"\n"
-print (r1+r2) +"\n"
-print (r1-r2) +"\n"
-print Roll.new("2d8+3d10 -10d2 -5").to_i.to_s + "\n"
-print 
-stats = Roll.stats
-mods= Hash.new
-stats.each {|key,value| mods[key] = (value-10)>0 ? ((value-10.0)/2).floor.to_i : ((value-10.0)/2).ceil.to_i}
-puts stats
-puts mods
+# r1 = Roll.new("2d6+3d6 -10d2 -5")
+# r2 = Roll.new("2d8+3d10 -10d2 -5")
+# print r1 +"\n"
+# print r2 +"\n"
+# print (r1+r2) +"\n"
+# print (r1-r2) +"\n"
+# print Roll.new("2d8+3d10 -10d2 -5").to_i.to_s + "\n"
+# print 
+# stats = Roll.stats
+# mods= Hash.new
+# stats.each {|key,value| mods[key] = (value-10)>0 ? ((value-10.0)/2).floor.to_i : ((value-10.0)/2).ceil.to_i}
+# puts stats
+# puts mods
