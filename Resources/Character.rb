@@ -2,11 +2,12 @@
 #require_relative "./Books/PHB/Races/ClassList"
 require_relative "./Lists/SkillList"
 require_relative "./Lists/ClassList"
+require_relative "./Lists/RaceList"
 require_relative "./Lists/LanguageList"
 
 class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
-	attr_accessor :stats, :skill_points, :HP, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist 
+	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist 
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages
 	
 	def initialize (sources)
@@ -29,6 +30,7 @@ class Character
 		@ref_save = {"base"=>0, "stat"=>0, "misc"=>0}
 		@will_save = {"base"=>0, "stat"=>0, "misc"=>0}
 		@HP = 0
+		@HD = Roll.new("0")
 		@BAB = 0
 		@speed = 0
 		@spell_resist = 0
@@ -41,7 +43,7 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		#RaceList.list.values[rand(RaceList.list.length)].apply(self)
+		RaceList.list.values[rand(RaceList.list.length)].apply(self)
 		#get info based on race
 		#get class from list
 		#get info based on class
@@ -50,6 +52,7 @@ class Character
 		
 		@level_up = [Proc.new do |c, i|
 			#i==0||(i+1)%3==0 ? c.feats.roll_feats(c,1):0
+			c.race.apply_level
 			sel = ClassList.list.values[rand(ClassList.list.length)]
 			sel.apply(c)
 =begin
@@ -80,7 +83,7 @@ class Character
 		end
 	end
 	
-	def inc_ability(name, number=1,dice=true)
+	def inc_ability(name, number=1,dice="")
 		found = false
 		self.abilities.each do |ability|
 			if ability.to_s.include? name
@@ -90,14 +93,15 @@ class Character
 			end
 		end
 		if !found 
-			self.add_ability(name +" "+ (dice ? number.to_s+"d6" :"+"+number.to_s))
+			self.add_ability(name +" "+ (dice!="" ? number.to_s+dice :"+"+number.to_s))
 		end
 	end
 	
 	def add_ability (text)
 		self.abilities.include?(text) ? 0 : self.abilities.push(text)
 	end
-	
+	#[DEP] marked for removal
+=begin
 	def get_stat
 		rolls = [rand(6)+1, rand(6)+1, rand(6)+1, rand(6)+1]
 		#rolls = [die[rand(6)], die[rand(6)], die[rand(6)], die[rand(6)]]
@@ -115,6 +119,7 @@ class Character
 		end
 		return sum
 	end
+=end
 	def get_level
 		return classes.length
 	end

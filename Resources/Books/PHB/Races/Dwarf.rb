@@ -1,17 +1,29 @@
-#require "RaceList"
-require 'pathname' 
-require Pathname(__FILE__).ascend{|d| h=d+'Lists.rb'; break h if h.file?} 
-class Dwarf
-	def self.apply(char)
-		age = 40
-		(1..7).each do |i|
-			age += (rand(6)+1)
+class Dwarf< RaceModel
+	def initialize(character)
+		super(character)
+		@size = "Medium"
+		@speed = 20
+		@age_roll = Roll.new("7d6+40")
+		@favored_classes=["Fighter"]
+		character.languages.learn_lang("Dwarven")
+		@bonus_languages = ["Giant", "Gnome", "Goblin", "Orc", "Terran", "Undercommon"]
+	end
+	def self.apply(character)
+		super(character)
+		if(character.level <=1)
+			character.stats["con"] += 2
+			character.stats["cha"] -= 2			
+			character.skill_list.assign_circ("Appraise","Racial (Stone)", 2)
+			character.skill_list.assign_circ("Craft","Racial (Stone)", 2)
+			character.skill_list.assign_circ("Search","Stonecunning", 2)
+			character.add_ability("Darkvision(60)")
+			character.add_ability("Weapon Familiarity (Dwarven Waraxe & Urgrosh)")
+			character.add_ability("+4 Ability vs Bull Rush or Trip [Ground]")
+			character.add_ability("+2 Saves vs Poision")
+			character.add_ability("+2 Saves vs Spells")
+			character.add_ability("+1 attack vs orcs and goblins")
+			character.add_ability("+4 Dodge(Giant)")
 		end
-		char.race= self
-		char.speed =20
-		char.age = age#agew(7.d6+40)
-		char.stats["con"] += 2
-		char.stats["cha"] -= 2
 	end
 end
 RaceList.push(Dwarf)

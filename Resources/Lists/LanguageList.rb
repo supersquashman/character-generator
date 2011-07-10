@@ -80,9 +80,11 @@ class LanguageList
 	def roll_lang(bonus_langs=[])
 		bonus_langs -= languages
 		if bonus_langs.length >0 
-			learn_lang(bonus_langs[bonus_langs.length])
-		else
+			learn_lang(bonus_langs[rand(bonus_langs.length)])
+		elsif (list - languages).length >0
 			while !learn_lang(list[rand(list.length)]) ;end
+		else
+			languages.push("Additional Language")
 		end
 	end
 #-- to_s -------------------------------------------------------------------------------#
