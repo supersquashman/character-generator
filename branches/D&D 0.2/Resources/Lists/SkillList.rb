@@ -64,6 +64,10 @@ class SkillList
 #++
 	#give ranks to the skill the character has
 	def assign_ranks(name, ranks)
+		ranks = ranks.to_f
+		if !class_skills.include?(name) 
+			ranks = ranks/2
+		end
 		if skills.include?(name) 
 		#increment skill character already has
 			skills[skills.index(name)].ranks += ranks
@@ -112,7 +116,7 @@ class SkillList
 		skillnum = ([( ranks / (level==1? 4:1)),1].max ) + rand(4)
 		perfered.length>0 ? 0 : perfer=0
 		skills.length>0 ? 0 : orig_weight=0
-		subset=[]
+		subset=Array.new
 		while subset.length < skillnum
 			i=rand(weight+perfer+new+orig_weight)+1
 			case i
@@ -125,20 +129,22 @@ class SkillList
 				else
 					choice =list[rand(list.length)].name
 			end	
-			if !subset.include?(choice)
+			if !subset.include?(choice) && choice
 				subset.push(choice)
 			end
 		end
 		#randomly assign the ranks between the subset of skills upto the max rank.
-		options=subset
+		options=subset.dup
+		options.each{|o| if !o then puts"UH1?" end}
 		while points>0 do
-			if subset.length >0
+			if options.length >0
 				skill =options[rand(options.length)]
 			else
-				#should never happen, or rarely on strange occasions
-				puts "----------error:Out of skills to pick in options --------------" + points.to_s
+				#should rarely happen when skill points come from some place other than characterclass
+				#puts "----------error:Out of skills to pick in options --------------" + points.to_s
 				skill =list[rand(list.length)].name
-			end			
+			end
+			if !skill then puts"UH2?" end
 			if skills.include?(skill) 
 				assign_ranks(skill,1)
 				points+=-1
@@ -174,7 +180,7 @@ class SkillList
 				circ = skill.circumstance_hash.length >0 ? " [" : ""
 				skill.circumstance_hash.each { |key, value| circ += get_positive_negative(value) +" "+key + (skill.circumstance_hash.keys.last !=key ? ", " : "")}
 				circ += skill.circumstance_hash.length >0 ? "]" : ""
-				total += skill.bonus(@character).to_i + skill.ranks.to_i
+				total += skill.bonus(@character).to_i + skill.ranks
 				swim = skill.name == "Swim" ? 2 : 1
 				armor = skill.armor_check&&@character.armor_check < 0  ? " ["+(@character.armor_check*swim).to_s+" Armor Check]" : ""
 				atotal = skill.armor_check&&@character.armor_check < 0 ? " ["+pm(@character.armor_check*swim+total)+"]" : ""
@@ -185,7 +191,7 @@ class SkillList
 #-- get_positive_negative(val) ---------------------------------------------------------#
 #++
         def get_positive_negative(val)
-                val>=0 ? "+"+val.to_s: val.to_s
+                val>=0 ? "+"+sprintf("%g",val): sprintf("%g",val)
         end
 	def total_skills
 		total =0

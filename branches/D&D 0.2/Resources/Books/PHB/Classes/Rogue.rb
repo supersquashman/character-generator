@@ -25,10 +25,10 @@ class Rogue < ClassModel
 		class_level = level.class_level #for visibility
 		#Class Features :
 		#sneak attack		
-		class_level %2>0 ? char.inc_ability("Sneak Attack") : 0
+		class_level %2>0 ? char.inc_ability("Sneak Attack",1,"d6") : 0
 		#trap sense
 		if [3,6,9,12,15,18].include?(class_level)
-			char.inc_ability("Trap Sense",1,false)
+			char.inc_ability("Trap Sense")
 			#AC dodge bonus against traps?
 		end
 

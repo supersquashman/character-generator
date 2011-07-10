@@ -1,22 +1,22 @@
 require_relative "../Roll"
 class ClassModel
 	#attr_accessor :good_save,:bad_save,:good_bab,:mid_bab,:bad_bab
-	attr_accessor :hd,:hd_type, :class_skills, :char, :will, :reflex, :fort, :bab, :class_level, :base_skill_num
+	attr_accessor :hd, :hd_type, :class_skills, :character, :will, :reflex, :fort, :bab, :class_level, :base_skill_num
 	GOOD_SAVE = [2,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	BAD_SAVE  = [0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0]
 	GOOD_BAB  = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	MID_BAB   = [0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1]
 	BAD_BAB   = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
-	def initialize(char)
-		@char = char
+	def initialize(character)
+		@character = character
 		@hd_type = "1d4"
 		@base_skill_num = 1
 		@will = BAD_SAVE
 		@reflex = BAD_SAVE
 		@fort = BAD_SAVE
 		@bab = BAD_BAB
-		@class_level = char.classes.collect {|val| val.class == self}.size+1
-		@hd = char.classes.length >0 ? Roll.new(hd_type) : Roll.new(hd_type).max
+		@class_level = character.classes.collect {|val| val.class == self}.size+1
+		@hd = character.classes.length >0 ? Roll.new(hd_type) : Roll.new(hd_type).max
 		@class_skills = []
 		
 	end
@@ -38,9 +38,11 @@ class ClassModel
 		character.BAB += level.bab[level.class_level-1]
 		#increase the character's hp by the hit die amount + con bonus
 		character.HP += [level.hd.to_i + character.stat_mod["con"],1].max
+		character.HD += level.hd
 		#roll this level of the character's skills (4X for first level)
 		num_skills = (level.base_skill_num + character.stat_mod["int"])*(level.class_level>1? 1:4)
 		character.skill_list.class_skills |= level.class_skills
+		character.skill_list.roll_skills(num_skills)
 		character.skill_list.roll_skills(num_skills)
 		#descendants will need the class reference for application of the class' abilities
 		#[TODO][QUESTION] should the apply class be an instance or class method?
@@ -50,6 +52,11 @@ class ClassModel
 		return true
 	end
 	def to_s
-		return self.class.to_s + "( " +hd.to_s+" )"
+		String name = self.class.to_s.dup
+		name.gsub!(/::/, '/')
+		name.gsub!(/([A-Z]+)([A-Z][a-z])/,'\1 \2')
+		name.gsub!(/([a-z\d])([A-Z])/,'\1 \2')
+		name.tr!("-", "_")
+		return name + "( " +hd.to_s+" )"
 	end
 end

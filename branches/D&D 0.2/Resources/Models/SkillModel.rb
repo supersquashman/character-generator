@@ -41,7 +41,7 @@ class SkillModel
 
 	def initialize (name, mod="wis",armor_check=false, description="",ranks=0)
 		@name=name
-		@ranks=ranks
+		@ranks=ranks.to_f
 		@mod=mod
 		@armor_check=armor_check ?  armor_check=="true"? true: false : false 
 		@description=description
