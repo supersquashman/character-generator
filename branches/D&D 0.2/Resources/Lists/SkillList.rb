@@ -32,9 +32,9 @@ class SkillList
 	@@list=[] #default skills available
 	attr_accessor :skills #skills the character has ranks in or wants to be printed
 	attr_accessor :class_skills
-	attr_accessor :char
+	attr_accessor :character
 	
-#-- initialize(character)-------------------------------------------------------------------------#
+#-- initialize(character)---------------------------------------------------------------#
 #++
 	def initialize (character)
 		@character = character
@@ -69,7 +69,7 @@ class SkillList
 			skills[skills.index(name)].ranks += ranks
 		elsif list.include? name 
 		#copy base skill from list to character's skills then increment that skill's ranks
-			skills.push(list[list.index(name)])
+			skills.push(list[list.index(name)].dup)
 			skills[skills.index(name)].ranks += ranks
 		else 
 		#skill doesn't exist in database make a new skill only for the character
@@ -102,15 +102,14 @@ class SkillList
 #-- roll_skills(ranks, perfered, level, perfer, orig_weight, weight, new) --------------#
 #++
 	def roll_skills(ranks, perfered=[],level=1,perfer=100, orig_weight=50, weight=5, new=1) 
-		if char 
-			level = char.get_level
+		if character
+			level = character.get_level
 		end
-		puts level
 		ranks = [ranks,1].max 
 		points = ranks
 		
 		#randomly pick a subset of skills to assign to (weigh them according to each param)
-		skillnum = [(level==1? ranks/4:ranks)+rand(3)+1, ranks/(level+3)].max
+		skillnum = ([( ranks / (level==1? 4:1)),1].max ) + rand(4)
 		perfered.length>0 ? 0 : perfer=0
 		skills.length>0 ? 0 : orig_weight=0
 		subset=[]
@@ -136,21 +135,22 @@ class SkillList
 			if subset.length >0
 				skill =options[rand(options.length)]
 			else
-				puts "error"
+				#should never happen, or rarely on strange occasions
+				puts "----------error:Out of skills to pick in options --------------" + points.to_s
 				skill =list[rand(list.length)].name
 			end			
 			if skills.include?(skill) 
-				if skills[skills.index(skill)].ranks < level+3
-					assign_ranks(skill,1)
-					points+=-1
-				else
+				assign_ranks(skill,1)
+				points+=-1
+				if skills[skills.index(skill)].ranks >= level+3
+					#puts skill +" maxed (" + skills[skills.index(skill)].ranks.to_s+")"
 					options.delete(skill)
 				end
 			else
 				if(skill.downcase == "speak language")
 					#[TODO]add a language
-					char.languages.roll_lang()
-					puts"Language"
+					character.languages.roll_lang()
+					#puts "Language"
 					points+=-1
 				else
 					assign_ranks(skill,1)
@@ -159,30 +159,30 @@ class SkillList
 			end
 		end	
 	end
-#-- to_s -------------------------------------------------------------------------#
+#-- to_s -------------------------------------------------------------------------------#
 #++
 	def to_s
-                ret =""
-                skills.sort! { |a,b| a.name <=> b.name }
-                skills.each do |skill|
-                        bonus = ""
-                        total=0
-                        skill.bonus_hash.each do|key,value|
-                                bonus+= ", "+get_positive_negative(value)+" "+key
-                                total+= value
-                        end
-                        circ = skill.circumstance_hash.length >0 ? " [" : ""
-                        skill.circumstance_hash.each { |key, value| circ += get_positive_negative(value) +" "+key + (skill.circumstance_hash.keys.last !=key ? ", " : "")}
-                        circ += skill.circumstance_hash.length >0 ? "]" : ""
-                        total += skill.bonus(@character).to_i + skill.ranks.to_i
-                        swim = skill.name == "Swim" ? 2 : 1
-                        armor = skill.armor_check&&@character.armor_check < 0  ? " ["+(@character.armor_check*swim).to_s+" Armor Check]" : ""
-                        atotal = skill.armor_check&&@character.armor_check < 0 ? " ["+pm(@character.armor_check*swim+total)+"]" : ""
-                        ret += skill.name.rjust(40) + " " + (get_positive_negative(total)+atotal).ljust(9) + " (" + get_positive_negative(skill.ranks) + " Rank, " + get_positive_negative(skill.bonus(@character).to_i) + " " + skill.mod.capitalize + bonus + armor + circ + ")\n"
-                end
-                return ret
-        end
-#-- get_positive_negative(val) ----------------------------------------------------------------------------#
+		ret =""
+		skills.sort! { |a,b| a.name <=> b.name }
+		skills.each do |skill|
+				bonus = ""
+				total=0
+				skill.bonus_hash.each do|key,value|
+						bonus+= ", "+get_positive_negative(value)+" "+key
+						total+= value
+				end
+				circ = skill.circumstance_hash.length >0 ? " [" : ""
+				skill.circumstance_hash.each { |key, value| circ += get_positive_negative(value) +" "+key + (skill.circumstance_hash.keys.last !=key ? ", " : "")}
+				circ += skill.circumstance_hash.length >0 ? "]" : ""
+				total += skill.bonus(@character).to_i + skill.ranks.to_i
+				swim = skill.name == "Swim" ? 2 : 1
+				armor = skill.armor_check&&@character.armor_check < 0  ? " ["+(@character.armor_check*swim).to_s+" Armor Check]" : ""
+				atotal = skill.armor_check&&@character.armor_check < 0 ? " ["+pm(@character.armor_check*swim+total)+"]" : ""
+				ret += skill.name.rjust(40) + " " + (get_positive_negative(total)+atotal).ljust(9) + " (" + get_positive_negative(skill.ranks) + " Rank, " + get_positive_negative(skill.bonus(@character).to_i) + " " + skill.mod.capitalize + bonus + armor + circ + ")\n"
+		end
+		return ret
+	end
+#-- get_positive_negative(val) ---------------------------------------------------------#
 #++
         def get_positive_negative(val)
                 val>=0 ? "+"+val.to_s: val.to_s

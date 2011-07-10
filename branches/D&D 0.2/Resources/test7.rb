@@ -10,7 +10,7 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require 
 panda = Character.new(temp)
 panda.stat_mod["int"].times {panda.languages.roll_lang()} # move this to race and use bonus_languages
 		
-	i.times do |j|
+	(i+1).times do |j|
 		panda.level_up.each {|p| p.call panda,j}
 	end
 
