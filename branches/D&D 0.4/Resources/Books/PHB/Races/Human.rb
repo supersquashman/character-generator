@@ -30,7 +30,7 @@ class Human < RaceModel
 	end
 	def apply_level
 		super
-		if character.get_level <1
+		if character.level == 1
 			character.skill_list.roll_skills(4,[],0)
 			#character.feats.roll_feats(1)
 		else

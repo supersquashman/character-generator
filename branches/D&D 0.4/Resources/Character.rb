@@ -114,17 +114,24 @@ class Character
 		end
 	end
         
-	def increase_ability(name, number=1,dice="")
+	def increase_ability(name, number=1,dice="+")
 		found = false
 		self.abilities.each do |ability|
 			if ability.to_s.include? name
-				inc_name=ability.sub(/\d{1,}/) {|n| n.to_i+number}                              
+				inc_name=ability.sub(/\d{1,}/) {|n| n.to_i+number}
 				self.abilities[self.abilities.index(ability)] = inc_name
 				found = true
 			end
 		end
 		if !found 
-			self.add_ability(name + (dice!="" ? number.to_s+dice :"+"+number.to_s))
+      if dice==""
+      ability_name = name
+      elsif dice=="+"
+      ability_name = name + " +" + number.to_s 
+      else
+      ability_name = name + " +" + number.to_s + dice
+      end
+			self.add_ability(ability_name)
 		end
 	end
         

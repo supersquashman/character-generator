@@ -39,7 +39,7 @@ class ClassModel
 		@reflex = BAD_SAVE
 		@fort = BAD_SAVE
 		@bab = BAD_BAB
-		@class_level = character.classes.collect {|val| val.class == self}.size+1
+		@class_level = character.classes.reject {|val| val.class != self.class}.size+1
 		@hd = character.classes.length >0 ? Roll.new(hd_type) : Roll.new(hd_type).max
 		@class_skills = []
 			

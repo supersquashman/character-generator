@@ -42,23 +42,21 @@ class Rogue < ClassModel
 	end
 	
 	def self.apply(char)
+    #[NOTE] Add weapon proficiencies 
 		level = super(char)
 		class_level = level.class_level #for visibility
 		#Class Features :
 		#sneak attack           
-		class_level %2>0 ? char.increase_ability("Sneak Attack +",1,"d6") : 0
+		char.increase_ability("Sneak Attack",1,"d6") if class_level %2>0
 		#trap sense
-		if [3,6,9,12,15,18].include?(class_level)
-			char.increase_ability("Trap Sense")
-			#AC dodge bonus against traps?
-		end
+		
+    char.increase_ability("Trap Sense") if [3,6,9,12,15,18].include?(class_level)
 
 		#class abilities
 		case class_level
 			when 1 then char.add_ability("Trapfinding")
 			when 2 then char.add_ability("Evasion")
-			when 4 then char.add_ability("Uncanny Dodge") #flat footed ac problem
-			when 8 then char.add_ability("Improved Uncanny Dodge")
+			when 4,8 then char.abilities.include?("Uncanny Dodge")? char.add_ability("Improved Uncanny Dodge") : char.add_ability("Uncanny Dodge") #flat footed ac problem
 			when 10,13,16,19
 				#Special Ability
 				selected = false
