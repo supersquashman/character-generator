@@ -105,23 +105,25 @@ class SkillList
 	end
 #-- roll_skills(ranks, preferred, level, prefer, orig_weight, weight, new) --------------#
 #++
-	def roll_skills(ranks, preferred=[],level=1,prefer=100, orig_weight=50, weight=5, new_skill=1) 
-		if @character
-			level = @character.level
-		end
+	def roll_skills(ranks, preferred=[],level=@character.get_level, prefer=5000, orig_weight=5000, weight=50, new_skill=1) 
+		# if character
+			# level = character.level
+		# end
+    skills_with_ranks = skills.reject {|skill| skill.ranks <=0}
 		ranks = [ranks,1].max 
 		points = ranks
 		
 		#randomly pick a subset of skills to assign to (weigh them according to each param)
-		skillnum = ([( ranks / (level==1? 4:1)),1].max ) + (rand(4)+1)
 		preferred.length>0 ? 0 : prefer=0
-		skills.length>0 ? 0 : orig_weight=0
+		skills_with_ranks.length>0 ? 0 : orig_weight=0
+    skillnum = ([( ranks / (level==1? 4:1)),1].max )
+    2.times { skillnum += 1 if rand(prefer+orig_weight+weight+new_skill) < (weight+prefer+new_skill)}
 		subset=Array.new
-		while subset.length <= skillnum
+		while subset.length < skillnum
 			i=rand(weight+prefer+new_skill+orig_weight)+1
 			case i
 				when 0..orig_weight
-					choice =skills[rand(skills.length)].name
+					choice =skills_with_ranks[rand(skills_with_ranks.length)].name
 				when orig_weight..orig_weight+weight
 					choice =class_skills[rand(class_skills.length)]
 				when orig_weight+weight..orig_weight+weight+prefer
@@ -134,33 +136,43 @@ class SkillList
 			end
 		end
 		#randomly assign the ranks between the subset of skills upto the max rank.
-		options=subset.dup
-		options.each{|o| if !o then puts"UH1?" end}
-		while points>0 do
-			if options.length >0
-				skill =options[rand(options.length)]
+		options = subset.dup
+		while points > 0 do
+			if options.length > 0
+				skill = options[rand(options.length)]
 			else
 				#should rarely happen when skill points come from some place other than characterclass
 				#puts "----------error:Out of skills to pick in options --------------" + points.to_s
-				skill =list[rand(list.length)].name
+				i = rand(weight + prefer + new_skill) + 1
+        case i
+          when 0..weight
+            choice = class_skills[rand(class_skills.length)]
+          when weight..weight + prefer
+            choice = prefered[rand(prefered.length)]
+          else
+            choice = list[rand(list.length)].name
+        end	
+        options.push(choice)
+        skill = options[0]
 			end
-			if !skill then puts"UH2?" end
+			Float inc = !class_skills.include?(skill) ? 0.5 : 1
 			if skills.include?(skill) 
-				assign_ranks(skill,1)
-				points+=-1
-				if skills[skills.index(skill)].ranks >= level+3
-						#puts skill +" maxed (" + skills[skills.index(skill)].ranks.to_s+")"
-						options.delete(skill)
+				if skills[skills.index(skill)].ranks.to_f + inc <= (level+3).to_f
+					assign_ranks(skill,1)
+          points-=1
+        else
+          #puts skill +" maxed (" + skills[skills.index(skill)].ranks.to_s+")"
+					options.delete(skill)
 				end
 			else
 				if(skill.downcase == "speak language")
-					#[TODO]add a language
+					#[TODO]when character picks speak language as a skill need both speak and write counts(2 points) and a max number of skill points to put into it
 					@character.languages.roll_lang()
 					#puts "Language"
-					points+=-1
+					points-=1
 				else
 					assign_ranks(skill,1)
-					points+=-1
+					points-=1
 				end
 			end
 		end     

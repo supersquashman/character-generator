@@ -31,9 +31,9 @@ class Dwarf< RaceModel
 		character.languages.learn_lang("Dwarven")
 		@bonus_languages = ["Giant", "Gnome", "Goblin", "Orc", "Terran", "Undercommon"]
 	end
-	def self.apply(character)
-		super(character)
-		if(character.level <=1)
+	def apply_level
+		super
+		if(character.get_level+1 <=1)
 			character.stats["con"] += 2
 			character.stats["cha"] -= 2                     
 			character.skill_list.assign_circ("Appraise","Racial (Stone)", 2)
