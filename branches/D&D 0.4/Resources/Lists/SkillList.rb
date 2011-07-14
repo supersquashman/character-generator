@@ -32,7 +32,7 @@ class SkillList
 	@@list=[] #default skills available
 	attr_accessor :skills #skills the character has ranks in or wants to be printed
 	attr_accessor :class_skills
-	attr_accessor :character
+	#attr_accessor :character
         
 #-- initialize(character)---------------------------------------------------------------#
 #++
@@ -106,9 +106,9 @@ class SkillList
 #-- roll_skills(ranks, preferred, level, prefer, orig_weight, weight, new) --------------#
 #++
 	def roll_skills(ranks, preferred=[],level=1,prefer=100, orig_weight=50, weight=5, new_skill=1) 
-		#if character
-		#	level = character.level
-		#end
+		if @character
+			level = @character.level
+		end
 		ranks = [ranks,1].max 
 		points = ranks
 		
@@ -155,7 +155,7 @@ class SkillList
 			else
 				if(skill.downcase == "speak language")
 					#[TODO]add a language
-					character.languages.roll_lang()
+					@character.languages.roll_lang()
 					#puts "Language"
 					points+=-1
 				else
