@@ -1,5 +1,5 @@
 require_relative "Character"
-require_relative "Lists"
+#require_relative "Lists"
 
 temp = ["PHB"]#, "mm1","eberron","forgotten realms","frostburn"]
 temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require file} }
