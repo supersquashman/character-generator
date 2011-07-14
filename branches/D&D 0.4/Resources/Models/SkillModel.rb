@@ -30,7 +30,7 @@
 # bonus_hash[Hash(key=origin, value=bonus)] - hash of skill bonuses. Will be used for calculating total Ex: {"Racial"=>2}
 # circumstance_hash[Hash(key=origin, value=bonus)] - hash of skill circumstance bonuses. Won't be used for calculating total
 
-# Methods : initialize, ==(skill), bonus(char)
+# Methods : initialize,initialize_copy(old), ==(skill), bonus(char)
 
 class SkillModel
 	attr_accessor :name, :ranks, :description,:mod,:armor_check, :bonus_hash, :circumstance_hash
@@ -38,7 +38,6 @@ class SkillModel
 	#circumstance_hash should contain reason as key and bonus as value
 #-- initialize -------------------------------------------------------------------------#
 #++
-
 	def initialize (name, mod="wis",armor_check=false, description="",ranks=0)
 		@name = name
 		@ranks = ranks.to_f
@@ -48,6 +47,13 @@ class SkillModel
 		@bonus_hash = Hash.new
 		@circumstance_hash = Hash.new
 	end
+#-- initialize_copy (old) --------------------------------------------------------------#
+#++
+   def initialize_copy (old)
+    super old
+    @bonus_hash = old.bonus_hash.dup
+    @circumstance_hash = old.circumstance_hash.dup
+  end
 #-- ==(skill) --------------------------------------------------------------------------#
 #++
 # comparison method will make sure that skills are always compared by name
