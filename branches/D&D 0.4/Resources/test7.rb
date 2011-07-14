@@ -29,7 +29,7 @@ puts ""
 end
 puts panda.skill_list
 puts ""
-puts panda.abilities
+puts panda.abilities.sort
 puts Roll.new("d4")
 puts panda.race.favored_classes
 puts ""
