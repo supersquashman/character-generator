@@ -40,7 +40,7 @@ class Fighter < ClassModel
 		#class_level = level.class_level #for visibility
 		#Class Features :
 		#bonus feats          
-		@class_level %2>0 ? FeatList.get_bonus_feat(@character, "Fighter") : 0
+		(@class_level == 1 || @class_level %2>0) ? FeatList.get_bonus_feat(@character, "Fighter") : 0
 	end
 end
 ClassList.push(Fighter)
