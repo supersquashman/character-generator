@@ -86,7 +86,7 @@ class SkillList
 	def assign_misc(name, bonus)
 		assign_ranks(name,0)
 		i = skills.index(name)
-		skills[i].bonus_hash["misc"]? skills[i].bonus_hash["misc"] +=bonus : skills[i].bonus_hash["misc"] =bonus
+		skills[i].bonus_hash["Misc"]? skills[i].bonus_hash["Misc"] +=bonus : skills[i].bonus_hash["Misc"] =bonus
 	end
 #-- assign_circ(name, bonus) -----------------------------------------------------------#
 #++
