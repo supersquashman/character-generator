@@ -94,8 +94,9 @@ class Character
 		@level += 1
 		#i==0||(i+1)%3==0 ? c.feats.roll_feats(c,1):0
 		self.race.apply_level
-		sel = ClassList.list.values[rand(ClassList.list.length)]
-		sel.apply(self)
+		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
+		#selected_class.apply(self)
+		@classes.push(ClassList.list.values[rand(ClassList.list.length)].new(self))
 =begin
 			c.skill_list.class_skills |= sel.Class_skills
 			c.skill_list.roll_skills(sel.skill_ranks(c))
@@ -158,7 +159,7 @@ class Character
 		return sum
 	end
 	
-	def get_level
-		return classes.length
-	end
+	#def get_level
+	#	return classes.length
+	#end
 end

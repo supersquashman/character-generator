@@ -39,24 +39,28 @@ class Rogue < ClassModel
 						"Move Silently","Open Lock","Perform", "Profession",
 						"Search","Sense Motive", "Sleight of Hand","Spot",
 						"Swim","Tumble","Use Magic Device","Use Rope"]
+		apply
 	end
 	
-	def self.apply(char)
-    #[NOTE] Add weapon proficiencies 
-		level = super(char)
-		class_level = level.class_level #for visibility
+	def apply
+		super
+		#level = super(char)
+		#class_level = level.class_level #for visibility
 		#Class Features :
 		#sneak attack           
-		char.increase_ability("Sneak Attack",1,"d6") if class_level %2>0
+		@class_level %2>0 ? @character.increase_ability("Sneak Attack",1,"d6") : 0
 		#trap sense
-		
-    char.increase_ability("Trap Sense") if [3,6,9,12,15,18].include?(class_level)
+		if [3,6,9,12,15,18].include?(class_level)
+			@character.increase_ability("Trap Sense")
+			#AC dodge bonus against traps?
+		end
 
 		#class abilities
 		case class_level
-			when 1 then char.add_ability("Trapfinding")
-			when 2 then char.add_ability("Evasion")
-			when 4,8 then char.abilities.include?("Uncanny Dodge")? char.add_ability("Improved Uncanny Dodge") : char.add_ability("Uncanny Dodge") #flat footed ac problem
+			when 1 then @character.add_ability("Trapfinding")
+			when 2 then @character.add_ability("Evasion")
+			when 4 then @character.add_ability("Uncanny Dodge") #flat footed ac problem
+			when 8 then @character.add_ability("Improved Uncanny Dodge")
 			when 10,13,16,19
 				#Special Ability
 				selected = false
@@ -65,21 +69,21 @@ class Rogue < ClassModel
 					spability = sp_abilities[rand(sp_abilities.length)]
 					if spability =="Feat"
 						# [TODO] add feat to character
-						char.add_ability(spability) #replace with random feat method
+						@character.add_ability(spability) #replace with random feat method
 						selected = true
 					elsif spability=="Skill Mastery"
 						# randomly select skills that havent been selected
 						forbid_skills =[] 
 						skills =[]
-						char.abilities.each do |ability|
+						@character.abilities.each do |ability|
 							if ability.to_s.include? "Skill Mastery"
 								forbid_skills.push(ability.scan(/(?:,\s*|\(\s*)(\w+)/).flatten)
 							end
 						end
 						num=0
-						if char.skill_list.skills.length >2
+						if @character.skill_list.skills.length >2
 							while num!=3 do
-								sel = char.skill_list.skills[rand(char.skill_list.skills.length)]
+								sel = @character.skill_list.skills[rand(@character.skill_list.skills.length)]
 								if !forbid_skills.include?( sel.name ) && !skills.include?(sel.name) 
 									skills.push(sel.name)
 									num+=1
@@ -88,13 +92,13 @@ class Rogue < ClassModel
 						else
 							skills = ["Hide", "Move Silently","Climb"]
 						end
-						#char.add_ability(spability+"("+skills.join(", ")+")")   
+						#@character.add_ability(spability+"("+skills.join(", ")+")")   
 						skills.each do |skill|
-							char.add_ability(spability+"("+skill+")")
+							@character.add_ability(spability+"("+skill+")")
 						end
 						selected = true
-					elsif !char.abilities.include?(spability) then
-						char.add_ability(spability)
+					elsif !@character.abilities.include?(spability) then
+						@character.add_ability(spability)
 						selected = true
 					end
 				end

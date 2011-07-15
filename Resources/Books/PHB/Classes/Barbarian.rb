@@ -34,35 +34,44 @@ class Barbarian < ClassModel
 		@bab = GOOD_BAB
 		@class_skills = ["Climb","Craft","Handle Animal","Intimidate",
                       "Jump","Listen","Ride","Survival","Swim"]
-    puts "Barbarian " + class_level.to_s
+		apply
+    #puts "Barbarian " + class_level.to_s
 	end
-  def available?
-    super
-    #[TODO] any non-lawful
-  end
-	def self.apply(char)
+	
+	def available?
+		super
+		#[TODO] any non-lawful
+	end
+  
+	def apply#(char)
+		super
     #[NOTE] Add weapon proficiencies 
-		level = super(char)
-		class_level = level.class_level #for visibility
+		#level = super(char)
+		#class_level = level.class_level #for visibility
 		#Class Features :
 		#rage          
-		char.increase_ability("Rage 1/day",1,"") if [1,4,8,12,16,20].include?(class_level)
+		@character.increase_ability("Rage 1/day",1,"") if [1,4,8,12,16,20].include?(@class_level)
 		#trap sense
-		char.increase_ability("Trap Sense") if [3,6,9,12,15,18].include?(class_level)
+		@character.increase_ability("Trap Sense") if [3,6,9,12,15,18].include?(@class_level)
     #damage reduction
-    char.increase_ability("Damage Reduction 1/-",1,"") if [7,10,13,16,19].include?(class_level)
+    @character.increase_ability("Damage Reduction 1/-",1,"") if [7,10,13,16,19].include?(@class_level)
 
 		#class abilities
 		case class_level
 			when 1  
-        char.add_ability("Fast movement")
-        char.speed += 10
-        char.add_ability("Illiteracy") #[TODO] special rules?
-			when 2,5 then char.abilities.include?("Uncanny Dodge") ? char.add_ability("Improved Uncanny Dodge") : char.add_ability("Uncanny Dodge") #flat footed ac problem
-			when 11 then char.add_ability("Greater Rage")
-			when 14 then char.add_ability("Indomitable Will")
-      when 17 then char.add_ability("Tireless Rage")
-      when 20 then char.add_ability("Mighty Rage")
+        @character.add_ability("Fast movement")
+        @character.speed += 10
+        @character.add_ability("Illiteracy") #[TODO] special rules?
+			when 2,5 then 
+				if (@character.abilities.include?("Uncanny Dodge")) 
+					@character.add_ability("Improved Uncanny Dodge")
+				else
+					@character.add_ability("Uncanny Dodge") #flat footed ac problem
+				end
+			when 11 then @character.add_ability("Greater Rage")
+			when 14 then @character.add_ability("Indomitable Will")
+      when 17 then @character.add_ability("Tireless Rage")
+      when 20 then @character.add_ability("Mighty Rage")
 		end
 	end
 end

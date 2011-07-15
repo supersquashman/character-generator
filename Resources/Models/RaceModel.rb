@@ -38,7 +38,7 @@ class RaceModel
 	
 	def apply_level
 		#routines that are made every level
-		if character.get_level < 1
+		if character.level <= 1
 			character.speed = speed
 			character.size = size
 			age_roll.make_rolls

@@ -30,9 +30,16 @@ end
 puts panda.skill_list
 puts ""
 puts panda.abilities.sort
-puts Roll.new("d4")
-puts panda.race.favored_classes
+puts "\nFavored Classes:  "
+panda.race.favored_classes.each {|cls| puts cls}
 puts ""
 puts panda.languages
+puts "Classes:  "
+temp_classes = []
+panda.classes.each {|cls| temp_classes.push(cls.to_s)}
+temp_classes.uniq.each do |cls|
+	#puts cls.to_s + "("+ panda.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
+	puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
+end 
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end
