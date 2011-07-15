@@ -4,6 +4,7 @@ require_relative "Character"
 temp = ["PHB"]#, "mm1","eberron","forgotten realms","frostburn"]
 temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
+temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require file} }
 
 1.times do |i|
 panda = Character.new(temp)
@@ -41,5 +42,6 @@ temp_classes.uniq.each do |cls|
 	#puts cls.to_s + "("+ panda.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
 	puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 end 
+puts panda.feats
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end

@@ -34,7 +34,7 @@ end
 class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist 
-	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages
+	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
 	
 	def initialize (sources)
 =begin
@@ -47,6 +47,7 @@ class Character
 =end
 		@classes = []
 		@abilities = []
+    @feats = FeatList.new
 		@level = 0
 		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
@@ -92,7 +93,7 @@ class Character
 	
 	def level_up
 		@level += 1
-		#i==0||(i+1)%3==0 ? c.feats.roll_feats(c,1):0
+		@feats.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		self.race.apply_level
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
