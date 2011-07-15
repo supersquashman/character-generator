@@ -33,7 +33,7 @@ class Dwarf< RaceModel
 	end
 	def apply_level
 		super
-		if(character.get_level ==1)
+		if(character.level <= 1)
 			character.stats["con"] += 2
 			character.stats["cha"] -= 2                     
 			character.skill_list.assign_circ("Appraise","Racial (Stone)", 2)

@@ -105,7 +105,7 @@ class SkillList
 	end
 #-- roll_skills(ranks, preferred, level, prefer, orig_weight, weight, new) --------------#
 #++
-	def roll_skills(ranks, preferred=[],level=@character.get_level, prefer=5000, orig_weight=5000, weight=50, new_skill=1) 
+	def roll_skills(ranks, preferred=[],level=@character.level, prefer=3000, orig_weight=3000, weight=50, new_skill=1) 
 		# if character
 			# level = character.level
 		# end
