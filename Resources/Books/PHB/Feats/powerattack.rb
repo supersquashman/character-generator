@@ -2,17 +2,22 @@
 # require 'pathname' 
 # require Pathname(__FILE__).ascend{|d| h=d+'FeatList.rb'; break h if h.file?} 
 class PowerAttack < FeatModel
+	@@bonus_classes = ["Fighter"]
+	
 	def initialize 
 		super
 		@title = "Power Attack"
-		@tag = "Fighter"
 		@description = "You make a power attack"
 		@page = "PHB??"
 		@link = ""
-		@ftr=true
 	end
+	
 	def self.available?(char)
-		return !char.feats.feats.include?(self.new) && char.stats["str"] >= 13
+		return !char.feats.include?(self.new) && char.stats["str"] >= 13
+	end
+	
+	def self.is_bonus_feat?(class_type)
+		return @@bonus_classes.include?(class_type)
 	end
 end
 FeatList.push(PowerAttack)

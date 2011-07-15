@@ -23,7 +23,6 @@
 #--== Rogue ============================================================================#
 #++
 class Rogue < ClassModel
-	@@hd = "1d6"
 	def initialize (character)
 		super(character)
 		@hd_type="1d6"

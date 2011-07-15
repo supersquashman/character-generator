@@ -47,7 +47,7 @@ class Character
 =end
 		@classes = []
 		@abilities = []
-    @feats = FeatList.new
+		@feats = []#FeatList.new
 		@level = 0
 		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
@@ -93,7 +93,7 @@ class Character
 	
 	def level_up
 		@level += 1
-		@feats.roll_feats(self,1) if @level == 1 || @level%3 == 0
+		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		self.race.apply_level
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)

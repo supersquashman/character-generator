@@ -41,7 +41,8 @@ panda.classes.each {|cls| temp_classes.push(cls.to_s)}
 temp_classes.uniq.each do |cls|
 	#puts cls.to_s + "("+ panda.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
 	puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
-end 
+end
+puts ""
 puts panda.feats
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end

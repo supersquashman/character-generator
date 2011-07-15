@@ -23,7 +23,6 @@
 #--== Barbarian ========================================================================#
 #++
 class Barbarian < ClassModel
-	@@hd = "1d12"
 	def initialize (character)
 		super(character)
 		@hd_type="1d12"
