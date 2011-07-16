@@ -17,6 +17,7 @@
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
 require_relative "../Roll"
+require_relative "SpellModel"
 #--== ClassModel =======================================================================#
 #++
 # Members :
@@ -24,7 +25,7 @@ require_relative "../Roll"
 # Methods : 
 class ClassModel
 	#attr_accessor :good_save,:bad_save,:good_bab,:mid_bab,:bad_bab
-	attr_accessor :hd, :hd_type, :class_skills, :character, :will, :reflex, :fort, :bab, :class_level, :base_skill_num
+	attr_accessor :hd, :hd_type, :class_skills, :character, :will, :reflex, :fort, :bab, :class_level, :base_skill_num, :spells
 	GOOD_SAVE = [2,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	BAD_SAVE  = [0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0]
 	GOOD_BAB  = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] #(level - GOOD_BAB.length).each {|i| (GOOD_BAB += 1) if (i>0)}
@@ -32,6 +33,7 @@ class ClassModel
 	BAD_BAB   = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	
 	def initialize(character)
+    @spells = Hash.new([])
 		@character = character
 		@hd_type = "1d4"
 		@base_skill_num = 1

@@ -13,7 +13,7 @@ class PowerAttack < FeatModel
 	end
 	
 	def self.available?(char)
-		return !char.feats.include?(self.new) && char.stats["str"] >= 13
+		return !feat_taken(char) && char.stats["str"] >= 13
 	end
 	
 	def self.is_bonus_feat?(class_type)
