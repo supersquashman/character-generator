@@ -33,7 +33,7 @@ end
 #++
 class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
-	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist 
+	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells_known, :forbidden_spell_types
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
 	
 	def initialize (sources)
@@ -49,6 +49,8 @@ class Character
 		@abilities = []
 		@feats = []#FeatList.new
 		@level = 0
+    @spells_known = SpellModel.all_spells #Hash.new(Hash.new([]))
+    @forbidden_spell_types = []
 		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
 		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>0,"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}

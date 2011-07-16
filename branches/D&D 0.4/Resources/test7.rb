@@ -45,4 +45,19 @@ end
 puts ""
 puts panda.feats
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
+
+# if panda.spells_known.length > 0
+  # puts ""
+  # puts "Spells:"
+  # panda.spells_known.each do |spell_class, spell_list|
+    # puts " " + spell_class + " Spells:"
+    # spell_list.keys.reject{|key| !key.is_a?(Numeric)}.each do |spell_level|
+      # puts "  Level " + spell_level.to_s + " Spells:"
+      # spell_list[spell_level].each do |spell|
+        # puts "   * "+spell.name
+      # end
+      # puts ""
+    # end
+  # end
+# end
 end

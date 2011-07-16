@@ -25,4 +25,7 @@ class FeatModel
 		#feats.each {|feat| ret+="\t* "+feat.title.to_s+"\n" }
 		return title.to_s
 	end
+  def self.feat_taken(char)
+    return char.feats.collect{|feat| feat.title}.include?(self.new.title)
+  end
 end
