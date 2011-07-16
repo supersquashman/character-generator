@@ -43,7 +43,11 @@ temp_classes.uniq.each do |cls|
 	puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 end
 puts ""
-puts panda.feats
+sorted_feats = []
+panda.feats.each do |feat|
+	sorted_feats += [feat.to_s]
+end
+puts sorted_feats.sort
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 
 # if panda.spells_known.length > 0
