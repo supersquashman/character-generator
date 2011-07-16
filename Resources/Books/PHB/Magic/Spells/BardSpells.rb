@@ -42,39 +42,39 @@ SpellModel.all_spells["Bard"][1] +=SpellModel.spell_level([["Alarm", "Abjuration
 ["Undetectable Alignment", "Abjuration", "PH p297", "Conceals alignment for 24 hours."],
 ["Unseen Servant", "Conjuration (Creation)", "PH p297", "Invisible force obeys your commands."],
 ["Ventriloquism", "Illusion (Figment)", "PH p298", "Throws voice for 1 min./ level."]])
-
-# ["Alter Self", "Assume form of a similar creature."]
-# ["Animal Messenger", "Sends a Tiny animal to a specific place."]
-# ["Animal Trance", "Fascinates 2d6 HD of animals."]
-# ["Blindness/ Deafness", "Makes subject blind or deaf."]
-# ["Blur", "Attacks miss subject 20% of the time."]
-# ["Calm Emotions", "Calms creatures, negating emotion effects."]
-# ["Cat’s Grace", "Subject gains +4 to Dex for 1 min./ level."]
-# ["Cure Moderate Wounds", "Cures 2d8 damage +1/ level (max +10)."]
-# ["Darkness", "20-ft. radius of supernatural shadow."]
-# ["Daze Monster", "Living creature of 6 HD or less loses next action."]
-# ["Delay Poison", "Stops poison from harming subject for 1 hour/  level."]
-# ["Detect Thoughts", "Allows “listening” to surface thoughts."]
-# ["Eagle’s Splendor", "Subject gains +4 to Cha for 1 min./ level."]
-# ["Enthrall", "Captivates all within 100 ft. + 10 ft./ level."]
-# ["Fox’s Cunning", "Subject gains +4 to Int for 1 min./ level."]
-# ["Glitterdust", "Blinds creatures, outlines invisible creatures."]
-# ["Heroism", "Gives +2 on attack rolls, saves, skill checks."]
-# ["Hold Person", "Paralyzes one humanoid for 1 round/ level."]
-# ["Hypnotic Pattern", "Fascinates (2d4 + level) HD of creatures."]
-# ["Invisibility", "Subject is invisible for 1 min./ level or until it attacks."]
-# ["Locate Object", "Senses direction toward object (specific or type)."]
-# ["Minor Image", "As silent image, plus some sound."]
-# ["Mirror Image", "Creates decoy duplicates of you (1d4 +1 per three levels, max 8)."]
-# ["Misdirection", "Misleads divinations for one creature or object."]
-# ["Pyrotechnics", "Turns fire into blinding light or choking smoke."]
-# ["Rage", "Gives +2 to Str and Con, +1 on Will saves, -2 to AC."]
-# ["Scare", "Panics creatures of less than 6 HD."]
-# ["Shatter", "Sonic vibration damages objects or crystalline creatures."]
-# ["Silence", "Negates sound in 20-ft. radius."]
-# ["Sound Burst", "Deals 1d8 sonic damage to subjects; may stun them."]
-# ["Suggestion", "Compels subject to follow stated course of action."]
-# ["Summon Monster II", "Calls extraplanar creature to fight for you."]
-# ["Summon Swarm", "Summons swarm of bats, rats, or spiders."]
-# ["Tongues", "Speak any language."]
-# ["Whispering Wind", "Sends a short message 1 mile/ level."]
+SpellModel.all_spells["Bard"][2] +=SpellModel.spell_level([
+["Alter Self", "Transmutation", "PH p197", "Assume form of a similar creature."],
+["Animal Messenger", "Enchantment (Compulsion) [Mind-Affecting],", "PH p198", "Sends a Tiny animal to a specific place."],
+["Animal Trance", "Enchantment (Compulsion) [Mind-Affecting, Sonic],", "PH p198", "Fascinates 2d6 HD of animals."],
+["Blindness/ Deafness", "Necromancy", "PH p206", "Makes subject blind or deaf."],
+["Blur", "Illusion (Glamer)", "PH p206", "Attacks miss subject 20% of the time."],
+["Calm Emotions", "Enchantment (Compulsion) [Mind-Affecting],", "PH p207", "Calms creatures, negating emotion effects."],
+["Cat's Grace", "Transmutation", "PH p208", "Subject gains +4 to Dex for 1 min./ level."],
+["Cure Moderate Wounds", "Conjuration (Healing)", "PH p216", "Cures 2d8 damage +1/ level (max +10)."],
+["Darkness", "Evocation [Darkness],", "PH p216", "20-ft. radius of supernatural shadow."],
+["Daze Monster", "Enchantment (Compulsion) [Mind-Affecting],", "PH p217", "Living creature of 6 HD or less loses next action."],
+["Delay Poison", "Conjuration (Healing)", "PH p217", "Stops poison from harming subject for 1 hour/  level."],
+["Detect Thoughts", "Divination [Mind-Affecting],", "PH p220", "Allows 'listening' to surface thoughts."],
+["Eagle's Splendor", "Transmutation", "PH p225", "Subject gains +4 to Cha for 1 min./ level."],
+["Enthrall", "Enchantment (Charm) [Language Dependent, Mind-Affecting, Sonic],", "PH p227", "Captivates all within 100 ft. + 10 ft./ level."],
+["Fox's Cunning", "Transmutation", "PH p233", "Subject gains +4 to Int for 1 min./ level."],
+["Glitterdust", "Conjuration (Creation)", "PH p236", "Blinds creatures, outlines invisible creatures."],
+["Heroism", "Enchantment (Compulsion) [Mind-Affecting],", "PH p240", "Gives +2 on attack rolls, saves, skill checks."],
+["Hold Person", "Enchantment (Compulsion) [Mind-Affecting],", "PH p241", "Paralyzes one humanoid for 1 round/ level."],
+["Hypnotic Pattern", "Illusion (Pattern) [Mind-Affecting],", "PH p242", "Fascinates (2d4 + level) HD of creatures."],
+["Invisibility", "Illusion (Glamer)", "PH p245", "Subject is invisible for 1 min./ level or until it attacks."],
+["Locate Object", "Divination", "PH p249", "Senses direction toward object (specific or type)."],
+["Minor Image", "Illusion (Figment)", "PH p254", "As silent image, plus some sound."],
+["Mirror Image", "Illusion (Figment)", "PH p254", "Creates decoy duplicates of you (1d4 +1 per three levels, max 8)."],
+["Misdirection", "Illusion (Glamer)", "PH p254", "Misleads divinations for one creature or object."],
+["Pyrotechnics", "Transmutation", "PH p267", "Turns fire into blinding light or choking smoke."],
+["Rage", "Enchantment (Compulsion) [Mind-Affecting],", "PH p268", "Gives +2 to Str and Con, +1 on Will saves, -2 to AC."],
+["Scare", "Necromancy [Fear, Mind-Affecting],", "PH p274", "Panics creatures of less than 6 HD."],
+["Shatter", "Evocation [Sonic],", "PH p278", "Sonic vibration damages objects or crystalline creatures."],
+["Silence", "Illusion (Glamer)", "PH p279", "Negates sound in 20-ft. radius."],
+["Sound Burst", "Evocation [Sonic],", "PH p281", "Deals 1d8 sonic damage to subjects; may stun them."],
+["Suggestion", "Enchantment (Compulsion) [Language-Dependent, Mind-Affecting],", "PH p285", "Compels subject to follow stated course of action."],
+["Summon Monster II", "Conjuration (Summoning)", "PH p286", "Calls extraplanar creature to fight for you."],
+["Summon Swarm", "Conjuration (Summoning)", "PH p289", "Summons swarm of bats, rats, or spiders."],
+["Tongues", "Divination", "PH p294", "Speak any language."],
+["Whispering Wind", "Transmutation [Air]", "PH p201", "Sends a short message 1 mile/ level."]])
