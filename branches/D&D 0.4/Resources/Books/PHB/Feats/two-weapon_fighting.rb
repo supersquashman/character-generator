@@ -13,7 +13,7 @@ class TwoWeaponFighting < FeatModel
 	end
 	
 	def self.available?(char)
-		return !char.feats.include?(self.new) && char.stats["dex"] >= 15
+		return !feat_taken(char) && char.stats["dex"] >= 15
 	end
 	
 	def self.is_bonus_feat?(class_type)
