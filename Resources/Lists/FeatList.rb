@@ -56,7 +56,7 @@ class FeatList
 				end
 			end
 			if !feat_added
-				char.feats.push(FeatModel.new("Additional " + class_type +"Bonus Feat"))
+				char.feats.push(FeatModel.new("Additional " + class_type +" Bonus Feat"))
 			end
 			#feats.push(available[t].new)
 		else
