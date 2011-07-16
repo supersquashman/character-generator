@@ -13,7 +13,7 @@ class QuickDraw < FeatModel
 	end
 	
 	def self.available?(char)
-		return (!char.feats.include?(self) && char.BAB >= 1)
+		return !char.feats.include?(self.new) && char.BAB >= 1
 	end
 	
 	def self.is_bonus_feat?(class_type)
