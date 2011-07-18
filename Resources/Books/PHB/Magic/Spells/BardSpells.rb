@@ -1,5 +1,5 @@
-SpellModel.all_spells["Bard"]= Hash.new([])
-SpellModel.all_spells["Bard"][0] = SpellModel.spell_level([
+
+SpellList.load_spells("0", "Bard", [
 ["Dancing Lights", "Evocation [Light]", "PH p272", "Creates torches or other lights."],
 ["Daze", "Enchantment (Compulsion) [Mind-Affecting]", "PH p217", "Humanoid creature of 4 HD or less loses next action."],
 ["Detect Magic", "Divination", "PH p219", "Detects spells and magic items within 60 ft."],
@@ -17,7 +17,8 @@ SpellModel.all_spells["Bard"][0] = SpellModel.spell_level([
 ["Resistance", "Abjuration", "PH p264", "Subject gains +1 on saving throws."],
 ["Summon Instrument", "Conjuration (Summoning)", "PH p285", "Summons one instrument of the caster's choice."]])
 
-SpellModel.all_spells["Bard"][1] +=SpellModel.spell_level([["Alarm", "Abjuration", "PH p197", "Wards an area for 2 hours/level."],
+SpellList.load_spells("1", "Bard", [
+["Alarm", "Abjuration", "PH p197", "Wards an area for 2 hours/level."],
 ["Animate Rope", "Transmutation", "PH p199", "Makes a rope move at your command."],
 ["Cause Fear", "Necromancy [Fear, Mind-Affecting],", "PH p208", "One creature of 5 HD or less flees for 1d4 rounds."],
 ["Charm Person", "Enchantment (Charm) [Mind-Affecting],", "PH p209", "Makes one person your friend."],
@@ -44,7 +45,7 @@ SpellModel.all_spells["Bard"][1] +=SpellModel.spell_level([["Alarm", "Abjuration
 ["Unseen Servant", "Conjuration (Creation)", "PH p297", "Invisible force obeys your commands."],
 ["Ventriloquism", "Illusion (Figment)", "PH p298", "Throws voice for 1 min./ level."]])
 
-SpellModel.all_spells["Bard"][2] +=SpellModel.spell_level([
+SpellList.load_spells("2", "Bard", [
 ["Alter Self", "Transmutation", "PH p197", "Assume form of a similar creature."],
 ["Animal Messenger", "Enchantment (Compulsion) [Mind-Affecting],", "PH p198", "Sends a Tiny animal to a specific place."],
 ["Animal Trance", "Enchantment (Compulsion) [Mind-Affecting, Sonic],", "PH p198", "Fascinates 2d6 HD of animals."],

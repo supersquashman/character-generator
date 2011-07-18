@@ -53,6 +53,11 @@ class Bard < ClassModel
 		#Class Features :
 		#rage          
 		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
+    @character.spells.roll_spells(4,"0","Bard")
+    @character.spells.roll_spells(4,"1","Bard")
+    @character.spells.roll_spells(4,"10","Bard")
+    #To learn a spell must have casting stat >= 10 + spell level
+    
 
 		#class abilities
 		case class_level
