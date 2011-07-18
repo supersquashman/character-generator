@@ -33,7 +33,7 @@ end
 #++
 class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
-	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells_known, :forbidden_spell_types
+	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells_known, :forbidden_spell_types, :spell_book, :spells_per_day
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
 	
 	def initialize (sources)
