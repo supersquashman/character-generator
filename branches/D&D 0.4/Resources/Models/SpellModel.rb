@@ -27,5 +27,6 @@ def self.spell_level(spells=[][])
   end
   return spell_array
 end
+def self.learn_spells
 end
 require_relative "../Books/PHB/Magic/Spells/BardSpells"
