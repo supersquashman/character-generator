@@ -15,10 +15,17 @@ def initialize(name = "", type = "",page = "N/A",description = "None", link = ""
   @description = description
   @link = link
 end
-def available(character)
+def available(forbidden_spells)
   forbidden = false
-  character.forbidden_spell_types.each { |stype| forbidden ||= @type.include?(stype)}
+  forbidden_spells.each { |stype| forbidden ||= @type.include?(stype)}
   return !forbidden
+end
+def ==(other)
+  if other.is_a?(SpellModel)
+    return other.name == @name
+  else
+    return other == @name
+  end
 end
 end
 require_relative "../Books/PHB/Magic/Spells/BardSpells"
