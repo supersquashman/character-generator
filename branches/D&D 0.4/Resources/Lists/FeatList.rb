@@ -48,7 +48,7 @@ class FeatList
 			feat_added = false
 			while (!feat_added && available.length >0)
 				t=rand(available.length)
-				if (available[t].is_bonus_feat?(class_type.downcase)) #&& !char.feats.contains?(available[t]))	
+				if (available[t].is_bonus_feat?(class_type)) #&& !char.feats.contains?(available[t]))	
 					available[t].add(char)
 					feat_added = true
 				else

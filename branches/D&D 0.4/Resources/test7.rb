@@ -8,7 +8,7 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require fi
 
 1.times do |i|
 panda = Character.new(temp)
-panda.max_classes = 2
+panda.max_classes = 1
 		
 	(rand(20)+1).times do |i|
 		#panda.level_up.each {|p| p.call panda,i}
@@ -21,6 +21,7 @@ puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s
 puts "Race:  " + panda.race.to_s
 puts "Age:  " + panda.age.to_s
+puts "Base Attack Bonus:  " + panda.BAB.to_s
 puts ""
 ["str","dex","con","int","wis","cha"].each do |stat|
 	if (panda.stat_mod[stat] >= 0)

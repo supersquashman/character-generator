@@ -36,6 +36,7 @@ class Fighter < ClassModel
 	end
 	
 	def apply
+		super
 		#level = super(char)
 		#class_level = level.class_level #for visibility
 		#Class Features :

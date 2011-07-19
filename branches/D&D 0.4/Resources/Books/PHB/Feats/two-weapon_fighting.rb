@@ -46,7 +46,7 @@ class ImprovedTwoWeaponFighting < FeatModel
 	
 	def initialize 
 		super
-		@title = "Improved Two-Weapon Fighting"
+		@title = "Two-Weapon Fighting (Improved)"
 		@description = "In addition to the standard single extra attack you get with an off-hand weapon, you get a second attack with it, albeit at a -5 penalty."
 		@page = "PHB??"
 		@link = ""
@@ -66,7 +66,7 @@ class GreaterTwoWeaponFighting < FeatModel
 	
 	def initialize 
 		super
-		@title = "Greater Two-Weapon Fighting"
+		@title = "Two-Weapon Fighting (Greater)"
 		@description = "You get a third attack with your off-hand weapon, albeit at a -10 penalty."
 		@page = "PHB??"
 		@link = ""
@@ -84,3 +84,4 @@ end
 FeatList.push(TwoWeaponDefense)
 FeatList.push(TwoWeaponFighting)
 FeatList.push(ImprovedTwoWeaponFighting)
+FeatList.push(GreaterTwoWeaponFighting)
