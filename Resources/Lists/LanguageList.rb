@@ -84,8 +84,10 @@ class LanguageList
 		elsif (list - languages).length >0
 			while !learn_lang(list[rand(list.length)]) ;end
 		else
-			languages.push("Additional Language")
+			#languages.push("Additional Language")
+      return false
 		end
+    return true
 	end
 #-- to_s -------------------------------------------------------------------------------#
 #++

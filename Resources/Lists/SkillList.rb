@@ -106,54 +106,79 @@ class SkillList
 #-- roll_skills(ranks, preferred, level, prefer, orig_weight, weight, new) --------------#
 #++
 	def roll_skills(ranks, preferred=[],level=@character.level, prefer=3000, orig_weight=3000, weight=50, new_skill=1) 
-		# if character
-			# level = character.level
-		# end
     skills_with_ranks = skills.reject {|skill| skill.ranks <=0}
 		ranks = [ranks,1].max 
 		points = ranks
 		
-		#randomly pick a subset of skills to assign to (weigh them according to each param)
+		#randomly pick a subset of skills to assign to (weigh them according to each param) remove from possibilities after picking
 		preferred.length>0 ? 0 : prefer=0
 		skills_with_ranks.length>0 ? 0 : orig_weight=0
     skillnum = ([( ranks / (level==1? 4:1)),1].max )
     2.times { skillnum += 1 if rand(prefer+orig_weight+weight+new_skill) < (weight+prefer+new_skill)}
 		subset=Array.new
+    class_skills_dup = class_skills.uniq
+    list_dup = @@list.uniq
 		while subset.length < skillnum
 			i=rand(weight+prefer+new_skill+orig_weight)+1
 			case i
 				when 0..orig_weight
 					choice =skills_with_ranks[rand(skills_with_ranks.length)].name
+          skills_with_ranks.delete(choice)
+          orig_weight = 0 if skills_with_ranks.length <=0
 				when orig_weight..orig_weight+weight
-					choice =class_skills[rand(class_skills.length)]
+					choice =class_skills_dup[rand(class_skills_dup.length)]
+          class_skills_dup.delete(choice)
+          weight = 0 if class_skills_dup.length <=0
 				when orig_weight+weight..orig_weight+weight+prefer
 					choice =preferred[rand(preferred.length)]
+          preferred.delete(choice)
+          prefer = 0 if preferred.length <=0
 				else
-					choice =list[rand(list.length)].name
-			end     
+          if list_dup.length <= 0
+            # if no more choices, break
+            break
+          else
+            choice = list_dup[rand(list_dup.length)].name
+            list_dup.delete(choice)
+          end
+			end
 			if !subset.include?(choice) && choice
 				subset.push(choice)
 			end
 		end
-		#randomly assign the ranks between the subset of skills upto the max rank.
+		#randomly assign the ranks between the subset of skills upto the max rank. 
 		options = subset.dup
 		while points > 0 do
 			if options.length > 0
 				skill = options[rand(options.length)]
 			else
+        #maxed all the options, pick from remaining non maxed skills
 				#should rarely happen when skill points come from some place other than characterclass
 				#puts "----------error:Out of skills to pick in options --------------" + points.to_s
 				i = rand(weight + prefer + new_skill) + 1
         case i
           when 0..weight
-            choice = class_skills[rand(class_skills.length)]
+            choice = class_skills_dup[rand(class_skills_dup.length)]
+            class_skills_dup.delete(choice)
+            weight = 0 if class_skills_dup.length <=0
           when weight..weight + prefer
             choice = prefered[rand(prefered.length)]
-          else
-            choice = list[rand(list.length)].name
+            preferred.delete(choice)
+            prefer = 0 if preferred.length <=0
+          else 
+            list_dup.compact!
+            list_dup.reject!{|v| skills.include?(v.name) ? skills[skills.index(v.name)].ranks >= level+3 : false} if list_dup.length >0
+            if list_dup.length > 0
+              choice = list_dup[rand(list_dup.length)].name 
+              list_dup.delete(choice)
+            else
+              #no more non-maxed skills... put remaining points in "extra skills" skill [note - cross-class]
+              choice = "Extra Skills"
+            end
         end	
         options.push(choice)
         skill = options[0]
+        #puts choice
 			end
 			Float inc = !class_skills.include?(skill) ? 0.5 : 1
 			if skills.include?(skill) 
@@ -161,15 +186,23 @@ class SkillList
 					assign_ranks(skill,1)
           points-=1
         else
-          #puts skill +" maxed (" + skills[skills.index(skill)].ranks.to_s+")"
+          if(skill == "Extra Skills")
+            assign_ranks(skill,1)
+            points-=1 
+          else
 					options.delete(skill)
+          end
 				end
 			else
 				if(skill.downcase == "speak language")
 					#[TODO]when character picks speak language as a skill need both speak and write counts(2 points) and a max number of skill points to put into it
-					@character.languages.roll_lang()
-					#puts "Language"
-					points-=1
+					if @character.languages.roll_lang()
+            #assign skills to languages upto max number of languages.
+            points-=1
+          else
+            options.delete(skill)
+            list_dup.delete(skill)
+          end
 				else
 					assign_ranks(skill,1)
 					points-=1

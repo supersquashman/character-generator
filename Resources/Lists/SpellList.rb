@@ -37,7 +37,8 @@ class SpellList
         
 #-- initialize(character)---------------------------------------------------------------#
 #++
-	def initialize 
+	def initialize
+
     @forbidden_types = []
 		@known=Hash.new(Hash.new([]))
 		@book=Hash.new(Hash.new([]))
@@ -76,25 +77,41 @@ class SpellList
 	def roll_spell_book(number, category, char_class) 
     (number-known[char_class][category].length).times do
       book[char_class] = Hash.new([]) if book[char_class].length <= 0 
-      choice = @@list[char_class][category][rand(@@list[char_class][category].length)]
+      list_dup = @@list[char_class][category].uniq
+      list_dup.reject!{|v| book[char_class][category].include?(v)}
+      begin
+      choice = list_dup[rand(list_dup.length)]
       choice = SpellModel.new(char_class.to_s + " Spell") if !choice
-      book[char_class][category] += [choice]
+      list_dup.delete(choice)
+      if !choice.available(forbidden_types)
+        choice = nil
+      end
+      end while !choice
+      book[char_class][category] += [choice].dup
     end
 	end
 #-- roll_spells(number, category, char_class, for_book=false) --------------------------#
 #++
-	def roll_spells(number, category, char_class) 
+	def roll_spells(number, category, char_class, duplicates=false) 
     (number-known[char_class][category].length).times do
       if book[char_class][category].length <=0
         known[char_class] = Hash.new([]) if known[char_class].length <= 0 
-        choice = @@list[char_class][category][rand(@@list[char_class][category].length)]
+        list_dup = @@list[char_class][category].uniq
+        list_dup.reject!{|v| known[char_class][category].include?(v)} if !duplicates
+        begin
+        choice = list_dup[rand(list_dup.length)]
         choice = SpellModel.new(char_class.to_s + " Spell") if !choice
-        known[char_class][category] += [choice]
+        list_dup.delete(choice.name) 
+        if !choice.available(forbidden_types)
+          choice = nil
+        end
+        end while !choice
+        known[char_class][category] += [choice].dup
       else
         known[char_class] = Hash.new([]) if known[char_class].length <= 0 
         choice = book[char_class][category][rand(book[char_class][category].length)]
         choice = SpellModel.new(char_class.to_s + " Spell") if !choice
-        known[char_class][category] += [choice]
+        known[char_class][category] += [choice].dup
       end
     end
 	end
@@ -135,8 +152,10 @@ end
 #-- self.table_row ---------------------------------------------------------------------#
 #++
 def self.table_row(table =[][], row=0)
-  table[row].each_index do |i|
-    yield table[row][i], i
+  if table.length > row
+    table[row].each_index do |i|
+      yield table[row][i], i
+    end
   end
 end
 end

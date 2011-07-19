@@ -101,7 +101,7 @@ class Bard < ClassModel
     [6,5,5,5,5,5,4]]
     SpellList.table_row(spell_table,class_level - 1) do |val,i| 
     if @character.stats["cha"] >= i+10 && @character.spells.per_day["Bard"][i.to_s] > 0
-    @character.spells.roll_spells(val,i.to_s,"Bard") 
+      @character.spells.roll_spells(val,i.to_s,"Bard") 
     end
     end
 

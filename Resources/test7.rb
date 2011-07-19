@@ -6,7 +6,7 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require fi
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require file} }
 
-1.times do |i|
+100.times do |i|
 panda = Character.new(temp)
 panda.max_classes = 1
 		
