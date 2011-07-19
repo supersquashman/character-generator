@@ -8,6 +8,7 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require fi
 
 1.times do |i|
 panda = Character.new(temp)
+panda.max_classes = 2
 		
 	(rand(20)+1).times do |i|
 		#panda.level_up.each {|p| p.call panda,i}
