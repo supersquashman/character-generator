@@ -35,7 +35,7 @@ class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
-	attr_accessor :max_classes
+	attr_accessor :max_classes, :grapple
 	
 	def initialize (sources)
 =begin
@@ -64,6 +64,7 @@ class Character
 		@HP = 0
 		@HD = 0
 		@BAB = 0
+		@grapple = {"BAB" => @BAB, "size" => 0, "misc" => 0}
 		@speed = 0
 		@spell_resist = 0
 		@stat_mod = {"str"=>0,"dex"=>0,"con"=>0,"int"=>0,"wis"=>0,"cha"=>0}#[str,dex,con,int,wis,cha]
@@ -122,6 +123,12 @@ class Character
 			@stat_mod[stat] = ((@stats[stat].to_i-10)/2).floor
 		end
 		@ac_list["size"] = case @size.downcase
+			when "medium" then 0
+			when "small" then 1
+			when "large" then -1
+		end
+		
+		@grapple["size"] = case @size.downcase
 			when "medium" then 0
 			when "small" then 1
 			when "large" then -1
