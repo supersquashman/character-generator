@@ -33,9 +33,12 @@ class Bard < ClassModel
 		@bab = MID_BAB
 		@class_skills = ["Appraise","Balance","Bluff","Climb","Concentraion", "Craft",
     "Decipher Script","Diplomacy","Disguise","Escape Artist", "Gather Information",
-    "Hide", "Jump", "Knowledge", "Listen", "Move Silently", "Perform", "Profession",
+    "Hide", "Jump", "Listen", "Move Silently", "Perform", "Profession",
     "Sense Motive", "Sleight of Hand", "Speak Language", "Spellcraft", "Swim", "Tumble",
     "Use Magic Device" ]
+    knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography","History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
+		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
+    @class_skills += knowledge
 		apply
 	end
 	
