@@ -35,6 +35,7 @@ class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
+	attr_accessor :max_classes
 	
 	def initialize (sources)
 =begin
@@ -46,11 +47,13 @@ class Character
 		@cha = get_stat
 =end
 		@classes = []
+		@number_of_classes = 0
+		@max_classes = 1
 		@abilities = []
 		@feats = []#FeatList.new
 		@level = 0
-    @spells = SpellList.new
-    @forbidden_spell_types = []
+		@spells = SpellList.new
+		@forbidden_spell_types = []
 		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
 		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>0,"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}
@@ -99,7 +102,14 @@ class Character
 		self.race.apply_level
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
-		@classes.push(ClassList.list.values[rand(ClassList.list.length)].new(self))
+		if @number_of_classes < @max_classes
+			@classes.push(ClassList.list.values[rand(ClassList.list.length)].new(self))
+			temp_classes = []
+			@classes.each {|cls| temp_classes.push(cls.to_s)}
+			@number_of_classes = temp_classes.uniq.length
+		else
+			@classes.push(@classes[rand(@classes.length)].class.new(self))
+		end
 =begin
 			c.skill_list.class_skills |= sel.Class_skills
 			c.skill_list.roll_skills(sel.skill_ranks(c))
