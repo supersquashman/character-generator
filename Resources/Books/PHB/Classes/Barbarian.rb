@@ -44,7 +44,7 @@ class Barbarian < ClassModel
   
 	def apply#(char)
 		super
-    #[NOTE] Add weapon proficiencies 
+		#[NOTE] Add weapon proficiencies 
 		#level = super(char)
 		#class_level = level.class_level #for visibility
 		#Class Features :
@@ -52,8 +52,8 @@ class Barbarian < ClassModel
 		@character.increase_ability("Rage 1/day",1,"") if [1,4,8,12,16,20].include?(@class_level)
 		#trap sense
 		@character.increase_ability("Trap Sense") if [3,6,9,12,15,18].include?(@class_level)
-    #damage reduction
-    @character.increase_ability("Damage Reduction 1/-",1,"") if [7,10,13,16,19].include?(@class_level)
+		#damage reduction
+		@character.increase_ability("Damage Reduction 1/-",1,"") if [7,10,13,16,19].include?(@class_level)
 
 		#class abilities
 		case class_level
@@ -69,8 +69,8 @@ class Barbarian < ClassModel
 				end
 			when 11 then @character.add_ability("Greater Rage")
 			when 14 then @character.add_ability("Indomitable Will")
-      when 17 then @character.add_ability("Tireless Rage")
-      when 20 then @character.add_ability("Mighty Rage")
+			when 17 then @character.add_ability("Tireless Rage")
+			when 20 then @character.add_ability("Mighty Rage")
 		end
 	end
 end

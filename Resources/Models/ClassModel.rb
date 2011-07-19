@@ -33,7 +33,7 @@ class ClassModel
 	BAD_BAB   = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	
 	def initialize(character)
-    @spells = Hash.new([])
+		@spells = Hash.new([])
 		@character = character
 		@hd_type = "1d4"
 		@base_skill_num = 1
