@@ -53,9 +53,58 @@ class Bard < ClassModel
 		#Class Features :
 		#rage          
 		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
-    @character.spells.roll_spells(4,"0","Bard")
-    @character.spells.roll_spells(4,"1","Bard")
-    @character.spells.roll_spells(4,"10","Bard")
+    spells_per_day_table = [
+    [3,0,0,0,0,0,0],
+    [3,1,0,0,0,0,0],
+    [3,2,0,0,0,0,0],
+    [3,3,1,0,0,0,0],
+    [3,3,2,0,0,0,0],
+    [3,3,2,0,0,0,0],
+    [3,3,3,1,0,0,0],
+    [3,3,3,2,0,0,0],
+    [3,3,3,2,0,0,0],
+    [3,3,3,3,1,0,0],
+    [3,3,3,3,2,0,0],
+    [3,3,3,3,2,0,0],
+    [4,3,3,3,3,1,0],
+    [4,4,3,3,3,2,0],
+    [4,4,4,3,3,2,0],
+    [4,4,4,4,3,3,1],
+    [4,4,4,4,4,3,2],
+    [4,4,4,4,4,4,3],
+    [4,4,4,4,4,4,4]]
+    SpellList.table_row(spells_per_day_table,class_level-1) do |val, i| 
+    @character.spells.set_spells_per_day((val+SpellList.bonus_spells(@character.stat_mod["cha"], i)),i.to_s,"Bard")
+    end
+    spell_table = [
+    [5,2,0,0,0,0,0],
+    [6,3,0,0,0,0,0],
+    [6,3,2,0,0,0,0],
+    [6,4,3,0,0,0,0],
+    [6,4,3,0,0,0,0],
+    [6,4,4,2,0,0,0],
+    [6,4,4,3,0,0,0],
+    [6,4,4,3,0,0,0],
+    [6,4,4,4,2,0,0],
+    [6,4,4,4,3,0,0],
+    [6,4,4,4,3,0,0],
+    [6,4,4,4,4,2,0],
+    [6,4,4,4,4,3,0],
+    [6,4,4,4,4,3,0],
+    [6,5,4,4,4,4,2],
+    [6,5,5,4,4,4,3],
+    [6,5,5,5,4,4,3],
+    [6,5,5,5,5,4,4],
+    [6,5,5,5,5,5,4]]
+    SpellList.table_row(spell_table,class_level - 1) do |val,i| 
+    if @character.stats["cha"] >= i+10 && @character.spells.per_day["Bard"][i.to_s] > 0
+    @character.spells.roll_spells(val,i.to_s,"Bard") 
+    end
+    end
+
+    # @character.spells.roll_spells(4,"0","Bard")
+    # @character.spells.roll_spells(4,"1","Bard")
+    # @character.spells.roll_spells(4,"10","Bard")
     #To learn a spell must have casting stat >= 10 + spell level
     
 

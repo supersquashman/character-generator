@@ -41,7 +41,7 @@ class SpellList
     @forbidden_types = []
 		@known=Hash.new(Hash.new([]))
 		@book=Hash.new(Hash.new([]))
-    @per_day = Hash.new(-1)
+    @per_day = Hash.new(Hash.new(-1))
 		#load all spells lists here?
 		#spelldirectories.each {|spell| require spell}
 	end
@@ -102,7 +102,7 @@ class SpellList
 #++
 	def set_spells_per_day(number, category, char_class)
     per_day[char_class] = Hash.new(-1) if per_day[char_class].length <= 0 
-    per_day[char_class][char_class] = number
+    per_day[char_class][category] = number
 	end
 #-- to_s -------------------------------------------------------------------------------#
 #++
@@ -111,7 +111,11 @@ class SpellList
       ret = "\n"
       known.each do |spell_class, spell_list|
         spell_list.keys.reject{|key| !key.is_numeric?}.each do |spell_level|
-          ret += "Level " + spell_level.to_s + " " + spell_class + " Spells:\n"
+          spells_per_day = ""
+          if per_day[spell_class][spell_level] > 0
+            spells_per_day = " (" + per_day[spell_class][spell_level].to_s + "/ Day)"
+          end
+          ret += "Level " + spell_level.to_s + " " + spell_class + " Spells" + spells_per_day + ":\n"
           spell_list[spell_level].each do |spell|
             ret += " * "+spell.name + " (" + spell.page + ") - " + spell.description + "\n"
           end
@@ -121,12 +125,19 @@ class SpellList
     end
     ret
   end
-#-- bonus_spells -----------------------------------------------------------------------#
+#-- self.bonus_spells ------------------------------------------------------------------#
 #++
-def self.bonus_spells(stat_bonus=0, level=0, spell_level=0)
+def self.bonus_spells(stat_bonus=0, spell_level=0)
   bonus = 0
-  bonus = ((stat_bonus - spell_level + 1) / 4).ceil if spell_level > 0
+  bonus = ((stat_bonus - spell_level + 1.0) / 4.0).ceil if spell_level > 0
   return [bonus,0].max
+end
+#-- self.table_row ---------------------------------------------------------------------#
+#++
+def self.table_row(table =[][], row=0)
+  table[row].each_index do |i|
+    yield table[row][i], i
+  end
 end
 end
 #monkey code for determining if a string is a number
