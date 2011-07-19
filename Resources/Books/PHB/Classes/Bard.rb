@@ -120,9 +120,9 @@ class Bard < ClassModel
         @character.add_ability("Fascinate")
       when 3 then @character.add_ability("Inspire Competence")
       when 6 then @character.add_ability("Suggestion")
-      when 9 then @character.add_ability("Inspire greatness")
-      when 12 then @character.add_ability("Song of freedom")
-      when 15 then @character.add_ability("Inspire heroics")
+      when 9 then @character.add_ability("Inspire Greatness")
+      when 12 then @character.add_ability("Song of Freedom")
+      when 15 then @character.add_ability("Inspire Heroics")
       when 18 then @character.add_ability("Mass Suggestion")
 		end
 	end
