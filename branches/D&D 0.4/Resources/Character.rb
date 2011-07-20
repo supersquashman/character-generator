@@ -35,7 +35,7 @@ class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
-	attr_accessor :max_classes, :grapple
+	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs
 	
 	def initialize (sources)
 =begin
@@ -46,6 +46,8 @@ class Character
 		@wis = get_stat
 		@cha = get_stat
 =end
+    @extra_levelup_procs = []
+    @final_levelup_procs = []
 		@classes = []
 		@number_of_classes = 0
 		@max_classes = 1
@@ -111,10 +113,7 @@ class Character
 		else
 			@classes.push(@classes[rand(@classes.length)].class.new(self))
 		end
-=begin
-			c.skill_list.class_skills |= sel.Class_skills
-			c.skill_list.roll_skills(sel.skill_ranks(c))
-=end
+    extra_levelup_procs.each{|proc| proc.call}
 		calculate_mods
 	end
         
@@ -139,7 +138,6 @@ class Character
 		found = false
 		self.abilities.each do |ability|
 			if ability.to_s.include? name.scan(/\D+/)[0]
-        print '"' + name.scan(/\D+/)[0] + '"'
 				inc_name=ability.sub(/\d{1,}/) {|n| n.to_i+number}
 				self.abilities[self.abilities.index(ability)] = inc_name
 				found = true
