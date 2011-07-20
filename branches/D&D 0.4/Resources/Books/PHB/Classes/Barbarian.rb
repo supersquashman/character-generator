@@ -43,7 +43,6 @@ class Barbarian < ClassModel
       @base_skill_num -=2
     end
 		super
-		#[TODO] Add proficiencies 
 		#Class Features :
 		#rage          
 		@character.increase_ability("Rage 1/day",1,"") if [1,4,8,12,16,20].include?(@class_level)
@@ -55,6 +54,8 @@ class Barbarian < ClassModel
 		#class abilities
 		case class_level
 			when 1  
+        @character.weapon_proficiencies |= ["Martial","Simple"]
+        @character.armor_proficiencies |= ["Light","Medium","Shields"]
         @character.add_ability("Fast movement")
         @character.speed += 10
         @character.add_ability("Illiteracy")
