@@ -6,6 +6,7 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require fi
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require file} }
 
+
 1.times do |i|
 panda = Character.new(temp)
 panda.max_classes = 1
@@ -14,6 +15,7 @@ panda.max_classes = 1
 		#panda.level_up.each {|p| p.call panda,i}
 		panda.level_up
 	end
+  panda.final_levelup_procs.each{|proc| proc.call panda}
 
 #puts (i+1).to_s + ".) " + panda.classes.to_s
 puts "HP:  " + panda.HP.to_s
@@ -52,4 +54,5 @@ end
 puts sorted_feats.sort
 puts panda.spells.to_s
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
+
 end

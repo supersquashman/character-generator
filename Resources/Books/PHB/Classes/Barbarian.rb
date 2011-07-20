@@ -38,6 +38,10 @@ class Barbarian < ClassModel
 	end
   
 	def apply#(char)
+    if rand(20)==0 && @character.abilities.include?("Illiteracy")
+      @character.abilities.delete("Illiteracy")
+      @base_skill_num -=2
+    end
 		super
 		#[TODO] Add proficiencies 
 		#Class Features :
@@ -53,7 +57,11 @@ class Barbarian < ClassModel
 			when 1  
         @character.add_ability("Fast movement")
         @character.speed += 10
-        @character.add_ability("Illiteracy") #[TODO] special rules?
+        @character.add_ability("Illiteracy")
+        @character.final_levelup_procs += [Proc.new do |char|
+          non_barb = char.classes.reject {|val| val.class == Barbarian}.size
+          char.abilities.delete("Illiteracy") if non_barb > 0
+        end]
 			when 2,5 then 
 				if (@character.abilities.include?("Uncanny Dodge")) 
 					@character.add_ability("Improved Uncanny Dodge")
