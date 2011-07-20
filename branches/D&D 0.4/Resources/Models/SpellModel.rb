@@ -28,4 +28,3 @@ def ==(other)
   end
 end
 end
-require_relative "../Books/PHB/Magic/Spells/BardSpells"

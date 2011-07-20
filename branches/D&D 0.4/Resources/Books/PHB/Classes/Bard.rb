@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
+require_relative "../Magic/Spells/BardSpells"
+
 #--== Bard =============================================================================#
 #++
 class Bard < ClassModel
@@ -32,7 +34,8 @@ class Bard < ClassModel
     "Hide", "Jump", "Listen", "Move Silently", "Perform", "Profession",
     "Sense Motive", "Sleight of Hand", "Speak Language", "Spellcraft", "Swim", "Tumble",
     "Use Magic Device" ]
-    knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography","History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
+    knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography",
+    "History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
     @class_skills += knowledge
 		apply

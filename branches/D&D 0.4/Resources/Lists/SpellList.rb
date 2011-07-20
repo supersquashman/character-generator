@@ -100,7 +100,7 @@ class SpellList
         begin
         choice = list_dup[rand(list_dup.length)]
         choice = SpellModel.new(char_class.to_s + " Spell") if !choice
-        list_dup.delete(choice.name) 
+        list_dup.delete(choice.name) if !duplicates
         if !choice.available(forbidden_types[char_class])
           choice = nil
         end
