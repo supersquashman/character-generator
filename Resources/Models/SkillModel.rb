@@ -66,7 +66,6 @@ class SkillModel
 	end
 #-- bonus(char) ------------------------------------------------------------------------#
 #++
-# [DEP] marked for removal
 	def bonus(char)
 		b = char.stat_mod[@mod]
 		return b

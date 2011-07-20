@@ -52,7 +52,7 @@ class Character
 		@number_of_classes = 0
 		@max_classes = 1
 		@abilities = []
-		@feats = []#FeatList.new
+		@feats = []#FeatList.new [TODO][QUESTION] Make feats instance?
 		@level = 0
 		@spells = SpellList.new
 		@forbidden_spell_types = []
@@ -71,7 +71,8 @@ class Character
 		@spell_resist = 0
 		@stat_mod = {"str"=>0,"dex"=>0,"con"=>0,"int"=>0,"wis"=>0,"cha"=>0}#[str,dex,con,int,wis,cha]
 		@size = "medium"
-		@race = "Fish Tornado"
+		@race = "Fish Tornado" #[CLEAN UP]?
+    #[QUESTION] Templates
 		@age = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
@@ -158,8 +159,6 @@ class Character
 	def add_ability (text)
 		self.abilities.include?(text) ? 0 : self.abilities.push(text)
 	end
-	
-        #[DEP] marked for removal ???????????????????
 	def get_stat
 		rolls = [rand(6)+1, rand(6)+1, rand(6)+1, rand(6)+1]
 		rolls.each do |i|

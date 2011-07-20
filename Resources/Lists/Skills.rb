@@ -26,8 +26,8 @@ class Skills
 		["Listen","wis"],
 		["Move Silently","dex",true],
 		["Open Lock","dex"],
-		["Perform","cha"],
-		["Profession","wis"], #each profession?
+		["Perform","cha"], #[TODO]each perform?
+		["Profession","wis"], #[TODO]each profession?
 		["Ride","dex"],
 		["Search","int"],
 		["Sense Motive","wis"],

@@ -24,8 +24,7 @@ class Human < RaceModel
 		@size = "Medium"
 		@speed = 30
 		@age_roll = Roll.new("2d6+15")
-		#@favored_classes=ClassList.list.collect {|val| val.to_s} #All classes
-		@favored_classes = ClassList.list.keys
+		@favored_classes = ClassList.list.keys #All classes
 		@bonus_languages = [] #All languages
 	end
 	def apply_level

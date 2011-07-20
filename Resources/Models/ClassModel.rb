@@ -24,11 +24,10 @@ require_relative "SpellModel"
 
 # Methods : 
 class ClassModel
-	#attr_accessor :good_save,:bad_save,:good_bab,:mid_bab,:bad_bab
 	attr_accessor :hd, :hd_type, :class_skills, :character, :will, :reflex, :fort, :bab, :class_level, :base_skill_num, :spells
 	GOOD_SAVE = [2,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	BAD_SAVE  = [0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0,1,0,0]
-	GOOD_BAB  = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] #(level - GOOD_BAB.length).each {|i| (GOOD_BAB += 1) if (i>0)}
+	GOOD_BAB  = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	MID_BAB   = [0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1]
 	BAD_BAB   = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
 	
@@ -52,9 +51,6 @@ class ClassModel
 	end
 	
 	def apply
-		#add an instance of this class level to the characters class list
-		#level = self.new(character)
-		#@character.classes.push(level)
 		#roll the hd fro hd_type
 		@hd = @character.classes.length >1 ? Roll.new(@hd_type) : Roll.new(@hd_type).max
 		#apply the classes save bonuses to the character
@@ -70,9 +66,6 @@ class ClassModel
 		num_skills = (@base_skill_num + @character.stat_mod["int"])*(@class_level>1? 1:4)
 		@character.skill_list.class_skills = @class_skills
 		@character.skill_list.roll_skills(num_skills)
-		#descendants will need the class reference for application of the class' abilities
-		#[TODO][QUESTION] should the apply class be an instance or class method?
-		#return level
 	end
 	
 	def self.available?(character)
@@ -85,7 +78,7 @@ class ClassModel
 		name.gsub!(/([A-Z]+)([A-Z][a-z])/,'\1 \2')
 		name.gsub!(/([a-z\d])([A-Z])/,'\1 \2')
 		name.tr!("-", "_")
-		return name.to_s# + "( " +hd.to_s+" )"
+		return name.to_s
 	end
 =begin
 	def expand_saves(epic_level)
