@@ -21,8 +21,6 @@ class FeatModel
 	end
 	
 	def to_s
-		#ret =""
-		#feats.each {|feat| ret+="\t* "+feat.title.to_s+"\n" }
 		return title.to_s
 	end
   def self.feat_taken(char)

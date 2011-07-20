@@ -43,8 +43,7 @@ class SpellList
 		@known=Hash.new(Hash.new([]))
 		@book=Hash.new(Hash.new([]))
     @per_day = Hash.new(Hash.new(-1))
-		#load all spells lists here?
-		#spelldirectories.each {|spell| require spell}
+		#classes should load relavent spells
 	end
 #-- list -------------------------------------------------------------------------------#
 #++

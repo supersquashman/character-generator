@@ -1,4 +1,4 @@
-# RaceModel - Model of D&D skills and container for related information
+# RaceModel - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.

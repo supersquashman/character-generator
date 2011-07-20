@@ -1,4 +1,4 @@
-# Bard - Model of D&D class and container for related information
+# Bard - D&D class model and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -47,8 +47,10 @@ class Bard < ClassModel
 		super
     #[TODO] Add proficiencies 
     #[NOTE][QUESTION] should perform be a prefered skill?
-		#Class Features :         
+		#Class Features :
+    #inspire courage
 		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
+    #spells
     spells_per_day_table = [
     [3,0,0,0,0,0,0],
     [3,1,0,0,0,0,0],

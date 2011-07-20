@@ -32,7 +32,6 @@ class SkillList
 	@@list=[] #default skills available
 	attr_accessor :skills #skills the character has ranks in or wants to be printed
 	attr_accessor :class_skills
-	#attr_accessor :character
         
 #-- initialize(character)---------------------------------------------------------------#
 #++
@@ -40,7 +39,7 @@ class SkillList
 		@character = character
 		@skills=[]
 		@class_skills=[]
-		#load all skill lists here?
+		#load skills
 		Skills.new
 	end
 #-- list -------------------------------------------------------------------------------#
@@ -178,7 +177,6 @@ class SkillList
         end	
         options.push(choice)
         skill = options[0]
-        #puts choice
 			end
 			Float inc = !class_skills.include?(skill) ? 0.5 : 1
 			if skills.include?(skill) 

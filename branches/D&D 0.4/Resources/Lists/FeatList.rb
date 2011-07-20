@@ -35,7 +35,6 @@ class FeatList
 		available = []
 		list.each do |title,feat|
 			if feat.available?(char)
-				#prefered.include?(feat.new.title) ? [prefer,1].max.times { available.push(feat)} :[new,1].max.times{available.push(feat)}
 				restriction.length<1 || restriction.include?(feat.new.title) ? available.push(feat) : 0
 			end
 		end

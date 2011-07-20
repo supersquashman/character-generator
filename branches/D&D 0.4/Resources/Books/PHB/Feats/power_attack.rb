@@ -7,7 +7,8 @@ class PowerAttack < FeatModel
 	def initialize 
 		super
 		@title = "Power Attack"
-		@description = "You make a power attack"
+		@description = "On your action, before making attack rolls for a round, you may choose to subtract a number from all melee attack rolls and add the same number to all melee damage rolls." +
+    "This number may not exceed your base attack bonus. The penalty on attacks and bonus on damage apply until your next turn."
 		@page = "PHB??"
 		@link = ""
 	end
