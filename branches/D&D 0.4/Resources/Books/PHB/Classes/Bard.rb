@@ -21,6 +21,9 @@ require_relative "../Magic/Spells/BardSpells"
 #--== Bard =============================================================================#
 #++
 class Bard < ClassModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize (character)
 		super(character)
 		@hd_type="1d6"
@@ -40,12 +43,16 @@ class Bard < ClassModel
     @class_skills += knowledge
 		apply
 	end
-	
+  
+#-- availiable? ------------------------------------------------------------------------#
+#++
 	def available?
 		super
 		#[TODO] any non-lawful
 	end
   
+#-- apply ------------------------------------------------------------------------------#
+#++
 	def apply#(char)
 		super
     #[NOTE][QUESTION] should perform be a prefered skill?

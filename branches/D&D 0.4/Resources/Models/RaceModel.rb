@@ -23,6 +23,8 @@ require_relative "../Roll"
 class RaceModel
 	attr_accessor :size, :age_roll, :speed, :favored_classes, :bonus_languages, :character
 	
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize(character)
 		@character =character
 		@size = "Medium"
@@ -31,11 +33,15 @@ class RaceModel
 		@favored_classes=[]
 		@bonus_languages = []
 	end     
-	
+  
+#-- self.apply(character) --------------------------------------------------------------#
+#++
 	def self.apply(character)
 		character.race= self.new(character)
 	end
-	
+  
+#-- apply_level ------------------------------------------------------------------------#
+#++
 	def apply_level
 		#routines that are made every level
 		if character.level <= 1
@@ -48,6 +54,8 @@ class RaceModel
 		end
 	end
 	
+#-- to_s -------------------------------------------------------------------------------#
+#++
 	def to_s
 		String name = self.class.to_s.dup
 		name.gsub!(/::/, '/')
@@ -56,7 +64,9 @@ class RaceModel
 		name.tr!("-", "_")
 		return name
 	end
-	
+  
+#-- weighted_age(age, weight) ----------------------------------------------------------#
+#++
 	def weighted_age(age, weight=Array.new(100,1)+Array.new(50,1)+Array.new(25,3)+Array.new(10,4)+Array.new(2,0.5))
 		return (age*(weight [rand(weight.length)])).to_i
 	end

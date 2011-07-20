@@ -1,4 +1,4 @@
-# RaceList - Model of D&D skills and container for related information
+# RaceList - Manager of D&D Races[RaceModel]
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -23,12 +23,21 @@ require_relative "../Models/RaceModel"
 
 class RaceList
 	@@list=Hash.new
+  
+#-- list -------------------------------------------------------------------------------#
+#++
 	def list
 		return @@list
 	end
+  
+#-- self.push(race) --------------------------------------------------------------------#
+#++
 	def self.push(race)
 		@@list[race.to_s] = race
 	end
+  
+#-- self.list --------------------------------------------------------------------------#
+#++
 	def self.list
 		return @@list
 	end
