@@ -35,7 +35,7 @@ class Character
 	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
-	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs
+	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies
 	
 	def initialize (sources)
 =begin
@@ -48,6 +48,8 @@ class Character
 =end
     @extra_levelup_procs = []
     @final_levelup_procs = []
+    @armor_proficiencies = []
+    @weapon_proficiencies = []
 		@classes = []
 		@number_of_classes = 0
 		@max_classes = 1

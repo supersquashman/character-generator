@@ -45,7 +45,6 @@ class Bard < ClassModel
   
 	def apply#(char)
 		super
-    #[TODO] Add proficiencies 
     #[NOTE][QUESTION] should perform be a prefered skill?
 		#Class Features :
     #inspire courage
@@ -103,6 +102,8 @@ class Bard < ClassModel
 		#class abilities
 		case class_level
 			when 1  
+        @character.weapon_proficiencies |= ["Simple", "Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
+        @character.armor_proficiencies |= ["Light","Shields"]
         @character.add_ability("Bardic Music")
         @character.add_ability("Bardic Knowledge")
         @character.add_ability("Countersong")

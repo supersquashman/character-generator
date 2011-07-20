@@ -33,9 +33,12 @@ class Fighter < ClassModel
 	
 	def apply
 		super
-		#[TODO] Add Proficiencies
+    if @class_level == 1
+      @character.weapon_proficiencies |= ["Martial","Simple"]
+      @character.armor_proficiencies |= ["Heavy","Medium","Light","Shields","Tower Shield"]
+    end
 		#Class Features :
-		#bonus feats          
+		#bonus feats    
 		(@class_level == 1 || @class_level %2>0) ? FeatList.get_bonus_feat(@character, "Fighter") : 0
 	end
 end
