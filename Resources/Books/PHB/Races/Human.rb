@@ -19,6 +19,9 @@
 #--== Human ============================================================================#
 #++
 class Human < RaceModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize(character)
 		super(character)
 		@size = "Medium"
@@ -27,6 +30,9 @@ class Human < RaceModel
 		@favored_classes = ClassList.list.keys #All classes
 		@bonus_languages = [] #All languages
 	end
+  
+#-- apply_level ------------------------------------------------------------------------#
+#++
 	def apply_level
 		super
 		if character.level <= 1

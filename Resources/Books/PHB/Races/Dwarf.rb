@@ -19,6 +19,9 @@
 #--== Dwarf ============================================================================#
 #++
 class Dwarf< RaceModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize(character)
 		super(character)
 		@size = "Medium"
@@ -28,6 +31,9 @@ class Dwarf< RaceModel
 		character.languages.learn_lang("Dwarven")
 		@bonus_languages = ["Giant", "Gnome", "Goblin", "Orc", "Terran", "Undercommon"]
 	end
+  
+#-- apply_level ------------------------------------------------------------------------#
+#++
 	def apply_level
 		super
 		if(character.level <= 1)

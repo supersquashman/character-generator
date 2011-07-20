@@ -19,6 +19,9 @@
 #--== Rogue ============================================================================#
 #++
 class Rogue < ClassModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize (character)
 		super(character)
 		@hd_type="1d6"
@@ -36,7 +39,9 @@ class Rogue < ClassModel
 						"Swim","Tumble","Use Magic Device","Use Rope"]
 		apply
 	end
-	
+
+#-- apply ------------------------------------------------------------------------------#
+#++
 	def apply
 		super
     #[TODO] Add proficiencies

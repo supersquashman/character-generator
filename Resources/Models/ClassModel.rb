@@ -1,4 +1,4 @@
-# ClassModel - Model of D&D skills and container for related information
+# ClassModel - Model of D&D classes and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -30,7 +30,8 @@ class ClassModel
 	GOOD_BAB  = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	MID_BAB   = [0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1]
 	BAD_BAB   = [0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1]
-	
+#-- initialize(character) --------------------------------------------------------------#
+#++	
 	def initialize(character)
 		@spells = Hash.new([])
 		@character = character
@@ -45,11 +46,15 @@ class ClassModel
 		@class_skills = []
 		#apply
 	end
-	
+
+#-- self.Class_skills ------------------------------------------------------------------#
+#++	
 	def self.Class_skills
 			Class_skills
 	end
-	
+
+#-- apply ------------------------------------------------------------------------------#
+#++	
 	def apply
 		#roll the hd fro hd_type
 		@hd = @character.classes.length >1 ? Roll.new(@hd_type) : Roll.new(@hd_type).max
@@ -67,11 +72,15 @@ class ClassModel
 		@character.skill_list.class_skills = @class_skills
 		@character.skill_list.roll_skills(num_skills)
 	end
-	
+
+#-- self.available?(character) ---------------------------------------------------------#
+#++
 	def self.available?(character)
 			return true
 	end
-	
+  
+#-- to_s -------------------------------------------------------------------------------#
+#++
 	def to_s
 		String name = self.class.to_s.dup
 		name.gsub!(/::/, '/')

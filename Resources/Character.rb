@@ -1,4 +1,4 @@
-# Character - Model of D&D skills and container for related information
+# Character - Model for D&D characters and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,12 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-#require_relative "./Books/PHB/Races/RaceList"
-#require_relative "./Books/PHB/Races/ClassList"
-#require_relative "./Lists/SkillList"
-#require_relative "./Lists/ClassList"
-#require_relative "./Lists/RaceList"
-#require_relative "./Lists/LanguageList"
 Dir.glob(File.join(".", "/Lists", "*.rb")).each do |file|
    require file
 end
@@ -32,20 +26,12 @@ end
 #--== Character ========================================================================#
 #++
 class Character
-	#attr_accessor :str, :dex, :con, :int, :wis, :cha, 
 	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies
-	
+#-- initialize (sources) ---------------------------------------------------------------#
+#++
 	def initialize (sources)
-=begin
-		@str = get_stat
-		@dex = get_stat
-		@con = get_stat
-		@int = get_stat
-		@wis = get_stat
-		@cha = get_stat
-=end
     @extra_levelup_procs = []
     @final_levelup_procs = []
     @armor_proficiencies = []
@@ -71,10 +57,10 @@ class Character
 		@grapple = {"BAB" => @BAB, "size" => 0, "misc" => 0}
 		@speed = 0
 		@spell_resist = 0
-		@stat_mod = {"str"=>0,"dex"=>0,"con"=>0,"int"=>0,"wis"=>0,"cha"=>0}#[str,dex,con,int,wis,cha]
+		@stat_mod = {"str"=>0,"dex"=>0,"con"=>0,"int"=>0,"wis"=>0,"cha"=>0}
 		@size = "medium"
 		@race = "Fish Tornado" #[CLEAN UP]?
-    #[QUESTION] Templates
+    #[QUESTION][TODO] Templates
 		@age = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
@@ -86,22 +72,10 @@ class Character
 		#get class from list
 		#get info based on class
 		#get feats
-		
-=begin	
-		@level_up = [Proc.new do |c, i|
-			#i==0||(i+1)%3==0 ? c.feats.roll_feats(c,1):0
-			c.race.apply_level
-			sel = ClassList.list.values[rand(ClassList.list.length)]
-			sel.apply(c)
-=begin
-			c.skill_list.class_skills |= sel.Class_skills
-			c.skill_list.roll_skills(sel.skill_ranks(c))
-/=end
-			calculate_mods
-		end]
-=end
 	end
-	
+  
+#-- levelup ----------------------------------------------------------------------------#
+#++	
 	def level_up
 		@level += 1
 		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
@@ -119,7 +93,9 @@ class Character
     extra_levelup_procs.each{|proc| proc.call}
 		calculate_mods
 	end
-        
+ 
+#-- calculate_mods ---------------------------------------------------------------------#
+#++ 
 	def calculate_mods
 		@stats.keys.each do |stat|
 			@stat_mod[stat] = ((@stats[stat].to_i-10)/2).floor
@@ -136,7 +112,9 @@ class Character
 			when "large" then -1
 		end
 	end
-        
+
+#-- increase_ability(name, number, dice) -----------------------------------------------#
+#++  
 	def increase_ability(name, number=1,dice="+")
 		found = false
 		self.abilities.each do |ability|
@@ -157,11 +135,15 @@ class Character
 			self.add_ability(ability_name)
 		end
 	end
-        
+
+#-- add_ability (text) -----------------------------------------------------------------#
+#++
 	def add_ability (text)
 		self.abilities.include?(text) ? 0 : self.abilities.push(text)
 	end
-	def get_stat
+#-- get_stat ---------------------------------------------------------------------------#
+#++
+  def get_stat
 		rolls = [rand(6)+1, rand(6)+1, rand(6)+1, rand(6)+1]
 		rolls.each do |i|
 			current = i
@@ -178,8 +160,4 @@ class Character
 		end
 		return sum
 	end
-	
-	#def get_level
-	#	return classes.length
-	#end
 end

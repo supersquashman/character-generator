@@ -21,6 +21,9 @@ require_relative "../Magic/Spells/SorcererSpells"
 #--== Sorcerer =========================================================================#
 #++
 class Sorcerer < ClassModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize (character)
 		super(character)
 		@hd_type="1d4"
@@ -34,6 +37,8 @@ class Sorcerer < ClassModel
 		apply
 	end
   
+#-- apply ------------------------------------------------------------------------------#
+#++
 	def apply#(char)
 		super
     #[NOTE][QUESTION] should spellcraft be a prefered skill?

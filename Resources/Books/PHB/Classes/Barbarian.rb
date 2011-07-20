@@ -19,6 +19,9 @@
 #--== Barbarian ========================================================================#
 #++
 class Barbarian < ClassModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize (character)
 		super(character)
 		@hd_type="1d12"
@@ -32,11 +35,15 @@ class Barbarian < ClassModel
 		apply
 	end
 	
+#-- available? -------------------------------------------------------------------------#
+#++
 	def available?
 		super
 		#[TODO] any non-lawful
 	end
   
+#-- apply ------------------------------------------------------------------------------#
+#++
 	def apply#(char)
     if rand(20)==0 && @character.abilities.include?("Illiteracy")
       @character.abilities.delete("Illiteracy")

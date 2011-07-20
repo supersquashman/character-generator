@@ -19,6 +19,9 @@
 #--== Fighter ============================================================================#
 #++
 class Fighter < ClassModel
+
+#-- initialize(character) --------------------------------------------------------------#
+#++
 	def initialize (character)
 		super(character)
 		@hd_type="1d10"
@@ -30,7 +33,9 @@ class Fighter < ClassModel
 		@class_skills = ["Climb", "Craft", "Handle Animal", "Intimidate", "Jump", "Ride", "Swim"]
 		apply
 	end
-	
+
+#-- apply ------------------------------------------------------------------------------#
+#++
 	def apply
 		super
     if @class_level == 1
