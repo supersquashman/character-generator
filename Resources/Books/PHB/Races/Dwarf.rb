@@ -1,4 +1,4 @@
-# Dwarf - Model of D&D skills and container for related information
+# Dwarf - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -15,9 +15,6 @@
 
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
-
-#require 'pathname' 
-#require Pathname(__FILE__).ascend{|d| h=d+'RaceModel.rb'; break h if h.file?} 
 
 #--== Dwarf ============================================================================#
 #++

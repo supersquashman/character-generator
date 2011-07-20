@@ -1,4 +1,4 @@
-# Rogue - Model of D&D skills and container for related information
+# Rogue - D&D class model and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -15,10 +15,6 @@
 
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
-
-#require "RaceList"
-#require 'pathname' 
-#require Pathname(__FILE__).ascend{|d| h=d+'ClassList.rb'; break h if h.file?} 
 
 #--== Rogue ============================================================================#
 #++
@@ -43,8 +39,7 @@ class Rogue < ClassModel
 	
 	def apply
 		super
-		#level = super(char)
-		#class_level = level.class_level #for visibility
+    #[TODO] Add proficiencies
 		#Class Features :
 		#sneak attack           
 		@class_level %2>0 ? @character.increase_ability("Sneak Attack",1,"d6") : 0
@@ -67,8 +62,7 @@ class Rogue < ClassModel
 				while !selected 
 					spability = sp_abilities[rand(sp_abilities.length)]
 					if spability =="Feat"
-						# [TODO] add feat to character
-						@character.add_ability(spability) #replace with random feat method
+						FeatList.roll_feats(@character,1)
 						selected = true
 					elsif spability=="Skill Mastery"
 						# randomly select skills that havent been selected
@@ -90,8 +84,7 @@ class Rogue < ClassModel
 							end
 						else
 							skills = ["Hide", "Move Silently","Climb"]
-						end
-						#@character.add_ability(spability+"("+skills.join(", ")+")")   
+						end 
 						skills.each do |skill|
 							@character.add_ability(spability+"("+skill+")")
 						end

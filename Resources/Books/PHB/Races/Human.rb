@@ -1,4 +1,4 @@
-# Human - Model of D&D skills and container for related information
+# Human - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -32,7 +32,7 @@ class Human < RaceModel
 		super
 		if character.level <= 1
 			character.skill_list.roll_skills(4,[],0)
-			#character.feats.roll_feats(1)
+			FeatList.roll_feats(character,1)
 		else
 			character.skill_list.roll_skills(1,[],character.classes.length)
 		end

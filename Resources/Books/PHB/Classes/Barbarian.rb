@@ -1,4 +1,4 @@
-# Barbarian - Model of D&D skills and container for related information
+# Barbarian - D&D class model and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,10 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-#require "RaceList"
-#require 'pathname' 
-#require Pathname(__FILE__).ascend{|d| h=d+'ClassList.rb'; break h if h.file?} 
-
 #--== Barbarian ========================================================================#
 #++
 class Barbarian < ClassModel
@@ -34,7 +30,6 @@ class Barbarian < ClassModel
 		@class_skills = ["Climb","Craft","Handle Animal","Intimidate",
                       "Jump","Listen","Ride","Survival","Swim"]
 		apply
-    #puts "Barbarian " + class_level.to_s
 	end
 	
 	def available?
@@ -44,9 +39,7 @@ class Barbarian < ClassModel
   
 	def apply#(char)
 		super
-		#[NOTE] Add weapon proficiencies 
-		#level = super(char)
-		#class_level = level.class_level #for visibility
+		#[TODO] Add proficiencies 
 		#Class Features :
 		#rage          
 		@character.increase_ability("Rage 1/day",1,"") if [1,4,8,12,16,20].include?(@class_level)
