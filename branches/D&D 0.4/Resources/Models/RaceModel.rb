@@ -43,7 +43,8 @@ class RaceModel
 			character.size = size
 			age_roll.make_rolls
 			character.age = age_roll.to_i#weighted_age(age_roll.to_i)
-			character.stat_mod["int"].times {character.languages.roll_lang(bonus_languages)}
+      character.languages.bonus_languages += bonus_languages
+			character.stat_mod["int"].times {character.languages.roll_lang(true)}
 		end
 	end
 	

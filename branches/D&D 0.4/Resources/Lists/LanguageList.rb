@@ -29,6 +29,7 @@ require_relative "Languages"
 
 class LanguageList
 	@@list=[] #default languages available
+  attr_accessor :bonus_languages #bonus languages the character has
 	attr_accessor :languages #languages the character has
         
 #-- initialize -------------------------------------------------------------------------#
@@ -36,6 +37,7 @@ class LanguageList
 	def initialize
 		Languages.new
 		@languages=[]
+    @bonus_languages=[]
 		#everyone knows common
 		learn_lang("Common")
 	end
@@ -59,10 +61,16 @@ class LanguageList
 #-- learn_lang(language) ---------------------------------------------------------------#
 #++
 	#character learns a specific language
-	def learn_lang(language)
+	def learn_lang(language, read=true)
 		available =!languages.include?(language)
-		if(available)
-			languages.push(language)
+    to_read = language.include?("Speak Only") && !available
+		if(available || to_read)
+      if to_read || read
+        languages.delete(language)
+        languages.push(language.gsub(/\(Speak Only\)/,""))
+      else
+        languages.push(language + "(Speak Only)")
+      end
 			return true
 		else
 			return false
@@ -77,12 +85,16 @@ class LanguageList
 	end
 #-- roll_lang( bonus_langs=[]) -----------------------------------------------------#
 #++
-	def roll_lang(bonus_langs=[])
-		bonus_langs -= languages
-		if bonus_langs.length >0 
-			learn_lang(bonus_langs[rand(bonus_langs.length)])
+	def roll_lang(read=true)
+		bonus_langs = bonus_languages - languages
+    to_read = languages.uniq
+    to_read.reject!{|lang| !lang.include?("Speak Only")}
+    if to_read.length > 0
+      learn_lang(to_read[rand(to_read.length)],read)
+		elsif bonus_langs.length >0 
+			learn_lang(bonus_langs[rand(bonus_langs.length)],read)
 		elsif (list - languages).length >0
-			while !learn_lang(list[rand(list.length)]) ;end
+			while !learn_lang(list[rand(list.length)],read) ;end
 		else
 			#languages.push("Additional Language")
       return false
