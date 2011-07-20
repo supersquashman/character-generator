@@ -1,4 +1,4 @@
-# Bard - Model of D&D skills and container for related information
+# Bard - Model of D&D class and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -15,10 +15,6 @@
 
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
-
-#require "RaceList"
-#require 'pathname' 
-#require Pathname(__FILE__).ascend{|d| h=d+'ClassList.rb'; break h if h.file?} 
 
 #--== Bard =============================================================================#
 #++
@@ -49,12 +45,9 @@ class Bard < ClassModel
   
 	def apply#(char)
 		super
-    #[NOTE] Add weapon proficiencies 
+    #[TODO] Add proficiencies 
     #[NOTE][QUESTION] should perform be a prefered skill?
-		#level = super(char)
-		#class_level = level.class_level #for visibility
-		#Class Features :
-		#rage          
+		#Class Features :         
 		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
     spells_per_day_table = [
     [3,0,0,0,0,0,0],
@@ -103,13 +96,7 @@ class Bard < ClassModel
     if @character.stats["cha"] >= i+10 && @character.spells.per_day["Bard"][i.to_s] > 0
       @character.spells.roll_spells(val,i.to_s,"Bard") 
     end
-    end
-
-    # @character.spells.roll_spells(4,"0","Bard")
-    # @character.spells.roll_spells(4,"1","Bard")
-    # @character.spells.roll_spells(4,"10","Bard")
-    #To learn a spell must have casting stat >= 10 + spell level
-    
+    end   
 
 		#class abilities
 		case class_level

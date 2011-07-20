@@ -9,7 +9,7 @@ class Languages
 		"Celestial",
 		"Common",
 		"Draconic",
-		"Druidic",
+		#"Druidic",
 		"Dwarven",
 		"Elven",
 		"Giant",

@@ -154,7 +154,7 @@ SpellList.load_spells("5", "Bard", [
 ["Song of Discord", "Enchantment (Compulsion) [Mind-Affecting, Sonic]", " ", "Forces targets to attack each other."],
 ["Suggestion, Mass", "Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]", " ", "As suggestion, plus one subject/ level."],
 ["Summon Monster V", "Conjuration (Summoning)", " ", "Calls extraplanar creature to fight for you."]])
-
+#[TODO] Add page numbers
 SpellList.load_spells("6", "Bard", [
 ["Analyze Dweomer", "Divination", " ", "Reveals magical aspects of subject."],
 ["Animate Objects", "Transmutation", " ", "Objects attack your foes."],
