@@ -196,7 +196,7 @@ class SkillList
 			else
 				if(skill.downcase == "speak language")
 					#[TODO]when character picks speak language as a skill need both speak and write counts(2 points) and a max number of skill points to put into it
-					if @character.languages.roll_lang()
+					if @character.languages.roll_lang(class_skills.include?("Speak Language"))
             #assign skills to languages upto max number of languages.
             points-=1
           else
