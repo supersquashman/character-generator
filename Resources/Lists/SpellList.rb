@@ -39,7 +39,7 @@ class SpellList
 #++
 	def initialize
 
-    @forbidden_types = []
+    @forbidden_types = Hash.new([])
 		@known=Hash.new(Hash.new([]))
 		@book=Hash.new(Hash.new([]))
     @per_day = Hash.new(Hash.new(-1))
@@ -83,7 +83,7 @@ class SpellList
       choice = list_dup[rand(list_dup.length)]
       choice = SpellModel.new(char_class.to_s + " Spell") if !choice
       list_dup.delete(choice)
-      if !choice.available(forbidden_types)
+      if !choice.available(forbidden_types[char_class])
         choice = nil
       end
       end while !choice
@@ -102,7 +102,7 @@ class SpellList
         choice = list_dup[rand(list_dup.length)]
         choice = SpellModel.new(char_class.to_s + " Spell") if !choice
         list_dup.delete(choice.name) 
-        if !choice.available(forbidden_types)
+        if !choice.available(forbidden_types[char_class])
           choice = nil
         end
         end while !choice
