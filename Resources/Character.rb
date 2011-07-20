@@ -138,8 +138,8 @@ class Character
 	def increase_ability(name, number=1,dice="+")
 		found = false
 		self.abilities.each do |ability|
-			if ability.to_s.include? name.scan(/[^0-9]/)[0]
-        print '"' + name.scan(/[^0-9]/)[0] + '"'
+			if ability.to_s.include? name.scan(/\D+/)[0]
+        print '"' + name.scan(/\D+/)[0] + '"'
 				inc_name=ability.sub(/\d{1,}/) {|n| n.to_i+number}
 				self.abilities[self.abilities.index(ability)] = inc_name
 				found = true
