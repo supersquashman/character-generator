@@ -59,7 +59,7 @@ class Character
 		@spell_resist = 0
 		@stat_mod = {"str"=>0,"dex"=>0,"con"=>0,"int"=>0,"wis"=>0,"cha"=>0}
 		@size = "medium"
-		@race = "Fish Tornado" #[CLEAN UP]?
+		@race =  RaceList.list.values[rand(RaceList.list.length)]#[CLEAN UP]?
     #[QUESTION][TODO] Templates
 		@age = 0
 		@languages = LanguageList.new
@@ -67,7 +67,7 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		RaceList.list.values[rand(RaceList.list.length)].apply(self)
+		race.apply(self)
 		#get info based on race
 		#get class from list
 		#get info based on class
