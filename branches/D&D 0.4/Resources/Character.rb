@@ -32,10 +32,10 @@ class Character
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
-    @extra_levelup_procs = []
-    @final_levelup_procs = []
-    @armor_proficiencies = []
-    @weapon_proficiencies = []
+		@extra_levelup_procs = []
+		@final_levelup_procs = []
+		@armor_proficiencies = []
+		@weapon_proficiencies = []
 		@classes = []
 		@number_of_classes = 0
 		@max_classes = 1
@@ -44,7 +44,7 @@ class Character
 		@level = 0
 		@spells = SpellList.new
 		@forbidden_spell_types = []
-		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat+20}
+		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
 		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>0,"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}
 		@armor_check = 0
@@ -90,7 +90,7 @@ class Character
 		else
 			@classes.push(@classes[rand(@classes.length)].class.new(self))
 		end
-    extra_levelup_procs.each{|proc| proc.call}
+		extra_levelup_procs.each{|proc| proc.call}
 		calculate_mods
 	end
  
