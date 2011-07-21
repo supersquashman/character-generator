@@ -55,75 +55,79 @@ class Bard < ClassModel
 #++
 	def apply#(char)
 		super
-    #[NOTE][QUESTION] should perform be a prefered skill?
-		#Class Features :
-    #inspire courage
-		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
-    #spells
-    spells_per_day_table = [
-    [3,0,0,0,0,0,0],
-    [3,1,0,0,0,0,0],
-    [3,2,0,0,0,0,0],
-    [3,3,1,0,0,0,0],
-    [3,3,2,0,0,0,0],
-    [3,3,2,0,0,0,0],
-    [3,3,3,1,0,0,0],
-    [3,3,3,2,0,0,0],
-    [3,3,3,2,0,0,0],
-    [3,3,3,3,1,0,0],
-    [3,3,3,3,2,0,0],
-    [3,3,3,3,2,0,0],
-    [4,3,3,3,3,1,0],
-    [4,4,3,3,3,2,0],
-    [4,4,4,3,3,2,0],
-    [4,4,4,4,3,3,1],
-    [4,4,4,4,4,3,2],
-    [4,4,4,4,4,4,3],
-    [4,4,4,4,4,4,4]]
-    SpellList.table_row(spells_per_day_table,class_level-1) do |val, i| 
-    @character.spells.set_spells_per_day((val+SpellList.bonus_spells(@character.stat_mod["cha"], i)),i.to_s,"Bard")
-    end
-    spell_table = [
-    [5,2,0,0,0,0,0],
-    [6,3,0,0,0,0,0],
-    [6,3,2,0,0,0,0],
-    [6,4,3,0,0,0,0],
-    [6,4,3,0,0,0,0],
-    [6,4,4,2,0,0,0],
-    [6,4,4,3,0,0,0],
-    [6,4,4,3,0,0,0],
-    [6,4,4,4,2,0,0],
-    [6,4,4,4,3,0,0],
-    [6,4,4,4,3,0,0],
-    [6,4,4,4,4,2,0],
-    [6,4,4,4,4,3,0],
-    [6,4,4,4,4,3,0],
-    [6,5,4,4,4,4,2],
-    [6,5,5,4,4,4,3],
-    [6,5,5,5,4,4,3],
-    [6,5,5,5,5,4,4],
-    [6,5,5,5,5,5,4]]
-    SpellList.table_row(spell_table,class_level - 1) do |val,i| 
-    if @character.stats["cha"] >= i+10 && @character.spells.per_day["Bard"][i.to_s] > 0
-      @character.spells.roll_spells(val,i.to_s,"Bard") 
-    end
-    end   
+		#[NOTE][QUESTION] should perform be a prefered skill?
+			#Class Features :
+		#inspire courage
+			@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
+		Bard.increase_spells(@character, @class_level)
 
-		#class abilities
-		case class_level
-			when 1  
-        @character.weapon_proficiencies |= ["Simple", "Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
-        @character.armor_proficiencies |= ["Light","Shields"]
-        @character.add_ability("Bardic Music")
-        @character.add_ability("Bardic Knowledge")
-        @character.add_ability("Countersong")
-        @character.add_ability("Fascinate")
-      when 3 then @character.add_ability("Inspire Competence")
-      when 6 then @character.add_ability("Suggestion")
-      when 9 then @character.add_ability("Inspire Greatness")
-      when 12 then @character.add_ability("Song of Freedom")
-      when 15 then @character.add_ability("Inspire Heroics")
-      when 18 then @character.add_ability("Mass Suggestion")
+			#class abilities
+			case class_level
+				when 1  
+			@character.weapon_proficiencies |= ["Simple", "Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
+			@character.armor_proficiencies |= ["Light","Shields"]
+			@character.add_ability("Bardic Music")
+			@character.add_ability("Bardic Knowledge")
+			@character.add_ability("Countersong")
+			@character.add_ability("Fascinate")
+		  when 3 then @character.add_ability("Inspire Competence")
+		  when 6 then @character.add_ability("Suggestion")
+		  when 9 then @character.add_ability("Inspire Greatness")
+		  when 12 then @character.add_ability("Song of Freedom")
+		  when 15 then @character.add_ability("Inspire Heroics")
+		  when 18 then @character.add_ability("Mass Suggestion")
+		end
+	end
+	
+	def self.increase_spells(character, class_level)
+		#spells
+		spells_per_day_table = [
+		[3,0,0,0,0,0,0],
+		[3,1,0,0,0,0,0],
+		[3,2,0,0,0,0,0],
+		[3,3,1,0,0,0,0],
+		[3,3,2,0,0,0,0],
+		[3,3,2,0,0,0,0],
+		[3,3,3,1,0,0,0],
+		[3,3,3,2,0,0,0],
+		[3,3,3,2,0,0,0],
+		[3,3,3,3,1,0,0],
+		[3,3,3,3,2,0,0],
+		[3,3,3,3,2,0,0],
+		[4,3,3,3,3,1,0],
+		[4,4,3,3,3,2,0],
+		[4,4,4,3,3,2,0],
+		[4,4,4,4,3,3,1],
+		[4,4,4,4,4,3,2],
+		[4,4,4,4,4,4,3],
+		[4,4,4,4,4,4,4]]
+		SpellList.table_row(spells_per_day_table,class_level-1) do |val, i| 
+			character.spells.set_spells_per_day((val+SpellList.bonus_spells(character.stat_mod["cha"], i)),i.to_s,"Bard")
+		end
+		spell_table = [
+		[5,2,0,0,0,0,0],
+		[6,3,0,0,0,0,0],
+		[6,3,2,0,0,0,0],
+		[6,4,3,0,0,0,0],
+		[6,4,3,0,0,0,0],
+		[6,4,4,2,0,0,0],
+		[6,4,4,3,0,0,0],
+		[6,4,4,3,0,0,0],
+		[6,4,4,4,2,0,0],
+		[6,4,4,4,3,0,0],
+		[6,4,4,4,3,0,0],
+		[6,4,4,4,4,2,0],
+		[6,4,4,4,4,3,0],
+		[6,4,4,4,4,3,0],
+		[6,5,4,4,4,4,2],
+		[6,5,5,4,4,4,3],
+		[6,5,5,5,4,4,3],
+		[6,5,5,5,5,4,4],
+		[6,5,5,5,5,5,4]]
+		SpellList.table_row(spell_table,class_level - 1) do |val,i| 
+			if character.stats["cha"] >= i+10 && character.spells.per_day["Bard"][i.to_s] > 0
+			  character.spells.roll_spells(val,i.to_s,"Bard") 
+			end
 		end
 	end
 end
