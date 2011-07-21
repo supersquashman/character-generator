@@ -59,6 +59,7 @@ class Monk < ClassModel
 				@character.add_ability("Still Mind")
 			when 4
 				@character.add_ability("Slow Fall (20ft.)")
+				@character.add_ability("Ki Strike (Magic)")
 			when 5
 				@character.add_ability("Purity of Body")
 			when 6
@@ -66,8 +67,11 @@ class Monk < ClassModel
 				@character.add_ability("Wholeness of Body")
 			when 8
 			when 9
+				#@character.remove_ability("Evasion")
 				@character.add_ability("Improved Evasion")
 			when 10
+				@character.remove_ability("Ki Strike (Magic)")
+				@character.add_ability("Ki Strike (Magic, Lawful)")
 			when 11
 				@character.add_ability("Diamond Body")
 			when 12
@@ -78,6 +82,8 @@ class Monk < ClassModel
 			when 15
 				@character.add_ability("Quivering Palm")
 			when 16
+				@character.remove_ability("Ki Strike (Magic, Lawful)")
+				@character.add_ability("Ki Strike (Magic, Lawful, Adamantine)")
 			when 17
 				@character.add_ability("Timeless Body")
 				@character.add_ability("Tongue of the Sun and Moon")
