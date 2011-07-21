@@ -13,11 +13,13 @@ public class Generator_Interface extends JFrame
 	private void drawInterface()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(500, 500);
+		setSize(500, 600);
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenX = (screenSize.width - getWidth())/2;
 		int screenY = (screenSize.height - getHeight())/2;
 		setLocation(screenX, screenY);
+		
+		
 		
 		
 		setVisible(true);
