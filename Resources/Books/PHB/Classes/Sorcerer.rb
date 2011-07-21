@@ -32,8 +32,7 @@ class Sorcerer < ClassModel
 		@fort = BAD_SAVE
 		@reflex = BAD_SAVE
 		@bab = BAD_BAB
-		@class_skills = ["Bluff","Concentraion", "Craft",
-    "Knowledge(Arcana)", "Profession", "Spellcraft"]
+		@class_skills = ["Bluff","Concentraion", "Craft", "Knowledge(Arcana)", "Profession", "Spellcraft"]
 		apply
 	end
   
@@ -41,67 +40,71 @@ class Sorcerer < ClassModel
 #++
 	def apply#(char)
 		super
-    #[NOTE][QUESTION] should spellcraft be a prefered skill?
-		#Class Features :
-    #spells
-    spells_per_day_table = [
-    [5,3,0,0,0,0,0,0,0,0],
-    [6,4,0,0,0,0,0,0,0,0],
-    [6,5,0,0,0,0,0,0,0,0],
-    [6,6,3,0,0,0,0,0,0,0],
-    [6,6,4,0,0,0,0,0,0,0],
-    [6,6,5,3,0,0,0,0,0,0],
-    [6,6,6,4,0,0,0,0,0,0],
-    [6,6,6,5,3,0,0,0,0,0],
-    [6,6,6,6,4,0,0,0,0,0],
-    [6,6,6,6,5,3,0,0,0,0],
-    [6,6,6,6,6,4,0,0,0,0],
-    [6,6,6,6,6,5,3,0,0,0],
-    [6,6,6,6,6,6,4,0,0,0],
-    [6,6,6,6,6,6,5,3,0,0],
-    [6,6,6,6,6,6,6,4,0,0],
-    [6,6,6,6,6,6,6,5,3,0],
-    [6,6,6,6,6,6,6,6,4,0],
-    [6,6,6,6,6,6,6,6,5,3],
-    [6,6,6,6,6,6,6,6,6,4],
-    [6,6,6,6,6,6,6,6,6,6]]
-
-    SpellList.table_row(spells_per_day_table,class_level-1) do |val, i| 
-    @character.spells.set_spells_per_day((val+SpellList.bonus_spells(@character.stat_mod["cha"], i)),i.to_s,"Sorcerer")
-    end
-    spell_table = [
-    [4,2,0,0,0,0,0,0,0,0],
-    [5,2,0,0,0,0,0,0,0,0],
-    [5,3,0,0,0,0,0,0,0,0],
-    [6,3,1,0,0,0,0,0,0,0],
-    [6,4,2,0,0,0,0,0,0,0],
-    [7,4,2,1,0,0,0,0,0,0],
-    [7,5,3,2,0,0,0,0,0,0],
-    [8,5,3,2,1,0,0,0,0,0],
-    [8,5,4,3,2,0,0,0,0,0],
-    [9,5,4,3,2,1,0,0,0,0],
-    [9,5,5,4,3,2,0,0,0,0],
-    [9,5,5,4,3,2,1,0,0,0],
-    [9,5,5,4,4,3,2,0,0,0],
-    [9,5,5,4,4,3,2,1,0,0],
-    [9,5,5,4,4,4,3,2,0,0],
-    [9,5,5,4,4,4,3,2,1,0],
-    [9,5,5,4,4,4,3,3,2,0],
-    [9,5,5,4,4,4,3,3,2,1],
-    [9,5,5,4,4,4,3,3,3,2],
-    [9,5,5,4,4,4,3,3,3,3]]
-
-    SpellList.table_row(spell_table,class_level - 1) do |val,i|
-      if @character.stats["cha"] >= i+10 && @character.spells.per_day["Sorcerer"][i.to_s] > 0
-        @character.spells.roll_spells(val,i.to_s,"Sorcerer")
-      end
-    end
+		#[NOTE][QUESTION] should spellcraft be a prefered skill?
+			#Class Features :
+		#spells
+		Sorcerer.increase_spells(@character,@class_level)
 
 		#class abilities
-		if class_level == 1  
+		if @class_level == 1  
         @character.weapon_proficiencies |= ["Simple"]
         @character.armor_proficiencies |= []
         @character.add_ability("Summon Familiar") #[TODO] Familiar rules
+		end
+	end
+	
+	def self.increase_spells(character, class_level)
+		spells_per_day_table = [
+		[5,3,0,0,0,0,0,0,0,0],
+		[6,4,0,0,0,0,0,0,0,0],
+		[6,5,0,0,0,0,0,0,0,0],
+		[6,6,3,0,0,0,0,0,0,0],
+		[6,6,4,0,0,0,0,0,0,0],
+		[6,6,5,3,0,0,0,0,0,0],
+		[6,6,6,4,0,0,0,0,0,0],
+		[6,6,6,5,3,0,0,0,0,0],
+		[6,6,6,6,4,0,0,0,0,0],
+		[6,6,6,6,5,3,0,0,0,0],
+		[6,6,6,6,6,4,0,0,0,0],
+		[6,6,6,6,6,5,3,0,0,0],
+		[6,6,6,6,6,6,4,0,0,0],
+		[6,6,6,6,6,6,5,3,0,0],
+		[6,6,6,6,6,6,6,4,0,0],
+		[6,6,6,6,6,6,6,5,3,0],
+		[6,6,6,6,6,6,6,6,4,0],
+		[6,6,6,6,6,6,6,6,5,3],
+		[6,6,6,6,6,6,6,6,6,4],
+		[6,6,6,6,6,6,6,6,6,6]]
+
+		SpellList.table_row(spells_per_day_table,class_level-1) do |val, i| 
+			character.spells.set_spells_per_day((val+SpellList.bonus_spells(character.stat_mod["cha"], i)),i.to_s,"Sorcerer")
+		end
+		spell_table = [
+		[4,2,0,0,0,0,0,0,0,0],
+		[5,2,0,0,0,0,0,0,0,0],
+		[5,3,0,0,0,0,0,0,0,0],
+		[6,3,1,0,0,0,0,0,0,0],
+		[6,4,2,0,0,0,0,0,0,0],
+		[7,4,2,1,0,0,0,0,0,0],
+		[7,5,3,2,0,0,0,0,0,0],
+		[8,5,3,2,1,0,0,0,0,0],
+		[8,5,4,3,2,0,0,0,0,0],
+		[9,5,4,3,2,1,0,0,0,0],
+		[9,5,5,4,3,2,0,0,0,0],
+		[9,5,5,4,3,2,1,0,0,0],
+		[9,5,5,4,4,3,2,0,0,0],
+		[9,5,5,4,4,3,2,1,0,0],
+		[9,5,5,4,4,4,3,2,0,0],
+		[9,5,5,4,4,4,3,2,1,0],
+		[9,5,5,4,4,4,3,3,2,0],
+		[9,5,5,4,4,4,3,3,2,1],
+		[9,5,5,4,4,4,3,3,3,2],
+		[9,5,5,4,4,4,3,3,3,3]]
+
+		SpellList.table_row(spell_table,class_level - 1) do |val,i|
+		  if character.stats["cha"] >= i+10 && character.spells.per_day["Sorcerer"][i.to_s] > 0
+			character.spells.roll_spells(val,i.to_s,"Sorcerer")
+		  end
 		end
 	end
 end

@@ -44,48 +44,52 @@ class Wizard < ClassModel
 #++
 	def apply#(char)
 		super
-    #[NOTE][QUESTION] should spellcraft be a prefered skill?
-		#Class Features :
-    #spells
-    #[TODO] Generate Spell Book
-    spell_table = [
-    [3,1,0,0,0,0,0,0,0,0],
-    [4,2,0,0,0,0,0,0,0,0],
-    [4,2,1,0,0,0,0,0,0,0],
-    [4,3,2,0,0,0,0,0,0,0],
-    [4,3,2,1,0,0,0,0,0,0],
-    [4,3,3,2,0,0,0,0,0,0],
-    [4,4,3,2,1,0,0,0,0,0],
-    [4,4,3,3,2,0,0,0,0,0],
-    [4,4,4,3,2,1,0,0,0,0],
-    [4,4,4,3,3,2,0,0,0,0],
-    [4,4,4,4,3,2,1,0,0,0],
-    [4,4,4,4,3,3,2,0,0,0],
-    [4,4,4,4,4,3,2,1,0,0],
-    [4,4,4,4,4,3,3,2,0,0],
-    [4,4,4,4,4,4,3,2,1,0],
-    [4,4,4,4,4,4,3,3,2,0],
-    [4,4,4,4,4,4,4,3,2,1],
-    [4,4,4,4,4,4,4,3,3,2],
-    [4,4,4,4,4,4,4,4,3,3],
-    [4,4,4,4,4,4,4,4,4,4]]
-
-    SpellList.table_row(spell_table,class_level - 1) do |val,i|
-      if @character.stats["int"] >= i+10
-        @character.spells.roll_spells(val,i.to_s,"Wizard", true)
-      end
-    end
+		#[NOTE][QUESTION] should spellcraft be a prefered skill?
+			#Class Features :
+		Wizard.increase_spells(@character, @class_level)
 
 		#class abilities
 		if class_level == 1  
-        @character.weapon_proficiencies |= ["Club", "Dagger", "Heavy Crossbow", "Light Crossbow", "Quarterstaff"]
-        @character.armor_proficiencies |= []
-        @character.add_ability("Summon Familiar") #[TODO] Familiar rules
-        @character.add_ability("Scribe Scroll") 
-        #[TODO] Spell Specialization
+		@character.weapon_proficiencies |= ["Club", "Dagger", "Heavy Crossbow", "Light Crossbow", "Quarterstaff"]
+		@character.armor_proficiencies |= []
+		@character.add_ability("Summon Familiar") #[TODO] Familiar rules
+		@character.add_ability("Scribe Scroll") 
+		#[TODO] Spell Specialization
 		end
-    
-    FeatList.get_bonus_feat(@character, "Wizard") if [5,10,15,20].include?(@class_level)
+		
+		FeatList.get_bonus_feat(@character, "Wizard") if [5,10,15,20].include?(@class_level)#(@class_level.to_i%5 == 0)
+	end
+	
+	def self.increase_spells(character, class_level)
+		#spells
+		#[TODO] Generate Spell Book
+		spell_table = [
+		[3,1,0,0,0,0,0,0,0,0],
+		[4,2,0,0,0,0,0,0,0,0],
+		[4,2,1,0,0,0,0,0,0,0],
+		[4,3,2,0,0,0,0,0,0,0],
+		[4,3,2,1,0,0,0,0,0,0],
+		[4,3,3,2,0,0,0,0,0,0],
+		[4,4,3,2,1,0,0,0,0,0],
+		[4,4,3,3,2,0,0,0,0,0],
+		[4,4,4,3,2,1,0,0,0,0],
+		[4,4,4,3,3,2,0,0,0,0],
+		[4,4,4,4,3,2,1,0,0,0],
+		[4,4,4,4,3,3,2,0,0,0],
+		[4,4,4,4,4,3,2,1,0,0],
+		[4,4,4,4,4,3,3,2,0,0],
+		[4,4,4,4,4,4,3,2,1,0],
+		[4,4,4,4,4,4,3,3,2,0],
+		[4,4,4,4,4,4,4,3,2,1],
+		[4,4,4,4,4,4,4,3,3,2],
+		[4,4,4,4,4,4,4,4,3,3],
+		[4,4,4,4,4,4,4,4,4,4]]
+
+		SpellList.table_row(spell_table,class_level - 1) do |val,i|
+		  if character.stats["int"] >= i+10
+			character.spells.roll_spells(val,i.to_s,"Wizard", true)
+		  end
+		end
 	end
 end
 ClassList.push(Wizard)
