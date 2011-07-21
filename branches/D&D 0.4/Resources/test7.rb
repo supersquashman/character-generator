@@ -6,20 +6,19 @@ temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require fi
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require file} }
 
-
 1.times do |i|
 panda = Character.new(temp)
 panda.max_classes = 1
 		
 	(rand(20)+1).times do |i|
+		#panda.level_up.each {|p| p.call panda,i}
 		panda.level_up
 	end
-  panda.final_levelup_procs.each{|proc| proc.call panda}
 
 #puts (i+1).to_s + ".) " + panda.classes.to_s
 puts "HP:  " + panda.HP.to_s
 puts "HD:  " + panda.HD.to_s
-puts "Level:  " + panda.level.to_s
+puts "Level:  " + panda.level.to_s#panda.get_level.to_s
 puts "Race:  " + panda.race.to_s
 puts "Age:  " + panda.age.to_s
 puts "Base Attack Bonus:  " + panda.BAB.to_s
@@ -37,6 +36,7 @@ puts panda.abilities.sort
 puts "\nFavored Classes:  "
 panda.race.favored_classes.each {|cls| puts cls}
 puts ""
+puts "Languages:"
 puts panda.languages
 puts "Classes:  "
 temp_classes = []
@@ -46,11 +46,15 @@ temp_classes.uniq.each do |cls|
 	puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 end
 puts ""
+puts "Feats:"
 sorted_feats = []
 panda.feats.each do |feat|
 	sorted_feats += [feat.to_s]
 end
 puts sorted_feats.sort
-puts panda.spells.to_s
-
+if panda.spells.to_s
+	puts "\nSpells:"
+	puts panda.spells.to_s
+end
+#puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end
