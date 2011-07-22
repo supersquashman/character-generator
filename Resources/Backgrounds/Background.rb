@@ -22,7 +22,8 @@ class Background
 
   def generate(alignment=@alignment)
     @result = "History: " + pick_line("[histories]",alignment) + "\n"
-    @result += "Motivation: " + pick_line("[motivations]",alignment)
+    @result += "Primary Motivation: " + pick_line("[motivations]",alignment) + "\n"
+	@result += "Secondary Motivation:  " + pick_line("[motivations]", alignment)
   end
 
   def pick_line (hash="[motivations]", alignment=@alignment)
