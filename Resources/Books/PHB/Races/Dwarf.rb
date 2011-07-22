@@ -39,11 +39,11 @@ class Dwarf< RaceModel
 		if(character.level <= 1)
 			if (character.sex == 0) #male
 				character.height = Roll.new("2d4+45")
-				character.weight = (130 * Roll.new("2d6"))
+				character.weight = (130 * Roll.new("2d6").to_i)
 			end
 			if (character.sex == 1) #female
 				character.height = Roll.new("2d4+43")
-				character.weight = (100 * Roll.new("2d6"))
+				character.weight = (100 * Roll.new("2d6").to_i)
 			end
 			character.stats["con"] += 2
 			character.stats["cha"] -= 2                     

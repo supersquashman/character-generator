@@ -26,7 +26,7 @@ end
 #--== Character ========================================================================#
 #++
 class Character
-	attr_accessor :stats, :skill_points, :HP, :HD, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
+	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies
 #-- initialize (sources) ---------------------------------------------------------------#
@@ -62,7 +62,7 @@ class Character
     #[QUESTION][TODO] Templates
 		@age = 0
 	#Gender: 0 = male, 1 = female
-		@sex = rand(2)
+		@sex = (rand(2))
 		@height = 0
 		@weight = 0
 		@languages = LanguageList.new
