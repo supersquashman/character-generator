@@ -38,11 +38,11 @@ class Human < RaceModel
 		if character.level <= 1
 			if (character.sex == 0) #male
 				character.height = Roll.new("2d10+58")
-				character.weight = (120 * Roll.new("2d4"))
+				character.weight = (120 * Roll.new("2d4").to_i)
 			end
 			if (character.sex == 1) #female
 				character.height = Roll.new("2d10+53")
-				character.weight = (85 * Roll.new("2d4"))
+				character.weight = (85 * Roll.new("2d4").to_i)
 			end
 			character.skill_list.roll_skills(4,[],0)
 			FeatList.roll_feats(character,1)

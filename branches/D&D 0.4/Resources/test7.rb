@@ -21,6 +21,15 @@ puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s
 puts "Race:  " + panda.race.to_s
 puts "Age:  " + panda.age.to_s
+if (panda.sex.to_s == "0")
+	puts "Gender:  Male"
+elsif (panda.sex.to_s == "1")
+	puts "Gender:  Female"
+else #for Debugging purposes :D 
+	puts "Gender:  WRONG!"
+end
+puts "Height:  " + panda.height.to_s
+puts "Weight:  " + panda.weight.to_s
 puts "Base Attack Bonus:  " + panda.BAB.to_s
 puts "Base Land Speed:  " + panda.speed.to_s
 puts "AC:  " + panda.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
