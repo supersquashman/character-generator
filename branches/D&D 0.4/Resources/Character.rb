@@ -28,8 +28,8 @@ require_relative "Backgrounds/Background"
 #++
 class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
-	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
-	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :background
+	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
+	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -63,12 +63,15 @@ class Character
     #[QUESTION][TODO] Templates
 		@age = 0
 	#Gender: 0 = male, 1 = female
-		@sex = (rand(2))
+		@sex = ["Male","Female"][(rand(2))]
 		@height = 0
 		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
-		@background = Background.new#(alignment)
+		background = Background.new#(alignment)
+		@history = background.history
+		@primary_motivation = background.primary_motivation
+		@secondary_motivation = background.secondary_motivation
 		#initialize stats
 		calculate_mods
 		#get race from race list

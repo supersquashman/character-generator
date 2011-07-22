@@ -37,18 +37,19 @@ class Gnome< RaceModel
 	def apply_level
 		super
 		if(character.level <= 1)
-			if (character.sex == 0) #male
+			if (character.sex == "Male") #male
 				character.height = Roll.new("2d4+36")
 				character.weight = (40 +(character.height - 36)) #extra weight for gnomes and halflings is just the poundage from extra height
 			end
-			if (character.sex == 1) #female
+			if (character.sex == "Female") #female
 				character.height = Roll.new("2d4+34")
 				character.weight = (35 +(character.height - 34)) #extra weight for gnomes and halflings is just the poundage from extra height
 			end
 			character.stats["con"] += 2
 			character.stats["str"] -= 2                     
 			character.skill_list.assign_circ("Listen", "Racial (Gnome)", 2)
-			#Un-comment once Craft skills are implemented character.skill_list.assign_circ("Craft (Alchemy)", "Racial (Gnome)", 2)
+			#Un-comment once Craft skills are implemented 
+			#character.skill_list.assign_circ("Craft (Alchemy)", "Racial (Gnome)", 2)
 			character.skill_list.assign_circ("Search", "Racial (Gnome)", 2)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Weapon Familiarity (Gnome Hooked Hammers)")

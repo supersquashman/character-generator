@@ -37,11 +37,11 @@ class Elf< RaceModel
 	def apply_level
 		super
 		if(character.level <= 1)
-			if (character.sex == 0) #male
+			if (character.sex == "Male") #male
 				character.height = Roll.new("2d6+53")
 				character.weight = (85 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
-			if (character.sex == 1) #female
+			if (character.sex == "Female") #female
 				character.height = Roll.new("2d6+53")
 				character.weight = (80 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
