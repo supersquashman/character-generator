@@ -48,8 +48,7 @@ class Gnome< RaceModel
 			character.stats["con"] += 2
 			character.stats["str"] -= 2                     
 			character.skill_list.assign_circ("Listen", "Racial (Gnome)", 2)
-			#Un-comment once Craft skills are implemented 
-			#character.skill_list.assign_circ("Craft (Alchemy)", "Racial (Gnome)", 2)
+			character.skill_list.assign_circ("Craft(Alchemy)", "Racial (Gnome)", 2)
 			character.skill_list.assign_circ("Search", "Racial (Gnome)", 2)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Weapon Familiarity (Gnome Hooked Hammers)")

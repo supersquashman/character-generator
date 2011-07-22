@@ -29,7 +29,7 @@ class Skills
 		["Bluff","cha"],
 		["Climb","str",true,],
 		["Concentration","con"],
-		["Craft","int"],
+		#["Craft","int"], #Craft skills added below
 		["Decipher Script","int"],
 		["Diplomacy","cha"],
 		["Disable Device","int"],
@@ -46,7 +46,7 @@ class Skills
 		["Listen","wis"],
 		["Move Silently","dex",true],
 		["Open Lock","dex"],
-		["Perform","cha"], #[TODO]each perform?
+		#["Perform","cha"], #Perform skills added below
 		["Profession","wis"], #[TODO]each profession?
 		["Ride","dex"],
 		["Search","int"],
@@ -60,10 +60,24 @@ class Skills
 		["Tumble","dex",true],
 		["Use Magic Device","cha"],
 		["Use Rope","dex"]])
+	#Knowledge Skills
 		knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography","History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
 		knowledge.each {|k| SkillList.push(SkillModel.new(k,"int"))}
-
+	#Craft Skills
+		craft = ["Alchemy", "Armorsmithing", "Bowmaking", "Trapmaking", "Weaponsmithing", "Carpentry", "Blacksmithing", "Mechanical", "Stoneworking"]
+		craft.each_index {|j| craft[j] = "Craft(" + craft[j] +")" }
+		craft.each {|c| SkillList.push(SkillModel.new(c,"int"))}
+	#Perform Skills
+		perform = ["Act", "Comedy", "Dance", "Keyboard", "Oratory", "Percussion", "String", "Wind", "Sing"]
+		perform.each_index {|l| perform[l] = "Perform(" + perform[l] +")" }
+		perform.each {|p| SkillList.push(SkillModel.new(p,"cha"))}
+	#Profession Skills
+=begin
+		profession = ["Act", "Comedy", "Dance", "Keyboard", "Oratory", "Percussion", "String", "Wind", "Sing"]
+		profession.each_index {|m| profession[m] = "Profession(" + profession[m] +")" }
+		profession.each {|r| SkillList.push(SkillModel.new(r,"int"))}
+=end
 		#-------------------------Custom Skill------------------
 		#Format for adding new skills:   SkillList.load_skills(name, mod="<stat>",armor_check=<boolean>*, description=""*,restricted=[]*,ranks=0*)   *optional
 	end
