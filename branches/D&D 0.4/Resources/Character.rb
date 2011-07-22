@@ -30,6 +30,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
+	attr_accessor :CR, :ECL
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -54,6 +55,8 @@ class Character
 		@will_save = {"base"=>0, "stat"=>0, "misc"=>0}
 		@HP = 0
 		@HD = 0
+		@CR = 0
+		@ECL = 0
 		@BAB = 0
 		@grapple = {"BAB" => @BAB, "size" => 0, "misc" => 0}
 		@speed = 0
@@ -87,6 +90,7 @@ class Character
 #++	
 	def level_up
 		@level += 1
+		@ECL += 1
 		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		self.race.apply_level
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
