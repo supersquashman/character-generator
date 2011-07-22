@@ -37,6 +37,14 @@ class Dwarf< RaceModel
 	def apply_level
 		super
 		if(character.level <= 1)
+			if (character.sex == 0) #male
+				character.height = Roll.new("2d4+45")
+				character.weight = (130 * Roll.new("2d6"))
+			end
+			if (character.sex == 1) #female
+				character.height = Roll.new("2d4+43")
+				character.weight = (100 * Roll.new("2d6"))
+			end
 			character.stats["con"] += 2
 			character.stats["cha"] -= 2                     
 			character.skill_list.assign_circ("Appraise","Racial (Stone)", 2)

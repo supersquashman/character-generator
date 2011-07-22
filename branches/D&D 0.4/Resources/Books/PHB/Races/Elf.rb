@@ -37,6 +37,14 @@ class Elf< RaceModel
 	def apply_level
 		super
 		if(character.level <= 1)
+			if (character.sex == 0) #male
+				character.height = Roll.new("2d6+53")
+				character.weight = (85 * Roll.new("1d6"))
+			end
+			if (character.sex == 1) #female
+				character.height = Roll.new("2d6+53")
+				character.weight = (80 * Roll.new("1d6"))
+			end
 			character.stats["dex"] += 2
 			character.stats["con"] -= 2                     
 			character.skill_list.assign_circ("Listen", "Racial (Elf)", 2)

@@ -61,6 +61,10 @@ class Character
 		@size = "medium"
     #[QUESTION][TODO] Templates
 		@age = 0
+	#Gender: 0 = male, 1 = female
+		@sex = rand(2)
+		@height = 0
+		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
 		#initialize stats
