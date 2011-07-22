@@ -28,8 +28,8 @@ elsif (panda.sex.to_s == "1")
 else #for Debugging purposes :D 
 	puts "Gender:  WRONG!"
 end
-puts "Height:  " + panda.height.to_s
-puts "Weight:  " + panda.weight.to_s
+puts "Height:  " + ((panda.height.to_i/12).floor).to_s + "'" + ((panda.height.to_i%12)).to_s + "\""
+puts "Weight:  " + panda.weight.to_s + " lbs."
 puts "Base Attack Bonus:  " + panda.BAB.to_s
 puts "Base Land Speed:  " + panda.speed.to_s
 puts "AC:  " + panda.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
