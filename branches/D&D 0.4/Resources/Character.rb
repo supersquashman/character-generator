@@ -22,13 +22,14 @@ end
 Dir.glob(File.join(".", "/Models", "*.rb")).each do |file|
    require file
 end
+require_relative "Books/PHB/Background/Background"
 
 #--== Character ========================================================================#
 #++
 class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats
-	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies
+	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :background
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -67,6 +68,7 @@ class Character
 		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
+    @background = Background.new#(alignment)
 		#initialize stats
 		calculate_mods
 		#get race from race list
