@@ -38,12 +38,12 @@ class HalfElf< RaceModel
 		super
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
-				character.height = Roll.new("2d6+53")
-				character.weight = (85 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("2d8+55")
+				character.weight = (100 +((character.height - 55) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
-				character.height = Roll.new("2d6+53")
-				character.weight = (80 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("2d8+53")
+				character.weight = (80 +((character.height - 53) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			#character.stats["dex"] += 2
 			#character.stats["con"] -= 2                     
