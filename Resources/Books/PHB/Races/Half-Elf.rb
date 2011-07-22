@@ -44,9 +44,7 @@ class HalfElf< RaceModel
 			if (character.sex == "Female") #female
 				character.height = Roll.new("2d8+53")
 				character.weight = (80 +((character.height - 53) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
-			end
-			#character.stats["dex"] += 2
-			#character.stats["con"] -= 2                     
+			end                   
 			character.skill_list.assign_circ("Listen", "Racial (Half-Elf)", 1)
 			character.skill_list.assign_circ("Spot", "Racial (Half-Elf)", 1)
 			character.skill_list.assign_circ("Search", "Racial (Half-Elf)", 1)
