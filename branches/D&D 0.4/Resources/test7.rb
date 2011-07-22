@@ -21,13 +21,16 @@ puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s
 puts "Race:  " + panda.race.to_s
 puts "Age:  " + panda.age.to_s
-if (panda.sex.to_s == "0")
+puts "Gender:  " + panda.sex
+=begin
+if (panda.sex. == 0)
 	puts "Gender:  Male"
-elsif (panda.sex.to_s == "1")
+elsif (panda.sex == 1)
 	puts "Gender:  Female"
 else #for Debugging purposes :D 
 	puts "Gender:  WRONG!"
 end
+=end
 puts "Height:  " + ((panda.height.to_i/12).floor).to_s + "'" + ((panda.height.to_i%12)).to_s + "\""
 puts "Weight:  " + panda.weight.to_s + " lbs."
 puts "Base Attack Bonus:  " + panda.BAB.to_s
