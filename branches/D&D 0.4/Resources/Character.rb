@@ -48,7 +48,7 @@ class Character
 		@forbidden_spell_types = []
 		@stats = {"str"=>get_stat,"dex"=>get_stat,"con"=>get_stat,"int"=>get_stat,"wis"=>get_stat,"cha"=>get_stat}
 		@skill_points = 0
-		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>0,"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}
+		@ac_list = {"base"=>10, "armor"=>0, "shield"=>0,"dex"=>stat_mod["dex"],"size"=>0, "enhancement"=>0, "deflection"=>0, "natural"=>0, "dodge"=>0}
 		@armor_check = 0
 		@fort_save = {"base"=>0, "stat"=>0, "misc"=>0}
 		@ref_save = {"base"=>0, "stat"=>0, "misc"=>0}
