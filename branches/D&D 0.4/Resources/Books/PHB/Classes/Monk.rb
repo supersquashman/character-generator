@@ -63,35 +63,51 @@ class Monk < ClassModel
 			when 5
 				@character.add_ability("Purity of Body")
 			when 6
+				@character.remove_ability("Slow Fall (20ft.)")
+				@character.add_ability("Slow Fall (30ft.)")
 			when 7
 				@character.add_ability("Wholeness of Body")
 			when 8
+				@character.remove_ability("Slow Fall (30ft.)")
+				@character.add_ability("Slow Fall (40ft.)")
 			when 9
 				#@character.remove_ability("Evasion")
 				@character.add_ability("Improved Evasion")
 			when 10
 				@character.remove_ability("Ki Strike (Magic)")
 				@character.add_ability("Ki Strike (Magic, Lawful)")
+				@character.remove_ability("Slow Fall (40ft.)")
+				@character.add_ability("Slow Fall (50ft.)")
 			when 11
 				@character.add_ability("Diamond Body")
 			when 12
 				@character.add_ability("Abundant Step")
+				@character.remove_ability("Slow Fall (50ft.)")
+				@character.add_ability("Slow Fall (60ft.)")
 			when 13
 				@character.add_ability("Diamond Soul")
 			when 14
+				@character.remove_ability("Slow Fall (60ft.)")
+				@character.add_ability("Slow Fall (70ft.)")
 			when 15
 				@character.add_ability("Quivering Palm")
 			when 16
 				@character.remove_ability("Ki Strike (Magic, Lawful)")
 				@character.add_ability("Ki Strike (Magic, Lawful, Adamantine)")
+				@character.remove_ability("Slow Fall (70ft.)")
+				@character.add_ability("Slow Fall (80ft.)")
 			when 17
 				@character.add_ability("Timeless Body")
 				@character.add_ability("Tongue of the Sun and Moon")
 			when 18
+				@character.remove_ability("Slow Fall (80ft.)")
+				@character.add_ability("Slow Fall (90ft.)")
 			when 19
 				@character.add_ability("Empty Body")
 			when 20
 				@character.add_ability("Perfect Body")
+				@character.remove_ability("Slow Fall (90ft.)")
+				@character.add_ability("Slow Fall (Any Distance)")
 		end
 	end
 end
