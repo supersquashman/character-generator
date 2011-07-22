@@ -71,6 +71,10 @@ if panda.spells.to_s
 	puts panda.spells.to_s
 end
 puts "\nBackground:"
-puts panda.background
+puts panda.history
+puts ""
+puts panda.primary_motivation
+puts ""
+puts panda.secondary_motivation
 #puts panda.stats["str"].to_s + " " + panda.stats["dex"].to_s  + " " + panda.stats["con"].to_s  + " " + panda.stats["int"].to_s  + " " + panda.stats["wis"].to_s  + " " + panda.stats["cha"].to_s 
 end
