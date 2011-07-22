@@ -68,7 +68,7 @@ class Character
 		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
-    @background = Background.new#(alignment)
+		@background = Background.new#(alignment)
 		#initialize stats
 		calculate_mods
 		#get race from race list

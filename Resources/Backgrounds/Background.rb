@@ -3,7 +3,7 @@ class Background
   @result = ""
   @alignment=""
   
-  def self.load(relative_path="/Books/PHB/Background")
+  def self.load(relative_path="Backgrounds")
     Dir.glob(File.join(".", relative_path, "*.txt")).each do |file|
       File.open(file, "r") do |file|
         while(line = file.gets)
