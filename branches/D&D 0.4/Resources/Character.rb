@@ -22,7 +22,7 @@ end
 Dir.glob(File.join(".", "/Models", "*.rb")).each do |file|
    require file
 end
-require_relative "Books/PHB/Background/Background"
+require_relative "Backgrounds/Background"
 
 #--== Character ========================================================================#
 #++
