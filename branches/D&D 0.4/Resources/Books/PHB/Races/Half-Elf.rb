@@ -26,7 +26,7 @@ class HalfElf< RaceModel
 		super(character)
 		@size = "Medium"
 		@speed = 30
-		@age_roll = Roll.new("10d6+110")
+		@age_roll = Roll.new("3d6+20")
 		@favored_classes = ClassList.list.keys
 		character.languages.learn_lang("Elven")
 		@bonus_languages = []
