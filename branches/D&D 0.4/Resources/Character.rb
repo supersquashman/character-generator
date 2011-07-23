@@ -110,7 +110,7 @@ class Character
 		else
 			@classes.push(@classes[rand(@classes.length)].class.new(self))
 		end
-		extra_levelup_procs.each{|proc| proc.call}
+		extra_levelup_procs.each{|proc| proc.call self}
 		calculate_mods
 	end
  

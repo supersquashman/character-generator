@@ -52,6 +52,11 @@ class Gnome< RaceModel
 			character.skill_list.assign_circ("Search", "Racial (Gnome)", 2)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Weapon Familiarity (Gnome Hooked Hammers)")
+      character.final_levelup_procs += [Proc.new do |char|
+        if (character.weapon_proficiencies & $MARTIAL_WEAPONS) == $MARTIAL_WEAPONS
+          character.weapon_proficiencies |= ["Gnome Hooked Hammer"]
+        end
+      end]
 			character.add_ability("Spell-Like Abilities: see page: PHB17")
 			character.add_ability("+1 to DC of saving throws against Illusion spells cast by gnomes")
 			character.add_ability("+2 Saves vs Illusion Spells")
