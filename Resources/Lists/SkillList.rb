@@ -43,11 +43,16 @@ class SkillList
 		Skills.new
     @character.final_levelup_procs +=[Proc.new do |char|
       cskills = char.skill_list.skills
+      #[TODO] class based synergies for bard and druid
       char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Bluff") >= 5
       char.skill_list.assign_circ("Disguise", "Synergy[Act in Character]", 2) if char.skill_list.get_ranks("Bluff") >= 5
       char.skill_list.assign_misc("Intimidate", 2) if char.skill_list.get_ranks("Bluff") >= 5
       char.skill_list.assign_misc("Sleight of Hand", 2) if char.skill_list.get_ranks("Bluff") >= 5
-      char.skill_list.assign_circ("Appraise", "Synergy[Craft Related]", 2) if char.skill_list.get_ranks("Craft") >= 5#[TODO] any craft
+      any_craft = false
+      ["Alchemy", "Armorsmithing", "Bowmaking", "Trapmaking", "Weaponsmithing", "Carpentry", "Blacksmithing", "Mechanical", "Stoneworking"].each do |craft|
+        any_craft ||= char.skill_list.get_ranks("Craft(" + craft + ")") >= 5
+      end
+      char.skill_list.assign_circ("Appraise", "Synergy[Craft Related]", 2) if any_craft
       char.skill_list.assign_circ("Use Magic Device", "Synergy[Involving Scrolls]", 2) if char.skill_list.get_ranks("Decipher Script") >= 5
       char.skill_list.assign_circ("Use Rope", "Synergy[Bindings]", 2) if char.skill_list.get_ranks("Escape Artist") >= 5
       char.skill_list.assign_misc("Ride", 2) if char.skill_list.get_ranks("Handle Animal") >= 5
