@@ -52,13 +52,13 @@ class Dwarf< RaceModel
 			character.skill_list.assign_circ("Craft(Blacksmithing)","Racial (Stone)", 2)
 			character.skill_list.assign_circ("Search","Stonecunning", 2)
 			character.add_ability("Darkvision(60)")
-      character.add_ability("Weapon Familiarity (Dwarven Waraxe)") 
+			character.add_ability("Weapon Familiarity (Dwarven Waraxe)") 
 			character.add_ability("Weapon Familiartiy (Urgrosh)")
-      character.final_levelup_procs += [Proc.new do |char|
-        if (character.weapon_proficiencies & $MARTIAL_WEAPONS) == $MARTIAL_WEAPONS
-          character.weapon_proficiencies |= ["Dwarven Waraxe", "Dwarven Urgrosh"]
-        end
-      end]
+			character.final_levelup_procs += [Proc.new do |char|
+				if (character.weapon_proficiencies & $MARTIAL_WEAPONS) == $MARTIAL_WEAPONS
+					character.weapon_proficiencies |= ["Dwarven Waraxe", "Dwarven Urgrosh"]
+				end
+			end]
 			character.add_ability("+4 Ability vs Bull Rush or Trip [Ground]")
 			character.add_ability("+2 Saves vs Poision")
 			character.add_ability("+2 Saves vs Spells")
