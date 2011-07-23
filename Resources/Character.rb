@@ -130,7 +130,7 @@ class Character
 		@grapple["size"] = case @size.downcase
 			when "medium" then 0
 			when "small" then 1
-			when "large" then -1
+			when "large" then 4
 		end
 		@ac_list["dex"] = @stat_mod["dex"]
 	end
