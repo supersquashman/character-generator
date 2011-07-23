@@ -39,8 +39,8 @@ class Fighter < ClassModel
 	def apply
 		super
     if @class_level == 1
-      @character.weapon_proficiencies |= ["Martial","Simple"]
-      @character.armor_proficiencies |= ["Heavy","Medium","Light","Shields","Tower Shield"]
+      @character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
+      @character.armor_proficiencies |= $ARMOR_HEAVY | $ARMOR_LIGHT | $ARMOR_MED | $SHIELDS | $TOWER_SHIELD
     end
 		#Class Features :
 		#bonus feats    

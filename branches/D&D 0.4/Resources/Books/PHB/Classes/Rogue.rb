@@ -44,7 +44,6 @@ class Rogue < ClassModel
 #++
 	def apply
 		super
-    #[TODO] Add proficiencies
 		#Class Features :
 		#sneak attack           
 		@class_level %2>0 ? @character.increase_ability("Sneak Attack",1,"d6") : 0
@@ -58,7 +57,7 @@ class Rogue < ClassModel
 		case class_level
 			when 1
       @character.add_ability("Trapfinding")
-      @character.weapon_proficiencies |= [ "Simple", "Hand Crossbow", "Rapier", "Sap", "Shortbow", "Short Sword"]
+      @character.weapon_proficiencies |= $SIMPLE_WEAPONS | [  "Hand Crossbow", "Rapier", "Sap", "Shortbow", "Short Sword"]
       @character.armor_proficiencies |= ["Light"]
 			when 2 then @character.add_ability("Evasion")
 			when 4 then @character.add_ability("Uncanny Dodge") #flat footed ac problem

@@ -40,7 +40,6 @@ class Monk < ClassModel
 #++
 	def apply
 		super
-		#[TODO] Add proficiencies
 		#Class Features :
 		(@character.speed += 10) if (class_level%3 == 0)
 		@character.ac_list["monk bonus"] = (class_level/5).floor
@@ -49,8 +48,8 @@ class Monk < ClassModel
 			when 1
 				@character.add_ability("Unnarmed Strike")
 				@character.add_ability("Flurry of Blows")
-				@character.weapon_proficiencies |= ["club", "crossbow (light)", "crossbow(heavy)", "dagger", "handaxe", "javelin", "kama", "nunchaku", 
-													"quarterstaff", "sai", "shuriken", "siangham", "sling"]
+				@character.weapon_proficiencies |= ["Club", "Light Crossbow", "Heavy Crossbow", "Dagger", "Handaxe", "Javelin", "Kama", "Nunchaku", 
+													"Quarterstaff", "Sai", "Shuriken", "Siangham", "Sling"]
 				@character.armor_proficiencies |= [""]
 				#bonus feat [improved grapple, stunning fist]
 			when 2

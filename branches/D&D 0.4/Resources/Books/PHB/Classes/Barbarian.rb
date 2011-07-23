@@ -62,7 +62,7 @@ class Barbarian < ClassModel
 		#class abilities
 		case class_level
 			when 1  
-        @character.weapon_proficiencies |= ["Martial","Simple"]
+        @character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
         @character.armor_proficiencies |= ["Light","Medium","Shields"]
         @character.add_ability("Fast movement")
         @character.speed += 10

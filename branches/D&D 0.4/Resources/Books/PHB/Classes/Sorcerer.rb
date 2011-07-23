@@ -47,7 +47,7 @@ class Sorcerer < ClassModel
 
 		#class abilities
 		if @class_level == 1  
-        @character.weapon_proficiencies |= ["Simple"]
+        @character.weapon_proficiencies |= $SIMPLE_WEAPONS
         @character.armor_proficiencies |= []
         @character.add_ability("Summon Familiar") #[TODO] Familiar rules
 		end
