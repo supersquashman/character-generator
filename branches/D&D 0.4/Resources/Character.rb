@@ -30,7 +30,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
-	attr_accessor :CR, :ECL
+	attr_accessor :CR, :ECL, :alignment
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -71,7 +71,8 @@ class Character
 		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
-		background = Background.new#(alignment)
+    @alignment = ["CG","NG","LG","CN","NN","LN","CE","NE","LE"][rand(9)]
+		background = Background.new(@alignment)
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation
@@ -96,7 +97,13 @@ class Character
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
 		if @number_of_classes < @max_classes
-			@classes.push(ClassList.list.values[rand(ClassList.list.length)].new(self))
+      i=0
+      begin
+        selected=ClassList.list.values[rand(ClassList.list.length)].new(self)
+        i +=1
+        raise "Can't find an available class" if (i >= 100) 
+      end while(!selected.available?)
+			@classes.push(selected)
 			temp_classes = []
 			@classes.each {|cls| temp_classes.push(cls.to_s)}
 			@number_of_classes = temp_classes.uniq.length

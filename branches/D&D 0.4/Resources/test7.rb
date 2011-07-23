@@ -20,6 +20,7 @@ puts "HP:  " + panda.HP.to_s
 puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s
 puts "Race:  " + panda.race.to_s
+puts "Alignment: " + panda.alignment
 puts "Age:  " + panda.age.to_s
 puts "Gender:  " + panda.sex
 =begin

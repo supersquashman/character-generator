@@ -38,8 +38,9 @@ class Barbarian < ClassModel
 #-- available? -------------------------------------------------------------------------#
 #++
 	def available?
-		super
-		#[TODO] any non-lawful
+		available = super 
+    ["LG","LN","LE"].each {|a| available &&= @character.alignment != a}
+    available
 	end
   
 #-- apply ------------------------------------------------------------------------------#
