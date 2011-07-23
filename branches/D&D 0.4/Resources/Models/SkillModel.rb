@@ -44,8 +44,8 @@ class SkillModel
 		@mod = mod
 		@armor_check = armor_check ?  armor_check=="true"? true: false : false 
 		@description = description
-		@bonus_hash = Hash.new
-		@circumstance_hash = Hash.new
+		@bonus_hash = Hash.new(0)
+		@circumstance_hash = Hash.new(0)
 	end
 #-- initialize_copy (old) --------------------------------------------------------------#
 #++

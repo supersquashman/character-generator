@@ -41,7 +41,44 @@ class SkillList
 		@class_skills=[]
 		#load skills
 		Skills.new
+    @character.final_levelup_procs +=[Proc.new do |char|
+      cskills = char.skill_list.skills
+      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Bluff") >= 5
+      char.skill_list.assign_circ("Disguise", "Synergy[Act in Character]", 2) if char.skill_list.get_ranks("Bluff") >= 5
+      char.skill_list.assign_misc("Intimidate", 2) if char.skill_list.get_ranks("Bluff") >= 5
+      char.skill_list.assign_misc("Sleight of Hand", 2) if char.skill_list.get_ranks("Bluff") >= 5
+      char.skill_list.assign_circ("Appraise", "Synergy[Craft Related]", 2) if char.skill_list.get_ranks("Craft") >= 5#[TODO] any craft
+      char.skill_list.assign_circ("Use Magic Device", "Synergy[Involving Scrolls]", 2) if char.skill_list.get_ranks("Decipher Script") >= 5
+      char.skill_list.assign_circ("Use Rope", "Synergy[Bindings]", 2) if char.skill_list.get_ranks("Escape Artist") >= 5
+      char.skill_list.assign_misc("Ride", 2) if char.skill_list.get_ranks("Handle Animal") >= 5
+      char.skill_list.assign_misc("Tumble", 2) if char.skill_list.get_ranks("Jump") >= 5
+      char.skill_list.assign_misc("Spellcraft", 2) if char.skill_list.get_ranks("Knowledge(Arcana)") >= 5
+      char.skill_list.assign_circ("Search", "Synergy[Secret Doors/Compartments]", 2) if char.skill_list.get_ranks("Knowledge(Architecture and Engineering)") >= 5
+      char.skill_list.assign_circ("Survival", "Synergy[Underground]", 2) if char.skill_list.get_ranks("Knowledge(Dungeoneering)") >= 5
+      char.skill_list.assign_circ("Survival", "Synergy[Not Getting Lost/ Avioding Hazards ]", 2) if char.skill_list.get_ranks("Knowledge(Geography)") >= 5
+      char.skill_list.assign_misc("Gather Information", 2) if char.skill_list.get_ranks("Knowledge(Local)") >= 5
+      char.skill_list.assign_circ("Survival", "Synergy[Aboveground Natural]", 2) if char.skill_list.get_ranks("Knowledge(Nature)") >= 5
+      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Knowledge(Nobility and Royalty)") >= 5
+      char.skill_list.assign_circ("Survival", "Synergy[Other Planes]", 2) if char.skill_list.get_ranks("Knowledge(The Planes)") >= 5
+      char.skill_list.assign_circ("Survival", "Synergy[Following Tracks]", 2) if char.skill_list.get_ranks("Search") >= 5
+      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Sense Motive") >= 5
+      char.skill_list.assign_circ("Use Magic Device", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Spellcraft") >= 5
+      char.skill_list.assign_misc("Knowledge(Nature)", 2) if char.skill_list.get_ranks("Survival") >= 5
+      char.skill_list.assign_misc("Balance", 2) if char.skill_list.get_ranks("Tumble") >= 5
+      char.skill_list.assign_misc("Jump", 2) if char.skill_list.get_ranks("Tumble") >= 5
+      char.skill_list.assign_circ("Spellcraft", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Use Magic Device") >= 5
+      char.skill_list.assign_circ("Climb", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
+      char.skill_list.assign_circ("Escape Artist", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
+    end]
 	end
+def get_ranks(skill)
+  if skills.index(skill)
+    ret = skills[skills.index(skill)].ranks.to_i
+  else
+    ret = 0
+  end
+  ret
+end
 #-- list -------------------------------------------------------------------------------#
 #++
 	def list
@@ -145,7 +182,7 @@ class SkillList
 				subset.push(choice)
 			end
 		end
-		#randomly assign the ranks between the subset of skills upto the max rank. 
+		#randomly assign the ranks between the subset of skills upto the max ranks. 
 		options = subset.dup
 		while points > 0 do
 			if options.length > 0
@@ -232,7 +269,7 @@ class SkillList
 			armor = skill.armor_check && (@character.armor_check < 0)  ? " ["+(@character.armor_check*swim).to_s+" Armor Check]" : ""
 			atotal = skill.armor_check && (@character.armor_check < 0) ? " ["+get_positive_negative(@character.armor_check*swim+total)+"]" : ""
 			ret += (skill.name.rjust(40) + " " + (get_positive_negative(total)+atotal).ljust(9) + " (" + get_positive_negative(skill.ranks) + 
-				" Rank, " + get_positive_negative(skill.bonus(@character).to_i) + " " + skill.mod.capitalize + bonus + armor + circ + ")\n")
+				" ranks, " + get_positive_negative(skill.bonus(@character).to_i) + " " + skill.mod.capitalize + bonus + armor + circ + ")\n")
 		end
 		return ret
 	end
