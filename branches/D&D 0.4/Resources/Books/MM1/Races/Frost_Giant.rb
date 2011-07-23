@@ -28,9 +28,8 @@ class FrostGiant < RaceModel
 		@speed = 40
 		@age_roll = Roll.new("10d10+25")
 		@favored_classes=["Cleric"]
-		character.languages.learn_lang("Elven")
-		character.languages.learn_lang("Undercommon")
-		@bonus_languages = ["Abyssal", "Aquan", "Draconic", "Drow Sign Language", "Gnome", "Goblin"]
+		character.languages.learn_lang("Giant")
+		@bonus_languages = ["Common", "Draconic", "Elven", "Goblin", "Orc"]
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
@@ -59,6 +58,10 @@ class FrostGiant < RaceModel
 			character.will_save["racial"] = 6
 			character.ac_list["natural"] = 9
 			FeatList.list["PowerAttack"].add(character)
+			#FeatList.list["Cleave"].add(character)
+			#FeatList.list["GreatCleave"].add(character)
+			#FeatList.list["ImprovedOverrun"].add(character)
+			#FeatList.list["ImprovedSunder"].add(character)
 			character.skill_list.assign_circ("Climb", "Racial (Frost Giant)", 13)
 			character.skill_list.assign_circ("Intimidate", "Racial (Frost Giant)", 6)
 			character.skill_list.assign_circ("Jump", "Racial (Frost Giant)", 17)
@@ -68,7 +71,7 @@ class FrostGiant < RaceModel
 			character.add_ability("Immunity to Cold")
 			character.add_ability("Rock Catching")
 			character.add_ability("Vulnerability to Fire")
-			character.weapon_proficiencies |= []
+			character.weapon_proficiencies |= ["Great Axe"]
 		end
 	end
 end
