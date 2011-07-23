@@ -5,6 +5,7 @@ temp = ["PHB", "MM1"]#, "mm1","eberron","forgotten realms","frostburn"]
 temp.each { |book| Dir.glob("./**/"+book+"/*Races/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Classes/*.rb").each {|file| require file} }
 temp.each { |book| Dir.glob("./**/"+book+"/*Feats/*.rb").each {|file| require file} }
+temp.each { |book| Dir.glob("./**/"+book+"/*Items/*.rb").each {|file| require file} }
 
 1.times do |i|
 panda = Character.new(temp)

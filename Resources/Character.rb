@@ -30,7 +30,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
-	attr_accessor :CR, :ECL, :alignment
+	attr_accessor :CR, :ECL, :alignment, :initiative
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -38,11 +38,12 @@ class Character
 		@final_levelup_procs = []
 		@armor_proficiencies = []
 		@weapon_proficiencies = []
+		@intiative = 0
 		@classes = []
 		@number_of_classes = 0
 		@max_classes = 1
 		@abilities = []
-		@feats = []#FeatList.new [TODO][QUESTION] Make feats instance?
+		@feats = []#FeatList.new #[TODO][QUESTION] Make feats instance?
 		@level = 0
 		@spells = SpellList.new
 		@forbidden_spell_types = []
@@ -71,7 +72,7 @@ class Character
 		@weight = 0
 		@languages = LanguageList.new
 		@skill_list = SkillList.new(self)
-    @alignment = ["CG","NG","LG","CN","NN","LN","CE","NE","LE"][rand(9)]
+		@alignment = ["Chaotic Good","Neutral Good","Lawful Good","Chaotic Neutral","Neutral","Lawful Neutral","Chaotic Evil","Neutral Evil","Lawful Evil"][rand(9)]
 		background = Background.new(@alignment)
 		@history = background.history
 		@primary_motivation = background.primary_motivation
@@ -92,8 +93,8 @@ class Character
 	def level_up
 		@level += 1
 		@ECL += 1
-		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		self.race.apply_level
+		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
 		if @number_of_classes < @max_classes

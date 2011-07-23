@@ -65,7 +65,8 @@ class Bard < ClassModel
 			#class abilities
 			case class_level
 				when 1  
-			@character.weapon_proficiencies |= $SIMPLE_WEAPONS |["Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
+			@character.weapon_proficiencies |= $SIMPLE_WEAPONS
+			@character.weapon_proficiencies |=["Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
 			@character.armor_proficiencies |= ["Light","Shields"]
 			@character.add_ability("Bardic Music")
 			@character.add_ability("Bardic Knowledge")
