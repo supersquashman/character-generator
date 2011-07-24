@@ -47,9 +47,9 @@ class Elf< RaceModel
 			end
 			character.stats["dex"] += 2
 			character.stats["con"] -= 2                     
-			character.skill_list.assign_circ("Listen", "Racial (Elf)", 2)
-			character.skill_list.assign_circ("Spot", "Racial (Elf)", 2)
-			character.skill_list.assign_circ("Search", "Racial (Elf)", 2)
+			character.skill_list.assign_misc("Listen", 2)
+			character.skill_list.assign_misc("Spot", 2)
+			character.skill_list.assign_misc("Search", 2)
 			character.add_ability("Low-Light Vision")
 			character.weapon_proficiencies |= ["Shortbow", "Composite Shortbow", "Longbow", "Composite Longbow", "Rapier", "Longsword"]
 			character.add_ability("Immune to magic sleep effects")

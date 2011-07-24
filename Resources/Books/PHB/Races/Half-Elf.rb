@@ -45,14 +45,14 @@ class HalfElf< RaceModel
 				character.height = Roll.new("2d8+53")
 				character.weight = (80 +((character.height - 53) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end                   
-			character.skill_list.assign_circ("Listen", "Racial (Half-Elf)", 1)
-			character.skill_list.assign_circ("Spot", "Racial (Half-Elf)", 1)
-			character.skill_list.assign_circ("Search", "Racial (Half-Elf)", 1)
-			character.skill_list.assign_circ("Gather Information", "Racial (Half-Elf)", 2)
-			character.skill_list.assign_circ("Diplomacy", "Racial (Half-Elf)", 2)
+			character.skill_list.assign_misc("Listen", 1)
+			character.skill_list.assign_misc("Spot", 1)
+			character.skill_list.assign_misc("Search", 1)
+			character.skill_list.assign_misc("Gather Information", 2)
+			character.skill_list.assign_misc("Diplomacy", 2)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Immune to magic sleep effects")
-			#character.add_ability("+2 Saves vs Enchantment Spells/Effects")
+			character.add_ability("+2 Saves vs Enchantment Spells/Effects")
 		end
 	end
 end

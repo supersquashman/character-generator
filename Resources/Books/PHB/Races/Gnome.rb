@@ -47,9 +47,9 @@ class Gnome< RaceModel
 			end
 			character.stats["con"] += 2
 			character.stats["str"] -= 2                     
-			character.skill_list.assign_circ("Listen", "Racial (Gnome)", 2)
-			character.skill_list.assign_circ("Craft(Alchemy)", "Racial (Gnome)", 2)
-			character.skill_list.assign_circ("Search", "Racial (Gnome)", 2)
+			character.skill_list.assign_misc("Listen", 2)
+			character.skill_list.assign_misc("Craft(Alchemy)", 2)
+			character.skill_list.assign_misc("Search", 2)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Weapon Familiarity (Gnome Hooked Hammers)")
 			character.final_levelup_procs += [Proc.new do |char|
