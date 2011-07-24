@@ -47,9 +47,9 @@ class Dwarf< RaceModel
 			end
 			character.stats["con"] += 2
 			character.stats["cha"] -= 2                     
-			character.skill_list.assign_circ("Appraise","Racial (Stone)", 2)
-			character.skill_list.assign_circ("Craft(Stoneworking)","Racial (Stone)", 2)
-			character.skill_list.assign_circ("Craft(Blacksmithing)","Racial (Stone)", 2)
+			character.skill_list.assign_misc("Appraise", 2)
+			character.skill_list.assign_misc("Craft(Stoneworking)", 2)
+			character.skill_list.assign_misc("Craft(Blacksmithing)", 2)
 			character.skill_list.assign_circ("Search","Stonecunning", 2)
 			character.add_ability("Darkvision(60)")
 			character.add_ability("Weapon Familiarity (Dwarven Waraxe)") 
