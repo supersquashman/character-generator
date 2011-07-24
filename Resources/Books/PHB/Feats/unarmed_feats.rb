@@ -113,6 +113,7 @@ class StunningFist < FeatModel
 end
 
 FeatList.push(ImprovedUnarmedStrike)
+FeatList.push(ImprovedGrapple)
 FeatList.push(DeflectArrows)
 FeatList.push(StunningFist)
 FeatList.push(SnatchArrows)
