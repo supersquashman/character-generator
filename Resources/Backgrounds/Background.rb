@@ -34,7 +34,7 @@ class Background
 			parts = line.partition("|")
 			line = parts[1]=="" ? parts[0] : parts[2]
 		end while (! qualified(parts[1]=="" ? "" : parts[0],alignment))
-				line.gsub!(/\[\S+\]/){|new_hash| pick_line(new_hash)}
+				line.gsub!(/\[[[^\]]+\]/){|new_hash| pick_line(new_hash)}
 				#return line
 			end
 		return line
