@@ -23,7 +23,7 @@ attr_accessor :name, :pre, :post
     @name_token_categories = ["General"]
 		@alignment= "CN"#character.alignment
     @gender = "Male" #rand(20)!=0 ? character.sex : ["Male","Female"][(rand(2))] #gender confusion?
-    @race = "Monster"#"[" + character.race.to_s + "]"
+    @race = "Halfling"#"[" + character.race.to_s + "]"
     @name = ""
     @pre = ""
     @post = ""
@@ -34,7 +34,7 @@ attr_accessor :name, :pre, :post
     race_hash = "[" + @race + "]"
     @name = pick_line(race_hash,"[rules]").split(" ").each{|word| word.capitalize!}.join(" ")
     @pre = pick_line(race_hash,"[pretitle]").split(" ").each{|word| word.capitalize!}.join(" ")
-    @post = pick_line(race_hash,"[posttitle]").split(" ").each{|word| word.capitalize!}.join(" ")
+    @post = pick_line("[Title]","[title]").split(" ").each{|word| word.capitalize!}.join(" ")
 	end
 
 	def pick_line (hash="[Dwarf]", hash2="[rules]", alignment=@alignment, gender=@gender)
@@ -92,4 +92,5 @@ end
 
 Name.load
 100.times { test = Name.new(10).to_s
+puts ""
 puts test}
