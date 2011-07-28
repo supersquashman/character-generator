@@ -58,10 +58,10 @@ class FrostGiant < RaceModel
 			character.will_save["racial"] = 6
 			character.ac_list["natural"] = 9
 			FeatList.list["PowerAttack"].add(character)
-			#FeatList.list["Cleave"].add(character)
-			#FeatList.list["GreatCleave"].add(character)
-			#FeatList.list["ImprovedOverrun"].add(character)
-			#FeatList.list["ImprovedSunder"].add(character)
+			FeatList.list["Cleave"].add(character)
+			FeatList.list["GreatCleave"].add(character)
+			FeatList.list["ImprovedOverrun"].add(character)
+			FeatList.list["ImprovedSunder"].add(character)
 			character.skill_list.assign_misc("Climb", 13)
 			character.skill_list.assign_misc("Intimidate", 6)
 			character.skill_list.assign_misc("Jump", 17)
