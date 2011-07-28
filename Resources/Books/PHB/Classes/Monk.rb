@@ -63,7 +63,7 @@ class Monk < ClassModel
 			when 5
 				@character.add_ability("Purity of Body")
 			when 6
-				#FeatList.list[["ImprovedDisarm", "ImprovedTrip"][rand(2)]].add(@character)
+				FeatList.list[["ImprovedDisarm", "ImprovedTrip"][rand(2)]].add(@character)
 				@character.remove_ability("Slow Fall (20ft.)")
 				@character.add_ability("Slow Fall (30ft.)")
 			when 7
