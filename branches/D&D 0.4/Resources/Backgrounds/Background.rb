@@ -30,13 +30,14 @@ class Background
 	def pick_line (hash="[motivations]", alignment=@alignment)
 		line = ""
 		if @@background[hash].length > 0
-			begin while ((line = @@background[hash][rand(@@background[hash].length)]) == ""); end
-			parts = line.partition("|")
-			line = parts[1]=="" ? parts[0] : parts[2]
-		end while (! qualified(parts[1]=="" ? "" : parts[0],alignment))
-				line.gsub!(/\[[[^\]]+\]/){|new_hash| pick_line(new_hash)}
+			begin 
+				while ((line = @@background[hash][rand(@@background[hash].length)]) == ""); end
+					parts = line.partition("|")
+					line = parts[1]=="" ? parts[0] : parts[2]
+			end while (! qualified(parts[1]=="" ? "" : parts[0],alignment))
+			#line.gsub!(/\[[[^\]]+\]/){|new_hash| pick_line(new_hash)}
 				#return line
-			end
+		end
 		return line
 	end
 
