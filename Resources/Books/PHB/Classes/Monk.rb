@@ -72,7 +72,7 @@ class Monk < ClassModel
 				@character.remove_ability("Slow Fall (30ft.)")
 				@character.add_ability("Slow Fall (40ft.)")
 			when 9
-				#@character.remove_ability("Evasion")
+				@character.remove_ability("Evasion")
 				@character.add_ability("Improved Evasion")
 			when 10
 				@character.remove_ability("Ki Strike (Magic)")
