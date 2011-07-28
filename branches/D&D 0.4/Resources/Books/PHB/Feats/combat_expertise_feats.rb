@@ -70,7 +70,7 @@ class ImprovedTrip < FeatModel
 		@description = "You do not provoke an attack of opportunity when you attempt to trip an opponent while you are unarmed. You also gain a +4 bonus on your 
 						Strength check to trip your opponent.
 
-			If you trip an opponent in melee combat, you immediately get a melee attack against that opponent as if you hadn’t used your attack for the trip attempt."
+			If you trip an opponent in melee combat, you immediately get a melee attack against that opponent as if you hadn't used your attack for the trip attempt."
 		@page = "PHB??"
 		@link = ""
 	end
