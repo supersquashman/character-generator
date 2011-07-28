@@ -51,11 +51,9 @@ class Monk < ClassModel
 				@character.weapon_proficiencies |= ["Club", "Light Crossbow", "Heavy Crossbow", "Dagger", "Handaxe", "Javelin", "Kama", "Nunchaku", 
 													"Quarterstaff", "Sai", "Shuriken", "Siangham", "Sling"]
 				@character.armor_proficiencies |= [""]
-				#bonus_feat = ["StunningFist", "ImprovedGrapple"][rand(2)]
 				FeatList.list[["StunningFist", "ImprovedGrapple"][rand(2)]].add(@character)
-				#bonus feat [improved grapple, stunning fist]
 			when 2
-				#FeatList.list[["CombatReflexes", "DeflectArrows"][rand(2)]].add(@character)
+				FeatList.list[["CombatReflexes", "DeflectArrows"][rand(2)]].add(@character)
 				@character.add_ability("Evasion")
 			when 3
 				@character.add_ability("Still Mind")
