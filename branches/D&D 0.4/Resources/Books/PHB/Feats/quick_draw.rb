@@ -1,6 +1,4 @@
-#require "FeatList"
-# require 'pathname' 
-# require Pathname(__FILE__).ascend{|d| h=d+'FeatList.rb'; break h if h.file?} 
+
 class QuickDraw < FeatModel
 	@@bonus_classes = ["Fighter"]
 	
