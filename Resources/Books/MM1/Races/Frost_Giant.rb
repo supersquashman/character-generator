@@ -62,7 +62,7 @@ class FrostGiant < RaceModel
 			#FeatList.list["GreatCleave"].add(character)
 			#FeatList.list["ImprovedOverrun"].add(character)
 			#FeatList.list["ImprovedSunder"].add(character)
-			FeatList.roll_feats(character, 5)
+			FeatList.roll_feats(character, 4)
 			#character.skill_list.assign_misc("Climb", 13)
 			#character.skill_list.assign_misc("Intimidate", 6)
 			#character.skill_list.assign_misc("Jump", 17)

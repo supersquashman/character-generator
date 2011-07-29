@@ -53,9 +53,9 @@ class Tiefling< RaceModel
 			character.skill_list.assign_misc("Hide", 2)
 			character.add_ability("Darkness (1/day)")
 			character.add_ability("Darkvision(60ft.)")
-			character.add_ability("Resistance(cold) 5")
-			character.add_ability("Resistance(electricity) 5")
-			character.add_ability("Resistance(fire) 5")
+			character.add_ability("Resistance to Cold (5)")
+			character.add_ability("Resistance to Electricity (5)")
+			character.add_ability("Resistance to Fire (5)")
 		end
 	end
 end

@@ -52,9 +52,9 @@ class Aasimar< RaceModel
 			character.skill_list.assign_misc("Listen", 2)
 			character.add_ability("Daylight (1/day)")
 			character.add_ability("Darkvision(60ft.)")
-			character.add_ability("Resistance(cold) 5")
-			character.add_ability("Resistance(electricity) 5")
-			character.add_ability("Resistance(acid) 5")
+			character.add_ability("Resistance to Cold (5)")
+			character.add_ability("Resistance to Electricity (5)")
+			character.add_ability("Resistance to Fire (5)")
 		end
 	end
 end
