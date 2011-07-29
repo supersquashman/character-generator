@@ -41,5 +41,19 @@ class RaceList
 	def self.list
 		return @@list
 	end
+	
+#-- self.select_race() --------------------------------------------------------------------------#
+#++
+	def self.select_race()
+		char_race = @@list.values[rand(@@list.length)]
+		return char_race
+	end
+=begin	
+#-- self.select_race(race) --------------------------------------------------------------------------#
+#++
+	def self.select_race(race)
+		return @@list[race]
+	end
+=end
 end
 
