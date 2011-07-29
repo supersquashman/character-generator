@@ -38,7 +38,7 @@ class HillGiant < RaceModel
 		super
 		if(character.level <= 1)
 			character.height = Roll.new("2d12+114")
-			character.weight = (character.height * 9)
+			character.weight = (character.height.to_i * 9)
 			character.ECL += 4
 			character.HD += 12
 			character.HP += Roll.new("12d8").to_i
@@ -53,17 +53,7 @@ class HillGiant < RaceModel
 			character.ref_save["racial"] = 4
 			character.will_save["racial"] = 4
 			character.ac_list["natural"] = 9
-			#FeatList.list["PowerAttack"].add(character)
-			#FeatList.list["Cleave"].add(character)
-			#FeatList.list["GreatCleave"].add(character)
-			#FeatList.list["ImprovedOverrun"].add(character)
-			#FeatList.list["ImprovedSunder"].add(character)
 			FeatList.roll_feats(character, 5)
-			character.skill_list.assign_misc("Climb", 13)
-			character.skill_list.assign_misc("Intimidate", 6)
-			character.skill_list.assign_misc("Jump", 17)
-			character.skill_list.assign_misc("Spot", 12)
-			#Craft (any one) +6
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Rock Catching")
 			character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
