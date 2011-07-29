@@ -29,11 +29,15 @@ require_relative "../Models/SpellModel"
 
 class SpellList
 	@@list=Hash.new(Hash.new([])) #list of all spells (primary key is class)
+  @@granted_powers_list = Hash.new() #list of granted powers description (primary key is domain)
+  @@granted_power_procs = Hash.new(Proc.new{|character|}) #Procedures the granted powers preform on the character.
   #following attributes have a shared keys of level/domain/category
 	attr_accessor :known #spells known/memorized by character by level/domain/category 
 	attr_accessor :book #spells known (by character by level/domain/category) in total by character (if not spontaneous caster)
   attr_accessor :per_day #spells of a category per day
   attr_accessor :forbidden_types
+  attr_accessor :granted_powers
+  attr_accessor :domains_known
         
 #-- initialize(character)---------------------------------------------------------------#
 #++
@@ -114,6 +118,7 @@ class SpellList
       end
     end
 	end
+  
 #-- set_spells_per_day(number, category, char_class) -----------------------------------#
 #++
 	def set_spells_per_day(number, category, char_class)
@@ -137,6 +142,15 @@ class SpellList
           end
           ret += "\n"
         end
+        spell_list.keys.reject{|key| key.is_numeric?}.each do |spell_level|
+          ret += spell_class + " " + spell_level.to_s + ":\n"
+          ret += "Granted Powers: " + granted_powers[spell_level]
+          spell_list[spell_level].each_index do |i|
+            ret += " " + i + " " + spell_list[spell_level][i].name + " (" + spell_list[spell_level][i].page +
+            ") - " + spell_list[spell_level][i].description + "\n"
+          end
+          ret += "\n"
+        end
       end
     end
     ret
@@ -157,6 +171,26 @@ def self.table_row(table =[][], row=0)
     end
   end
 end
+#-- self.granted_powers_list -----------------------------------------------------------#
+#++
+	def self.granted_powers_list=(gpl)
+		@@granted_powers_list = gpl
+	end
+#-- self.granted_powers_list -----------------------------------------------------------#
+#++
+	def self.granted_powers_list
+		return @@granted_powers_list
+	end
+#-- self.granted_powers_procs ----------------------------------------------------------#
+#++
+	def self.granted_powers_procs=(gpp)
+		@@granted_powers_procs = gpp
+	end
+#-- self.granted_powers_list -----------------------------------------------------------#
+#++
+	def self.granted_powers_procs
+		return @@granted_powers_procs
+	end
 end
 #monkey code for determining if a string is a number
 class String
