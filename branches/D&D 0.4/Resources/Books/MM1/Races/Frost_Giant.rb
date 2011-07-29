@@ -39,11 +39,11 @@ class FrostGiant < RaceModel
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
 				character.height = Roll.new("3d12+168")
-				character.weight = (character.height * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
 				character.height = Roll.new("3d12+144")
-				character.weight = (character.height * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 4
 			character.HD += 14
