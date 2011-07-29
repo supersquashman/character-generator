@@ -77,10 +77,16 @@ class Character
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation
+		@template = Array.new
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		@race = RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?
+		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
+		while (@race.is_template)
+			@template.push(@race)
+			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
+		end
+		@template.each {|template| template.apply(self)} if @template.length > 0
 		race.apply(self)
 		#get info based on race
 		#get class from list
@@ -98,12 +104,12 @@ class Character
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
 		if @number_of_classes < @max_classes
-      i=0
-      begin
-        selected=ClassList.list.values[rand(ClassList.list.length)].new(self)
-        i +=1
-        raise "Can't find an available class" if (i >= 100) 
-      end while(!selected.available?)
+			i=0
+			begin
+				selected=ClassList.list.values[rand(ClassList.list.length)].new(self)
+				i +=1
+				raise "Can't find an available class" if (i >= 100) 
+			end while(!selected.available?)
 			@classes.push(selected)
 			temp_classes = []
 			@classes.each {|cls| temp_classes.push(cls.to_s)}

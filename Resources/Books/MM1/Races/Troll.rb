@@ -39,11 +39,11 @@ class Troll < RaceModel
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
 				character.height = Roll.new("2d12+96")
-				character.weight = (character.height.to_i * 4.6) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 4.6).floor #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
 				character.height = Roll.new("3d12+100")
-				character.weight = (character.height.to_i * 4.7) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 4.7).floor #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 5
 			character.HD += 6

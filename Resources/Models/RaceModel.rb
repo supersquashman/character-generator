@@ -26,6 +26,7 @@ class RaceModel
 #-- initialize(character) --------------------------------------------------------------#
 #++
 	def initialize(character)
+		@template = false
 		@character =character
 		@size = "Medium"
 		@speed = 30
@@ -69,5 +70,11 @@ class RaceModel
 #++
 	def weighted_age(age, weight=Array.new(100,1)+Array.new(50,1)+Array.new(25,3)+Array.new(10,4)+Array.new(2,0.5))
 		return (age*(weight [rand(weight.length)])).to_i
+	end
+	
+#-- is_template ------------------------------------------------------------------------#
+#++
+	def self.is_template
+		return @template
 	end
 end
