@@ -51,7 +51,7 @@ class Dwarf< RaceModel
 			character.skill_list.assign_misc("Craft(Stoneworking)", 2)
 			character.skill_list.assign_misc("Craft(Blacksmithing)", 2)
 			character.skill_list.assign_circ("Search","Stonecunning", 2)
-			character.add_ability("Darkvision(60)")
+			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Weapon Familiarity (Dwarven Waraxe)") 
 			character.add_ability("Weapon Familiartiy (Urgrosh)")
 			character.final_levelup_procs += [Proc.new do |char|
