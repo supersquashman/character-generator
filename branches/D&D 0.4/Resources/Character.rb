@@ -64,9 +64,9 @@ class Character
 		@speed = 0
 		@spell_resist = 0
 		@size = "medium"
-    #[TODO] Templates
+		#[TODO] Templates
 		@age = 0
-	#Gender: 0 = male, 1 = female
+		#Gender: 0 = male, 1 = female
 		@sex = ["Male","Female"][(rand(2))]
 		@height = 0
 		@weight = 0
