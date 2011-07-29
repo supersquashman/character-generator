@@ -26,7 +26,7 @@ class HillGiant < RaceModel
 		super(character)
 		@size = "Large"
 		@speed = 40
-		@age_roll = Roll.new("8d10+25")
+		@age_roll = Roll.new("8d10+20")
 		@favored_classes=["Barbarian"]
 		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Common", "Draconic", "Elven", "Goblin", "Orc"]
@@ -37,18 +37,13 @@ class HillGiant < RaceModel
 	def apply_level
 		super
 		if(character.level <= 1)
-			if (character.sex == "Male") #male
-				character.height = Roll.new("2d6+53")
-				character.weight = (85 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
-			end
-			if (character.sex == "Female") #female
-				character.height = Roll.new("2d6+53")
-				character.weight = (80 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
-			end
+			character.height = Roll.new("2d12+114")
+			character.weight = (character.height * 9)
 			character.ECL += 4
 			character.HD += 12
 			character.HP += Roll.new("12d8").to_i
-			character.feats
+			character.BAB += 8
+			#character.feats
 			character.stats["str"] += 14
 			character.stats["cha"] -= 4
 			character.stats["con"] += 8
@@ -71,7 +66,10 @@ class HillGiant < RaceModel
 			#Craft (any one) +6
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Rock Catching")
-			character.weapon_proficiencies |= []
+			character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
+			num_skills = (character.stat_mod["int"] + 2) * 15
+			character.skill_list.class_skills = ["Climb","Jump","Listen","Spot"]
+			character.skill_list.roll_skills(num_skills)
 		end
 	end
 end

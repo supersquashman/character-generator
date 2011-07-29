@@ -38,17 +38,17 @@ class FrostGiant < RaceModel
 		super
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
-				character.height = Roll.new("2d6+53")
-				character.weight = (85 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("3d12+168")
+				character.weight = (character.height * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
-				character.height = Roll.new("2d6+53")
-				character.weight = (80 +((character.height - 53) * Roll.new("1d6").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("3d12+144")
+				character.weight = (character.height * 15) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 4
 			character.HD += 14
+			character.BAB += 10
 			character.HP += Roll.new("14d8").to_i
-			character.feats
 			character.stats["str"] += 18
 			character.stats["cha"] += 1
 			character.stats["con"] += 11
@@ -57,15 +57,19 @@ class FrostGiant < RaceModel
 			character.ref_save["racial"] = 3
 			character.will_save["racial"] = 6
 			character.ac_list["natural"] = 9
-			FeatList.list["PowerAttack"].add(character)
-			FeatList.list["Cleave"].add(character)
-			FeatList.list["GreatCleave"].add(character)
-			FeatList.list["ImprovedOverrun"].add(character)
-			FeatList.list["ImprovedSunder"].add(character)
-			character.skill_list.assign_misc("Climb", 13)
-			character.skill_list.assign_misc("Intimidate", 6)
-			character.skill_list.assign_misc("Jump", 17)
-			character.skill_list.assign_misc("Spot", 12)
+			#FeatList.list["PowerAttack"].add(character)
+			#FeatList.list["Cleave"].add(character)
+			#FeatList.list["GreatCleave"].add(character)
+			#FeatList.list["ImprovedOverrun"].add(character)
+			#FeatList.list["ImprovedSunder"].add(character)
+			FeatList.roll_feats(character, 5)
+			#character.skill_list.assign_misc("Climb", 13)
+			#character.skill_list.assign_misc("Intimidate", 6)
+			#character.skill_list.assign_misc("Jump", 17)
+			#character.skill_list.assign_misc("Spot", 12)
+			num_skills = (character.stat_mod["int"] + 2) * 15
+			character.skill_list.class_skills = ["Climb","Jump","Intimidate","Spot"]
+			character.skill_list.roll_skills(num_skills)
 			#Craft (any one) +6
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Immunity to Cold")
