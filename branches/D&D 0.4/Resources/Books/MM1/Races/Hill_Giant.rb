@@ -53,7 +53,7 @@ class HillGiant < RaceModel
 			character.ref_save["racial"] = 4
 			character.will_save["racial"] = 4
 			character.ac_list["natural"] = 9
-			FeatList.roll_feats(character, 5)
+			FeatList.roll_feats(character, 4)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Rock Catching")
 			character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
