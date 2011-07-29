@@ -52,7 +52,8 @@ class Cleric < ClassModel
 		@character.armor_proficiencies |= $ARMOR_HEAVY | $ARMOR_LIGHT | $ARMOR_MED | $SHIELDS
 		@character.add_ability("Turn or Rebuke Undead")
     @character.add_ability("Spontaneous Casting(Cure or Inflict)")
-    @character.add_ability("Aura(" + @character.alignment.scan(/Good|Evil|Lawful|Chaotic/).join(" ").to_s + ")")
+    aura = @character.alignment.scan(/Good|Evil|Lawful|Chaotic/).join(" ").to_s
+    @character.add_ability("Aura(" + (aura == "" ? "Neutral" : aura) + ")")
 		end
 	end
 	#[TODO] Domains and Spells
