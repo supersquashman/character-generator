@@ -87,7 +87,7 @@ class Wizard < ClassModel
 
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
 		  if character.stats["int"] >= i+10
-			character.spells.roll_spells(val,i.to_s,"Wizard", true)
+			character.spells.roll_spells(val+SpellList.bonus_spells(character.stat_mod["int"], i),i.to_s,"Wizard", true)
 		  end
 		end
 	end
