@@ -60,7 +60,6 @@ class Character
 		@CR = 0
 		@ECL = 0
 		@BAB = 0
-		@caster_level =0
 		@grapple = {"BAB" => @BAB, "size" => 0, "misc" => 0}
 		@speed = 0
 		@spell_resist = 0
@@ -84,11 +83,11 @@ class Character
 		#get race from race list
 		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		while (@race.is_template)
-			@template.push(@race)
+			@template.push(@race.dup)
 			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
 		end
+		@race.apply(self)
 		@template.each {|template| template.apply(self)} if @template.length > 0
-		race.apply(self)
 		#get info based on race
 		#get class from list
 		#get info based on class
@@ -154,13 +153,13 @@ class Character
 			end
 		end
 		if !found 
-      if dice==""
-      ability_name = name
-      elsif dice=="+"
-      ability_name = name + " +" + number.to_s 
-      else
-      ability_name = name + " +" + number.to_s + dice
-      end
+			if dice==""
+				ability_name = name
+			elsif dice=="+"
+				ability_name = name + " +" + number.to_s 
+			else
+				ability_name = name + " +" + number.to_s + dice
+			end
 			self.add_ability(ability_name)
 		end
 	end
@@ -175,6 +174,17 @@ class Character
 #++
 	def remove_ability (text)
 		self.abilities.include?(text) ? self.abilities.delete(text) : 0
+	end
+	
+#-- has_ability (text) -----------------------------------------------------------------#
+#++
+	def has_ability (text)
+		included = false
+		self.abilities.each do |ability|
+			included = true if ability.include?(text)
+		end
+		#include?(text) ? self.abilities.delete(text) : 0
+		return included
 	end
 	
 #-- get_stat ---------------------------------------------------------------------------#
