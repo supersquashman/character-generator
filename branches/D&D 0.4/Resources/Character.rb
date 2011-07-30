@@ -60,6 +60,7 @@ class Character
 		@CR = 0
 		@ECL = 0
 		@BAB = 0
+		@caster_level = 0
 		@grapple = {"BAB" => @BAB, "size" => 0, "misc" => 0}
 		@speed = 0
 		@spell_resist = 0
