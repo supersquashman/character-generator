@@ -57,7 +57,12 @@ class Gnome< RaceModel
 					character.weapon_proficiencies |= ["Gnome Hooked Hammer"]
 					end
 				end]
-			character.add_ability("Spell-Like Abilities: see page: PHB17")
+			character.add_ability("Spell-Like Ability: 1/day Speak with Animals(burrowing animals)")
+			if(character.stats["cha"] >= 10)
+				character.add_ability("Spell-Like Ability: 1/day Dancing Lights")
+				character.add_ability("Spell-Like Ability: 1/day Ghost Sound")
+				character.add_ability("Spell-Like Ability: 1/day Prestidigitation")
+			end
 			character.add_ability("+1 to DC of saving throws against Illusion spells cast by gnomes")
 			character.add_ability("+2 Saves vs Illusion Spells")
 			character.add_ability("+1 on Attack rolls against kobolds and goblinoids")
