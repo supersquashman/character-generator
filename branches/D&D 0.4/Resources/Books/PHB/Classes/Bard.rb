@@ -78,6 +78,7 @@ class Bard < ClassModel
 		  when 15 then @character.add_ability("Inspire Heroics")
 		  when 18 then @character.add_ability("Mass Suggestion")
 		end
+		@character.caster_level +=1
 	end
 	
 	def self.increase_spells(character, class_level)
