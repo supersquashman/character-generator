@@ -48,12 +48,12 @@ class RaceList
 		char_race = RaceList.list.values[rand(RaceList.list.length)]
 		return char_race
 	end
-=begin	
+	
 #-- self.select_race(race) --------------------------------------------------------------------------#
 #++
 	def self.select_race(race)
 		return @@list[race]
 	end
-=end
+
 end
 

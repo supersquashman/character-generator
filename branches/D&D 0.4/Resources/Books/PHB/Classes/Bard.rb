@@ -33,14 +33,14 @@ class Bard < ClassModel
 		@reflex = GOOD_SAVE
 		@bab = MID_BAB
 		@class_skills = ["Appraise","Balance","Bluff","Climb","Concentraion", "Craft",
-    "Decipher Script","Diplomacy","Disguise","Escape Artist", "Gather Information",
-    "Hide", "Jump", "Listen", "Move Silently", "Perform", "Profession",
-    "Sense Motive", "Sleight of Hand", "Speak Language", "Spellcraft", "Swim", "Tumble",
-    "Use Magic Device" ]
-    knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography",
-    "History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
+		"Decipher Script","Diplomacy","Disguise","Escape Artist", "Gather Information",
+		"Hide", "Jump", "Listen", "Move Silently", "Perform", "Profession",
+		"Sense Motive", "Sleight of Hand", "Speak Language", "Spellcraft", "Swim", "Tumble",
+		"Use Magic Device" ]
+		knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography",
+		"History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
+		@class_skills += knowledge
 		apply
 	end
   
@@ -48,8 +48,8 @@ class Bard < ClassModel
 #++
 	def available?
 		available = super 
-    ["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
-    available
+		["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
+		available
 	end
   
 #-- apply ------------------------------------------------------------------------------#
