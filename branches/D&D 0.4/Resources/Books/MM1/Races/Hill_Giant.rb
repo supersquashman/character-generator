@@ -30,6 +30,7 @@ class HillGiant < RaceModel
 		@favored_classes=["Barbarian"]
 		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Common", "Draconic", "Elven", "Goblin", "Orc"]
+		@racial_HD = "12d8"
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
@@ -41,7 +42,7 @@ class HillGiant < RaceModel
 			character.weight = (character.height.to_i * 9)
 			character.ECL += 4
 			character.HD += 12
-			character.HP += Roll.new("12d8").to_i
+			character.HP += Roll.new(@racial_HD).to_i
 			character.BAB += 8
 			#character.feats
 			character.stats["str"] += 14
@@ -52,7 +53,7 @@ class HillGiant < RaceModel
 			character.fort_save["racial"] = 8
 			character.ref_save["racial"] = 4
 			character.will_save["racial"] = 4
-			character.ac_list["natural"] = 9
+			character.ac_list["natural"] += 9
 			FeatList.roll_feats(character, 4)
 			character.add_ability("Low-Light Vision")
 			character.add_ability("Rock Catching")

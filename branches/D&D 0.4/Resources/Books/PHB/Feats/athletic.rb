@@ -8,7 +8,7 @@ class Athletic < FeatModel
 		@title = "Athletic"
 		@bonus_classes = []
 		@description = "+2 Bonus on Climb and Swim checks"
-		@page = "PHB89"
+		@page = "PHB 89"
 		@link = ""
 	end
 	def self.add(char)

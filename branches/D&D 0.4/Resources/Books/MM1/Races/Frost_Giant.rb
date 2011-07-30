@@ -30,6 +30,7 @@ class FrostGiant < RaceModel
 		@favored_classes=["Cleric"]
 		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Common", "Draconic", "Elven", "Goblin", "Orc"]
+		@racial_HD = "14d8"
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
@@ -48,7 +49,7 @@ class FrostGiant < RaceModel
 			character.ECL += 4
 			character.HD += 14
 			character.BAB += 10
-			character.HP += Roll.new("14d8").to_i
+			character.HP += Roll.new(@racial_HD).to_i
 			character.stats["str"] += 18
 			character.stats["cha"] += 1
 			character.stats["con"] += 11
@@ -56,7 +57,7 @@ class FrostGiant < RaceModel
 			character.fort_save["racial"] = 14
 			character.ref_save["racial"] = 3
 			character.will_save["racial"] = 6
-			character.ac_list["natural"] = 9
+			character.ac_list["natural"] += 9
 			#FeatList.list["PowerAttack"].add(character)
 			#FeatList.list["Cleave"].add(character)
 			#FeatList.list["GreatCleave"].add(character)

@@ -30,6 +30,7 @@ class Troll < RaceModel
 		@favored_classes=["Fighter"]
 		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Common", "Orc"]
+		@racial_HD = "6d8"
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
@@ -48,7 +49,7 @@ class Troll < RaceModel
 			character.ECL += 5
 			character.HD += 6
 			character.BAB += 4
-			character.HP += Roll.new("6d8").to_i
+			character.HP += Roll.new(@racial_HD).to_i
 			character.stats["str"] += 12
 			character.stats["cha"] += 1
 			character.stats["con"] += 12
@@ -57,7 +58,7 @@ class Troll < RaceModel
 			character.fort_save["racial"] = 5
 			character.ref_save["racial"] = 2
 			character.will_save["racial"] = 2
-			character.ac_list["natural"] = 5
+			character.ac_list["natural"] += 5
 			FeatList.roll_feats(character, 2)
 			num_skills = (character.stat_mod["int"] + 2) * 9
 			character.skill_list.class_skills = ["Listen","Spot"]
