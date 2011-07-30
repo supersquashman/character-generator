@@ -21,12 +21,12 @@ require_relative "../Roll"
 #--== RaceModel ========================================================================#
 #++
 class RaceModel
-	attr_accessor :size, :age_roll, :speed, :favored_classes, :bonus_languages, :character
+	attr_accessor :size, :age_roll, :speed, :favored_classes, :bonus_languages, :character, :racial_HD
 	
 #-- initialize(character) --------------------------------------------------------------#
 #++
 	def initialize(character)
-		@template = false
+		@racial_HD = "0d0"
 		@character =character
 		@size = "Medium"
 		@speed = 30
@@ -50,7 +50,7 @@ class RaceModel
 			character.size = size
 			age_roll.make_rolls
 			character.age = age_roll.to_i#weighted_age(age_roll.to_i)
-      character.languages.bonus_languages += bonus_languages
+			character.languages.bonus_languages += bonus_languages
 			character.stat_mod["int"].times {character.languages.roll_lang(true)}
 		end
 	end
@@ -75,6 +75,6 @@ class RaceModel
 #-- is_template ------------------------------------------------------------------------#
 #++
 	def self.is_template
-		return @template
+		return false
 	end
 end

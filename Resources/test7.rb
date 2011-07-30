@@ -50,8 +50,8 @@ end
 puts panda.skill_list
 puts ""
 puts panda.abilities.sort
-puts "\nFavored Classes:  "
-panda.race.favored_classes.each {|cls| puts cls}
+#puts "\nFavored Classes:  "
+#panda.race.favored_classes.each {|cls| puts cls}
 puts ""
 puts "Languages:"
 puts panda.languages

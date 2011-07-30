@@ -48,7 +48,7 @@ class Bard < ClassModel
 #++
 	def available?
 		available = super 
-    ["LG","LN","LE"].each {|a| available &&= @character.alignment != a}
+    ["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
     available
 	end
   
