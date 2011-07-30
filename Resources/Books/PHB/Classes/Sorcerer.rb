@@ -51,6 +51,7 @@ class Sorcerer < ClassModel
         @character.armor_proficiencies |= []
         @character.add_ability("Summon Familiar") #[TODO] Familiar rules
 		end
+		@character.caster_level +=1
 	end
 	
 	def self.increase_spells(character, class_level)

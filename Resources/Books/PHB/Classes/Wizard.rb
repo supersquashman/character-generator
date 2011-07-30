@@ -57,6 +57,8 @@ class Wizard < ClassModel
 		#[TODO] Spell Specialization
 		end
 		
+		@character.caster_level +=1
+		
 		FeatList.get_bonus_feat(@character, "Wizard") if [5,10,15,20].include?(@class_level)#(@class_level.to_i%5 == 0)
 	end
 	
