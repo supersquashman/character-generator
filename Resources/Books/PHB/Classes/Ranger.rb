@@ -38,6 +38,12 @@ class Ranger < ClassModel
 		knowledge = ["Nature", "Geography", "Dungeoneering"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
 		@class_skills += knowledge
+		@favored_enemies = Hash.new
+		@favored_enemy_list = ["Aberration", "Humanoid (reptilian)", "Animal", "Magical beast", "Construct", "Monstrous Humanoid", "Dragon", "Ooze",
+								"Elemental", "Outsider (air)", "Fey", "Outsider (chaotic)", "Giant", "Outsider (earth)", "Humanoid (aquatic)", 
+								"Outsider (evil)", "Humanoid (dwarf)", "Outsider (fire)", "Humanoid (elf)", "Outsider (good)", "Humanoid (goblinoid)",
+								"Outsider (lawful)", "Humanoid (gnoll)", "Outsider (native)", "Humanoid (gnome)", "Outsider (water)", "Humanoid (halfling)",
+								"Plant", "Humanoid (human)", "Undead", "Humanoid (orc)", "Vermin"]
 		apply
 	end
 
@@ -49,11 +55,12 @@ class Ranger < ClassModel
 
 		#class abilities
 		if class_level == 1  
-		@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
-		@character.armor_proficiencies |= $ARMOR_LIGHT  | $SHIELDS
-    
-		@character.add_ability("Track")
-		@character.add_ability("Wild Empathy")
+			@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
+			@character.armor_proficiencies |= $ARMOR_LIGHT  | $SHIELDS
+			@character.add_ability("Track")
+			@character.add_ability("Wild Empathy")
+			add_favored_enemy
+			update_favored_enemies
 		end
 		#favored enemy [1,5,10,15,20]
 		case class_level
@@ -80,6 +87,10 @@ class Ranger < ClassModel
 			when 4
 				@character.add_ability("Animal Companion")
 				@character.caster_level +=2
+			when 5
+				add_favored_enemy
+				increase_favored_enemy_bonus
+				update_favored_enemies
 			when 6 
 				@character.caster_level +=1
 				#improved comat style
@@ -103,7 +114,11 @@ class Ranger < ClassModel
 				@character.add_ability("Swift Tracker")
 				@character.caster_level +=1
 			when 9 then @character.add_ability("Evasion")
-			when 10 then @character.caster_level +=1
+			when 10
+				@character.caster_level +=1
+				add_favored_enemy
+				increase_favored_enemy_bonus
+				update_favored_enemies
 			when 11 
 			#comat style mastery
 			if character.abilities.include?("Combat Style(Archery)")
@@ -124,10 +139,18 @@ class Ranger < ClassModel
 			when 12 then @character.caster_level +=1
 			when 13 then @character.add_ability("Camouflage")
 			when 14 then @character.caster_level +=1
+			when 15
+				add_favored_enemy
+				increase_favored_enemy_bonus
+				update_favored_enemies
 			when 16 then @character.caster_level +=1
 			when 17 then @character.add_ability("Hide in Plain Sight")
 			when 18 then @character.caster_level +=1
-			when 20 then @character.caster_level +=1
+			when 20 
+				@character.caster_level +=1
+				add_favored_enemy
+				increase_favored_enemy_bonus
+				update_favored_enemies
 		end
 	end
 
@@ -157,6 +180,25 @@ class Ranger < ClassModel
 			if character.stats["wis"] >= i+10
 				character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Ranger", true) if val >= 0 
 			end
+		end
+	end
+	
+	def add_favored_enemy
+		#new_favored_enemy = @favored_enemy_list[rand(@favored_enemy_list.length)]
+		begin 
+			new_favored_enemy = @favored_enemy_list[rand(@favored_enemy_list.length)]
+		end while @favored_enemies.keys.include?(new_favored_enemy)
+		@favored_enemies[new_favored_enemy] = 2
+	end
+	
+	def increase_favored_enemy_bonus
+		@favored_enemies[@favored_enemies.keys[rand(@favored_enemies.keys.length)].to_s] += 2
+	end
+	
+	def update_favored_enemies
+		@favored_enemies.each do |enemy, bonus|
+			@character.remove_ability("Favored Enemy (" + enemy + " +", true) if @character.has_ability("Favored Enemy (" + enemy + " +")
+			@character.add_ability("Favored Enemy (" + enemy + " +" + bonus.to_s + ")")
 		end
 	end
 end
