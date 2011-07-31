@@ -31,7 +31,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :caster_level, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
-	attr_accessor :CR, :ECL, :alignment, :initiative, :templates, :name
+	attr_accessor :CR, :ECL, :alignment, :initiative, :racial_templates, :name
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -76,26 +76,26 @@ class Character
 		@skill_list = SkillList.new(self)
 		@alignment = ["Chaotic Good","Neutral Good","Lawful Good","Chaotic Neutral","Neutral","Lawful Neutral","Chaotic Evil","Neutral Evil","Lawful Evil"][rand(9)]
 		background = Background.new(@alignment)
-    @name = Name.new(self)
+		@name = Name.new(self)
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation
-		@templates = Array.new
+		@temp_templates = Array.new
+		@racial_templates = Array.new
 		#initialize stats
 		calculate_mods
 		#get race from race list
-=begin
 		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		while (@race.is_template)
-			@templates.push(@race.dup)
+			#@race.apply(self) if !@templates.include?(@race)
+			@temp_templates.push(@race) if !@temp_templates.include?(@race)
 			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
 		end
-=end
-		@race = RaceList.select_race("Human")
+		#@race = RaceList.select_race("Human")
 		#@templates.push(RaceList.select_race("HalfDragon"))
 		@race.apply(self)
-		RaceList.select_race("HalfDragon").apply(self)
-		#@templates.each {|template| template.apply(self)} if @templates.length > 0
+		#RaceList.select_race("HalfDragon").apply(self)
+		@temp_templates.each {|template| template.apply(self)} if @temp_templates.length > 0
 		#get info based on race
 		#get class from list
 		#get info based on class
@@ -108,7 +108,7 @@ class Character
 		@level += 1
 		@ECL += 1
 		self.race.apply_level
-		self.templates.each {|template| template.apply_level} if self.templates.length > 0
+		self.racial_templates.each {|template| template.apply_level} if self.racial_templates.length > 0
 		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
