@@ -58,17 +58,33 @@ class Ranger < ClassModel
     #favored enemy [1,5,10,15,20]
     case class_level
     when 2 
-    #combat style
+    combat_style = ["Combat Style(Archery)","Combat Style(Two-Weapon)"][rand(2)]
+    @character.add_ability(combat_style)
+    #if character.abilities.include?("Combat Style(Archery)")
+    #archery combat style
+    #else
+    #two-weapon combat style
+    #end
     when 3 
     #endurance
     when 4 then @character.add_ability("Animal Companion")
     when 6 
     #improved comat style
+    #if character.abilities.include?("Combat Style(Archery)")
+    #archery combat style
+    #else
+    #two-weapon combat style
+    #end
     when 7 then @character.add_ability("Woodland Stride")
     when 8 then @character.add_ability("Swift Tracker")
     when 9 then @character.add_ability("Evasion")
     when 11 
     #comat style mastery
+    #if character.abilities.include?("Combat Style(Archery)")
+    #archery combat style
+    #else
+    #two-weapon combat style
+    #end
     when 13 then @character.add_ability("Camouflage")
     when 17 then @character.add_ability("Hide in Plain Sight")
     end
