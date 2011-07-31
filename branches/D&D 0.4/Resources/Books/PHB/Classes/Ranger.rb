@@ -1,4 +1,4 @@
-# Paladin - D&D class model and container for related information
+# Ranger - D&D class model and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,64 +16,61 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "../Magic/Spells/PaladinSpells"
+require_relative "../Magic/Spells/RangerSpells"
 
-#--== Paladin ===========================================================================#
+#--== Ranger ===========================================================================#
 #++
-class Paladin < ClassModel
+class Ranger < ClassModel
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
 	def initialize (character)
 		super(character)
-		@hd_type="1d10"
-		@base_skill_num = 2
+		@hd_type="1d8"
+		@base_skill_num = 6
 		@will = BAD_SAVE
 		@fort = GOOD_SAVE
-		@reflex = BAD_SAVE
+		@reflex = GOOD_SAVE
 		@bab = GOOD_BAB
-		@class_skills = ["Concentraion", "Craft", "Diplomacy", "Handle Animal",
-    "Profession", "Heal", "Ride", "Sense Motive"]
-    knowledge = ["Religion", "Nobility and Royalty"]
+		@class_skills = ["Concentraion", "Craft", "Climb", "Handle Animal",
+    "Profession", "Jump", "Heal", "Hide", "Ride", "Move Silently", "Search",
+    "Spot", "Survival", "Swim", "Listen", "Use Rope"]
+    knowledge = ["Nature", "Geography", "Dungeoneering"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
     @class_skills += knowledge
 		apply
 	end
-#-- availiable? ------------------------------------------------------------------------#
-#++
-	def available?
-		available = super
-		available &&= ["Lawful Good"].include?( @character.alignment )
-		available
-	end
-  
-  
+
 #-- apply ------------------------------------------------------------------------------#
 #++
 	def apply#(char)
-    Paladin.increase_spells(@character, @class_level)
+    Ranger.increase_spells(@character, @class_level)
 		super
 
 		#class abilities
 		if class_level == 1  
 		@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
-    #non metal armor?
-		@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | $ARMOR_HEAVY | $SHIELDS
+		@character.armor_proficiencies |= $ARMOR_LIGHT  | $SHIELDS
     
-		@character.add_ability("Aura of Good")
-    @character.add_ability("Detect Evil")
+		@character.add_ability("Track")
+    @character.add_ability("Wild Empathy")
 		end
-    @character.increase_ability("Smite Evil(1/day)",1,"") if [1,5,10,15,20].include?(@class_level)
-    @character.increase_ability("Remove Disease(1/week)",1,"") if [6,9,15,18].include?(@class_level)
+    #favored enemy [1,5,10,15,20]
     case class_level
     when 2 
-    @character.add_ability("Divine Grace")
-    @character.add_ability("Lay on Hands") #+cha to all saving throws
+    #combat style
     when 3 
-    @character.add_ability("Aura of Courage")
-    @character.add_ability("Divine Health")
-    when 4 then @character.add_ability("Turn Undead")
-    when 8 then @character.add_ability("Special Mount")
+    #endurance
+    when 4 then @character.add_ability("Animal Companion")
+    when 6 
+    #improved comat style
+    when 7 then @character.add_ability("Woodland Stride")
+    when 8 then @character.add_ability("Swift Tracker")
+    when 9 then @character.add_ability("Evasion")
+    when 11 
+    #comat style mastery
+    when 13 then @character.add_ability("Camouflage")
+    when 17 then @character.add_ability("Hide in Plain Sight")
     end
 		@character.caster_level +=1
 	end
@@ -101,9 +98,9 @@ class Paladin < ClassModel
     [3,  3,  3,  3 ]]
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
 		  if character.stats["wis"] >= i+10
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Paladin", true) if val >= 0 
+			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Ranger", true) if val >= 0 
 		  end
 		end
 	end
 end
-ClassList.push(Paladin)
+ClassList.push(Ranger)
