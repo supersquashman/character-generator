@@ -61,7 +61,8 @@ class Bard < ClassModel
 		#inspire courage
 			@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
 		Bard.increase_spells(@character, @class_level)
-
+     
+      @character.add_ability("Bardic Knowledge +2 Synergy") if @character.skill_list.get_ranks("Knowledge(History)") >=5
 			#class abilities
 			case class_level
 				when 1  

@@ -46,7 +46,8 @@ class Cleric < ClassModel
     Cleric.increase_spells(@character, @class_level)
     character.spells.domains_known.each {|domain| SpellList.granted_powers_procs[domain].call(character, self)}
 		super
-
+    
+    @character.add_ability("Turn or Rebuke Undead Checks +2 Synergy") if @character.skill_list.get_ranks("Knowledge(Religion)") >=5
 		#class abilities
 		if class_level == 1  
 		@character.languages.bonus_languages += ["Celestial", "Abyssal", "Infernal"]
@@ -59,29 +60,28 @@ class Cleric < ClassModel
 		end
 		@character.caster_level +=1
 	end
-	#[TODO] Domains and Spells
 	def self.increase_spells(character, class_level)
 		spell_table = [
-    [1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [2, 0, 0, 0, 0, 0, 0, 0, 0],
-    [2, 1, 0, 0, 0, 0, 0, 0, 0],
-    [3, 2, 0, 0, 0, 0, 0, 0, 0],
-    [3, 2, 1, 0, 0, 0, 0, 0, 0],
-    [3, 3, 2, 0, 0, 0, 0, 0, 0],
-    [4, 3, 2, 1, 0, 0, 0, 0, 0],
-    [4, 3, 3, 2, 0, 0, 0, 0, 0],
-    [4, 4, 3, 2, 1, 0, 0, 0, 0],
-    [4, 4, 3, 3, 2, 0, 0, 0, 0],
-    [5, 4, 4, 3, 2, 1, 0, 0, 0],
-    [5, 4, 4, 3, 3, 2, 0, 0, 0],
-    [5, 5, 4, 4, 3, 2, 1, 0, 0],
-    [5, 5, 4, 4, 3, 3, 2, 0, 0],
-    [5, 5, 5, 4, 4, 3, 2, 1, 0],
-    [5, 5, 5, 4, 4, 3, 3, 2, 0],
-    [5, 5, 5, 5, 4, 4, 3, 2, 1],
-    [5, 5, 5, 5, 4, 4, 3, 3, 2],
-    [5, 5, 5, 5, 5, 4, 4, 3, 3],
-    [5, 5, 5, 5, 5, 4, 4, 4, 4]]
+    [3, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [4, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+    [4, 2, 1, 0, 0, 0, 0, 0, 0, 0],
+    [5, 3, 2, 0, 0, 0, 0, 0, 0, 0],
+    [5, 3, 2, 1, 0, 0, 0, 0, 0, 0],
+    [5, 3, 3, 2, 0, 0, 0, 0, 0, 0],
+    [6, 4, 3, 2, 1, 0, 0, 0, 0, 0],
+    [6, 4, 3, 3, 2, 0, 0, 0, 0, 0],
+    [6, 4, 4, 3, 2, 1, 0, 0, 0, 0],
+    [6, 4, 4, 3, 3, 2, 0, 0, 0, 0],
+    [6, 5, 4, 4, 3, 2, 1, 0, 0, 0],
+    [6, 5, 4, 4, 3, 3, 2, 0, 0, 0],
+    [6, 5, 5, 4, 4, 3, 2, 1, 0, 0],
+    [6, 5, 5, 4, 4, 3, 3, 2, 0, 0],
+    [6, 5, 5, 5, 4, 4, 3, 2, 1, 0],
+    [6, 5, 5, 5, 4, 4, 3, 3, 2, 0],
+    [6, 5, 5, 5, 5, 4, 4, 3, 2, 1],
+    [6, 5, 5, 5, 5, 4, 4, 3, 3, 2],
+    [6, 5, 5, 5, 5, 5, 4, 4, 3, 3],
+    [6, 5, 5, 5, 5, 5, 4, 4, 4, 4]]
     character.spells.roll_domains(character)
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
 		  if character.stats["wis"] >= i+10
