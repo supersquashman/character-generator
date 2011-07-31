@@ -17,6 +17,7 @@ panda.max_classes = 1
 	end
 panda.final_levelup_procs.each{|proc| proc.call panda}
 #puts (i+1).to_s + ".) " + panda.classes.to_s
+puts "Name:  " + panda.name.to_s
 puts "HP:  " + panda.HP.to_s
 puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s

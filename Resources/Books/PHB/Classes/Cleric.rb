@@ -17,6 +17,7 @@
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
 require_relative "../Magic/Spells/ClericSpells"
+require_relative "../Magic/Spells/ClericDomains"
 
 #--== Cleric ===========================================================================#
 #++
@@ -42,8 +43,9 @@ class Cleric < ClassModel
 #-- apply ------------------------------------------------------------------------------#
 #++
 	def apply#(char)
+    Cleric.increase_spells(@character, @class_level)
+    character.spells.domains_known.each {|domain| SpellList.granted_powers_procs[domain].call(character, self)}
 		super
-		Cleric.increase_spells(@character, @class_level)
 
 		#class abilities
 		if class_level == 1  
@@ -80,10 +82,11 @@ class Cleric < ClassModel
     [5, 5, 5, 5, 4, 4, 3, 3, 2],
     [5, 5, 5, 5, 5, 4, 4, 3, 3],
     [5, 5, 5, 5, 5, 4, 4, 4, 4]]
-
+    character.spells.roll_domains(character)
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
 		  if character.stats["wis"] >= i+10
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Cleric", true)
+      character.spells.roll_domain_spells(i) if i > 0 && val > 0
+			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Cleric", true) if val > 0 
 		  end
 		end
 	end

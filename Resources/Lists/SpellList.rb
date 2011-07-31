@@ -30,7 +30,7 @@ require_relative "../Models/SpellModel"
 class SpellList
 	@@list=Hash.new(Hash.new([])) #list of all spells (primary key is class)
   @@granted_powers_list = Hash.new() #list of granted powers description (primary key is domain)
-  @@granted_power_procs = Hash.new(Proc.new{|character|}) #Procedures the granted powers preform on the character.
+  @@granted_powers_procs = Hash.new(Proc.new{|character|}) #Procedures the granted powers preform on the character.
   #following attributes have a shared keys of level/domain/category
 	attr_accessor :known #spells known/memorized by character by level/domain/category 
 	attr_accessor :book #spells known (by character by level/domain/category) in total by character (if not spontaneous caster)
@@ -47,6 +47,8 @@ class SpellList
 		@known=Hash.new(Hash.new([]))
 		@book=Hash.new(Hash.new([]))
     @per_day = Hash.new(Hash.new(-1))
+    @granted_powers = Hash.new("")
+    @domains_known = []
 		#classes should load relavent spells
 	end
 #-- list -------------------------------------------------------------------------------#
@@ -75,6 +77,48 @@ class SpellList
       eval('self.push(SpellModel.new("' + spell.join('","') + '"),"' + category.to_s + '","' + char_class.to_s + '")')
     end
   end
+#-- roll_domains(character,number=2) ---------------------------------------------------#
+def roll_domains(character, number=2, char_class="Cleric")
+  forbidden_domains = {"Chaotic Good"=>["Law","Evil"],
+  "Neutral Good"=>["Evil"],
+  "Lawful Good"=>["Chaos","Evil"],
+  "Chaotic Neutral"=>["Law"],
+  "Neutral"=>[],
+  "Lawful Neutral"=>["Chaos"],
+  "Chaotic Evil"=>["Law","Good"],
+  "Neutral Evil"=>["Good"],
+  "Lawful Evil"=>["Chaos","Good"]}
+  if(domains_known.length < number)
+    domains = @@list[char_class].reject{|cat| !cat.include?("Domain")}.keys - forbidden_domains[character.alignment]
+    [number, domains.length].min.times do 
+      choices = domains - domains_known
+      domain = choices[rand(choices.length)]
+      @domains_known += [domain]
+      @granted_powers[domain] = @@granted_powers_list[domain]
+      if @known[char_class][domain].length < 1
+        known[char_class] = Hash.new([]) if known[char_class].length <= 0 
+        known[char_class][domain] = Array.new(9) 
+      end
+    end
+  end
+end
+#-- roll_domain_spells(level, domains, number) -----------------------------------------#
+def roll_domain_spells(level=1, domains=domains_known,number=1,char_class="Cleric")
+  spells_known_level = 0
+  domains.each do |domain|
+    known[char_class][domain] = Array.new(9) if known[char_class][domain].length < 1
+    spells_known_level += 1 if known[char_class][domain][level-1]
+  end
+  (number - spells_known_level).times do
+    begin
+    domain = domains[rand(domains.length)]
+    choice = @@list[char_class][domain][level-1]
+    end while !choice
+    known[char_class] = Hash.new([]) if known[char_class].length <= 0     
+    known[char_class][domain][level-1] = choice.dup
+  end
+end
+
 #-- roll_spell_book(number, category, char_class, for_book=false) ----------------------#
 #++
 	def roll_spell_book(number, category, char_class) 
@@ -144,10 +188,12 @@ class SpellList
         end
         spell_list.keys.reject{|key| key.is_numeric?}.each do |spell_level|
           ret += spell_class + " " + spell_level.to_s + ":\n"
-          ret += "Granted Powers: " + granted_powers[spell_level]
+          ret += "Granted Powers: " + granted_powers[spell_level] + "\n"
           spell_list[spell_level].each_index do |i|
-            ret += " " + i + " " + spell_list[spell_level][i].name + " (" + spell_list[spell_level][i].page +
-            ") - " + spell_list[spell_level][i].description + "\n"
+            if spell_list[spell_level][i].is_a?(SpellModel)
+              ret += " " + (i+1).to_s + ") " + spell_list[spell_level][i].name + " (" + spell_list[spell_level][i].page +
+              ") - " + spell_list[spell_level][i].description + "\n"
+            end
           end
           ret += "\n"
         end

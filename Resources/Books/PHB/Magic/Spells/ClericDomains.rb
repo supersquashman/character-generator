@@ -1,7 +1,7 @@
 SpellList.granted_powers_list["Air Domain"] = "Turn or destroy earth creatures as a good cleric turns undead." +
  "Rebuke, command, or bolster air creatures as an evil cleric rebukes undead." + 
  "Use these abilities a total number of times per day equal to 3 + your Charisma modifier."
-SpellList.granted_powers_procs["Air Domain"] = Proc.new{|character|}
+SpellList.granted_powers_procs["Air Domain"] = Proc.new{|character, thisclass|}
 SpellList.load_spells("Air Domain", "Cleric", [
 ["Obscuring Mist", "", "", "Fog surrounds you."],
 ["Wind Wall", "", "", "Deflects arrows, smaller creatures, and gases."],
@@ -11,43 +11,40 @@ SpellList.load_spells("Air Domain", "Cleric", [
 ["Chain Lightning", "", "", "1d6/level damage; 1 secondary bolt/level each deals half damage."],
 ["Control Weather", "", "", "Changes weather in local area."],
 ["Whirlwind", "", "", "Cyclone deals damage and can pick up creatures."],
-["Elemental Swarm", "", "", "Summons multiple elementals."]]
+["Elemental Swarm", "", "", "Summons multiple elementals."]])
+
+
+SpellList.granted_powers_list["Animal Domain"] = "You can use speak with animals once per day as a spell-like ability."
+SpellList.granted_powers_procs["Animal Domain"] = Proc.new do|character, thisclass|
+#Add Knowledge (nature) to your list of cleric class skills.
+  thisclass.class_skills |= ["Knowledge(Nature)"]
+end
+SpellList.load_spells("Animal Domain", "Cleric", [
+["Calm Animals", "", "", "Calms (2d4 + level) HD of animals."],
+["Hold Animal", "", "", "Paralyzes one animal for 1 round/level."],
+["Dominate Animal", "", "", "Subject animal obeys silent mental commands."],
+["Summon Nature's Ally IV", "", "", "Calls creature to fight."],
+["Commune with Nature", "", "", "Learn about terrain for 1 mile/level."],
+["Antilife Shell", "", "", "10-ft. field hedges out living creatures."],
+["Animal Shapes", "", "", "One ally/level polymorphs into chosen animal."],
+["Summon Nature's Ally VIII", "", "", "Calls creature to fight."],
+["Shapechange", "", "", "Transforms you into any creature, and change forms once per round."]])
+
+
+SpellList.granted_powers_list["Chaos Domain"] = "You cast chaos spells at +1 caster level."
+SpellList.granted_powers_procs["Chaos Domain"] = Proc.new{|character, thisclass|}
+SpellList.load_spells("Chaos Domain", "Cleric", [
+["Protection from Law", "", "", "+2 to AC and saves, counter mind control, hedge out elementals and outsiders."],
+["Shatter", "", "", "Sonic vibration damages objects or crystalline creatures."],
+["Magic Circle against Law", "", "", "As protection spells, but 10-ft. radius and 10 min./level."],
+["Chaos Hammer", "", "", "Damages and staggers lawful creatures."],
+["Dispel Law", "", "", "+4 bonus against attacks by lawful creatures."],
+["Animate Objects", "", "", "Objects attack your foes."],
+["Word of Chaos", "", "", "Kills, confuses, stuns, or deafens nonchaotic subjects."],
+["Cloak of Chaos F", "", "", "+4 to AC, +4 resistance, SR 25 against lawful spells."],
+["Summon Monster IX", "", "", "Calls extraplanar creature to fight for you."]])
 
 =begin
-Animal Domain
-Granted Powers
-You can use speak with animals once per day as a spell-like ability.
-
-Add Knowledge (nature) to your list of cleric class skills.
-
-Animal Domain Spells
-Calm Animals: Calms (2d4 + level) HD of animals.
-Hold Animal: Paralyzes one animal for 1 round/level.
-Dominate Animal: Subject animal obeys silent mental commands.
-Summon Nature’s Ally IV*: Calls creature to fight.
-Commune with Nature: Learn about terrain for 1 mile/level.
-Antilife Shell: 10-ft. field hedges out living creatures.
-Animal Shapes: One ally/level polymorphs into chosen animal.
-Summon Nature’s Ally VIII*: Calls creature to fight.
-Shapechange F: Transforms you into any creature, and change forms once per round.
-*Can only summon animals.
-
-Chaos Domain
-Granted Power
-You cast chaos spells at +1 caster level.
-
-Chaos Domain Spells
-Protection from Law: +2 to AC and saves, counter mind control, hedge out elementals and outsiders.
-Shatter: Sonic vibration damages objects or crystalline creatures.
-Magic Circle against Law: As protection spells, but 10-ft. radius and 10 min./level.
-Chaos Hammer: Damages and staggers lawful creatures.
-Dispel Law: +4 bonus against attacks by lawful creatures.
-Animate Objects: Objects attack your foes.
-Word of Chaos: Kills, confuses, stuns, or deafens nonchaotic subjects.
-Cloak of Chaos F: +4 to AC, +4 resistance, SR 25 against lawful spells.
-Summon Monster IX*: Calls extraplanar creature to fight for you.
-*Cast as a chaos spell only.
-
 Death Domain
 Granted Power
 You may use a death touch once per day. Your death touch is a supernatural ability that produces a death effect. You must succeed on a melee touch attack against a living creature (using the rules for touch spells). When you touch, roll 1d6 per cleric level you possess. If the total at least equals the creature’s current hit points, it dies (no save).
