@@ -39,9 +39,10 @@ class HalfDragon < RaceModel
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
 	end
-	
+#-- self.apply(character) --------------------------------------------------------------#
+#++
 	def self.apply(character)
-		self.new(character)
+		character.racial_templates.push(self.new(character))
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
@@ -68,16 +69,13 @@ class HalfDragon < RaceModel
 			character.remove_ability("Darkvision(60ft.)")
 			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
-			character.add_ability("Natural Weapon:  Bite ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			characer.add_ability("Fly ("+ (character.speed.to_i * 2).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
+			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
+			character.add_ability("Fly ("+ (character.speed.to_i * 2).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
 		end
 	end
 	
-#-- self.apply(character) --------------------------------------------------------------#
-#++
-	def self.apply(character)
-		character.race= self.new(character)
+	def self.is_template
+		return true
 	end
-	
 end
 RaceList.push(HalfDragon)

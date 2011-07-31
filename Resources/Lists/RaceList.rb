@@ -42,18 +42,14 @@ class RaceList
 		return @@list
 	end
 	
-#-- self.select_race() --------------------------------------------------------------------------#
+#-- self.select_race --------------------------------------------------------------------------#
 #++
-	def self.select_race()
+	def self.select_race(race="")
 		char_race = RaceList.list.values[rand(RaceList.list.length)]
+		if (race.strip != "")
+			char_race = @@list[race]
+		end
 		return char_race
 	end
-	
-#-- self.select_race(race) --------------------------------------------------------------------------#
-#++
-	def self.select_race(race)
-		return @@list[race]
-	end
-
 end
 
