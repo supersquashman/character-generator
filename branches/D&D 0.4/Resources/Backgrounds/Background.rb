@@ -35,8 +35,8 @@ class Background
 					parts = line.partition("|")
 					line = parts[1]=="" ? parts[0] : parts[2]
 			end while (! qualified(parts[1]=="" ? "" : parts[0],alignment))
-			#line.gsub!(/\[[[^\]]+\]/){|new_hash| pick_line(new_hash)}
-				#return line
+			line.gsub!(/\[[^\]]+\]/){|new_hash| pick_line(new_hash)}
+				return line
 		end
 		return line
 	end
@@ -49,18 +49,18 @@ class Background
 				case c
 				#alignment
 				when "c"
-					ret &&= alignment[0]!="C"
+					ret &&= !["Chaotic Good","Chaotic Neutral","Chaotic Evil"].include?(alignment)
 				when "l"
-					ret &&= alignment[0]!="L"
+					ret &&= !["Lawful Good","Lawful Neutral","Lawful Evil"].include?(alignment)
 				when "N"
-					ret &&= alignment[0]!="N"
+					ret &&= !["Neutral Good","Neutral","Neutral Evil"].include?(alignment)
 				#goodness?
 				when "g"
-					ret &&= alignment[1]!="G"
+					ret &&= !["Chaotic Good","Neutral Good","Lawful Good"].include?(alignment)
 				when "e"
-					ret &&= alignment[1]!="E"
+					ret &&= !["Chaotic Evil","Neutral Evil","Lawful Evil"].include?(alignment)
 				when "n"
-					ret &&= alignment[0]!="N"
+					ret &&= !["Chaotic Neutral","Neutral", "Lawful Neutral"].include?(alignment)
 				end
 			end
 		end

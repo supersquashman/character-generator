@@ -5,8 +5,8 @@ attr_accessor :name, :pre, :post
 	@alignment=""
   
 	def self.load(relative_path="Names")
-		#Dir.glob(File.join(".", relative_path, "*/*.txt")).each do |file|
-    Dir.glob(File.join(".", "*/*.txt")).each do |file|
+		Dir.glob(File.join(".", relative_path, "*/*.txt")).each do |file|
+    #Dir.glob(File.join(".", "*/*.txt")).each do |file|
 			File.open(file, "r") do |file|
 				while(line = file.gets)
 					hash2 = File.basename(file.path, ".txt")
@@ -15,15 +15,15 @@ attr_accessor :name, :pre, :post
 					@@tokens["[" + hash1 + "]"]["[" + hash2 + "]"] += [line.chomp] if line.chomp!=""
 				end
 			end
-		end    
+		end
 	end
   
 	def initialize(character)
 		@result = ""
-    @name_token_categories = ["General"]
-		@alignment= "CN"#character.alignment
-    @gender = "Male" #rand(20)!=0 ? character.sex : ["Male","Female"][(rand(2))] #gender confusion?
-    @race = "Halfling"#"[" + character.race.to_s + "]"
+		@alignment= character.alignment
+    @gender = rand(20)!=0 ? character.sex : ["Male","Female"][(rand(2))] #gender confusion?
+    @race = character.race.to_s
+    @name_token_categories = ["[General]", "[" + @race + "]"]
     @name = ""
     @pre = ""
     @post = ""
@@ -31,9 +31,11 @@ attr_accessor :name, :pre, :post
 	end
 
 	def generate(alignment=@alignment)
-    race_hash = "[" + @race + "]"
-    @name = pick_line(race_hash,"[rules]").split(" ").each{|word| word.capitalize!}.join(" ")
-    @pre = pick_line(race_hash,"[pretitle]").split(" ").each{|word| word.capitalize!}.join(" ")
+    begin 
+    choice=@name_token_categories[rand(@name_token_categories.length)] 
+    end while(@@tokens[choice].length < 1)
+    @name = pick_line(choice,"[rules]").split(" ").each{|word| word.capitalize!}.join(" ")
+    @pre = pick_line(choice,"[pretitle]").split(" ").each{|word| word.capitalize!}.join(" ")
     @post = pick_line("[Title]","[title]").split(" ").each{|word| word.capitalize!}.join(" ")
 	end
 
@@ -59,18 +61,18 @@ attr_accessor :name, :pre, :post
 				case c
 				#alignment
 				when "c"
-					ret &&= alignment[0]!="C"
+					ret &&= !["Chaotic Good","Chaotic Neutral","Chaotic Evil"].include?(alignment)
 				when "l"
-					ret &&= alignment[0]!="L"
+					ret &&= !["Lawful Good","Lawful Neutral","Lawful Evil"].include?(alignment)
 				when "N"
-					ret &&= alignment[0]!="N"
+					ret &&= !["Neutral Good","Neutral","Neutral Evil"].include?(alignment)
 				#goodness?
 				when "g"
-					ret &&= alignment[1]!="G"
+					ret &&= !["Chaotic Good","Neutral Good","Lawful Good"].include?(alignment)
 				when "e"
-					ret &&= alignment[1]!="E"
+					ret &&= !["Chaotic Evil","Neutral Evil","Lawful Evil"].include?(alignment)
 				when "n"
-					ret &&= alignment[1]!="N"
+					ret &&= !["Chaotic Neutral","Neutral", "Lawful Neutral"].include?(alignment)
         when "M"
 					ret &&= gender=="Male"
         when "F"
@@ -83,14 +85,11 @@ attr_accessor :name, :pre, :post
 	
 	def to_s
     ret =""
-    ret += @pre + " " if @pre!=""
+    #ret += @pre + " " if @pre!=""
     ret += @name if @name!=""
-    ret += " " + @post if @post!=""
+    #ret += ", " + @post if @post!=""
 		return ret
 	end
 end
 
 Name.load
-100.times { test = Name.new(10).to_s
-puts ""
-puts test}

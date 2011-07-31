@@ -23,6 +23,7 @@ Dir.glob(File.join(".", "/Models", "*.rb")).each do |file|
    require file
 end
 require_relative "Backgrounds/Background"
+require_relative "Names/Name"
 
 #--== Character ========================================================================#
 #++
@@ -30,7 +31,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :caster_level, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
-	attr_accessor :CR, :ECL, :alignment, :initiative, :templates
+	attr_accessor :CR, :ECL, :alignment, :initiative, :templates, :name
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
@@ -75,6 +76,7 @@ class Character
 		@skill_list = SkillList.new(self)
 		@alignment = ["Chaotic Good","Neutral Good","Lawful Good","Chaotic Neutral","Neutral","Lawful Neutral","Chaotic Evil","Neutral Evil","Lawful Evil"][rand(9)]
 		background = Background.new(@alignment)
+    @name = Name.new(self)
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation
