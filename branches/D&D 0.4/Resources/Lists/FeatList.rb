@@ -108,4 +108,3 @@ class FeatList
 		return ret
 	end
 end
-

@@ -181,8 +181,14 @@ class Character
 	
 #-- remove_ability (text) -----------------------------------------------------------------#
 #++
-	def remove_ability (text)
-		self.abilities.include?(text) ? self.abilities.delete(text) : 0
+	def remove_ability (text, partial=false)
+		if (partial)
+			self.abilities.each do |ability|
+				self.abilities.delete(ability.to_s) if ability.include?(text)
+			end
+		else
+			self.abilities.include?(text) ? self.abilities.delete(text) : 0
+		end
 	end
 	
 #-- has_ability (text) -----------------------------------------------------------------#
