@@ -33,11 +33,11 @@ class Ranger < ClassModel
 		@reflex = GOOD_SAVE
 		@bab = GOOD_BAB
 		@class_skills = ["Concentraion", "Craft", "Climb", "Handle Animal",
-    "Profession", "Jump", "Heal", "Hide", "Ride", "Move Silently", "Search",
-    "Spot", "Survival", "Swim", "Listen", "Use Rope"]
-    knowledge = ["Nature", "Geography", "Dungeoneering"]
+		"Profession", "Jump", "Heal", "Hide", "Ride", "Move Silently", "Search",
+		"Spot", "Survival", "Swim", "Listen", "Use Rope"]
+		knowledge = ["Nature", "Geography", "Dungeoneering"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
+		@class_skills += knowledge
 		apply
 	end
 
@@ -53,69 +53,110 @@ class Ranger < ClassModel
 		@character.armor_proficiencies |= $ARMOR_LIGHT  | $SHIELDS
     
 		@character.add_ability("Track")
-    @character.add_ability("Wild Empathy")
+		@character.add_ability("Wild Empathy")
 		end
-    #favored enemy [1,5,10,15,20]
-    case class_level
-    when 2 
-    combat_style = ["Combat Style(Archery)","Combat Style(Two-Weapon)"][rand(2)]
-    @character.add_ability(combat_style)
-    #if character.abilities.include?("Combat Style(Archery)")
-    #archery combat style
-    #else
-    #two-weapon combat style
-    #end
-    when 3 
-    #endurance
-    when 4 then @character.add_ability("Animal Companion")
-    when 6 
-    #improved comat style
-    #if character.abilities.include?("Combat Style(Archery)")
-    #archery combat style
-    #else
-    #two-weapon combat style
-    #end
-    when 7 then @character.add_ability("Woodland Stride")
-    when 8 then @character.add_ability("Swift Tracker")
-    when 9 then @character.add_ability("Evasion")
-    when 11 
-    #comat style mastery
-    #if character.abilities.include?("Combat Style(Archery)")
-    #archery combat style
-    #else
-    #two-weapon combat style
-    #end
-    when 13 then @character.add_ability("Camouflage")
-    when 17 then @character.add_ability("Hide in Plain Sight")
-    end
-		@character.caster_level +=1
+		#favored enemy [1,5,10,15,20]
+		case class_level
+			when 2 
+				combat_style = ["Combat Style(Archery)","Combat Style(Two-Weapon)"][rand(2)]
+				@character.add_ability(combat_style)
+				if character.abilities.include?("Combat Style(Archery)")
+					#archery combat style
+					if (!PointBlankShot.feat_taken(@character))
+						PointBlankShot.add(@character) 
+					else
+						FeatList.roll_feats(@character,1)
+					end
+				else
+					#two-weapon combat style
+					if (!TwoWeaponFighting.feat_taken(@character))
+						TwoWeaponFighting.add(@character)
+					else
+						FeatList.roll_feats(@character,1)
+					end
+				end
+			when 3 
+			#endurance
+			when 4
+				@character.add_ability("Animal Companion")
+				@character.caster_level +=2
+			when 6 
+				@character.caster_level +=1
+				#improved comat style
+				if character.abilities.include?("Combat Style(Archery)")
+					#archery combat style
+					if (!ManyShot.feat_taken(@character))
+						ManyShot.add(@character) 
+					else
+						FeatList.roll_feats(@character,1)
+					end
+				else
+					#two-weapon combat style
+					if (!ImprovedTwoWeaponFighting.feat_taken(@character))
+						ImprovedTwoWeaponFighting.add(@character)
+					else
+						FeatList.roll_feats(@character,1)
+					end
+				end
+			when 7 then @character.add_ability("Woodland Stride")
+			when 8
+				@character.add_ability("Swift Tracker")
+				@character.caster_level +=1
+			when 9 then @character.add_ability("Evasion")
+			when 10 then @character.caster_level +=1
+			when 11 
+			#comat style mastery
+			if character.abilities.include?("Combat Style(Archery)")
+				#archery combat style
+				if (!ImprovedPreciseShot.feat_taken(@character))
+					ImprovedPreciseShot.add(@character) 
+				else
+					FeatList.roll_feats(@character,1)
+				end
+			else
+				#two-weapon combat style
+				if (!GreaterTwoWeaponFighting.feat_taken(@character))
+					GreaterTwoWeaponFighting.add(@character)
+				else
+					FeatList.roll_feats(@character,1)
+				end
+			end
+			when 12 then @character.caster_level +=1
+			when 13 then @character.add_ability("Camouflage")
+			when 14 then @character.caster_level +=1
+			when 16 then @character.caster_level +=1
+			when 17 then @character.add_ability("Hide in Plain Sight")
+			when 18 then @character.caster_level +=1
+			when 20 then @character.caster_level +=1
+		end
 	end
+
 	def self.increase_spells(character, class_level)
 		spell_table = [
-    [-1, -1, -1, -1],
-    [-1, -1, -1, -1],
-    [-1, -1, -1, -1],
-    [0,  -1, -1, -1],
-    [0,  -1, -1, -1],
-    [1,  -1, -1, -1],
-    [1,  -1, -1, -1],
-    [1,  0,  -1, -1],
-    [1,  0,  -1, -1],
-    [1,  1,  -1, -1],
-    [1,  1,  0,  -1],
-    [1,  1,  1,  -1],
-    [1,  1,  1,  -1],
-    [2,  1,  1,  0 ],
-    [2,  1,  1,  1 ],
-    [2,  2,  1,  1 ],
-    [2,  2,  2,  1 ],
-    [3,  2,  2,  1 ],
-    [3,  3,  3,  2 ],
-    [3,  3,  3,  3 ]]
+			[-1, -1, -1, -1],
+			[-1, -1, -1, -1],
+			[-1, -1, -1, -1],
+			[0,  -1, -1, -1],
+			[0,  -1, -1, -1],
+			[1,  -1, -1, -1],
+			[1,  -1, -1, -1],
+			[1,  0,  -1, -1],
+			[1,  0,  -1, -1],
+			[1,  1,  -1, -1],
+			[1,  1,  0,  -1],
+			[1,  1,  1,  -1],
+			[1,  1,  1,  -1],
+			[2,  1,  1,  0 ],
+			[2,  1,  1,  1 ],
+			[2,  2,  1,  1 ],
+			[2,  2,  2,  1 ],
+			[3,  2,  2,  1 ],
+			[3,  3,  3,  2 ],
+			[3,  3,  3,  3 ]]
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["wis"] >= i+10
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Ranger", true) if val >= 0 
-		  end
+			if character.stats["wis"] >= i+10
+				character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Ranger", true) if val >= 0 
+			end
 		end
 	end
 end
