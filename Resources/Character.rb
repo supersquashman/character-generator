@@ -85,6 +85,7 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
+		@temp_templates.push(RaceList.select_race("HalfDragon"))
 		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		while (@race.is_template)
 			#@race.apply(self) if !@templates.include?(@race)

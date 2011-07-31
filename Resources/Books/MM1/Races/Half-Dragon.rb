@@ -24,9 +24,12 @@ class HalfDragon < RaceModel
 #++
 	def initialize(character)
 		super(character)
+		@fly_speed = (character.speed.to_i) > 60 ? 120 : character.speed.to_i * 2
+		@breath_DC = 0
 		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
 		if (character.race.racial_HD == "0d0")
 			@racial_HD = character.race.racial_HD
+			@breath_DC = (10 + character.stat_mod["con"])
 		else
 			race_hd = character.race.racial_HD
 			temp_HD = race_hd[race_hd.index("d")+1, race_hd.length].to_i + 2
@@ -35,9 +38,18 @@ class HalfDragon < RaceModel
 			else
 				@racial_HD = "1d"+ temp_HD.to_s
 			end
+			@breath_DC = (10 + (character.HD/2).floor + character.stat_mod["con"])
 		end
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
+		#@dragon_types = ["Red","Blue","White","Black","Green","Gold","Silver","Bronze","Copper","Brass"]
+		@dragon_breaths = {"Red" => "30-foot cone of fire", "Black" => "60-foot line of acid", "Blue" => "60-foot line of lightning",
+							"Green" => "30-foot cone of corrosive (acid) gas", "White" => "30-foot cone of cold", "Brass" => "60-foot line of fire",
+							"Copper" => "60-foot line of acid", "Bronze" => "60-foot line of lightning", "Gold" => "30-foot cone of fire",
+							"Silver" => "30-foot cone of cold"}
+		@energy_type = {"Red" => "Fire", "Silver" => "Cold", "Brass" => "Fire", "Bronze" => "Electricity", "Copper" => "Acid", "Gold" => "Fire", "Blue" => "Electricity",
+						"Green" => "Acid", "Black" => "Acid", "White" => "Cold"}
+		@dragon_type = @dragon_breaths.keys[rand(@dragon_breaths.length)].to_s
 	end
 #-- self.apply(character) --------------------------------------------------------------#
 #++
@@ -70,12 +82,24 @@ class HalfDragon < RaceModel
 			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
 			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			character.add_ability("Fly ("+ (character.speed.to_i * 2).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
+			character.add_ability("Fly ("+ (@fly_speed).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
+			character.add_ability("Breath Weapon:  " + @dragon_breaths[@dragon_type] + "(6d8); 1/day; DC" + (10 + (character.HD/2).floor + character.stat_mod["con"]).to_s)
+			character.add_ability("Immunity to " + @energy_type[@dragon_type])
 		end
 	end
-	
+
+#-- self.is_template ------------------------------------------------------------------------#
+#++	
 	def self.is_template
 		return true
 	end
+	
+#-- self.is_template ------------------------------------------------------------------------#
+#++	
+	def to_s
+		name = super + "(" + @dragon_type + ")"
+		return name
+	end
+
 end
 RaceList.push(HalfDragon)

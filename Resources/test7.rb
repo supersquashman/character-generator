@@ -17,7 +17,6 @@ panda.max_classes = 1
 	end
 panda.final_levelup_procs.each{|proc| proc.call panda}
 #puts (i+1).to_s + ".) " + panda.classes.to_s
-puts "Name:  " + panda.name.to_s
 puts "HP:  " + panda.HP.to_s
 puts "HD:  " + panda.HD.to_s
 puts "Level:  " + panda.level.to_s#panda.get_level.to_s
@@ -26,7 +25,7 @@ panda.racial_templates.each do |tmplt|
 	template_race_list.push(tmplt.to_s)
 end
 #puts "Templates:  " + template_race_list.join(" ").to_s
-puts "Race:  " + template_race_list.join(" ").to_s + panda.race.to_s
+puts "Race:  " + template_race_list.join(" ").to_s + " " + panda.race.to_s
 puts "Alignment: " + panda.alignment
 puts "Age:  " + panda.age.to_s
 puts "Gender:  " + panda.sex
