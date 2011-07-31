@@ -39,6 +39,14 @@ class Druid < ClassModel
     @class_skills += knowledge
 		apply
 	end
+#-- availiable? ------------------------------------------------------------------------#
+#++
+	def available?
+		available = super
+		available &&= ["Neutral Good","Chaotic Neutral","Neutral","Lawful Neutral","Neutral Evil"].include?( @character.alignment )
+		available
+	end
+  
   
 #-- apply ------------------------------------------------------------------------------#
 #++
