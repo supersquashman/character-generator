@@ -83,7 +83,7 @@ class Ranger < ClassModel
 					end
 				end
 			when 3 
-			#endurance
+			#FeatList.list["Endurance"].add
 			when 4
 				@character.add_ability("Animal Companion")
 				@character.caster_level +=2
