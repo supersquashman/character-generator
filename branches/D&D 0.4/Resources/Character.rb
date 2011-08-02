@@ -86,6 +86,7 @@ class Character
 		calculate_mods
 		#get race from race list
 		#@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
+		#@race = RaceList.select_race("Aasimar		#@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		@race = RaceList.select_race("Aasimar")
 		while (@race.is_template)
 			#@race.apply(self) if !@templates.include?(@race)
@@ -93,6 +94,7 @@ class Character
 			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
 		end
 		#@race = RaceList.select_race("Human")
+		#@temp_templates.push(RaceList.select_race("Vampire"))
 		@temp_templates.push(RaceList.select_race("Vampire"))
 		@race.apply(self)
 		#RaceList.select_race("Vampire").apply(self)
