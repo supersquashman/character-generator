@@ -30,7 +30,7 @@ class StoneGiant < RaceModel
 		@favored_classes=["Barbarian"]
 		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Common", "Draconic", "Elven", "Goblin", "Orc"]
-		@racial_HD = "12d8"
+		@racial_HD = "14d8"
 	end
   
 #-- apply_level ------------------------------------------------------------------------#
