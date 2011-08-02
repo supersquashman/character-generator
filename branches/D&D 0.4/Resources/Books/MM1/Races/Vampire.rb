@@ -103,4 +103,4 @@ class Vampire < RaceModel
 	end
 
 end
-RaceList.push(Vampire)
+#RaceList.push(Vampire)
