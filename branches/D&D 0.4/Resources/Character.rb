@@ -85,16 +85,17 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
+		#@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
+		@race = RaceList.select_race("Aasimar")
 		while (@race.is_template)
 			#@race.apply(self) if !@templates.include?(@race)
 			@temp_templates.push(@race) if !@temp_templates.include?(@race)
 			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
 		end
 		#@race = RaceList.select_race("Human")
-		#@templates.push(RaceList.select_race("HalfDragon"))
+		@temp_templates.push(RaceList.select_race("Vampire"))
 		@race.apply(self)
-		#RaceList.select_race("HalfDragon").apply(self)
+		#RaceList.select_race("Vampire").apply(self)
 		@temp_templates.each {|template| template.apply(self)} if @temp_templates.length > 0
 		#get info based on race
 		#get class from list

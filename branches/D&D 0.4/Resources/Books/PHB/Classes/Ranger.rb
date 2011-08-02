@@ -96,8 +96,8 @@ class Ranger < ClassModel
 				#improved comat style
 				if character.abilities.include?("Combat Style(Archery)")
 					#archery combat style
-					if (!ManyShot.feat_taken(@character))
-						ManyShot.add(@character) 
+					if (!Manyshot.feat_taken(@character))
+						Manyshot.add(@character) 
 					else
 						FeatList.roll_feats(@character,1)
 					end
