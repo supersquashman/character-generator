@@ -11,6 +11,7 @@ class Athletic < FeatModel
 		@page = "PHB 89"
 		@link = ""
 	end
+	
 	def self.add(char)
 		super(char)
 		char.skill_list.assign_misc("Climb",2)
