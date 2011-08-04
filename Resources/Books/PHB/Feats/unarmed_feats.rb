@@ -14,7 +14,7 @@ class ImprovedUnarmedStrike < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -35,7 +35,7 @@ class DeflectArrows < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -56,7 +56,7 @@ class ImprovedGrapple < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 	
 	def self.add(char)
@@ -83,7 +83,7 @@ class SnatchArrows < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -108,7 +108,7 @@ class StunningFist < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 

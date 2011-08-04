@@ -14,7 +14,7 @@ class PointBlankShot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -34,7 +34,7 @@ class FarShot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -54,7 +54,7 @@ class PreciseShot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -75,7 +75,7 @@ class RapidShot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -101,7 +101,7 @@ class Manyshot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -121,7 +121,7 @@ class ShotOnTheRun < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -143,7 +143,7 @@ class ImprovedPreciseShot < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 

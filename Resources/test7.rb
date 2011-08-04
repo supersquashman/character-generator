@@ -25,6 +25,7 @@ panda.racial_templates.each do |tmplt|
 	template_race_list.push(tmplt.to_s)
 end
 #puts "Templates:  " + template_race_list.join(" ").to_s
+puts "Name:  " + panda.name.to_s
 puts "Race:  " + template_race_list.join(" ").to_s + " " + panda.race.to_s
 puts "Alignment: " + panda.alignment
 puts "Age:  " + panda.age.to_s

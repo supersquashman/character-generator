@@ -16,7 +16,7 @@ class CombatExpertise < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -37,7 +37,7 @@ class ImprovedDisarm < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -57,7 +57,7 @@ class ImprovedFeint < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -80,7 +80,7 @@ class ImprovedTrip < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 

@@ -17,7 +17,7 @@ class TwoWeaponFighting < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -37,7 +37,7 @@ class TwoWeaponDefense < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -57,7 +57,7 @@ class ImprovedTwoWeaponFighting < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -77,7 +77,7 @@ class GreaterTwoWeaponFighting < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
