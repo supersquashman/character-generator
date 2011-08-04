@@ -1,5 +1,5 @@
 class ImprovedUnarmedStrike < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -19,7 +19,7 @@ class ImprovedUnarmedStrike < FeatModel
 end
 
 class DeflectArrows < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -40,7 +40,7 @@ class DeflectArrows < FeatModel
 end
 
 class ImprovedGrapple < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -66,7 +66,7 @@ class ImprovedGrapple < FeatModel
 end
 
 class SnatchArrows < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -88,7 +88,7 @@ class SnatchArrows < FeatModel
 end
 
 class StunningFist < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super

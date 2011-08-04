@@ -2,7 +2,7 @@
 # require 'pathname' 
 # require Pathname(__FILE__).ascend{|d| h=d+'FeatList.rb'; break h if h.file?} 
 class TwoWeaponFighting < FeatModel
-	@@bonus_classes = ["Fighter", "Ranger(Melee)"]
+	@bonus_classes = ["Fighter", "Ranger(Melee)"]
 	
 	def initialize 
 		super
@@ -22,7 +22,7 @@ class TwoWeaponFighting < FeatModel
 end
 
 class TwoWeaponDefense < FeatModel
-	@@bonus_classes = ["Fighter", "Ranger(Melee)"]
+	@bonus_classes = ["Fighter", "Ranger(Melee)"]
 	
 	def initialize 
 		super
@@ -42,7 +42,7 @@ class TwoWeaponDefense < FeatModel
 end
 
 class ImprovedTwoWeaponFighting < FeatModel
-	@@bonus_classes = ["Fighter", "Ranger(Melee)"]
+	@bonus_classes = ["Fighter", "Ranger(Melee)"]
 	
 	def initialize 
 		super
@@ -62,7 +62,7 @@ class ImprovedTwoWeaponFighting < FeatModel
 end
 
 class GreaterTwoWeaponFighting < FeatModel
-	@@bonus_classes = ["Fighter", "Ranger(Melee)"]
+	@bonus_classes = ["Fighter", "Ranger(Melee)"]
 	
 	def initialize 
 		super

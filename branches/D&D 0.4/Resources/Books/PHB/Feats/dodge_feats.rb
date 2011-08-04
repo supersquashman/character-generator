@@ -1,5 +1,5 @@
 class Dodge < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -21,7 +21,7 @@ class Dodge < FeatModel
 end
 
 class Mobility < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -43,7 +43,7 @@ class Mobility < FeatModel
 end
 
 class SpringAttack < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
