@@ -1,9 +1,14 @@
-require_relative "/Resources/Character"
+require_relative "Resources/Character"
 
 class CharacterGenerator
 	@@character_list = []
 
 	def generate_specific_level_characters(char_level = 1, book_list = ["PHB"], char_count = 1)
+		book_list.each { |book| Dir.glob("./**/**/"+book+"/*Races/*.rb").each {|file| require file} }
+		book_list.each { |book| Dir.glob("./**/**/"+book+"/*Classes/*.rb").each {|file| require file} }
+		book_list.each { |book| Dir.glob("./**/**/"+book+"/*Feats/*.rb").each {|file| require file} }
+		book_list.each { |book| Dir.glob("./**/**/"+book+"/*Items/*.rb").each {|file| require file} }
+		
 		char_count.times do
 			@@character_list.push(Character.new(book_list))
 		end
@@ -16,7 +21,7 @@ class CharacterGenerator
 		character.final_levelup_procs.each{|proc| proc.call character}
 	end
 	
-	def generate_level_range_characters(char_low_level =1, char_high_level = 20, book_list = ["PHB"], , char_count = 1)
+	def generate_level_range_characters(char_low_level =1, char_high_level = 20, book_list = ["PHB"], char_count = 1)
 	char_count.times do
 			@@character_list.push(Character.new(book_list))
 		end
@@ -35,7 +40,18 @@ class CharacterGenerator
 	
 	def save_characters
 		@@character_list.each do |character|
-		
+			created = false
+			new_file_count = 0
+			file_name = "Characters/" + character.name + ".txt"
+			while (!created)
+				if (File.exists(file_name))
+					new_file_count += 1
+					file_name = "Characters/" + character.name + "(" + new_file_count.to_s + ").txt"
+				else
+					char_file = File.new(file_name, w)
+					created = true
+				end
+			end
 		end
 	end
 end
