@@ -72,5 +72,5 @@ class Background
 	end
 end
 
-Background.load
+Background.load("Resources/Backgrounds/")
 #puts Background.new("LG")
