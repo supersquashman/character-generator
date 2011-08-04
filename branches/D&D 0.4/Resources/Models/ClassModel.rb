@@ -76,7 +76,7 @@ class ClassModel
 #-- self.available?(character) ---------------------------------------------------------#
 #++
 	def available?
-			return true
+		return true
 	end
   
 #-- to_s -------------------------------------------------------------------------------#
