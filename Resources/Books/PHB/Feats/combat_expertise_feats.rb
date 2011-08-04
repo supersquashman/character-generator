@@ -1,5 +1,5 @@
 class CombatExpertise < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -21,7 +21,7 @@ class CombatExpertise < FeatModel
 end
 
 class ImprovedDisarm < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -42,7 +42,7 @@ class ImprovedDisarm < FeatModel
 end
 
 class ImprovedFeint < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -62,7 +62,7 @@ class ImprovedFeint < FeatModel
 end
 
 class ImprovedTrip < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super

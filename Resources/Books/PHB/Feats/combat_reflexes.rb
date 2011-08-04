@@ -1,5 +1,5 @@
 class CombatReflexes < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super

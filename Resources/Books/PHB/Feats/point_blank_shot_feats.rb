@@ -1,5 +1,5 @@
 class PointBlankShot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -19,7 +19,7 @@ class PointBlankShot < FeatModel
 end
 
 class FarShot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -39,7 +39,7 @@ class FarShot < FeatModel
 end
 
 class PreciseShot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -59,7 +59,7 @@ class PreciseShot < FeatModel
 end
 
 class RapidShot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -80,7 +80,7 @@ class RapidShot < FeatModel
 end
 
 class Manyshot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -106,7 +106,7 @@ class Manyshot < FeatModel
 end
 
 class ShotOnTheRun < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
@@ -126,7 +126,7 @@ class ShotOnTheRun < FeatModel
 end
 
 class ImprovedPreciseShot < FeatModel
-	@@bonus_classes = ["Fighter"]
+	@bonus_classes = ["Fighter"]
 	
 	def initialize 
 		super
