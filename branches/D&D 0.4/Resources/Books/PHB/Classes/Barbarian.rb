@@ -37,9 +37,10 @@ class Barbarian < ClassModel
 #-- available? -------------------------------------------------------------------------#
 #++
 	def self.available?
-		available = super 
-		["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
-		available
+		#available = super 
+		#["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
+		#available
+		!(["Lawful Good","Lawful Neutral","Lawful Evil"].include?(@character.alignment))
 	end
   
 #-- apply ------------------------------------------------------------------------------#
