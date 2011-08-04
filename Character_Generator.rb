@@ -66,24 +66,7 @@ class CharacterGenerator
 	end
 	
 	def print_character(file, character)
-		file.puts "HP:  " + character.HP.to_s
-		file.puts "HD:  " + character.HD.to_s
-		file.puts "Level:  " + character.level.to_s #panda.get_level.to_s
-		template_race_list = []
-		character.racial_templates.each do |tmplt|
-			template_race_list.push(tmplt.to_s)
-		end
 		file.puts "Name:  " + character.name.to_s
-		file.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
-		file.puts "Alignment: " + character.alignment
-		file.puts "Age:  " + character.age.to_s
-		file.puts "Gender:  " + character.sex
-		file.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
-		file.puts "Weight:  " + character.weight.to_s + " lbs."
-		file.puts "Base Attack Bonus:  " + character.BAB.to_s
-		file.puts "Base Land Speed:  " + character.speed.to_s
-		file.puts "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
-		(file.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
 		file.puts ""
 		["str","dex","con","int","wis","cha"].each do |stat|
 			if (character.stat_mod[stat] >= 0)
@@ -91,6 +74,38 @@ class CharacterGenerator
 			else
 				file.puts stat + "	" + character.stats[stat].to_s + " (" + character.stat_mod[stat].to_s + ")"
 			end
+		end
+		file.puts ""
+		file.puts "Level:  " + character.level.to_s #panda.get_level.to_s
+		file.puts "HD:  " + character.HD.to_s
+		template_race_list = []
+		file.puts "HP:  " + character.HP.to_s
+		character.racial_templates.each do |tmplt|
+			template_race_list.push(tmplt.to_s)
+		end
+		file.puts "Gender:  " + character.sex
+		file.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
+		file.puts "Age:  " + character.age.to_s
+		file.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
+		file.puts "Weight:  " + character.weight.to_s + " lbs."
+		file.puts "Alignment: " + character.alignment
+		file.print "Base Attack Bonus:  +" + character.BAB.to_s
+		minus = 5
+		while (minus < character.BAB)
+			file.print "/+" + (character.BAB - minus).to_s
+			minus += 5
+		end
+		file.print "\n"
+		file.puts "Base Land Speed:  " + character.speed.to_s
+		file.puts "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
+		(file.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
+		file.puts ""
+		file.puts "Classes:  "
+		temp_classes = []
+		character.classes.each {|cls| temp_classes.push(cls.to_s)}
+		temp_classes.uniq.each do |cls|
+			#file.puts cls.to_s + "("+ character.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
+			file.puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 		end
 		file.puts character.skill_list
 		file.puts ""
@@ -100,13 +115,6 @@ class CharacterGenerator
 		file.puts ""
 		file.puts "Languages:"
 		file.puts character.languages
-		file.puts "Classes:  "
-		temp_classes = []
-		character.classes.each {|cls| temp_classes.push(cls.to_s)}
-		temp_classes.uniq.each do |cls|
-			#file.puts cls.to_s + "("+ character.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
-			file.puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
-		end
 		file.puts ""
 		file.puts "Feats:"
 		sorted_feats = []
