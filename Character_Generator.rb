@@ -101,7 +101,7 @@ class CharacterGenerator
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|
 			separator_counter += 1
-			if bonus > 0
+			if bonus != 0
 				file.print (separator_counter == 1 ? "" : ", ") + modifier.capitalize + ": " +  bonus.to_s + (separator_counter < character.ac_list.length ? "" : ")")
 			else
 				(separator_counter < character.ac_list.length ? ", " : ")")
