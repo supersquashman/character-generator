@@ -33,7 +33,6 @@ class Monk < ClassModel
 		@class_skills = ["Balance", "Climb", "Concentration", "Craft", "Diplomacy", "Escape Artist", "Hide", "Jump", "Knowledge (arcana)", 
 						"Knowledge (religion)", "Listen", "Move Silently", "Perform", "Profession", "Sense Motive", "Spot", "Swim", "Tumble"]
 		@character.ac_list["wis"] = character.stat_mod["wis"]
-		apply
 	end
 
 #-- apply ------------------------------------------------------------------------------#

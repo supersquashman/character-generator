@@ -33,11 +33,10 @@ class Paladin < ClassModel
 		@reflex = BAD_SAVE
 		@bab = GOOD_BAB
 		@class_skills = ["Concentraion", "Craft", "Diplomacy", "Handle Animal",
-    "Profession", "Heal", "Ride", "Sense Motive"]
-    knowledge = ["Religion", "Nobility and Royalty"]
+			"Profession", "Heal", "Ride", "Sense Motive"]
+		knowledge = ["Religion", "Nobility and Royalty"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
-		apply
+		@class_skills += knowledge
 	end
 #-- availiable? ------------------------------------------------------------------------#
 #++
@@ -51,58 +50,61 @@ class Paladin < ClassModel
 #-- apply ------------------------------------------------------------------------------#
 #++
 	def apply#(char)
-    Paladin.increase_spells(@character, @class_level)
+		Paladin.increase_spells(@character, @class_level)
 		super
 
 		#class abilities
 		if class_level == 1  
-		@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
-    #non metal armor?
-		@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | $ARMOR_HEAVY | $SHIELDS
-    
-		@character.add_ability("Aura of Good")
-    @character.add_ability("Detect Evil")
+			@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
+			#non metal armor?
+			@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | $ARMOR_HEAVY | $SHIELDS
+		
+			@character.add_ability("Aura of Good")
+			@character.add_ability("Detect Evil")
 		end
-    @character.increase_ability("Smite Evil(1/day)",1,"") if [1,5,10,15,20].include?(@class_level)
-    @character.increase_ability("Remove Disease(1/week)",1,"") if [6,9,15,18].include?(@class_level)
-    case class_level
-    when 2 
-    @character.add_ability("Divine Grace")
-    @character.add_ability("Lay on Hands") #+cha to all saving throws
-    when 3 
-    @character.add_ability("Aura of Courage")
-    @character.add_ability("Divine Health")
-    when 4 then @character.add_ability("Turn Undead")
-    when 8 then @character.add_ability("Special Mount")
-    end
+		@character.increase_ability("Smite Evil(1/day)",1,"") if [1,5,10,15,20].include?(@class_level)
+		@character.increase_ability("Remove Disease(1/week)",1,"") if [6,9,15,18].include?(@class_level)
+		case class_level
+			when 2 
+				@character.add_ability("Divine Grace")
+				@character.add_ability("Lay on Hands") #+cha to all saving throws
+			when 3 
+				@character.add_ability("Aura of Courage")
+				@character.add_ability("Divine Health")
+			when 4 then @character.add_ability("Turn Undead")
+			when 8 then @character.add_ability("Special Mount")
+		end
 		@character.caster_level +=1
 	end
+
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++
 	def self.increase_spells(character, class_level)
 		spell_table = [
-    [-1, -1, -1, -1],
-    [-1, -1, -1, -1],
-    [-1, -1, -1, -1],
-    [0,  -1, -1, -1],
-    [0,  -1, -1, -1],
-    [1,  -1, -1, -1],
-    [1,  -1, -1, -1],
-    [1,  0,  -1, -1],
-    [1,  0,  -1, -1],
-    [1,  1,  -1, -1],
-    [1,  1,  0,  -1],
-    [1,  1,  1,  -1],
-    [1,  1,  1,  -1],
-    [2,  1,  1,  0 ],
-    [2,  1,  1,  1 ],
-    [2,  2,  1,  1 ],
-    [2,  2,  2,  1 ],
-    [3,  2,  2,  1 ],
-    [3,  3,  3,  2 ],
-    [3,  3,  3,  3 ]]
+		[-1, -1, -1, -1],
+		[-1, -1, -1, -1],
+		[-1, -1, -1, -1],
+		[0,  -1, -1, -1],
+		[0,  -1, -1, -1],
+		[1,  -1, -1, -1],
+		[1,  -1, -1, -1],
+		[1,  0,  -1, -1],
+		[1,  0,  -1, -1],
+		[1,  1,  -1, -1],
+		[1,  1,  0,  -1],
+		[1,  1,  1,  -1],
+		[1,  1,  1,  -1],
+		[2,  1,  1,  0 ],
+		[2,  1,  1,  1 ],
+		[2,  2,  1,  1 ],
+		[2,  2,  2,  1 ],
+		[3,  2,  2,  1 ],
+		[3,  3,  3,  2 ],
+		[3,  3,  3,  3 ]]
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["wis"] >= i+10
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Paladin", true) if val >= 0 
-		  end
+			if character.stats["wis"] >= i+10
+				character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i+1),(i+1).to_s,"Paladin", true) if val >= 0 
+			end
 		end
 	end
 end

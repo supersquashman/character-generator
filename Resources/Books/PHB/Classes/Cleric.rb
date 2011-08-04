@@ -34,10 +34,9 @@ class Cleric < ClassModel
 		@reflex = GOOD_SAVE
 		@bab = MID_BAB
 		@class_skills = ["Concentraion", "Craft", "Diplomacy", "Spellcraft", "Profession", "Heal"]
-    knowledge = ["Arcana", "History", "Religion", "The Planes"]
+		knowledge = ["Arcana", "History", "Religion", "The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
-		apply
+		@class_skills += knowledge
 	end
   
 #-- apply ------------------------------------------------------------------------------#
@@ -60,6 +59,9 @@ class Cleric < ClassModel
 		end
 		@character.caster_level +=1
 	end
+
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++
 	def self.increase_spells(character, class_level)
 		spell_table = [
     [3, 1, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -84,10 +86,10 @@ class Cleric < ClassModel
     [6, 5, 5, 5, 5, 5, 4, 4, 4, 4]]
     character.spells.roll_domains(character)
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["wis"] >= i+10
-      character.spells.roll_domain_spells(i) if i > 0 && val > 0
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Cleric", true) if val > 0 
-		  end
+			if character.stats["wis"] >= i+10
+				character.spells.roll_domain_spells(i) if i > 0 && val > 0
+				character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Cleric", true) if val > 0 
+			end
 		end
 	end
 end

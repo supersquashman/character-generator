@@ -33,11 +33,10 @@ class Wizard < ClassModel
 		@reflex = BAD_SAVE
 		@bab = BAD_BAB
 		@class_skills = ["Concentraion", "Craft", "Decipher Script", "Profession", "Spellcraft"]
-    knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography",
-    "History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
+		knowledge = ["Military","Arcana","Architecture and Engineering","Dungeoneering","Geography",
+		"History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
-		apply
+		@class_skills += knowledge
 	end
   
 #-- apply ------------------------------------------------------------------------------#
@@ -50,10 +49,10 @@ class Wizard < ClassModel
 
 		#class abilities
 		if class_level == 1  
-		@character.weapon_proficiencies |= ["Club", "Dagger", "Heavy Crossbow", "Light Crossbow", "Quarterstaff"]
-		@character.armor_proficiencies |= []
-		@character.add_ability("Summon Familiar") #[TODO] Familiar rules
-		@character.add_ability("Scribe Scroll") 
+			@character.weapon_proficiencies |= ["Club", "Dagger", "Heavy Crossbow", "Light Crossbow", "Quarterstaff"]
+			@character.armor_proficiencies |= []
+			@character.add_ability("Summon Familiar") #[TODO] Familiar rules
+			@character.add_ability("Scribe Scroll") 
 		#[TODO] Spell Specialization
 		end
 		
@@ -61,7 +60,9 @@ class Wizard < ClassModel
 		
 		FeatList.get_bonus_feat(@character, "Wizard") if [5,10,15,20].include?(@class_level)#(@class_level.to_i%5 == 0)
 	end
-	
+
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++
 	def self.increase_spells(character, class_level)
 		#spells
 		#[TODO] Generate Spell Book
@@ -88,9 +89,9 @@ class Wizard < ClassModel
 		[4,4,4,4,4,4,4,4,4,4]]
 
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["int"] >= i+10
-			character.spells.roll_spells(val+SpellList.bonus_spells(character.stat_mod["int"], i),i.to_s,"Wizard", true) if val > 0
-		  end
+			if character.stats["int"] >= i+10
+				character.spells.roll_spells(val+SpellList.bonus_spells(character.stat_mod["int"], i),i.to_s,"Wizard", true) if val > 0
+			end
 		end
 	end
 end

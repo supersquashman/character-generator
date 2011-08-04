@@ -33,7 +33,6 @@ class Sorcerer < ClassModel
 		@reflex = BAD_SAVE
 		@bab = BAD_BAB
 		@class_skills = ["Bluff","Concentraion", "Craft", "Knowledge(Arcana)", "Profession", "Spellcraft"]
-		apply
 	end
   
 #-- apply ------------------------------------------------------------------------------#
@@ -53,7 +52,9 @@ class Sorcerer < ClassModel
 		end
 		@character.caster_level +=1
 	end
-	
+
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++	
 	def self.increase_spells(character, class_level)
 		spells_per_day_table = [
 		[5,3,0,0,0,0,0,0,0,0],
@@ -103,9 +104,9 @@ class Sorcerer < ClassModel
 		[9,5,5,4,4,4,3,3,3,3]]
 
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["cha"] >= i+10 && character.spells.per_day["Sorcerer"][i.to_s] > 0
-			character.spells.roll_spells(val,i.to_s,"Sorcerer")
-		  end
+			if character.stats["cha"] >= i+10 && character.spells.per_day["Sorcerer"][i.to_s] > 0
+				character.spells.roll_spells(val,i.to_s,"Sorcerer")
+			end
 		end
 	end
 end

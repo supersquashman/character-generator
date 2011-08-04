@@ -31,7 +31,6 @@ class Fighter < ClassModel
 		@reflex = BAD_SAVE
 		@bab = GOOD_BAB
 		@class_skills = ["Climb", "Craft", "Handle Animal", "Intimidate", "Jump", "Ride", "Swim"]
-		apply
 	end
 
 #-- apply ------------------------------------------------------------------------------#

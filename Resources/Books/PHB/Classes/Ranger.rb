@@ -44,7 +44,6 @@ class Ranger < ClassModel
 								"Outsider (evil)", "Humanoid (dwarf)", "Outsider (fire)", "Humanoid (elf)", "Outsider (good)", "Humanoid (goblinoid)",
 								"Outsider (lawful)", "Humanoid (gnoll)", "Outsider (native)", "Humanoid (gnome)", "Outsider (water)", "Humanoid (halfling)",
 								"Plant", "Humanoid (human)", "Undead", "Humanoid (orc)", "Vermin"]
-		apply
 	end
 
 #-- apply ------------------------------------------------------------------------------#
@@ -154,6 +153,8 @@ class Ranger < ClassModel
 		end
 	end
 
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++
 	def self.increase_spells(character, class_level)
 		spell_table = [
 			[-1, -1, -1, -1],
