@@ -112,6 +112,7 @@ class Character
 		self.race.apply_level
 		self.racial_templates.each {|template| template.apply_level} if self.racial_templates.length > 0
 		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
+		@stats[stats.keys[rand(stats.keys.length)]] += 1 if (@level%4 == 0)
 		#selected_class = ClassList.list.values[rand(ClassList.list.length)]
 		#selected_class.apply(self)
 		if @number_of_classes < @max_classes
