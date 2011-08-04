@@ -92,4 +92,4 @@ attr_accessor :name, :pre, :post
 	end
 end
 
-Name.load
+Name.load("Resources/Names/")

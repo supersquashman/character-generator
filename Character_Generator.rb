@@ -57,7 +57,7 @@ class CharacterGenerator
 					file_name = "Characters/" + character.name.to_s + "(" + new_file_count.to_s + ").txt"
 				else
 					char_file = File.new(file_name, "w")
-					print_character(char_file)
+					print_character(char_file, character)
 					char_file.close
 					created = true
 				end
@@ -65,57 +65,64 @@ class CharacterGenerator
 		end
 	end
 	
-	def print_character(file)
-		file.puts "Name:  " + panda.name.to_s
-		file.puts "Race:  " + template_race_list.join(" ").to_s + " " + panda.race.to_s
-		file.puts "Alignment: " + panda.alignment
-		file.puts "Age:  " + panda.age.to_s
-		file.puts "Gender:  " + panda.sex
-		file.puts "Height:  " + ((panda.height.to_i/12).floor).to_s + "'" + ((panda.height.to_i%12)).to_s + "\""
-		file.puts "Weight:  " + panda.weight.to_s + " lbs."
-		file.puts "Base Attack Bonus:  " + panda.BAB.to_s
-		file.puts "Base Land Speed:  " + panda.speed.to_s
-		file.puts "AC:  " + panda.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
-		(file.puts "Spell Resistance:  " + panda.spell_resist.to_s) if panda.spell_resist > 0
+	def print_character(file, character)
+		file.puts "HP:  " + character.HP.to_s
+		file.puts "HD:  " + character.HD.to_s
+		file.puts "Level:  " + character.level.to_s #panda.get_level.to_s
+		template_race_list = []
+		character.racial_templates.each do |tmplt|
+			template_race_list.push(tmplt.to_s)
+		end
+		file.puts "Name:  " + character.name.to_s
+		file.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
+		file.puts "Alignment: " + character.alignment
+		file.puts "Age:  " + character.age.to_s
+		file.puts "Gender:  " + character.sex
+		file.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
+		file.puts "Weight:  " + character.weight.to_s + " lbs."
+		file.puts "Base Attack Bonus:  " + character.BAB.to_s
+		file.puts "Base Land Speed:  " + character.speed.to_s
+		file.puts "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s
+		(file.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
 		file.puts ""
 		["str","dex","con","int","wis","cha"].each do |stat|
-			if (panda.stat_mod[stat] >= 0)
-				file.puts stat + "	" + panda.stats[stat].to_s + " (+" + panda.stat_mod[stat].to_s + ")"
+			if (character.stat_mod[stat] >= 0)
+				file.puts stat + "	" + character.stats[stat].to_s + " (+" + character.stat_mod[stat].to_s + ")"
 			else
-				file.puts stat + "	" + panda.stats[stat].to_s + " (" + panda.stat_mod[stat].to_s + ")"
+				file.puts stat + "	" + character.stats[stat].to_s + " (" + character.stat_mod[stat].to_s + ")"
 			end
 		end
-		file.puts panda.skill_list
+		file.puts character.skill_list
 		file.puts ""
-		file.puts panda.abilities.sort
+		file.puts character.abilities.sort
 		#file.puts "\nFavored Classes:  "
-		#panda.race.favored_classes.each {|cls| file.puts cls}
+		#character.race.favored_classes.each {|cls| file.puts cls}
 		file.puts ""
 		file.puts "Languages:"
-		file.puts panda.languages
+		file.puts character.languages
 		file.puts "Classes:  "
 		temp_classes = []
-		panda.classes.each {|cls| temp_classes.push(cls.to_s)}
+		character.classes.each {|cls| temp_classes.push(cls.to_s)}
 		temp_classes.uniq.each do |cls|
-			#file.puts cls.to_s + "("+ panda.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
+			#file.puts cls.to_s + "("+ character.classes.collect {|val| val.class.to_s == cls}.size.to_s + ")"
 			file.puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 		end
 		file.puts ""
 		file.puts "Feats:"
 		sorted_feats = []
-		panda.feats.each do |feat|
+		character.feats.each do |feat|
 			sorted_feats += [feat.to_s]
 		end
 		file.puts sorted_feats.sort
-		if panda.spells.to_s
+		if character.spells.to_s
 			file.puts "\nSpells:"
-			file.puts panda.spells.to_s
+			file.puts character.spells.to_s
 		end
 		file.puts "\nBackground:"
-		file.puts panda.history
+		file.puts character.history
 		file.puts ""
-		file.puts panda.primary_motivation
+		file.puts character.primary_motivation
 		file.puts ""
-		file.puts panda.secondary_motivation
+		file.puts character.secondary_motivation
 	end
 end
