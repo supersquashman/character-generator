@@ -32,7 +32,7 @@ class Equipment
 	"Hand Crossbow", "Repeating Heavy Crossbow", "Repeating Light Crossbow", "Net", "Shuriken"]
 	$SHIELDS = ["Buckler", "Light Wooden Shield", "Light Steel Shield", "Heavy Wooden Shield", "Heavy Steel Shield"]
 	$TOWER_SHIELD = ["Tower Shield"]
-	$ARMOR_HEAVY = ["Splint mail", "Banded mail", "Half-plate", "Full plate"]
-	$ARMOR_MED = ["Hide", "Scale mail", "Chainmail", "Breastplate"]
-	$ARMOR_LIGHT = ["Padded", "Leather", "Studded leather", "Chain shirt"]
+	$HEAVY_ARMOR = ["Splint mail", "Banded mail", "Half-plate", "Full plate"]
+	$MEDIUM_ARMOR = ["Hide", "Scale mail", "Chainmail", "Breastplate"]
+	$LIGHT_ARMOR = ["Padded", "Leather", "Studded leather", "Chain shirt"]
 end

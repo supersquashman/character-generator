@@ -51,7 +51,7 @@ class Cleric < ClassModel
 		if class_level == 1  
 		@character.languages.bonus_languages += ["Celestial", "Abyssal", "Infernal"]
 		@character.weapon_proficiencies |= $SIMPLE_WEAPONS
-		@character.armor_proficiencies |= $ARMOR_HEAVY | $ARMOR_LIGHT | $ARMOR_MED | $SHIELDS
+		@character.armor_proficiencies |= $HEAVY_ARMOR | $LIGHT_ARMOR | $MEDIUM_ARMOR | $SHIELDS
 		@character.add_ability("Turn or Rebuke Undead")
 		@character.add_ability("Spontaneous Casting(Cure or Inflict)")
 		aura = @character.alignment.scan(/Good|Evil|Lawful|Chaotic/).join(" ").to_s
