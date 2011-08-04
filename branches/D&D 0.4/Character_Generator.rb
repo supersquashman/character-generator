@@ -11,14 +11,14 @@ require_relative "Resources/Names/Name"
 class CharacterGenerator
 	@@character_list = []
 
-	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, book_list = ["PHB"])
-		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
-		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
-		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
-		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
+	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, sources = ["PHB"])
+		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
 		
 		char_count.times do
-			@@character_list.push(Character.new(book_list))
+			@@character_list.push(Character.new(sources))
 		end
 		@@character_list.each do |character|
 			character.max_classes = num_classes
@@ -29,9 +29,9 @@ class CharacterGenerator
 		end
 	end
 	
-	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, book_list = ["PHB"])
+	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"])
 	char_count.times do
-			@@character_list.push(Character.new(book_list))
+			@@character_list.push(Character.new(sources))
 		end
 		@@character_list.times do |character|
 			character.max_classes = num_classes
@@ -108,6 +108,7 @@ class CharacterGenerator
 				file.print ")" if (separator_counter >= character.ac_list.length)
 			end
 		end
+		file.print "\n"
 		(file.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
 		file.puts ""
 		file.puts "Classes:  "
@@ -116,16 +117,15 @@ class CharacterGenerator
 		temp_classes.uniq.each do |cls|
 			file.puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 		end
+		file.print "\nSkills:  \n"
 		file.puts character.skill_list
-		file.puts ""
+		file.print "\nAbilities:  \n"
 		file.puts character.abilities.sort
 		#file.puts "\nFavored Classes:  "
 		#character.race.favored_classes.each {|cls| file.puts cls}
-		file.puts ""
-		file.puts "Languages:"
+		file.print "\nLanguages:  \n"
 		file.puts character.languages
-		file.puts ""
-		file.puts "Feats:"
+		file.print "\nFeats:  \n"
 		sorted_feats = []
 		character.feats.each do |feat|
 			sorted_feats += [feat.to_s]
