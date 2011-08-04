@@ -41,7 +41,6 @@ class Bard < ClassModel
 		"History","Local","Nature","Nobility and Royalty","Psionics","Religion","The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
 		@class_skills += knowledge
-		apply
 	end
   
 #-- availiable? ------------------------------------------------------------------------#
@@ -59,29 +58,31 @@ class Bard < ClassModel
 		#[NOTE][QUESTION] should perform be a prefered skill?
 			#Class Features :
 		#inspire courage
-			@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
+		@character.increase_ability("Inspire Courage",1,"+") if [1,8,14,20].include?(@class_level)
 		Bard.increase_spells(@character, @class_level)
      
-      @character.add_ability("Bardic Knowledge +2 Synergy") if @character.skill_list.get_ranks("Knowledge(History)") >=5
+		@character.add_ability("Bardic Knowledge +2 Synergy") if @character.skill_list.get_ranks("Knowledge(History)") >=5
 			#class abilities
-			case class_level
-				when 1  
-			@character.weapon_proficiencies |= $SIMPLE_WEAPONS |["Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
-			@character.armor_proficiencies |= ["Light","Shields"]
-			@character.add_ability("Bardic Music")
-			@character.add_ability("Bardic Knowledge")
-			@character.add_ability("Countersong")
-			@character.add_ability("Fascinate")
-		  when 3 then @character.add_ability("Inspire Competence")
-		  when 6 then @character.add_ability("Suggestion")
-		  when 9 then @character.add_ability("Inspire Greatness")
-		  when 12 then @character.add_ability("Song of Freedom")
-		  when 15 then @character.add_ability("Inspire Heroics")
-		  when 18 then @character.add_ability("Mass Suggestion")
+		case class_level
+			when 1  
+				@character.weapon_proficiencies |= $SIMPLE_WEAPONS |["Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
+				@character.armor_proficiencies |= ["Light","Shields"]
+				@character.add_ability("Bardic Music")
+				@character.add_ability("Bardic Knowledge")
+				@character.add_ability("Countersong")
+				@character.add_ability("Fascinate")
+			when 3 then @character.add_ability("Inspire Competence")
+			when 6 then @character.add_ability("Suggestion")
+			when 9 then @character.add_ability("Inspire Greatness")
+			when 12 then @character.add_ability("Song of Freedom")
+			when 15 then @character.add_ability("Inspire Heroics")
+			when 18 then @character.add_ability("Mass Suggestion")
 		end
 		@character.caster_level +=1
 	end
-	
+
+#-- self.increase_spells(character, class_level) ------------------------------------------------------------------------------#
+#++	
 	def self.increase_spells(character, class_level)
 		#spells
 		spells_per_day_table = [

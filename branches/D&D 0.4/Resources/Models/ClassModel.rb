@@ -73,7 +73,7 @@ class ClassModel
 		@character.skill_list.roll_skills(num_skills)
 	end
 
-#-- self.available?(character) ---------------------------------------------------------#
+#-- available?(character) ---------------------------------------------------------#
 #++
 	def available?
 		return true

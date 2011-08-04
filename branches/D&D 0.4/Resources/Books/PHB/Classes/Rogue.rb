@@ -37,7 +37,6 @@ class Rogue < ClassModel
 						"Move Silently","Open Lock","Perform", "Profession",
 						"Search","Sense Motive", "Sleight of Hand","Spot",
 						"Swim","Tumble","Use Magic Device","Use Rope"]
-		apply
 	end
 
 #-- apply ------------------------------------------------------------------------------#
@@ -56,9 +55,9 @@ class Rogue < ClassModel
 		#class abilities
 		case class_level
 			when 1
-      @character.add_ability("Trapfinding")
-      @character.weapon_proficiencies |= $SIMPLE_WEAPONS | [  "Hand Crossbow", "Rapier", "Sap", "Shortbow", "Short Sword"]
-      @character.armor_proficiencies |= ["Light"]
+				@character.add_ability("Trapfinding")
+				@character.weapon_proficiencies |= $SIMPLE_WEAPONS | [  "Hand Crossbow", "Rapier", "Sap", "Shortbow", "Short Sword"]
+				@character.armor_proficiencies |= ["Light"]
 			when 2 then @character.add_ability("Evasion")
 			when 4 then @character.add_ability("Uncanny Dodge") #flat footed ac problem
 			when 8 then @character.add_ability("Improved Uncanny Dodge")

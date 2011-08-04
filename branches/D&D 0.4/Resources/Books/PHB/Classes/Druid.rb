@@ -33,11 +33,10 @@ class Druid < ClassModel
 		@reflex = BAD_SAVE
 		@bab = MID_BAB
 		@class_skills = ["Concentraion", "Craft", "Diplomacy", "Handle Animal", "Spellcraft", 
-    "Profession", "Heal", "Listen", "Swim", "Ride", "Spot", "Survival"]
-    knowledge = ["Nature"]
+		"Profession", "Heal", "Listen", "Swim", "Ride", "Spot", "Survival"]
+		knowledge = ["Nature"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
-    @class_skills += knowledge
-		apply
+		@class_skills += knowledge
 	end
 #-- availiable? ------------------------------------------------------------------------#
 #++
@@ -51,69 +50,70 @@ class Druid < ClassModel
 #-- apply ------------------------------------------------------------------------------#
 #++
 	def apply#(char)
-    Druid.increase_spells(@character, @class_level)
+		Druid.increase_spells(@character, @class_level)
 		super
     
-    @character.add_ability("Wild Empathy Checks +2 Synergy") if @character.skill_list.get_ranks("Knowledge(Religion)") >=5
+		@character.add_ability("Wild Empathy Checks +2 Synergy") if @character.skill_list.get_ranks("Knowledge(Religion)") >=5
 		#class abilities
 		if class_level == 1  
-		@character.languages.bonus_languages += ["Sylvan"]
-    @character.languages.learn_lang("Druidic")
-		@character.weapon_proficiencies |=  ["Dagger", "Club",	"Shortspear", "Quarterstaff", "Spear", "Sling","Dart", "Scimitar", "Sickle"]
-    #non metal armor?
-		@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | ["Buckler", "Light Wooden Shield", "Heavy Wooden Shield"]
-    
-		@character.add_ability("Animal Companion")
-    @character.add_ability("Wild Empathy")
-    #@character.add_ability("Nature Sense")
-    @character.skill_list.assign_misc("Knowledge(Nature)", 2)
-    @character.skill_list.assign_misc("Survival", 2)
-		@character.add_ability("Spontaneous Casting(Summon Nature's Ally)")
+			@character.languages.bonus_languages += ["Sylvan"]
+			@character.languages.learn_lang("Druidic")
+			@character.weapon_proficiencies |=  ["Dagger", "Club",	"Shortspear", "Quarterstaff", "Spear", "Sling","Dart", "Scimitar", "Sickle"]
+			#non metal armor?
+			@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | ["Buckler", "Light Wooden Shield", "Heavy Wooden Shield"]
+		
+			@character.add_ability("Animal Companion")
+			@character.add_ability("Wild Empathy")
+			#@character.add_ability("Nature Sense")
+			@character.skill_list.assign_misc("Knowledge(Nature)", 2)
+			@character.skill_list.assign_misc("Survival", 2)
+			@character.add_ability("Spontaneous Casting(Summon Nature's Ally)")
 		end
-    @character.increase_ability("Wild Shape(1/day)",1,"") if [5,6,7,10,14,18].include?(@class_level)
-    @character.increase_ability("Wild Shape Elemental(1/day)",1,"") if [16,18,20].include?(@class_level)
-    case class_level
-    when 2 then @character.add_ability("Woodland Stride")
-    when 3 then @character.add_ability("Trackless Step")
-    when 4 then @character.add_ability("Resist Nature's Lure")
-    when 8 then @character.add_ability("Wild Shape(Large)")
-    when 9 then @character.add_ability("Venom Immunity")
-    when 11 then @character.add_ability("Wild Shape(Tiny)")
-    when 12 then @character.add_ability("Wild Shape(Plant)")
-    when 13 then @character.add_ability("A thounsand faces")
-    when 15
-      @character.add_ability("Timeless Body")
-      @character.add_ability("Wild Shape(Huge)")
-    when 20 then @character.add_ability("Wild Shape Elemental(Huge)")
-    end
+		@character.increase_ability("Wild Shape(1/day)",1,"") if [5,6,7,10,14,18].include?(@class_level)
+		@character.increase_ability("Wild Shape Elemental(1/day)",1,"") if [16,18,20].include?(@class_level)
+		case class_level
+			when 2 then @character.add_ability("Woodland Stride")
+			when 3 then @character.add_ability("Trackless Step")
+			when 4 then @character.add_ability("Resist Nature's Lure")
+			when 8 then @character.add_ability("Wild Shape(Large)")
+			when 9 then @character.add_ability("Venom Immunity")
+			when 11 then @character.add_ability("Wild Shape(Tiny)")
+			when 12 then @character.add_ability("Wild Shape(Plant)")
+			when 13 then @character.add_ability("A thounsand faces")
+			when 15
+				@character.add_ability("Timeless Body")
+				@character.add_ability("Wild Shape(Huge)")
+			when 20 then @character.add_ability("Wild Shape Elemental(Huge)")
+		end
 		@character.caster_level +=1
 	end
+	
 	def self.increase_spells(character, class_level)
 		spell_table = [
-    [3, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [4, 2, 0, 0, 0, 0, 0, 0, 0, 0],
-    [4, 2, 1, 0, 0, 0, 0, 0, 0, 0],
-    [5, 3, 2, 0, 0, 0, 0, 0, 0, 0],
-    [5, 3, 2, 1, 0, 0, 0, 0, 0, 0],
-    [5, 3, 3, 2, 0, 0, 0, 0, 0, 0],
-    [6, 4, 3, 2, 1, 0, 0, 0, 0, 0],
-    [6, 4, 3, 3, 2, 0, 0, 0, 0, 0],
-    [6, 4, 4, 3, 2, 1, 0, 0, 0, 0],
-    [6, 4, 4, 3, 3, 2, 0, 0, 0, 0],
-    [6, 5, 4, 4, 3, 2, 1, 0, 0, 0],
-    [6, 5, 4, 4, 3, 3, 2, 0, 0, 0],
-    [6, 5, 5, 4, 4, 3, 2, 1, 0, 0],
-    [6, 5, 5, 4, 4, 3, 3, 2, 0, 0],
-    [6, 5, 5, 5, 4, 4, 3, 2, 1, 0],
-    [6, 5, 5, 5, 4, 4, 3, 3, 2, 0],
-    [6, 5, 5, 5, 5, 4, 4, 3, 2, 1],
-    [6, 5, 5, 5, 5, 4, 4, 3, 3, 2],
-    [6, 5, 5, 5, 5, 5, 4, 4, 3, 3],
-    [6, 5, 5, 5, 5, 5, 4, 4, 4, 4]]
+		[3, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+		[4, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+		[4, 2, 1, 0, 0, 0, 0, 0, 0, 0],
+		[5, 3, 2, 0, 0, 0, 0, 0, 0, 0],
+		[5, 3, 2, 1, 0, 0, 0, 0, 0, 0],
+		[5, 3, 3, 2, 0, 0, 0, 0, 0, 0],
+		[6, 4, 3, 2, 1, 0, 0, 0, 0, 0],
+		[6, 4, 3, 3, 2, 0, 0, 0, 0, 0],
+		[6, 4, 4, 3, 2, 1, 0, 0, 0, 0],
+		[6, 4, 4, 3, 3, 2, 0, 0, 0, 0],
+		[6, 5, 4, 4, 3, 2, 1, 0, 0, 0],
+		[6, 5, 4, 4, 3, 3, 2, 0, 0, 0],
+		[6, 5, 5, 4, 4, 3, 2, 1, 0, 0],
+		[6, 5, 5, 4, 4, 3, 3, 2, 0, 0],
+		[6, 5, 5, 5, 4, 4, 3, 2, 1, 0],
+		[6, 5, 5, 5, 4, 4, 3, 3, 2, 0],
+		[6, 5, 5, 5, 5, 4, 4, 3, 2, 1],
+		[6, 5, 5, 5, 5, 4, 4, 3, 3, 2],
+		[6, 5, 5, 5, 5, 5, 4, 4, 3, 3],
+		[6, 5, 5, 5, 5, 5, 4, 4, 4, 4]]
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
-		  if character.stats["wis"] >= i+10
-			character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Druid", true) if val > 0 
-		  end
+			if character.stats["wis"] >= i+10
+				character.spells.roll_spells(val + SpellList.bonus_spells(character.stat_mod["wis"], i),i.to_s,"Druid", true) if val > 0 
+			end
 		end
 	end
 end

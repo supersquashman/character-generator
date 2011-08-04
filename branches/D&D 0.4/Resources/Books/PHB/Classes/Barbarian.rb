@@ -32,15 +32,14 @@ class Barbarian < ClassModel
 		@bab = GOOD_BAB
 		@class_skills = ["Climb","Craft","Handle Animal","Intimidate",
                       "Jump","Listen","Ride","Survival","Swim"]
-		apply
 	end
 	
 #-- available? -------------------------------------------------------------------------#
 #++
-	def available?
+	def self.available?
 		available = super 
-    ["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
-    available
+		["Lawful Good","Lawful Neutral","Lawful Evil"].each {|a| available &&= @character.alignment != a}
+		available
 	end
   
 #-- apply ------------------------------------------------------------------------------#

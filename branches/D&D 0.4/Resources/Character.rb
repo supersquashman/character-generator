@@ -127,8 +127,10 @@ class Character
 			@classes.each {|cls| temp_classes.push(cls.to_s)}
 			@number_of_classes = temp_classes.uniq.length
 		else
-			@classes.push(@classes[rand(@classes.length)].class.new(self))
+			selected = @classes[rand(@classes.length)].class.new(self)
+			@classes.push(selected)
 		end
+		selected.apply
 		extra_levelup_procs.each{|proc| proc.call self}
 		calculate_mods
 	end
