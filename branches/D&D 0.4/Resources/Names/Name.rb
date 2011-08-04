@@ -33,7 +33,7 @@ attr_accessor :name, :pre, :post
 	def generate(alignment=@alignment)
 		begin 
 			choice=@name_token_categories[rand(@name_token_categories.length)] 
-		end while(@@tokens[choice].length > 1)
+		end while(@@tokens[choice].length < 1)
 		@name = pick_line(choice,"[rules]").split(" ").each{|word| word.capitalize!}.join(" ")
 		@pre = pick_line(choice,"[pretitle]").split(" ").each{|word| word.capitalize!}.join(" ")
 		@post = pick_line("[Title]","[title]").split(" ").each{|word| word.capitalize!}.join(" ")

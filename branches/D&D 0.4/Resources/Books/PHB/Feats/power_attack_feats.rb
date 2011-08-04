@@ -18,7 +18,7 @@ class PowerAttack < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -40,7 +40,7 @@ class Cleave < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -60,7 +60,7 @@ class GreatCleave < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -81,7 +81,7 @@ class ImprovedBullRush < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -102,7 +102,7 @@ class ImprovedOverrun < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
@@ -124,7 +124,7 @@ class ImprovedSunder < FeatModel
 	end
 	
 	def self.is_bonus_feat?(class_type)
-		return @@bonus_classes.include?(class_type)
+		return @bonus_classes.include?(class_type)
 	end
 end
 
