@@ -11,7 +11,7 @@ require_relative "Resources/Names/Name"
 class CharacterGenerator
 	@@character_list = []
 
-	def generate_specific_level_characters(char_level = 1, book_list = ["PHB"], char_count = 1)
+	def generate_specific_level_characters(char_count = 1, char_level = 1, book_list = ["PHB"])
 		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
 		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
 		book_list.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
@@ -29,7 +29,7 @@ class CharacterGenerator
 		end
 	end
 	
-	def generate_level_range_characters(char_low_level =1, char_high_level = 20, book_list = ["PHB"], char_count = 1)
+	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, book_list = ["PHB"])
 	char_count.times do
 			@@character_list.push(Character.new(book_list))
 		end

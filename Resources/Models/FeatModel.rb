@@ -22,14 +22,14 @@ require_relative "../Roll"
 #++
 class FeatModel
 	attr_accessor :title,:description,:page,:type,:link,:bonus_feat, :bonus_classes
-
+	
+	@bonus_classes = [""]
 #-- initialize(title, bonus_feat) ------------------------------------------------------#
 #++	
 	def initialize (title="", bonus_feat=false)
 		@bonus_feat = bonus_feat
 		@type = "general"
 		@title =title
-		@bonus_classes = []
 	end
   
 #-- self.available?(character) ---------------------------------------------------------#
@@ -61,7 +61,7 @@ class FeatModel
 
 #-- self.is_bonus_feat?(class_type) --------------------------------------------------------------#
 #++
-	def self.is_bonus_feat?(class_type)
-		return @bonus_classes.include?(class_type)
-	end
+	#def self.is_bonus_feat?(class_type)
+	#	return @bonus_classes.include?(class_type)
+	#end
 end
