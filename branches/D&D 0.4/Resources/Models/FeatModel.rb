@@ -58,10 +58,4 @@ class FeatModel
 	def self.feat_taken(char)
 		return char.feats.collect{|feat| feat.title}.include?(self.new.title)
 	end
-
-#-- self.is_bonus_feat?(class_type) --------------------------------------------------------------#
-#++
-	#def self.is_bonus_feat?(class_type)
-	#	return @bonus_classes.include?(class_type)
-	#end
 end
