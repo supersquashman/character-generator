@@ -17,6 +17,10 @@ class CharacterGenerator
 		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
 		
+		if (char_level < num_classes)
+			num_classes = char_level
+		end
+		
 		char_count.times do
 			@@character_list.push(Character.new(sources))
 		end
