@@ -60,7 +60,7 @@ class Druid < ClassModel
 			@character.languages.learn_lang("Druidic")
 			@character.weapon_proficiencies |=  ["Dagger", "Club",	"Shortspear", "Quarterstaff", "Spear", "Sling","Dart", "Scimitar", "Sickle"]
 			#non metal armor?
-			@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | ["Buckler", "Light Wooden Shield", "Heavy Wooden Shield"]
+			@character.armor_proficiencies |= $LIGHT_ARMOR | $MEDIUM_ARMOR | ["Buckler", "Light Wooden Shield", "Heavy Wooden Shield"]
 		
 			@character.add_ability("Animal Companion")
 			@character.add_ability("Wild Empathy")

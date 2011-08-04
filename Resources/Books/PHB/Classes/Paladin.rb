@@ -57,7 +57,7 @@ class Paladin < ClassModel
 		if class_level == 1  
 			@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
 			#non metal armor?
-			@character.armor_proficiencies |= $ARMOR_LIGHT | $ARMOR_MED | $ARMOR_HEAVY | $SHIELDS
+			@character.armor_proficiencies |= $LIGHT_ARMOR | $MEDIUM_ARMOR | $HEAVY_ARMOR | $SHIELDS
 		
 			@character.add_ability("Aura of Good")
 			@character.add_ability("Detect Evil")

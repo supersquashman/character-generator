@@ -55,7 +55,7 @@ class Ranger < ClassModel
 		#class abilities
 		if class_level == 1  
 			@character.weapon_proficiencies |=  $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
-			@character.armor_proficiencies |= $ARMOR_LIGHT  | $SHIELDS
+			@character.armor_proficiencies |= $LIGHT_ARMOR  | $SHIELDS
 			@character.add_ability("Track")
 			@character.add_ability("Wild Empathy")
 			add_favored_enemy

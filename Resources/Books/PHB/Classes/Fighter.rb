@@ -39,7 +39,7 @@ class Fighter < ClassModel
 		super
     if @class_level == 1
       @character.weapon_proficiencies |= $MARTIAL_WEAPONS | $SIMPLE_WEAPONS
-      @character.armor_proficiencies |= $ARMOR_HEAVY | $ARMOR_LIGHT | $ARMOR_MED | $SHIELDS | $TOWER_SHIELD
+      @character.armor_proficiencies |= $HEAVY_ARMOR | $LIGHT_ARMOR | $MEDIUM_ARMOR | $SHIELDS | $TOWER_SHIELD
     end
 		#Class Features :
 		#bonus feats    
