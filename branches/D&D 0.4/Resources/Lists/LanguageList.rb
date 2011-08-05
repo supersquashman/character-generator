@@ -80,24 +80,24 @@ class LanguageList
 #++
 	def self.load_langs(array)      
 		array.each do |lang|
-				@@list.include?(lang) ? 0 : self.push(lang)
+			@@list.include?(lang) ? 0 : self.push(lang)
 		end
 	end
 #-- roll_lang( bonus_langs=[]) -----------------------------------------------------#
 #++
 	def roll_lang(read=true)
 		bonus_langs = bonus_languages - languages
-    to_read = languages.uniq
-    to_read.reject!{|lang| !lang.include?("Speak Only")}
-    if to_read.length > 0
-      learn_lang(to_read[rand(to_read.length)],read)
+		to_read = languages.uniq
+		to_read.reject!{|lang| !lang.include?("Speak Only")}
+		if to_read.length > 0
+			learn_lang(to_read[rand(to_read.length)],read)
 		elsif bonus_langs.length >0 
 			learn_lang(bonus_langs[rand(bonus_langs.length)],read)
 		elsif (list - languages).length >0
 			while !learn_lang(list[rand(list.length)],read) ;end
 		else
 			#languages.push("Additional Language")
-      return false
+		return false
 		end
     return true
 	end
@@ -105,7 +105,7 @@ class LanguageList
 #++
 	def to_s
 		ret =""
-		languages.each {|lang| ret += "\t* " +lang +"\n"}
+		languages.each {|lang| ret += "    * " +lang +"\n"}
 		return ret
 	end
 end

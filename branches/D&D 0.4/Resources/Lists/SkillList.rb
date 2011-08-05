@@ -41,66 +41,71 @@ class SkillList
 		@class_skills=[]
 		#load skills
 		Skills.new
-    @character.final_levelup_procs +=[Proc.new do |char|
-      cskills = char.skill_list.skills
-      #[TODO] class based synergies for bard and druid
-      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Bluff") >= 5
-      char.skill_list.assign_circ("Disguise", "Synergy[Act in Character]", 2) if char.skill_list.get_ranks("Bluff") >= 5
-      char.skill_list.assign_misc("Intimidate", 2) if char.skill_list.get_ranks("Bluff") >= 5
-      char.skill_list.assign_misc("Sleight of Hand", 2) if char.skill_list.get_ranks("Bluff") >= 5
-      any_craft = false
-      ["Alchemy", "Armorsmithing", "Bowmaking", "Trapmaking", "Weaponsmithing", "Carpentry", "Blacksmithing", "Mechanical", "Stoneworking"].each do |craft|
-        any_craft ||= char.skill_list.get_ranks("Craft(" + craft + ")") >= 5
-      end
-      char.skill_list.assign_circ("Appraise", "Synergy[Craft Related]", 2) if any_craft
-      char.skill_list.assign_circ("Use Magic Device", "Synergy[Involving Scrolls]", 2) if char.skill_list.get_ranks("Decipher Script") >= 5
-      char.skill_list.assign_circ("Use Rope", "Synergy[Bindings]", 2) if char.skill_list.get_ranks("Escape Artist") >= 5
-      char.skill_list.assign_misc("Ride", 2) if char.skill_list.get_ranks("Handle Animal") >= 5
-      char.skill_list.assign_misc("Tumble", 2) if char.skill_list.get_ranks("Jump") >= 5
-      char.skill_list.assign_misc("Spellcraft", 2) if char.skill_list.get_ranks("Knowledge(Arcana)") >= 5
-      char.skill_list.assign_circ("Search", "Synergy[Secret Doors/Compartments]", 2) if char.skill_list.get_ranks("Knowledge(Architecture and Engineering)") >= 5
-      char.skill_list.assign_circ("Survival", "Synergy[Underground]", 2) if char.skill_list.get_ranks("Knowledge(Dungeoneering)") >= 5
-      char.skill_list.assign_circ("Survival", "Synergy[Not Getting Lost/ Avioding Hazards ]", 2) if char.skill_list.get_ranks("Knowledge(Geography)") >= 5
-      char.skill_list.assign_misc("Gather Information", 2) if char.skill_list.get_ranks("Knowledge(Local)") >= 5
-      char.skill_list.assign_circ("Survival", "Synergy[Aboveground Natural]", 2) if char.skill_list.get_ranks("Knowledge(Nature)") >= 5
-      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Knowledge(Nobility and Royalty)") >= 5
-      char.skill_list.assign_circ("Survival", "Synergy[Other Planes]", 2) if char.skill_list.get_ranks("Knowledge(The Planes)") >= 5
-      char.skill_list.assign_circ("Survival", "Synergy[Following Tracks]", 2) if char.skill_list.get_ranks("Search") >= 5
-      char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Sense Motive") >= 5
-      char.skill_list.assign_circ("Use Magic Device", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Spellcraft") >= 5
-      char.skill_list.assign_misc("Knowledge(Nature)", 2) if char.skill_list.get_ranks("Survival") >= 5
-      char.skill_list.assign_misc("Balance", 2) if char.skill_list.get_ranks("Tumble") >= 5
-      char.skill_list.assign_misc("Jump", 2) if char.skill_list.get_ranks("Tumble") >= 5
-      char.skill_list.assign_circ("Spellcraft", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Use Magic Device") >= 5
-      char.skill_list.assign_circ("Climb", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
-      char.skill_list.assign_circ("Escape Artist", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
-    end]
+		@character.final_levelup_procs +=[Proc.new do |char|
+			cskills = char.skill_list.skills
+			#[TODO] class based synergies for bard and druid
+			char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Bluff") >= 5
+			char.skill_list.assign_circ("Disguise", "Synergy[Act in Character]", 2) if char.skill_list.get_ranks("Bluff") >= 5
+			char.skill_list.assign_misc("Intimidate", 2) if char.skill_list.get_ranks("Bluff") >= 5
+			char.skill_list.assign_misc("Sleight of Hand", 2) if char.skill_list.get_ranks("Bluff") >= 5
+			any_craft = false
+			["Alchemy", "Armorsmithing", "Bowmaking", "Trapmaking", "Weaponsmithing", "Carpentry", "Blacksmithing", "Mechanical", "Stoneworking"].each do |craft|
+				any_craft ||= char.skill_list.get_ranks("Craft(" + craft + ")") >= 5
+			end
+			char.skill_list.assign_circ("Appraise", "Synergy[Craft Related]", 2) if any_craft
+			char.skill_list.assign_circ("Use Magic Device", "Synergy[Involving Scrolls]", 2) if char.skill_list.get_ranks("Decipher Script") >= 5
+			char.skill_list.assign_circ("Use Rope", "Synergy[Bindings]", 2) if char.skill_list.get_ranks("Escape Artist") >= 5
+			char.skill_list.assign_misc("Ride", 2) if char.skill_list.get_ranks("Handle Animal") >= 5
+			char.skill_list.assign_misc("Tumble", 2) if char.skill_list.get_ranks("Jump") >= 5
+			char.skill_list.assign_misc("Spellcraft", 2) if char.skill_list.get_ranks("Knowledge(Arcana)") >= 5
+			char.skill_list.assign_circ("Search", "Synergy[Secret Doors/Compartments]", 2) if char.skill_list.get_ranks("Knowledge(Architecture and Engineering)") >= 5
+			char.skill_list.assign_circ("Survival", "Synergy[Underground]", 2) if char.skill_list.get_ranks("Knowledge(Dungeoneering)") >= 5
+			char.skill_list.assign_circ("Survival", "Synergy[Not Getting Lost/ Avioding Hazards ]", 2) if char.skill_list.get_ranks("Knowledge(Geography)") >= 5
+			char.skill_list.assign_misc("Gather Information", 2) if char.skill_list.get_ranks("Knowledge(Local)") >= 5
+			char.skill_list.assign_circ("Survival", "Synergy[Aboveground Natural]", 2) if char.skill_list.get_ranks("Knowledge(Nature)") >= 5
+			char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Knowledge(Nobility and Royalty)") >= 5
+			char.skill_list.assign_circ("Survival", "Synergy[Other Planes]", 2) if char.skill_list.get_ranks("Knowledge(The Planes)") >= 5
+			char.skill_list.assign_circ("Survival", "Synergy[Following Tracks]", 2) if char.skill_list.get_ranks("Search") >= 5
+			char.skill_list.assign_misc("Diplomacy", 2) if char.skill_list.get_ranks("Sense Motive") >= 5
+			char.skill_list.assign_circ("Use Magic Device", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Spellcraft") >= 5
+			char.skill_list.assign_misc("Knowledge(Nature)", 2) if char.skill_list.get_ranks("Survival") >= 5
+			char.skill_list.assign_misc("Balance", 2) if char.skill_list.get_ranks("Tumble") >= 5
+			char.skill_list.assign_misc("Jump", 2) if char.skill_list.get_ranks("Tumble") >= 5
+			char.skill_list.assign_circ("Spellcraft", "Synergy[Scrolls]", 2) if char.skill_list.get_ranks("Use Magic Device") >= 5
+			char.skill_list.assign_circ("Climb", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
+			char.skill_list.assign_circ("Escape Artist", "Synergy[Rope]", 2) if char.skill_list.get_ranks("Use Rope") >= 5
+		end]
 	end
-def get_ranks(skill)
-  if skills.index(skill)
-    ret = skills[skills.index(skill)].ranks.to_i
-  else
-    ret = 0
-  end
-  ret
-end
+	
+	def get_ranks(skill)
+		if skills.index(skill)
+			ret = skills[skills.index(skill)].ranks.to_i
+		else
+			ret = 0
+		end
+		ret
+	end
+	
 #-- list -------------------------------------------------------------------------------#
 #++
 	def list
 		return @@list
 	end
+	
 #-- self.push(skill) -------------------------------------------------------------------#
 #++
 	#add skills to the skill list
 	def self.push(skill)
 		@@list.push(skill)
 	end
+	
 #-- self.list --------------------------------------------------------------------------#
 #++
 	#return the list of skills available
 	def self.list
 		return @@list
 	end
+	
 #-- assign_ranks(name, ranks) ----------------------------------------------------------#
 #++
 	#give ranks to the skill the character has
@@ -122,6 +127,7 @@ end
 			skills[skills.index(name)].ranks += ranks
 		end
 	end
+	
 #-- assign_misc(name, bonus) -----------------------------------------------------------#
 #++
 	def assign_misc(name, bonus)
@@ -129,6 +135,7 @@ end
 		i = skills.index(name)
 		skills[i].bonus_hash["Misc"]? skills[i].bonus_hash["Misc"] +=bonus : skills[i].bonus_hash["Misc"] =bonus
 	end
+	
 #-- assign_circ(name, bonus) -----------------------------------------------------------#
 #++
 	def assign_circ(name, type, bonus)
@@ -136,6 +143,7 @@ end
 		i = skills.index(name)
 		skills[i].circumstance_hash[type]? skills[i].circumstance_hash[type] +=bonus : skills[i].circumstance_hash[type] =bonus
 	end
+	
 #-- self.load_skills(array) ------------------------------------------------------------#
 #++
 	def self.load_skills(array)     
@@ -144,44 +152,45 @@ end
 			eval( "SkillList.push(SkillModel.new('" +skill.join("','")+"'))")
 		end
 	end
+	
 #-- roll_skills(ranks, preferred, level, prefer, orig_weight, weight, new) --------------#
 #++
 	def roll_skills(ranks, preferred=[],level=@character.level, prefer=3000, orig_weight=3000, weight=50, new_skill=1) 
-    skills_with_ranks = skills.reject {|skill| skill.ranks <=0}
+		skills_with_ranks = skills.reject {|skill| skill.ranks <=0}
 		ranks = [ranks,1].max 
 		points = ranks
 		
 		#randomly pick a subset of skills to assign to (weigh them according to each param) remove from possibilities after picking
 		preferred.length>0 ? 0 : prefer=0
 		skills_with_ranks.length>0 ? 0 : orig_weight=0
-    skillnum = ([( ranks / (level==1? 4:1)),1].max )
-    2.times { skillnum += 1 if rand(prefer+orig_weight+weight+new_skill) < (weight+prefer+new_skill)}
+		skillnum = ([( ranks / (level==1? 4:1)),1].max )
+		2.times { skillnum += 1 if rand(prefer+orig_weight+weight+new_skill) < (weight+prefer+new_skill)}
 		subset=Array.new
-    class_skills_dup = class_skills.uniq
-    list_dup = @@list.uniq
+		class_skills_dup = class_skills.uniq
+		list_dup = @@list.uniq
 		while subset.length < skillnum
 			i=rand(weight+prefer+new_skill+orig_weight)+1
 			case i
 				when 0..orig_weight
 					choice =skills_with_ranks[rand(skills_with_ranks.length)].name
-          skills_with_ranks.delete(choice)
-          orig_weight = 0 if skills_with_ranks.length <=0
+					skills_with_ranks.delete(choice)
+					orig_weight = 0 if skills_with_ranks.length <=0
 				when orig_weight..orig_weight+weight
 					choice =class_skills_dup[rand(class_skills_dup.length)]
-          class_skills_dup.delete(choice)
-          weight = 0 if class_skills_dup.length <=0
+					class_skills_dup.delete(choice)
+					weight = 0 if class_skills_dup.length <=0
 				when orig_weight+weight..orig_weight+weight+prefer
 					choice =preferred[rand(preferred.length)]
-          preferred.delete(choice)
-          prefer = 0 if preferred.length <=0
+					preferred.delete(choice)
+					prefer = 0 if preferred.length <=0
 				else
-          if list_dup.length <= 0
-            # if no more choices, break
-            break
-          else
-            choice = list_dup[rand(list_dup.length)].name
-            list_dup.delete(choice)
-          end
+					if list_dup.length <= 0
+					# if no more choices, break
+						break
+					else
+						choice = list_dup[rand(list_dup.length)].name
+						list_dup.delete(choice)
+					end
 			end
 			if !subset.include?(choice) && choice
 				subset.push(choice)
@@ -193,55 +202,55 @@ end
 			if options.length > 0
 				skill = options[rand(options.length)]
 			else
-        #maxed all the options, pick from remaining non maxed skills
+				#maxed all the options, pick from remaining non maxed skills
 				#should rarely happen when skill points come from some place other than characterclass
 				#puts "----------error:Out of skills to pick in options --------------" + points.to_s
 				i = rand(weight + prefer + new_skill) + 1
-        case i
-          when 0..weight
-            choice = class_skills_dup[rand(class_skills_dup.length)]
-            class_skills_dup.delete(choice)
-            weight = 0 if class_skills_dup.length <=0
-          when weight..weight + prefer
-            choice = prefered[rand(prefered.length)]
-            preferred.delete(choice)
-            prefer = 0 if preferred.length <=0
-          else 
-            list_dup.compact!
-            list_dup.reject!{|v| skills.include?(v.name) ? skills[skills.index(v.name)].ranks >= level+3 : false} if list_dup.length >0
-            if list_dup.length > 0
-              choice = list_dup[rand(list_dup.length)].name 
-              list_dup.delete(choice)
-            else
-              #no more non-maxed skills... put remaining points in "extra skills" skill [note - cross-class]
-              choice = "Extra Skills"
-            end
-        end	
-        options.push(choice)
-        skill = options[0]
+				case i
+				  when 0..weight
+					choice = class_skills_dup[rand(class_skills_dup.length)]
+					class_skills_dup.delete(choice)
+					weight = 0 if class_skills_dup.length <=0
+				  when weight..weight + prefer
+					choice = prefered[rand(prefered.length)]
+					preferred.delete(choice)
+					prefer = 0 if preferred.length <=0
+				  else 
+					list_dup.compact!
+					list_dup.reject!{|v| skills.include?(v.name) ? skills[skills.index(v.name)].ranks >= level+3 : false} if list_dup.length >0
+					if list_dup.length > 0
+						choice = list_dup[rand(list_dup.length)].name 
+						list_dup.delete(choice)
+					else
+					  #no more non-maxed skills... put remaining points in "extra skills" skill [note - cross-class]
+					  choice = "Extra Skills"
+					end
+				end	
+				options.push(choice)
+				skill = options[0]
 			end
 			Float inc = !class_skills.include?(skill) ? 0.5 : 1
 			if skills.include?(skill) 
 				if skills[skills.index(skill)].ranks.to_f + inc <= (level+3).to_f
 					assign_ranks(skill,1)
-          points-=1
-        else
-          if(skill == "Extra Skills")
-            assign_ranks(skill,1)
-            points-=1 
-          else
-					options.delete(skill)
-          end
+					points-=1
+				else
+					if(skill == "Extra Skills")
+						assign_ranks(skill,1)
+						points-=1 
+					else
+						options.delete(skill)
+					end
 				end
 			else
 				if(skill.downcase == "speak language")
 					if @character.languages.roll_lang(class_skills.include?("Speak Language"))
-            #assign skills to languages upto max number of languages.
-            points-=1
-          else
-            options.delete(skill)
-            list_dup.delete(skill)
-          end
+						#assign skills to languages upto max number of languages.
+						points-=1
+					else
+						options.delete(skill)
+						list_dup.delete(skill)
+					end
 				else
 					assign_ranks(skill,1)
 					points-=1
@@ -273,7 +282,7 @@ end
 			swim = skill.name == "Swim" ? 2 : 1
 			armor = skill.armor_check && (@character.armor_check < 0)  ? " ["+(@character.armor_check*swim).to_s+" Armor Check]" : ""
 			atotal = skill.armor_check && (@character.armor_check < 0) ? " ["+get_positive_negative(@character.armor_check*swim+total)+"]" : ""
-			ret += (skill.name.rjust(40) + " " + (get_positive_negative(total)+atotal).ljust(9) + " (" + get_positive_negative(skill.ranks) + 
+			ret += (skill.name.rjust(1) + " " + (get_positive_negative(total)+atotal).rjust(5) + " (" + get_positive_negative(skill.ranks) + 
 				" ranks, " + get_positive_negative(skill.bonus(@character).to_i) + " " + skill.mod.capitalize + bonus + armor + circ + ")\n")
 		end
 		return ret
