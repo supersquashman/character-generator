@@ -207,7 +207,7 @@ SpellList.load_spells("9", "Druid", [
 		["Antipathy", "", "PHB 200", "Object or location affected by spell repels certain creatures"],
 		["Cure Critical Wounds, Mass", "", "PHB 215", "Cures 4d8 damage +1/level for many creatures"],
 		["Elemental Swarm", "", "PHB 226", "Summons multiple elementals"],
-		["Foresight", "", "PHB 233", "\"Sixth Sense\" warns of impending danger"],
+		["Foresight", "", "PHB 233", "Sixth Sense warns of impending danger"],
 		["Regenerate", "", "PHB 270", "Subject's severed limbs grow back, cures 4d8 damage +1/level (max +35)"],
 		["Shambler", "", "PHB 277", "Summons 1d4+2 shamblimg mounds to fight for you"],
 		["Shapechange", "", "PHB 277", "Transforms you into any creature, and change forms once per round"],
