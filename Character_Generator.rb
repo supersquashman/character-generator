@@ -119,7 +119,7 @@ class CharacterGenerator
 		temp_classes = []
 		character.classes.each {|cls| temp_classes.push(cls.to_s)}
 		temp_classes.uniq.each do |cls|
-			file.puts cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
+			file.puts "    * " + cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 		end
 		file.print "\nSkills:  \n"
 		file.puts character.skill_list
@@ -134,7 +134,9 @@ class CharacterGenerator
 		character.feats.each do |feat|
 			sorted_feats += [feat.to_s]
 		end
-		file.puts sorted_feats.sort
+		sorted_feats.sort.each do |feat|
+			file.puts "    * " + feat.to_s
+		end
 		if character.spells.to_s
 			file.puts "\nSpells:"
 			file.puts character.spells.to_s
