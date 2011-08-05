@@ -49,7 +49,7 @@ class Monk < ClassModel
 				@character.add_ability("Flurry of Blows")
 				@character.weapon_proficiencies |= ["Club", "Light Crossbow", "Heavy Crossbow", "Dagger", "Handaxe", "Javelin", "Kama", "Nunchaku", 
 													"Quarterstaff", "Sai", "Shuriken", "Siangham", "Sling"]
-				@character.armor_proficiencies |= [""]
+				@character.armor_proficiencies |= []
 				FeatList.list[["StunningFist", "ImprovedGrapple"][rand(2)]].add(@character)
 			when 2
 				FeatList.list[["CombatReflexes", "DeflectArrows"][rand(2)]].add(@character)

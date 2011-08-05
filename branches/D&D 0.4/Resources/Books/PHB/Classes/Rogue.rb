@@ -57,7 +57,7 @@ class Rogue < ClassModel
 			when 1
 				@character.add_ability("Trapfinding")
 				@character.weapon_proficiencies |= $SIMPLE_WEAPONS | [  "Hand Crossbow", "Rapier", "Sap", "Shortbow", "Short Sword"]
-				@character.armor_proficiencies |= ["Light"]
+				@character.armor_proficiencies |= $LIGHT_ARMOR
 			when 2 then @character.add_ability("Evasion")
 			when 4 then @character.add_ability("Uncanny Dodge") #flat footed ac problem
 			when 8 then @character.add_ability("Improved Uncanny Dodge")

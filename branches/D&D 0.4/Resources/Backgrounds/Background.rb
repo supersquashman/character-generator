@@ -5,7 +5,7 @@ class Background
 	@alignment=""
   
 	def self.load(relative_path="Backgrounds")
-		Dir.glob(File.join(".", relative_path, "*.txt")).each do |file|
+		Dir.glob(File.join("#{File.dirname(__FILE__)}", "/*.txt")).each do |file|
 			File.open(file, "r") do |file|
 				while(line = file.gets)
 					hash = File.basename(file.path, ".txt")

@@ -16,14 +16,14 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-Dir.glob(File.join(".", "/Lists", "*.rb")).each do |file|
+Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Lists", "*.rb")).each do |file|
    require file
 end
-Dir.glob(File.join(".", "/Models", "*.rb")).each do |file|
+Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Models", "*.rb")).each do |file|
    require file
 end
-require_relative "Backgrounds/Background"
-require_relative "Names/Name"
+require_relative File.join("#{File.dirname(__FILE__)}", "/Backgrounds/Background")
+require_relative File.join("#{File.dirname(__FILE__)}", "/Names/Name")
 
 #--== Character ========================================================================#
 #++

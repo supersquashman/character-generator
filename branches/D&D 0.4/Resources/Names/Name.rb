@@ -5,7 +5,7 @@ attr_accessor :name, :pre, :post
 	@alignment=""
   
 	def self.load(relative_path="Names")
-		Dir.glob(File.join(".", relative_path, "*/*.txt")).each do |file|
+		Dir.glob(File.join("#{File.dirname(__FILE__)}", "/*/*.txt")).each do |file|
 		#Dir.glob(File.join(".", "*/*.txt")).each do |file|
 			File.open(file, "r") do |file|
 				while(line = file.gets) 

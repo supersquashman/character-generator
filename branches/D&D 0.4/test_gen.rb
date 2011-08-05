@@ -1,4 +1,4 @@
-require_relative "Character_Generator"
+require_relative "#{File.dirname(__FILE__)}/Character_Generator"
 
 print "Number of characters to generate:  "
 number_of_characters = gets.chomp
