@@ -1,3 +1,4 @@
+require_relative File.join("#{File.dirname(__FILE__)}", "/../Items/Equipment")
 class LightArmorProficiency < FeatModel
 	
 	def initialize 
@@ -10,11 +11,11 @@ class LightArmorProficiency < FeatModel
 	
 	def self.add(char)
 		super(char)
-		char.armor_proficiencies |= $ARMOR_LIGHT
+		char.armor_proficiencies |= $LIGHT_ARMOR
 	end
 	
 	def self.available?(char)
-		return !feat_taken(char)
+		return !((char.armor_proficiencies & $LIGHT_ARMOR) == $LIGHT_ARMOR)
 	end
 	
 	def self.is_bonus_feat?(class_type)
@@ -34,11 +35,11 @@ class MediumArmorProficiency < FeatModel
 	
 	def self.add(char)
 		super(char)
-		char.armor_proficiencies |= $ARMOR_MEDIUM
+		char.armor_proficiencies |= $MEDIUM_ARMOR
 	end
 	
 	def self.available?(char)
-		return !feat_taken(char) && LightArmorProficiency.feat_taken(char)
+		return !(char.armor_proficiencies & $MEDIUM_ARMOR == $MEDIUM_ARMOR) && (char.armor_proficiencies & $LIGHT_ARMOR == $LIGHT_ARMOR) 
 	end
 	
 	def self.is_bonus_feat?(class_type)
@@ -58,11 +59,11 @@ class HeavyArmorProficiency < FeatModel
 	
 	def self.add(char)
 		super(char)
-		char.armor_proficiencies |= $ARMOR_HEAVY
+		char.armor_proficiencies |= $HEAVY_ARMOR
 	end
 	
 	def self.available?(char)
-		return !feat_taken(char) && MediumArmorProficiency.feat_taken(char) && LightArmorProficiency.feat_taken(char)
+		return !(char.armor_proficiencies & $HEAVY_ARMOR == $HEAVY_ARMOR) && (char.armor_proficiencies & $MEDIUM_ARMOR == $MEDIUM_ARMOR) && (char.armor_proficiencies & $LIGHT_ARMOR == $LIGHT_ARMOR) 
 	end
 	
 	def self.is_bonus_feat?(class_type)
@@ -70,6 +71,6 @@ class HeavyArmorProficiency < FeatModel
 	end
 end
 
-#FeatList.push(LightArmorProficiency)
-#FeatList.push(MediumArmorProficiency)
-#FeatList.push(HeavyArmorProficiency)
+FeatList.push(LightArmorProficiency)
+FeatList.push(MediumArmorProficiency)
+FeatList.push(HeavyArmorProficiency)

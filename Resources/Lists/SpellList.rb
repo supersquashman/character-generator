@@ -17,7 +17,7 @@
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
 
-require_relative "../Models/SpellModel"
+require_relative "#{File.dirname(__FILE__)}/../Models/SpellModel"
 
 #--== SpellList ========================================================================#
 #++

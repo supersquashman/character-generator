@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "../Magic/Spells/BardSpells"
+require_relative "#{File.dirname(__FILE__)}/../Magic/Spells/BardSpells"
 
 #--== Bard =============================================================================#
 #++
@@ -67,7 +67,7 @@ class Bard < ClassModel
 		case class_level
 			when 1  
 				@character.weapon_proficiencies |= $SIMPLE_WEAPONS |["Longsword", "Rapier", "Sap", "Short Sword", "Shortbow", "Whip"]
-				@character.armor_proficiencies |= ["Light","Shields"]
+				@character.armor_proficiencies |= $LIGHT_ARMOR | $SHIELDS
 				@character.add_ability("Bardic Music")
 				@character.add_ability("Bardic Knowledge")
 				@character.add_ability("Countersong")

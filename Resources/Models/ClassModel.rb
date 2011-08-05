@@ -16,8 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "../Roll"
-require_relative "SpellModel"
+require_relative "#{File.dirname(__FILE__)}/../Roll"
+require_relative "#{File.dirname(__FILE__)}/SpellModel"
+
 #--== ClassModel =======================================================================#
 #++
 # Members :

@@ -17,8 +17,8 @@
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
 
-require_relative "../Models/SkillModel"
-require_relative "Skills"
+require_relative "#{File.dirname(__FILE__)}/../Models/SkillModel"
+require_relative "#{File.dirname(__FILE__)}/Skills"
 
 #--== SkillList ========================================================================#
 #++

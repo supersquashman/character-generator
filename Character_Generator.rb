@@ -1,21 +1,21 @@
-require_relative "./Resources/Character"
-Dir.glob(File.join(".", "/Resources/Lists", "*.rb")).each do |file|
+require_relative "#{File.dirname(__FILE__)}/Resources/Character"
+Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Resources/Lists", "*.rb")).each do |file|
    require file
 end
-Dir.glob(File.join(".", "/Resources/Models", "*.rb")).each do |file|
+Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Resources/Models", "*.rb")).each do |file|
    require file
 end
-require_relative "Resources/Backgrounds/Background"
-require_relative "Resources/Names/Name"
+require_relative "#{File.dirname(__FILE__)}/Resources/Backgrounds/Background"
+require_relative "#{File.dirname(__FILE__)}/Resources/Names/Name"
 
 class CharacterGenerator
 	@@character_list = []
 
 	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, sources = ["PHB"])
-		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("./*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
+		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
 		
 		if (char_level < num_classes)
 			num_classes = char_level
