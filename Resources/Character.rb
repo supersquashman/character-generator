@@ -39,7 +39,7 @@ class Character
 		@final_levelup_procs = []
 		@armor_proficiencies = []
 		@weapon_proficiencies = []
-		@intiative = 0
+		@initiative = 0
 		@classes = []
 		@number_of_classes = 0
 		@max_classes = 1
