@@ -12,7 +12,6 @@
 	end
 	
 	def self.available?(char)
-  puts char.skill_list.get_ranks("Ride")
 		return char.skill_list.get_ranks("Ride") > 0
 	end
 	
