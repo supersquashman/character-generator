@@ -47,6 +47,52 @@ class MediumArmorProficiency < FeatModel
 	end
 end
 
+class ShieldProficiency < FeatModel
+	def initialize 
+		super
+		@title = "Shield Proficiency"
+		@description = "You can use a shield and take only the standard penalties."
+		@page = "PHB 100"
+		@link = ""
+	end
+	
+	def self.add(char)
+		super(char)
+		char.armor_proficiencies |= $SHIELDS
+	end
+	
+	def self.available?(char)
+		return !(char.armor_proficiencies & $SHIELDS == $SHIELDS)
+	end
+	
+	def self.is_bonus_feat?(class_type)
+		return false
+	end
+end
+
+class TowerShieldProficiency < FeatModel
+	def initialize 
+		super
+		@title = "Tower Shield Proficiency"
+		@description = "You can use a tower shield and suffer only the standard penalties."
+		@page = "PHB 101"
+		@link = ""
+	end
+	
+	def self.add(char)
+		super(char)
+		char.armor_proficiencies |= ["Tower Shield"]
+	end
+	
+	def self.available?(char)
+		return !(char.armor_proficiencies & $SHIELDS == $SHIELDS) && !char.armor_proficiencies.include?("Tower Shield")
+	end
+	
+	def self.is_bonus_feat?(class_type)
+		return false
+	end
+end
+
 class HeavyArmorProficiency < FeatModel
 	
 	def initialize 
@@ -74,3 +120,5 @@ end
 FeatList.push(LightArmorProficiency)
 FeatList.push(MediumArmorProficiency)
 FeatList.push(HeavyArmorProficiency)
+FeatList.push(ShieldProficiency)
+FeatList.push(TowerShieldProficiency)
