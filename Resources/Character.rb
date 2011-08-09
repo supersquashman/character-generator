@@ -76,7 +76,6 @@ class Character
 		@skill_list = SkillList.new(self)
 		@alignment = ["Chaotic Good","Neutral Good","Lawful Good","Chaotic Neutral","Neutral","Lawful Neutral","Chaotic Evil","Neutral Evil","Lawful Evil"][rand(9)]
 		background = Background.new(@alignment)
-		@name = Name.new(self)
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation
@@ -102,6 +101,7 @@ class Character
 		#get class from list
 		#get info based on class
 		#get feats
+    @name = Name.new(self)
 	end
   
 #-- levelup ----------------------------------------------------------------------------#
