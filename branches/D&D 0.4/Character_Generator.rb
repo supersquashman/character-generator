@@ -29,7 +29,7 @@ class CharacterGenerator
 			char_level.times do
 				character.level_up
 			end
-			character.final_levelup_procs.each{|proc| proc.call character}
+			character.final_levelup
 		end
 	end
 	
@@ -43,7 +43,7 @@ class CharacterGenerator
 				character.level_up
 			end
 		end
-		character.final_levelup_procs.each{|proc| proc.call character}
+		character.final_levelup
 	end
 	
 	def get_characters
