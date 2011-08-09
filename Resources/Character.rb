@@ -31,7 +31,7 @@ class Character
 	attr_accessor :stats, :skill_points, :HP, :HD, :sex, :height, :weight, :speed, :ability_mods, :ac_list, :fort_save, :will_save, :ref_save, :spell_resist, :spells
 	attr_accessor :size, :skill_list, :BAB, :caster_level, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
-	attr_accessor :CR, :ECL, :alignment, :initiative, :racial_templates, :name
+	attr_accessor :CR, :ECL, :alignment, :initiative, :racial_templates, :name, :forbidden_spell_types
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources)
