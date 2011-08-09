@@ -49,6 +49,7 @@ class Orc< RaceModel
       character.stats["wis"] -= 2
       character.stats["cha"] -= 2
       character.stats["str"] += 4
+      character.weapon_proficiencies |= $SIMPLE_WEAPONS
 			character.add_ability("Light Sensitivity")
 			character.add_ability("Darkvision(60ft.)")
 		end
