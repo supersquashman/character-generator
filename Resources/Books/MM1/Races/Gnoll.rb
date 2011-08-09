@@ -58,6 +58,7 @@ class Gnoll< RaceModel
       character.ac_list["natural"] += 1
       character.add_ability("Darkvision(60ft.)")
       FeatList.roll_feats(character, 1)
+      character.weapon_proficiencies |= $SIMPLE_WEAPONS
       character.skill_list.class_skills = ["Listen","Spot"]
       num_skills = (character.stat_mod["int"] + 2) * 5
       character.skill_list.roll_skills(num_skills)
