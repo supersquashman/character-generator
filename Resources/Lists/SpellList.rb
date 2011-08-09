@@ -79,15 +79,15 @@ class SpellList
   end
 #-- roll_domains(character,number=2) ---------------------------------------------------#
 def roll_domains(character, number=2, char_class="Cleric")
-  forbidden_domains = {"Chaotic Good"=>["Law","Evil"],
-  "Neutral Good"=>["Evil"],
-  "Lawful Good"=>["Chaos","Evil"],
-  "Chaotic Neutral"=>["Law"],
+  forbidden_domains = {"Chaotic Good"=>["Law Domain","Evil Domain"],
+  "Neutral Good"=>["Evil Domain"],
+  "Lawful Good"=>["Chaos Domain","Evil Domain"],
+  "Chaotic Neutral"=>["Law Domain"],
   "Neutral"=>[],
-  "Lawful Neutral"=>["Chaos"],
-  "Chaotic Evil"=>["Law","Good"],
-  "Neutral Evil"=>["Good"],
-  "Lawful Evil"=>["Chaos","Good"]}
+  "Lawful Neutral"=>["Chaos Domain"],
+  "Chaotic Evil"=>["Law Domain","Good Domain"],
+  "Neutral Evil"=>["Good Domain"],
+  "Lawful Evil"=>["Chaos Domain","Good Domain"]}
   if(domains_known.length < number)
     domains = @@list[char_class].reject{|cat| !cat.include?("Domain")}.keys - forbidden_domains[character.alignment]
     [number, domains.length].min.times do 

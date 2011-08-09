@@ -22,7 +22,7 @@ require_relative "#{File.dirname(__FILE__)}/../Magic/Spells/ClericDomains"
 #--== Cleric ===========================================================================#
 #++
 class Cleric < ClassModel
-
+attr_accessor :deity_weapon
 #-- initialize(character) --------------------------------------------------------------#
 #++
 	def initialize (character)
@@ -37,6 +37,9 @@ class Cleric < ClassModel
 		knowledge = ["Arcana", "History", "Religion", "The Planes"]
 		knowledge.each_index {|i| knowledge[i] = "Knowldege(" + knowledge[i] +")" }
 		@class_skills += knowledge
+    choices = $SIMPLE_WEAPONS | $MARTIAL_WEAPONS | $EXOTIC_WEAPONS
+    @deity_weapon = choices[rand(choices.length)]
+    
 	end
   
 #-- apply ------------------------------------------------------------------------------#
@@ -45,6 +48,7 @@ class Cleric < ClassModel
     fcheck = {"Evil"=>["Good"], "Good"=>["Evil"], "Lawful"=>["Chaotic","Chaos"], "Chaotic"=>["Lawful","Law"]}
     forbidden = character.alignment.split.collect{|a| fcheck[a]}.flatten.select{|a| ["Evil","Good","Chaotic","Chaos","Lawful","Law"].include?(a)}
     character.spells.forbidden_types["Cleric"] = forbidden
+    character.spells.roll_domains(character)
     Cleric.increase_spells(@character, @class_level)
     character.spells.domains_known.each {|domain| SpellList.granted_powers_procs[domain].call(character, self)}
 		super
@@ -87,7 +91,6 @@ class Cleric < ClassModel
     [6, 5, 5, 5, 5, 4, 4, 3, 3, 2],
     [6, 5, 5, 5, 5, 5, 4, 4, 3, 3],
     [6, 5, 5, 5, 5, 5, 4, 4, 4, 4]]
-    character.spells.roll_domains(character)
 		SpellList.table_row(spell_table,class_level - 1) do |val,i|
 			if character.stats["wis"] >= i+10
 				character.spells.roll_domain_spells(i) if i > 0 && val > 0
