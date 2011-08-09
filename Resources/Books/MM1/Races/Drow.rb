@@ -50,7 +50,9 @@ class Drow< RaceModel
 			end
 			character.ECL += 2
 			character.stats["int"] += 2
-			character.stats["cha"] += 2                     
+			character.stats["cha"] += 2     
+      character.stats["dex"] += 2
+			character.stats["con"] -= 2       
 			character.skill_list.assign_circ("Listen", "Racial (Drow)", 2)
 			character.skill_list.assign_circ("Spot", "Racial (Drow)", 2)
 			character.skill_list.assign_circ("Search", "Racial (Drow)", 2)
