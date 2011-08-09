@@ -87,7 +87,7 @@ SpellList.load_spells("2", "Druid", [
 		
 SpellList.load_spells("3", "Druid", [
 		["Call Lightning", "", "PHB 207", "Calls dwon lightning bolts (3d6 per bolt) from the sky"],
-		["Contagion", "", "PHB 213", "Infects subject with chosen disease"],
+		["Contagion", "Evil", "PHB 213", "Infects subject with chosen disease"],
 		["Cure Moderate Wounds", "", "PHB 216", "cures 2d8 +1/level (max +10)"],
 		["Daylight", "", "PHB 216", "60ft radius of bright light"],
 		["Diminish Plants", "", "PHB 221", "Reduces size or blights growth of normal plants"],
@@ -139,14 +139,14 @@ SpellList.load_spells("5", "Druid", [
 		["Control Winds", "", "PHB 214", "Change wind direction and speed"],
 		["Cure Critical Wounds", "", "PHB 215", "Cures 4d8 +1/level (max +20)"],
 		["Death Ward", "", "PHB 217", "Grants immunity to all death spells and negative energy effects"],
-		["Hallow", "", "PHB 238", "Designates location as holy"],
+		["Hallow", "Good", "PHB 238", "Designates location as holy"],
 		["Insect Plague", "", "PHB 244", "Locust swarms attack creatures"],
 		["Stoneskin", "", "PHB 284", "Ignore 10 points of damage per attack"],
 		["Summon Nature's Ally V", "", "PHB 289", "Calls creature to fight"],
 		["Transmute Mud to Rock", "", "PHB 295", "Transforms two 10ft cubes per level"],
 		["Transmute Rock to Mud", "", "PHB 295", "Transforms two 10ft cubes per level"],
 		["Tree Stride", "", "PHB 296", "Step from one tree to another far away"],
-		["Unhallow", "", "PHB 297", "Designates location as unholy"],
+		["Unhallow", "Evil", "PHB 297", "Designates location as unholy"],
 		["Wall of Fire", "", "PHB 298", "Deals 2d4 fire damage out to 10ft and 1d4 out to 20ft. Passing through wall deals 2d6 damage +1/level"],
 		["Wall of Thorns", "", "PHB 300", "Thorns damage anyone who tries to pass"]
 		])

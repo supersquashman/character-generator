@@ -50,6 +50,9 @@ class Druid < ClassModel
 #-- apply ------------------------------------------------------------------------------#
 #++
 	def apply#(char)
+    fcheck = {"Evil"=>["Good"], "Good"=>["Evil"], "Lawful"=>["Chaotic","Chaos"], "Chaotic"=>["Lawful","Law"]}
+    forbidden = character.alignment.split.collect{|a| fcheck[a]}.flatten.select{|a| ["Evil","Good","Chaotic","Chaos","Lawful","Law"].include?(a)}
+    character.spells.forbidden_types["Druid"] = forbidden
 		Druid.increase_spells(@character, @class_level)
 		super
     
