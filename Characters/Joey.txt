@@ -1,0 +1,56 @@
+Name:  Joey
+
+str	12 (+1)
+dex	14 (+2)
+con	14 (+2)
+int	8 (-1)
+wis	14 (+2)
+cha	10 (+0)
+
+Level:  1
+HD:  1
+HP:  12
+Gender:  Male
+Race:   Half Elf
+Age:  34
+Height:  5'4"
+Weight:  136 lbs.
+Alignment: Chaotic Evil
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+AC:  12 (Base: 10, Dex: 2)
+
+Classes:  
+    * Fighter(1)
+
+Skills:  
+Climb    +2 (+1 ranks, +1 Str)
+Diplomacy    +2 (+0 ranks, +0 Cha, +2 Misc)
+Gather Information    +2 (+0 ranks, +0 Cha, +2 Misc)
+Intimidate    +1 (+1 ranks, +0 Cha)
+Jump    +3 (+2 ranks, +1 Str)
+Listen    +3 (+0 ranks, +2 Wis, +1 Misc)
+Search    +0 (+0 ranks, -1 Int, +1 Misc)
+Spot    +3 (+0 ranks, +2 Wis, +1 Misc)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Immune to magic sleep effects
+Low-Light Vision
+
+Languages:  
+    * Common
+    * Elven
+
+Feats:  
+    * Combat Reflexes
+    * Dodge
+
+Background:
+History: The character has travelled to Ull and Ket, but is originally from Rel Astra and the Cities of the Solnor Compact.
+
+Primary Motivation: Divine. The character is compelled to act according to their religious beliefs.
+
+Secondary Motivation:  A need to defend themself from _____________ (a loved one). The character feels continually threatened, and defense is their priority.
+
+Seed: 187377147452645674334063789878593992894
