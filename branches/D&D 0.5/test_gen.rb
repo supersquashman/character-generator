@@ -18,4 +18,4 @@ end
 generator = CharacterGenerator.new
 generator.generate_specific_level_characters(number_of_characters.to_i, char_level.to_i, num_classes.to_i,["PHB", "MM1"])
 generator.save_characters
-OutputFormat.text(generator.regenerate_specific_level_character(1,1,["PHB", "MM1"],187377147452645674334063789878593992894))
+OutputFormat.text(generator.regenerate_specific_level_character(1,1,["PHB", "MM1"],89040110133916598451619148324716886324))
