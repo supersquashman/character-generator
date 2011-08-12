@@ -19,7 +19,7 @@ class CharacterGenerator
 		end
 		
 		char_count.times do
-			@@character_list.push(generate_specific_level_character(char_level, num_classes, sources, 187377147452645674334063789878593992894))
+			@@character_list.push(generate_specific_level_character(char_level, num_classes, sources))
 		end
 		# @@character_list.each do |character|
 			# character.max_classes = num_classes
@@ -36,13 +36,11 @@ class CharacterGenerator
   def generate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
     seed = (seed == 0) ? Random.new_seed : seed
     srand(seed)
-    puts seed.to_s + ":" + rand(30).to_s
     sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
     
-    puts RaceList.list.length
     char = Character.new(sources, seed)
     char.max_classes = num_classes
     char_level.times do

@@ -76,9 +76,7 @@ class Character
 		@languages = LanguageList.new 
 		@skill_list = SkillList.new(self)
 		@alignment = ["Chaotic Good","Neutral Good","Lawful Good","Chaotic Neutral","Neutral","Lawful Neutral","Chaotic Evil","Neutral Evil","Lawful Evil"][rand(9)]
-    print "?" + rand(30).to_s
 		background = Background.new(@alignment)
-    print "?" + rand(30).to_s
 		@history = background.history
 		@primary_motivation = background.primary_motivation
 		@secondary_motivation = background.secondary_motivation

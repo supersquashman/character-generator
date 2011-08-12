@@ -18,7 +18,6 @@ class Background
 	def initialize(alignment="")
 		@result = ""
 		@alignment= alignment
-    puts alignment
 		generate
 	end
 
@@ -32,7 +31,7 @@ class Background
 		line = ""
 		if @@background[hash].length > 0
 			begin 
-				while ((line = @@background[hash][rand(@@background[hash].length)]) == ""); end
+				while ((line = @@background[hash][rand(@@background[hash].length)].dup) == ""); end
 					parts = line.partition("|")
 					line = parts[1]=="" ? parts[0] : parts[2]
 			end while (! qualified(parts[1]=="" ? "" : parts[0],alignment))
