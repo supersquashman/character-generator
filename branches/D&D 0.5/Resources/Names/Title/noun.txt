@@ -1,0 +1,6 @@
+kid
+[occupation]
+[item]
+[position]
+[verber]
+[race]
