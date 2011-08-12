@@ -1,77 +1,36 @@
-require_relative "#{File.dirname(__FILE__)}/Resources/Character"
-Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Resources/Lists", "*.rb")).each do |file|
-   require file
-end
-Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Resources/Models", "*.rb")).each do |file|
-   require file
-end
-require_relative "#{File.dirname(__FILE__)}/Resources/Backgrounds/Background"
-require_relative "#{File.dirname(__FILE__)}/Resources/Names/Name"
-require_relative "#{File.dirname(__FILE__)}/output_format"
+require 'prawn'
+module OutputFormat
 
-class CharacterGenerator
-	@@character_list = []
-
-	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, sources = ["PHB"])
-		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
-		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
-		
-		if (char_level < num_classes)
-			num_classes = char_level
-		end
-		
-		char_count.times do
-			@@character_list.push(Character.new(sources))
-		end
-		@@character_list.each do |character|
-			character.max_classes = num_classes
-			char_level.times do
-				character.level_up
-			end
-			character.final_levelup
-		end
-	end
-	
-	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"])
-	char_count.times do
-			@@character_list.push(Character.new(sources))
-		end
-		@@character_list.times do |character|
-			character.max_classes = num_classes
-			(rand(char_high_level-char_low_level) + char_low_level).times do
-				character.level_up
-			end
-		end
-		character.final_levelup
-	end
-	
-	def get_characters
-	
-	end
-	
-	def save_characters
-		@@character_list.each do |character|
-			# created = false
-			# new_file_count = 0
-			# file_name = "Characters/" + character.name.to_s + ".txt"
-			# while (!created)
-				# if (File.exists?(file_name))
-					# new_file_count += 1
-					# file_name = "Characters/" + character.name.to_s + "(" + new_file_count.to_s + ").txt"
-				# else
-					# char_file = File.new(file_name, "w")
-					# print_character(char_file, character)
-					# char_file.close
-					# created = true
-				# end
-			# end
-      OutputFormat.pdf(character)
-		end
-	end
-	
-	def print_character(file, character)
+  def OutputFormat.get_file_name(character,ext)
+    num = Dir.glob(File.join("#{File.dirname(__FILE__)}", "/Characters", character.name.to_s + "*." + ext)).collect {|x| 
+    File.basename(x).match(/\d+/).to_s.to_i
+    }.sort.last
+    "#{File.dirname(__FILE__)}/Characters/" + ( num ? character.name.to_s + "(" + (num + 1).to_s + ")." + ext : character.name.to_s + "." + ext )
+  end
+  
+  def OutputFormat.pdf(character)
+    pdf = Prawn::Document.new
+    pdf.font_size 8
+    pdf.text_box "Name: " , :at => [30, 575] , :width => 70, :align => :right
+    pdf.font_size 14
+    pdf.fill_color "000000" 
+    pdf.fill_rectangle [100,578], 200, 16 
+    pdf.fill_color "ffffff"
+    pdf.font "#{File.dirname(__FILE__)}/Fonts/writtenonhishands.ttf"
+    pdf.text_box "Sir James Wimberly the Third, Royal Bastard Esquire, 17th in Line", :at => [100,575], :width => 200, :single_line => true, :overflow => :shrink_to_fit, :leading => 0
+    pdf.fill_color "000000" 
+    pdf.stroke_rounded_rectangle([50, 550], 50, 100, 10)
+    pdf.fill_and_stroke_rounded_rectangle([200, 550], 50, 100, 10)
+    pdf.join_style :round
+    pdf.line_width 10
+    pdf.stroke_rectangle([350, 550], 50, 100)
+     
+    pdf.render_file OutputFormat.get_file_name(character,"pdf")
+  end
+  
+  def OutputFormat.text(character)
+    file_name = OutputFormat.get_file_name(character, "txt")
+    file = File.new(file_name, "w")
 		file.puts "Name:  " + character.name.to_s
 		file.puts ""
 		["str","dex","con","int","wis","cha"].each do |stat|
@@ -149,5 +108,6 @@ class CharacterGenerator
 		file.puts character.primary_motivation
 		file.puts ""
 		file.puts character.secondary_motivation
+    file.close
 	end
 end
