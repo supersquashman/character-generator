@@ -29,29 +29,30 @@ class CharacterGenerator
 			# character.final_levelup
 		# end
 	end
-  def regenerate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
-    generate_specific_level_character(char_level, num_classes, sources, seed)
-  end
+	
+	def regenerate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
+		generate_specific_level_character(char_level, num_classes, sources, seed)
+	end
   
-  def generate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
-    seed = (seed == 0) ? Random.new_seed : seed
-    srand(seed)
-    sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
+	def generate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
+		seed = (seed == 0) ? Random.new_seed : seed
+		srand(seed)
+		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Classes/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
     
-    char = Character.new(sources, seed)
-    char.max_classes = num_classes
-    char_level.times do
-      char.level_up
-    end
-    char.final_levelup
-    char
-  end
+		char = Character.new(sources, seed)
+		char.max_classes = num_classes
+		char_level.times do
+			char.level_up
+		end
+		char.final_levelup
+		#char
+	end
 	
 	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"])
-	char_count.times do
+		char_count.times do
 			@@character_list.push(generate_specific_level_character(rand(char_high_level-char_low_level) + char_low_level, num_classses, sources))
 		end
 		# @@character_list.times do |character|
@@ -83,7 +84,7 @@ class CharacterGenerator
 					# created = true
 				# end
 			# end
-      OutputFormat.text(character)
+			OutputFormat.text(character)
 		end
 	end
 	
