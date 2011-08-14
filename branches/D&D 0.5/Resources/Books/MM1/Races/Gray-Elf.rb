@@ -31,8 +31,10 @@ class GrayElf< Elf
 	def apply_level
 		super
     #in addition to elf
+    if(character.level <= 1)
     character.stats["str"] -= 2
     character.stats["int"] += 2
+    end
 	end
 end
 RaceList.push(GrayElf)
