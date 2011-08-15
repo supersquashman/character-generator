@@ -1,0 +1,990 @@
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (46.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (46.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateDndCharacters (20110815201942)
+  [1m[36mSQL (0.0ms)[0m  [1mCREATE TABLE "dnd_characters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "seed" integer, "settings" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110815201942')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("dnd_characters")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dndcharacter" for 127.0.0.1 at 2011-08-15 15:22:18 -0500
+
+ActionController::RoutingError (No route matches "/dndcharacter"):
+  
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:22:28 -0500
+
+LoadError (no such file to load -- C:/Data/D&D cgen/Interfaces/Character_Generator_Rails/app/controllers/prawn):
+  app/controllers/dnd_characters_controller.rb:1:in `require_relative'
+  app/controllers/dnd_characters_controller.rb:1:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.2ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.5ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:24:19 -0500
+
+LoadError (No such file to load -- prawn):
+  app/controllers/dnd_characters_controller.rb:1:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:29:16 -0500
+
+LoadError (no such file to load -- prawn):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.2ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:42:21 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 422ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:43:39 -0500
+
+TypeError (CharacterGeneratorRails is not a class):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:44:01 -0500
+
+TypeError (CharacterGeneratorRails is not a class):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:44:05 -0500
+
+TypeError (CharacterGeneratorRails is not a class):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:44:55 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:47:39 -0500
+
+LoadError (no such file to load -- C:/Data/D&D cgen/Interfaces/character_generator/app/controllers/../../../../D&D 0.5/Character_Generator_Rails.rb):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.2ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.9ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:48:03 -0500
+
+TypeError (CharacterGeneratorRails is not a class):
+  app/controllers/dnd_characters_controller.rb:2:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:49:45 -0500
+
+NameError (uninitialized constant CharacterGeneratorRails):
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:50:24 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 344ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:52:29 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 15:52:31 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (171.9ms)
+Rendered dnd_characters/new.html.erb within layouts/application (187.5ms)
+Completed 200 OK in 219ms (Views: 203.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:52:38 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"Newby", "seed"=>"12424351", "settings"=>"1234"}, "commit"=>"Create Dnd character"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Newby', 12424351, '1234', '2011-08-15 20:52:38.406250', '2011-08-15 20:52:38.406250')
+Redirected to http://localhost:3000/dnd_characters/1
+Completed 302 Found in 344ms
+
+
+Started GET "/dnd_characters/1" for 127.0.0.1 at 2011-08-15 15:52:38 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 1 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1750ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/1" for 127.0.0.1 at 2011-08-15 15:53:54 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 1 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 500ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/1" for 127.0.0.1 at 2011-08-15 15:53:57 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 1 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 625ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:55:32 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (15.6ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/dnd_characters/1" for 127.0.0.1 at 2011-08-15 15:55:35 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 1 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 484ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:55:37 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters/1" for 127.0.0.1 at 2011-08-15 15:55:40 -0500
+  Processing by DndCharactersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "id"=>"1"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "dnd_characters" WHERE "dnd_characters"."id" = 1
+Redirected to http://localhost:3000/dnd_characters
+Completed 302 Found in 141ms
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:55:40 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 15:55:42 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (15.6ms)
+Rendered dnd_characters/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:55:46 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"Maco", "seed"=>"", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Maco', NULL, '', '2011-08-15 20:55:46.375000', '2011-08-15 20:55:46.375000')
+Redirected to http://localhost:3000/dnd_characters/2
+Completed 302 Found in 109ms
+
+
+Started GET "/dnd_characters/2" for 127.0.0.1 at 2011-08-15 15:55:46 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 2 LIMIT 1[0m
+Completed 500 Internal Server Error in 62ms
+
+TypeError (can't convert nil into Integer):
+  app/controllers/dnd_characters_controller.rb:21:in `show'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:38 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"Maco", "seed"=>"2648", "settings"=>"sdfg"}, "commit"=>"Create Dnd character"}
+  [1m[35mAREL (15.6ms)[0m  INSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Maco', 2648, 'sdfg', '2011-08-15 20:59:38.156250', '2011-08-15 20:59:38.156250')
+Redirected to http://localhost:3000/dnd_characters/3
+Completed 302 Found in 141ms
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 15:59:38 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 484ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:40 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 15:59:41 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (15.6ms)
+Rendered dnd_characters/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:42 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('', NULL, '', '2011-08-15 20:59:43.015625', '2011-08-15 20:59:43.015625')[0m
+Redirected to http://localhost:3000/dnd_characters/4
+Completed 302 Found in 78ms
+
+
+Started GET "/dnd_characters/4" for 127.0.0.1 at 2011-08-15 15:59:43 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 4 LIMIT 1
+Completed 500 Internal Server Error in 141ms
+
+TypeError (can't convert nil into Integer):
+  app/controllers/dnd_characters_controller.rb:21:in `show'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:47 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters/4" for 127.0.0.1 at 2011-08-15 15:59:50 -0500
+  Processing by DndCharactersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "id"=>"4"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 4 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "dnd_characters" WHERE "dnd_characters"."id" = 4[0m
+Redirected to http://localhost:3000/dnd_characters
+Completed 302 Found in 62ms
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:50 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters/2" for 127.0.0.1 at 2011-08-15 15:59:52 -0500
+  Processing by DndCharactersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "id"=>"2"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 2 LIMIT 1[0m
+  [1m[35mAREL (0.0ms)[0m  DELETE FROM "dnd_characters" WHERE "dnd_characters"."id" = 2
+Redirected to http://localhost:3000/dnd_characters
+Completed 302 Found in 172ms
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:52 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 15:59:53 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 453ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 15:59:56 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:03:22 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (0.0ms)
+Rendered dnd_characters/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 47ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:03:28 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"asd", "seed"=>"123", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('asd', 123, '', '2011-08-15 21:03:28.203125', '2011-08-15 21:03:28.203125')
+Redirected to http://localhost:3000/dnd_characters/5
+Completed 302 Found in 109ms
+
+
+Started GET "/dnd_characters/5" for 127.0.0.1 at 2011-08-15 16:03:28 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 5 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 578ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/5" for 127.0.0.1 at 2011-08-15 16:05:21 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 5 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 469ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:05:23 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:05:24 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (15.6ms)
+Rendered dnd_characters/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 78ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:05:27 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"214145", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `seed' for nil:NilClass):
+  app/controllers/dnd_characters_controller.rb:49:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:05:39 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"agffhjfghj", "seed"=>"214145", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `seed' for nil:NilClass):
+  app/controllers/dnd_characters_controller.rb:49:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:03 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"agffhjfghj", "seed"=>"214145", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `seed' for nil:NilClass):
+  app/controllers/dnd_characters_controller.rb:49:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:05 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"agffhjfghj", "seed"=>"214145", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `seed' for nil:NilClass):
+  app/controllers/dnd_characters_controller.rb:49:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:07 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:06:09 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (15.6ms)
+Rendered dnd_characters/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:12 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"asdfg", "seed"=>"2351325", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `seed' for nil:NilClass):
+  app/controllers/dnd_characters_controller.rb:49:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:41 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"asdfg", "seed"=>"2351325", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('asdfg', 2351325, '', '2011-08-15 21:06:41.406250', '2011-08-15 21:06:41.406250')[0m
+Redirected to http://localhost:3000/dnd_characters/6
+Completed 302 Found in 94ms
+
+
+Started GET "/dnd_characters/6" for 127.0.0.1 at 2011-08-15 16:06:41 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 6 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 500ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:06:45 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (15.6ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:08:40 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:08:42 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (0.0ms)
+Rendered dnd_characters/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 62ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:08:45 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"asdgah", "settings"=>""}, "commit"=>"Create Dnd character"}
+Completed 500 Internal Server Error in 0ms
+
+TypeError (can't convert String into Integer):
+  app/controllers/dnd_characters_controller.rb:50:in `create'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:09:22 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"asdgah", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[36mAREL (15.6ms)[0m  [1mINSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('--- !ruby/object:Name
+result: ''''
+alignment: Chaotic Good
+gender: Male
+race: Elf
+name_token_categories:
+- ! ''[General]''
+- ! ''[Elf]''
+name: Luke
+pre: ''''
+post: The Cook''s Doctor
+', 0, '', '2011-08-15 21:09:22.843750', '2011-08-15 21:09:22.843750')[0m
+Redirected to http://localhost:3000/dnd_characters/7
+Completed 302 Found in 516ms
+
+
+Started GET "/dnd_characters/7" for 127.0.0.1 at 2011-08-15 16:09:22 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 7 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 438ms (Views: 31.2ms | ActiveRecord: 15.6ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:09:51 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"asdgahd", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Osborn', 0, '', '2011-08-15 21:09:51.875000', '2011-08-15 21:09:51.875000')[0m
+Redirected to http://localhost:3000/dnd_characters/8
+Completed 302 Found in 688ms
+
+
+Started GET "/dnd_characters/8" for 127.0.0.1 at 2011-08-15 16:09:51 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 8 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 609ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:09:58 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters/7" for 127.0.0.1 at 2011-08-15 16:10:01 -0500
+  Processing by DndCharactersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "id"=>"7"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 7 LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mDELETE FROM "dnd_characters" WHERE "dnd_characters"."id" = 7[0m
+Redirected to http://localhost:3000/dnd_characters
+Completed 302 Found in 62ms
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:01 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:10:08 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (62.5ms)
+Rendered dnd_characters/new.html.erb within layouts/application (78.1ms)
+Completed 200 OK in 109ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:12 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"1234567", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Eldon', 1234567, '', '2011-08-15 21:10:12.812500', '2011-08-15 21:10:12.812500')[0m
+Redirected to http://localhost:3000/dnd_characters/9
+Completed 302 Found in 578ms
+
+
+Started GET "/dnd_characters/9" for 127.0.0.1 at 2011-08-15 16:10:12 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 9 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 531ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:16 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/new" for 127.0.0.1 at 2011-08-15 16:10:17 -0500
+  Processing by DndCharactersController#new as HTML
+Rendered dnd_characters/_form.html.erb (46.9ms)
+Rendered dnd_characters/new.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 78ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:22 -0500
+  Processing by DndCharactersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"", "seed"=>"458456721345", "settings"=>""}, "commit"=>"Create Dnd character"}
+  [1m[35mAREL (0.0ms)[0m  INSERT INTO "dnd_characters" ("name", "seed", "settings", "created_at", "updated_at") VALUES ('Ellywick', 458456721345, '', '2011-08-15 21:10:22.843750', '2011-08-15 21:10:22.843750')
+Redirected to http://localhost:3000/dnd_characters/10
+Completed 302 Found in 547ms
+
+
+Started GET "/dnd_characters/10" for 127.0.0.1 at 2011-08-15 16:10:22 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 484ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:25 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/10" for 127.0.0.1 at 2011-08-15 16:10:29 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 500ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:10:34 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:14:17 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:5)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError (undefined method `generator' for #<CharacterGenerator:0x29fda50>):
+  app/models/dnd_character.rb:6:in `after_initialize'
+  app/controllers/dnd_characters_controller.rb:8:in `index'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:14:47 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:5)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 47ms
+
+NoMethodError (undefined method `generator' for #<Class:0x25bd8c0>):
+  app/models/dnd_character.rb:6:in `after_initialize'
+  app/controllers/dnd_characters_controller.rb:8:in `index'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:15:35 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 2969ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:15:43 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1000ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:16:18 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1031ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:16:25 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 3031ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3/edit" for 127.0.0.1 at 2011-08-15 16:16:32 -0500
+  Processing by DndCharactersController#edit as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1
+Rendered dnd_characters/_form.html.erb (0.0ms)
+Rendered dnd_characters/edit.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 562ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:16:34 -0500
+  Processing by DndCharactersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VO4eRcsLTdTWCOGxbAdLy5pLanvj+jxBPM6MD5xqI5o=", "dnd_character"=>{"name"=>"Maco", "seed"=>"2648", "settings"=>"sdfg"}, "commit"=>"Update Dnd character", "id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1[0m
+Redirected to http://localhost:3000/dnd_characters/3
+Completed 302 Found in 500ms
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:16:35 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1125ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:16:37 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (125.0ms)
+Completed 200 OK in 3234ms (Views: 140.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:18:27 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 3406ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:18:32 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 3625ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:18:39 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1094ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:20:41 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1234ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:20:47 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:8)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 3547ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:21:14 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:9)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 3672ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:21:28 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:9)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 3844ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:21:54 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:9)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:21:57 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:9)
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 62ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:21:59 -0500
+  Processing by DndCharactersController#index as HTML
+DEPRECATION WARNING: Base#after_initialize has been deprecated, please use Base.after_initialize :method instead. (called from <class:DndCharacter> at C:/Data/D&D cgen/Interfaces/character_generator/app/models/dnd_character.rb:9)
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 62ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:22:42 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters"
+Rendered dnd_characters/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 47ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/3" for 127.0.0.1 at 2011-08-15 16:22:43 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 3 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 609ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters/9" for 127.0.0.1 at 2011-08-15 16:39:00 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 9 LIMIT 1
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1250ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/10" for 127.0.0.1 at 2011-08-15 16:39:07 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters" for 127.0.0.1 at 2011-08-15 16:39:45 -0500
+  Processing by DndCharactersController#index as HTML
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters"[0m
+Rendered dnd_characters/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 375ms (Views: 62.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/10" for 127.0.0.1 at 2011-08-15 16:39:54 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1[0m
+Rendered dnd_characters/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1016ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/10.txt" for 127.0.0.1 at 2011-08-15 16:39:59 -0500
+  Processing by DndCharactersController#show as TXT
+  Parameters: {"id"=>"10"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 453ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/10.txt" for 127.0.0.1 at 2011-08-15 16:44:20 -0500
+  Processing by DndCharactersController#show as TXT
+  Parameters: {"id"=>"10"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1[0m
+Completed 500 Internal Server Error in 438ms
+
+NoMethodError (undefined method `string' for OutputFormat:Module):
+  app/controllers/dnd_characters_controller.rb:26:in `block (2 levels) in show'
+  app/controllers/dnd_characters_controller.rb:23:in `show'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at C:/Ruby192/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/dnd_characters/10.txt" for 127.0.0.1 at 2011-08-15 16:47:20 -0500
+  Processing by DndCharactersController#show as TXT
+  Parameters: {"id"=>"10"}
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1
+Rendered text template (0.0ms)
+Completed 200 OK in 1391ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dnd_characters/Ellywick" for 127.0.0.1 at 2011-08-15 16:47:59 -0500
+  Processing by DndCharactersController#show as HTML
+  Parameters: {"id"=>"Ellywick"}
+  [1m[36mDndCharacter Load (0.0ms)[0m  [1mSELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 16ms
+
+ActiveRecord::RecordNotFound (Couldn't find DndCharacter with ID=Ellywick):
+  app/controllers/dnd_characters_controller.rb:19:in `show'
+
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+Rendered C:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/dnd_characters/10.txt" for 127.0.0.1 at 2011-08-15 16:55:35 -0500
+  Processing by DndCharactersController#show as TXT
+  Parameters: {"id"=>"10"}
+  [1m[35mDndCharacter Load (0.0ms)[0m  SELECT "dnd_characters".* FROM "dnd_characters" WHERE "dnd_characters"."id" = 10 LIMIT 1
+Rendered text template (0.0ms)
+Sent data Ellywick.txt (0.0ms)
+Completed 200 OK in 406ms (Views: 0.0ms | ActiveRecord: 0.0ms)
