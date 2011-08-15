@@ -53,9 +53,9 @@ class Drow< RaceModel
 			character.stats["cha"] += 2     
 			character.stats["dex"] += 2
 			character.stats["con"] -= 2       
-			character.skill_list.assign_circ("Listen", "Racial (Drow)", 2)
-			character.skill_list.assign_circ("Spot", "Racial (Drow)", 2)
-			character.skill_list.assign_circ("Search", "Racial (Drow)", 2)
+			character.skill_list.assign_misc("Listen", 2)
+			character.skill_list.assign_misc("Spot", 2)
+			character.skill_list.assign_misc("Search", 2)
 			character.add_ability("Darkvision(120ft.)")
 			character.weapon_proficiencies |= ["Hand Crossbow", "Rapier", "Short Sword"]
 			character.add_ability("Immune to magic sleep effects")
