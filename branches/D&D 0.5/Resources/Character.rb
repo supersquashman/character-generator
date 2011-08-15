@@ -35,7 +35,7 @@ class Character
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources, seed = 0)
-    @seed = seed
+		@seed = seed
 		@extra_levelup_procs = []
 		@final_levelup_procs = []
 		@armor_proficiencies = []
@@ -102,7 +102,7 @@ class Character
 		#get class from list
 		#get info based on class
 		#get feats
-    @name = Name.new(self)
+		@name = Name.new(self)
 	end
   
 #-- levelup ----------------------------------------------------------------------------#
