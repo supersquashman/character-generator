@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  seed: 1
+  settings: MyString
+
+two:
+  name: MyString
+  seed: 1
+  settings: MyString

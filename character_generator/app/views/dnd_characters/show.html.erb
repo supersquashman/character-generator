@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dnd_character.name %>
+</p>
+
+<p>
+  <b>Seed:</b>
+  <%= @dnd_character.seed %>
+</p>
+
+<p>
+  <b>Name2:</b>
+  <%= @character.name %>
+</p>
+
+<p>
+  <b>Settings:</b>
+  <%= @dnd_character.settings %>
+</p>
+
+
+<%= link_to 'Edit', edit_dnd_character_path(@dnd_character) %> |
+<%= link_to 'Back', dnd_characters_path %>
