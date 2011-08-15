@@ -42,6 +42,7 @@ class HalfFiend < RaceModel
 		end
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
+		@fiend_abilities = {1 => "Darkness (3/day)", 2 => "", 3 => "", 4 => "", 5 => "", 6 => "", 7 => "", 8 => ""}
 	end
 #-- self.apply(character) --------------------------------------------------------------#
 #++
@@ -74,9 +75,6 @@ class HalfFiend < RaceModel
 			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
 			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			character.add_ability("Fly ("+ (@fly_speed).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
-			character.add_ability("Breath Weapon:  " + @dragon_breaths[@dragon_type] + "(6d8); 1/day; DC" + (10 + (character.HD/2).floor + character.stat_mod["con"]).to_s)
-			character.add_ability("Immunity to " + @energy_type[@dragon_type])
 		end
 	end
 
