@@ -26,7 +26,7 @@ class Doppleganger < RaceModel
 		super(character)
 		@size = "Large"
 		@speed = 40
-		@age_roll = Roll.new("10d10+25")
+		@age_roll = Roll.new("4d10+25")
 		@favored_classes=["Rogue"]
 		character.languages.learn_lang("Common","Giant")
 		@bonus_languages = ["Auran", "Dwarven", "Elven", "Gnome", "Halfling", "Giant", "Terran"]
@@ -40,11 +40,11 @@ class Doppleganger < RaceModel
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
 				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 5.48) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
 				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 5.48) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 4
 			character.HD += 4
