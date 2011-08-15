@@ -40,11 +40,11 @@ class Ogre < RaceModel
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
 				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 5.48) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
 				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height.to_i * 5.48) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 2
 			character.HD += 4
