@@ -64,14 +64,6 @@ class Ogre < RaceModel
 			character.skill_list.class_skills = ["Listen", "Climb", "Spot"]
 			character.skill_list.roll_skills(num_skills)
 			character.add_ability("Darkvision(60ft.)")
-			character.add_ability("Regeneration (5)")
-			character.add_ability("Change Shape")
-			character.add_ability("Darkness")
-			character.add_ability("Invisibility") 
-			character.add_ability("Charm Person (1/day)")
-			character.add_ability("Cone of Cold (1/day)")
-			character.add_ability("Gaseous Form (1/day)")
-			character.add_ability("Sleep (1/day)")
 			character.add_ability("Fly(40ft.)")
 			character.weapon_proficiencies |= $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
 			character.armor_proficiencies |= $Light_ARMOR | $MEDIUM_ARMOR | $SHIELDS
