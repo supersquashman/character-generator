@@ -24,11 +24,11 @@ class Doppleganger < RaceModel
 #++
 	def initialize(character)
 		super(character)
-		@size = "Large"
-		@speed = 40
+		@size = "Medium"
+		@speed = 30
 		@age_roll = Roll.new("4d10+25")
 		@favored_classes=["Rogue"]
-		character.languages.learn_lang("Common","Giant")
+		character.languages.learn_lang("Common")
 		@bonus_languages = ["Auran", "Dwarven", "Elven", "Gnome", "Halfling", "Giant", "Terran"]
 		@racial_HD = "4d8"
 	end
@@ -68,6 +68,7 @@ class Doppleganger < RaceModel
 			num_skills = (character.stat_mod["int"] + 2) * 7
 			character.skill_list.class_skills = ["Bluff", "Diplomacy", "Disguise", "Intimidate", "Listen", "Sense Motive", "Spot"]
 			character.skill_list.roll_skills(num_skills)
+			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Change Shape")
 			character.add_ability("Detect Thoughts")
 			character.add_ability("Immunity to Sleep Effects")

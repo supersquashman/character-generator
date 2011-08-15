@@ -28,7 +28,8 @@ class Ogre < RaceModel
 		@speed = 40
 		@age_roll = Roll.new("10d10+25")
 		@favored_classes=["Barbarian"]
-		character.languages.learn_lang("Common","Giant")
+		character.languages.learn_lang("Common")
+		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Dwarven", "Terran", "Goblin", "Orc"]
 		@racial_HD = "4d8"
 	end

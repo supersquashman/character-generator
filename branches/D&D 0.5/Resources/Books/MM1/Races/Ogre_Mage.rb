@@ -28,7 +28,8 @@ class OgreMage < RaceModel
 		@speed = 40
 		@age_roll = Roll.new("10d10+25")
 		@favored_classes=["Sorcerer"]
-		character.languages.learn_lang("Common","Giant")
+		character.languages.learn_lang("Common")
+		character.languages.learn_lang("Giant")
 		@bonus_languages = ["Dwarven", "Infernal", "Goblin", "Orc"]
 		@racial_HD = "5d8"
 	end
