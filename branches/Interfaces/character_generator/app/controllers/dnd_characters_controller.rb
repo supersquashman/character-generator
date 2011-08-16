@@ -16,14 +16,19 @@ class DndCharactersController < ApplicationController
   # GET /dnd_characters/1
   # GET /dnd_characters/1.xml
   def show
-    @dnd_character = DndCharacter.find(params[:id])
+    begin
+    @dnd_character = DndCharacter.find(params[:id]) 
+    rescue
+    puts params[:id]
+    @dnd_character = DndCharacter.find_by_name(params[:id]) 
+    end
     generator = CharacterGenerator.new
     @character = generator.generate_specific_level_character(1, 1, sources = ["PHB","MM"], seed = @dnd_character.seed) 
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @dnd_character }
-      format.txt  { send_data OutputFormat.string(@character), :filename => "#{@character.name}.txt"}
+      format.txt  { send_data OutputFormat.string(@character).gsub("\n","\r\n"), :type => 'text/plain', :filename => "#{@character.name}.txt"}
     end
   end
 
@@ -68,6 +73,9 @@ class DndCharactersController < ApplicationController
   # PUT /dnd_characters/1.xml
   def update
     @dnd_character = DndCharacter.find(params[:id])
+    generator = CharacterGenerator.new
+    @character = generator.generate_specific_level_character(1, 1, sources = ["PHB","MM"], seed = params[:dnd_character][:seed].to_i)
+    params[:dnd_character][:name] =@character.name.to_s
 
     respond_to do |format|
       if @dnd_character.update_attributes(params[:dnd_character])

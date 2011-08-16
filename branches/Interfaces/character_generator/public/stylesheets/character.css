@@ -1,0 +1,78 @@
+.stats {
+  border-spacing: 5px;
+  text-align: center;
+  position:absolute;
+  left:200px;
+  top:20px;
+}
+.statname {
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  text-align: center;
+  background-color:black;
+  color: white;
+}
+.statname1 {
+  font-size: 16px;
+  padding: 0px;
+  line-height:80%
+}
+.statname2 {
+  font-size: 11px;
+  padding: 0px;
+  line-height:60%
+}
+.posmod {
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  color: black;
+  background-color: LightGreen;
+  border: 1px solid black;
+}
+.negmod {
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  color: black;
+  background-color:Tomato ;
+  border: 1px solid black;
+}
+.zeromod {
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  color: black;
+  background-color:LightSkyBlue ;
+  border: 1px solid black;
+}
+.statval {
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  border: 1px solid black;
+}
+.classes{
+  border-spacing: 5px;
+  position:absolute;
+  width: 200px;
+  left:350px;
+  top:20px;
+  text-align: center;
+}
+.classes #heading{
+  color: white;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  border: 1px solid black;
+  background-color:black ;
+}
+.classes #value{
+  color: blue;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: 3px; 
+  border: 1px solid black;
+}
