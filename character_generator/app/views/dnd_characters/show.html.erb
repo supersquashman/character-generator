@@ -5,6 +5,8 @@
   <%= @dnd_character.name %>
 </p>
 
+<%= render :partial => "stats", :locals => { :orient => :horizontal } %>
+<%= render :partial => "classes" %>
 <p>
   <b>Seed:</b>
   <%= @dnd_character.seed %>
@@ -19,7 +21,7 @@
   <b>Settings:</b>
   <%= @dnd_character.settings %>
 </p>
-
+<%= link_to 'Text File', :controller=>"dnd_characters",:action=>"show", :id =>@dnd_character.name, :format=>"txt" %> |
 
 <%= link_to 'Edit', edit_dnd_character_path(@dnd_character) %> |
 <%= link_to 'Back', dnd_characters_path %>

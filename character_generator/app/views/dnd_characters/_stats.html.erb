@@ -1,0 +1,19 @@
+<table class="stats">
+<% statname = {"str"=>"Strength","dex"=>"Dexterity","con"=>"Constitution","int"=>"Intelligence","wis"=>"Wisdom","cha"=>"Charisma"}%>
+<% ["str","dex","con","int","wis","cha"].each do |stat| %>
+  <% if orient == :horizontal %><tr><% end %>
+    <td class="statname" ><table align="center">
+    <tr><td class="statname1"><%= "#{stat.upcase}" %></td></tr>
+    <tr><td class="statname2"><%= "#{statname[stat]}" %></td></tr>
+  </table></td>
+  <td class="statval"><%= "#{@character.stats[stat]}" %></td>
+	<% if (@character.stat_mod[stat] > 0) %>
+    <td class="posmod"><%= "+#{@character.stat_mod[stat]}" %></td>
+	<% elsif (@character.stat_mod[stat] == 0) %>
+    <td class="zeromod"><%= "#{@character.stat_mod[stat]}" %></td>
+  <% else %>
+    <td class="negmod"><%= "#{@character.stat_mod[stat]}" %></td>
+	<% end %>
+  <% if orient == :horizontal %></tr><% end %>
+<% end %>
+</table>
