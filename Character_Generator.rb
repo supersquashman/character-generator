@@ -48,7 +48,7 @@ class CharacterGenerator
 			char.level_up
 		end
 		char.final_levelup
-		#char
+		return char
 	end
 	
 	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"])
