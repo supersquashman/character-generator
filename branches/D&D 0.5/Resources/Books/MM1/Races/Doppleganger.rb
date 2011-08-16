@@ -62,8 +62,8 @@ class Doppleganger < RaceModel
 			character.ac_list["natural"] += 4
 			character.skill_list.assign_misc("Bluff", 4)
 			character.skill_list.assign_misc("Disguise", 4)
-			character.skill_list.assign_misc("Disguise", "(Shape Changed)", 10)
-			character.skill_list.assign_misc("Disguise", "(Reading Thoughts)", 4)
+			character.skill_list.assign_circ("Disguise", "(Shape Changed)", 10)
+			character.skill_list.assign_circ("Disguise", "(Reading Thoughts)", 4)
 			FeatList.roll_feats(character, 1)
 			num_skills = (character.stat_mod["int"] + 2) * 7
 			character.skill_list.class_skills = ["Bluff", "Diplomacy", "Disguise", "Intimidate", "Listen", "Sense Motive", "Spot"]
