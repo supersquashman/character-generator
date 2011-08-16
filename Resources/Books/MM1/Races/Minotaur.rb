@@ -1,4 +1,4 @@
-# Hill Giant - Model of D&D race and container for related information
+# Minotaur - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,9 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-#--== Hill Giant ============================================================================#
+#--== Minotaur ============================================================================#
 #++
-class HillGiant < RaceModel
+class Minotaur < RaceModel
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
@@ -70,4 +70,4 @@ class HillGiant < RaceModel
 		end
 	end
 end
-RaceList.push(HillGiant)
+RaceList.push(Minotaur)
