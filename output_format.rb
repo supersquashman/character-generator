@@ -110,89 +110,90 @@ module OutputFormat
 		# file.puts character.primary_motivation
 		# file.puts ""
 		# file.puts character.secondary_motivation
-    # file.puts "\nSeed: #{character.seed.to_s}"
-    file.close
+		# file.puts "\nSeed: #{character.seed.to_s}"
+		file.close
 	end
-  def OutputFormat.string(character)
-    s = StringIO.new
-		s.puts "Name:  " + character.name.to_s
-		s.puts ""
+	
+	def OutputFormat.string(character)
+		out_string = StringIO.new
+		out_string.puts "Name:  " + character.name.to_s
+		out_string.puts ""
 		["str","dex","con","int","wis","cha"].each do |stat|
 			if (character.stat_mod[stat] >= 0)
-				s.puts stat + "	" + character.stats[stat].to_s + " (+" + character.stat_mod[stat].to_s + ")"
+				out_string.puts stat + "	" + character.stats[stat].to_s + " (+" + character.stat_mod[stat].to_s + ")"
 			else
-				s.puts stat + "	" + character.stats[stat].to_s + " (" + character.stat_mod[stat].to_s + ")"
+				out_string.puts stat + "	" + character.stats[stat].to_s + " (" + character.stat_mod[stat].to_s + ")"
 			end
 		end
-		s.puts ""
-		s.puts "Level:  " + character.level.to_s #panda.get_level.to_s
-		s.puts "HD:  " + character.HD.to_s
+		out_string.puts ""
+		out_string.puts "Level:  " + character.level.to_s #panda.get_level.to_s
+		out_string.puts "HD:  " + character.HD.to_s
 		template_race_list = []
-		s.puts "HP:  " + character.HP.to_s
-		character.racial_templates.each do |tmplt|
+		out_string.puts "HP:  " + character.HP.to_s
+		character.racial_templateout_string.each do |tmplt|
 			template_race_list.push(tmplt.to_s)
 		end
-		s.puts "Gender:  " + character.sex
-		s.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
-		s.puts "Age:  " + character.age.to_s
-		s.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
-		s.puts "Weight:  " + character.weight.to_s + " lbs."
-		s.puts "Alignment: " + character.alignment
-		s.print "Base Attack Bonus:  +" + character.BAB.to_s
+		out_string.puts "Gender:  " + character.sex
+		out_string.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
+		out_string.puts "Age:  " + character.age.to_s
+		out_string.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
+		out_string.puts "Weight:  " + character.weight.to_s + " lbout_string."
+		out_string.puts "Alignment: " + character.alignment
+		out_string.print "Base Attack Bonus:  +" + character.BAB.to_s
 		minus = 5
 		while (minus < character.BAB)
-			s.print "/+" + (character.BAB - minus).to_s
+			out_string.print "/+" + (character.BAB - minus).to_s
 			minus += 5
 		end
-		s.print "\n"
-		s.puts "Base Land Speed:  " + character.speed.to_s + " ft."
-		s.print "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
+		out_string.print "\n"
+		out_string.puts "Base Land Speed:  " + character.speed.to_s + " ft."
+		out_string.print "AC:  " + character.ac_list.valueout_string.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|
 			separator_counter += 1
 			if bonus != 0
-				s.print (separator_counter == 1 ? "" : ", ") + modifier.capitalize + ": " +  bonus.to_s + (separator_counter < character.ac_list.length ? "" : ")")
+				out_string.print (separator_counter == 1 ? "" : ", ") + modifier.capitalize + ": " +  bonuout_string.to_s + (separator_counter < character.ac_list.length ? "" : ")")
 			else
 				(separator_counter < character.ac_list.length ? ", " : ")")
-				s.print ")" if (separator_counter >= character.ac_list.length)
+				out_string.print ")" if (separator_counter >= character.ac_list.length)
 			end
 		end
-		s.print "\n"
-		(s.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
-		s.puts ""
-		s.puts "Classes:  "
+		out_string.print "\n"
+		(out_string.puts "Spell Resistance:  " + character.spell_resist.to_s) if character.spell_resist > 0
+		out_string.puts ""
+		out_string.puts "Classes:  "
 		temp_classes = []
-		character.classes.each {|cls| temp_classes.push(cls.to_s)}
-		temp_classes.uniq.each do |cls|
-			s.puts "    * " + cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
+		character.classeout_string.each {|cls| temp_classeout_string.push(clout_string.to_s)}
+		temp_classeout_string.uniq.each do |cls|
+			out_string.puts "    * " + clout_string.to_s + "(" + temp_classeout_string.count(cls).to_s + ")"
 		end
-		s.print "\nSkills:  \n"
-		s.puts character.skill_list
-		s.print "\nAbilities:  \n"
-		s.puts character.abilities.sort
-		#s.puts "\nFavored Classes:  "
-		#character.race.favored_classes.each {|cls| s.puts cls}
-		s.print "\nLanguages:  \n"
-		s.puts character.languages
-		s.print "\nFeats:  \n"
+		out_string.print "\nSkills:  \n"
+		out_string.puts character.skill_list
+		out_string.print "\nAbilities:  \n"
+		out_string.puts character.abilitieout_string.sort
+		#out_string.puts "\nFavored Classes:  "
+		#character.race.favored_classeout_string.each {|cls| out_string.puts cls}
+		out_string.print "\nLanguages:  \n"
+		out_string.puts character.languages
+		out_string.print "\nFeats:  \n"
 		sorted_feats = []
-		character.feats.each do |feat|
+		character.featout_string.each do |feat|
 			sorted_feats += [feat.to_s]
 		end
-		sorted_feats.sort.each do |feat|
-			s.puts "    * " + feat.to_s
+		sorted_featout_string.sort.each do |feat|
+			out_string.puts "    * " + feat.to_s
 		end
-		if character.spells.to_s
-			s.puts "\nSpells:"
-			s.puts character.spells.to_s
+		if character.spellout_string.to_s
+			out_string.puts "\nSpells:"
+			out_string.puts character.spellout_string.to_s
 		end
-		s.puts "\nBackground:"
-		s.puts character.history
-		s.puts ""
-		s.puts character.primary_motivation
-		s.puts ""
-		s.puts character.secondary_motivation
-    s.puts "\nSeed: #{character.seed.to_s}"
-    s.string
+		out_string.puts "\nBackground:"
+		out_string.puts character.history
+		out_string.puts ""
+		out_string.puts character.primary_motivation
+		out_string.puts ""
+		out_string.puts character.secondary_motivation
+		out_string.puts "\n\n\nSeed: #{character.seed.to_s}"
+		out_string.string
 	end
 end

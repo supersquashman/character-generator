@@ -131,7 +131,7 @@ class Character
 			@classes.push(selected)
 		end
 		selected.apply
-    FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
+		FeatList.roll_feats(self,1) if @level == 1 || @level%3 == 0
 		extra_levelup_procs.each{|proc| proc.call self}
 		calculate_mods
 	end
@@ -210,7 +210,7 @@ class Character
 	
 #-- get_stat ---------------------------------------------------------------------------#
 #++
-  def get_stat
+	def get_stat
 		rolls = [rand(6)+1, rand(6)+1, rand(6)+1, rand(6)+1]
 		rolls.each do |i|
 			current = i
@@ -229,17 +229,17 @@ class Character
 	end
 
 #-- apply_size -------------------------------------------------------------------------#
-  def apply_size
-    hide_hash = {"Fine"=>16, "Diminutive"=>12, "Tiny"=>8, "Small"=>4, "Medium"=>0, "Large"=>-4, "Huge"=>-8, "Gargantuan"=>-12, "Colossal"=>-16}
-    grapple_hash = {"Fine"=>-16, "Diminutive"=>-12, "Tiny"=>-8, "Small"=>-4, "Medium"=>0, "Large"=>4, "Huge"=>-8, "Gargantuan"=>-12, "Colossal"=>-16}
-    size_hash = {"Fine"=>8, "Diminutive"=>4 ,"Tiny"=>2, "Small"=>1, "Medium"=>0, "Large"=>-1, "Huge"=>-2, "Gargantuan"=>-4, "Colossal"=>-8}
-    @skill_list.assign_misc("Hide", hide_hash[@size]) if hide_hash[@size] != 0
-    @grapple["size"] = grapple_hash[@size]
-    @ac_list["size"] = size_hash[@size]
-  end
+	def apply_size
+		hide_hash = {"Fine"=>16, "Diminutive"=>12, "Tiny"=>8, "Small"=>4, "Medium"=>0, "Large"=>-4, "Huge"=>-8, "Gargantuan"=>-12, "Colossal"=>-16}
+		grapple_hash = {"Fine"=>-16, "Diminutive"=>-12, "Tiny"=>-8, "Small"=>-4, "Medium"=>0, "Large"=>4, "Huge"=>-8, "Gargantuan"=>-12, "Colossal"=>-16}
+		size_hash = {"Fine"=>8, "Diminutive"=>4 ,"Tiny"=>2, "Small"=>1, "Medium"=>0, "Large"=>-1, "Huge"=>-2, "Gargantuan"=>-4, "Colossal"=>-8}
+		@skill_list.assign_misc("Hide", hide_hash[@size]) if hide_hash[@size] != 0
+		@grapple["size"] = grapple_hash[@size]
+		@ac_list["size"] = size_hash[@size]
+	end
 #-- apply_size -------------------------------------------------------------------------#
-  def final_levelup
-    final_levelup_procs.each{|proc| proc.call self}
-    apply_size
-  end
+	def final_levelup
+		final_levelup_procs.each{|proc| proc.call self}
+		apply_size
+	end
 end
