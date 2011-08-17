@@ -1,7 +1,8 @@
-<table class="classes">
+<table class="classes" style="left:<%= left-5%>px; top:<%= top-2%>px; width:<%= width+10%>px;">
 <tr><td id="heading"><%= "Levels: #{@character.level}" %></td></tr>
 <% temp_classes = @character.classes.collect {|cls| cls.to_s} %>
 <% temp_classes.uniq.each do |cls| %>
 <tr><td id="value"><%= "#{cls}(#{temp_classes.count(cls)})" %></td></tr>
 <% end %>
+<tr><td id="heading"><%= "ECL: #{@character.ECL}" %></td></tr>
 </table>

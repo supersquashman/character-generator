@@ -1,0 +1,6 @@
+<table class="smalltable languages" style="left:<%= left%>px; top:<%= top%>px; width:<%= width%>px;">
+<tr id="label"><td>Languages</td></tr>
+<% @character.languages.languages.sort.each do |language| %>
+<tr id="value"><td><%= language %></td></tr>
+<% end %>
+</table>

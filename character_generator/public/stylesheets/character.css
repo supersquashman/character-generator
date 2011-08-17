@@ -2,8 +2,6 @@
   border-spacing: 5px;
   text-align: center;
   position:absolute;
-  left:200px;
-  top:20px;
 }
 .statname {
   -moz-border-radius: 6px;
@@ -57,8 +55,8 @@
   border-spacing: 5px;
   position:absolute;
   width: 200px;
-  left:350px;
-  top:20px;
+  left:560px;
+  top:140px;
   text-align: center;
 }
 .classes #heading{
@@ -75,4 +73,118 @@
   border-radius: 6px;
   padding: 3px; 
   border: 1px solid black;
+}
+.appearance{
+  position:absolute;
+  border-spacing: 5px;
+}
+.appearance #value{
+  text-align: center;
+  border-bottom:1px solid black;
+}
+.appearance #label{
+  font-size: 9px;
+  padding: 0px;
+  line-height:40%;
+  text-align: center;
+}
+.aclist{
+  position:absolute;
+  left:205px;
+  top:100px;
+  width: 550px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border-spacing: 0px;
+  border:1px solid black;
+  text-align: center;
+  padding: 0px;
+}
+.aclist #title{
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius:4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius:4px;
+  color: white;
+  background-color:black ;
+  font-size: 16px;
+}
+.aclist #label{
+  font-size: 9px;
+  padding: 0px;
+  line-height:60%;
+  text-align: center;
+}
+.aclist #value{
+  font-size: 10px;
+  line-height:80%;
+  text-align: center;
+}
+.miscstats{
+  position:absolute;
+}
+.splitbubble{
+  width: 100%;
+  text-align: center;
+  -moz-border-radius: 6px;
+  border-radius:6px;
+  border:1px solid black;
+  border-spacing: 0px;
+}
+.splitbubble #value{
+}
+.splitbubble #label{
+  width: 50%;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-left-radius:4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius:4px;
+  color: white;
+  background-color:black ;
+}
+.topsplitbubble{
+  text-align: center;
+  width: 100%;
+  -moz-border-radius: 6px;
+  border-radius:6px;
+  border:1px solid black;
+  border-spacing: 0px;
+}
+.topsplitbubble #value{
+}
+.topsplitbubble #label{
+  -moz-border-radius-topright: 4px;
+  border-top-right-radius:4px;
+  -moz-border-radius-topleft: 4px;
+  border-top-left-radius:4px;
+  color: white;
+  background-color:black ;
+}
+.skills{
+  position:absolute;
+}
+.languages{
+  position:absolute;
+}
+.abilities{
+  position:absolute;
+}
+.feats{
+  position:absolute;
+}
+.smalltable{
+  text-align: left;
+  border:1px solid black;
+  border-spacing: 0px;
+}
+.smalltable #label td{
+  font-size: 10px;
+  color: white;
+  background-color:black ;
+}
+.smalltable #value td{
+  font-size: 9px;
+  width: 40px;
+  padding: 0px;
+  border-bottom:1px solid black;
 }

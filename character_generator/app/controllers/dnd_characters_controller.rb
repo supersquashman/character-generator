@@ -23,7 +23,7 @@ class DndCharactersController < ApplicationController
     @dnd_character = DndCharacter.find_by_name(params[:id]) 
     end
     generator = CharacterGenerator.new
-    @character = generator.generate_specific_level_character(1, 1, sources = ["PHB","MM"], seed = @dnd_character.seed) 
+    @character = generator.generate_specific_level_character(15, 4, sources = ["PHB","MM1"], seed = @dnd_character.seed) 
 
     respond_to do |format|
       format.html # show.html.erb
@@ -53,7 +53,7 @@ class DndCharactersController < ApplicationController
   def create
     
     generator = CharacterGenerator.new
-    @character = generator.generate_specific_level_character(1, 1, sources = ["PHB","MM"], seed = params[:dnd_character][:seed].to_i)
+    @character = generator.generate_specific_level_character(15, 1, sources = ["PHB","MM1"], seed = params[:dnd_character][:seed].to_i)
     params[:dnd_character][:name] =@character.name.to_s
     @dnd_character = DndCharacter.new(params[:dnd_character])
     puts params
@@ -74,7 +74,7 @@ class DndCharactersController < ApplicationController
   def update
     @dnd_character = DndCharacter.find(params[:id])
     generator = CharacterGenerator.new
-    @character = generator.generate_specific_level_character(1, 1, sources = ["PHB","MM"], seed = params[:dnd_character][:seed].to_i)
+    @character = generator.generate_specific_level_character(15, 1, sources = ["PHB","MM1"], seed = params[:dnd_character][:seed].to_i)
     params[:dnd_character][:name] =@character.name.to_s
 
     respond_to do |format|

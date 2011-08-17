@@ -1,0 +1,16 @@
+<table class="aclist" style="left:<%= left%>px; top:<%= top%>px; width:<%= width%>px;">
+<tr>
+<td id="title">AC:</td>
+<td><%= @character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s %></td><td>=</td>
+<% first = true %>
+<% @character.ac_list.each do |modifier, bonus| %>
+  <td><table><tr>
+<% if first then first = false %>
+  <td id="value"><%= bonus %></td>
+<% else %>
+  <td id="value">+ <%= bonus %></td>
+<% end %>
+  </tr>
+  <tr><td id="label"><%= modifier.capitalize %></td></tr></table><td>
+<% end %>
+</tr></table>
