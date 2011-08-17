@@ -56,9 +56,9 @@ class StormGiant < RaceModel
 			character.stats["dex"] += 4
 			character.stats["int"] += 6
 			character.stats["wis"] += 10
-			character.fort_save["racial"] = 17
-			character.ref_save["racial"] = 8
-			character.will_save["racial"] = 13
+			character.fort_save["racial"] = 11
+			character.ref_save["racial"] = 6
+			character.will_save["racial"] = 8
 			character.ac_list["natural"] += 12
 			FeatList.roll_feats(character, 6)
 			num_skills = (character.stat_mod["int"] + 2) * 15

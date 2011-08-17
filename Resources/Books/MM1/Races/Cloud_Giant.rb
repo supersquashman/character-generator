@@ -55,9 +55,9 @@ class CloudGiant < RaceModel
 			character.stats["con"] += 12
 			character.stats["dex"] += 3
 			character.stats["int"] += 2
-			character.stats["wis"] += 6
-			character.fort_save["racial"] = 16
-			character.ref_save["racial"] = 6
+			character.stats["wis"] += 7
+			character.fort_save["racial"] = 10
+			character.ref_save["racial"] = 5
 			character.will_save["racial"] = 10
 			character.ac_list["natural"] += 12
 			FeatList.roll_feats(character, 5)

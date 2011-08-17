@@ -54,9 +54,9 @@ class FireGiant < RaceModel
 			character.stats["cha"] += 4
 			character.stats["con"] += 10
 			character.stats["dex"] -= 1
-			character.fort_save["racial"] = 14
-			character.ref_save["racial"] = 4
-			character.will_save["racial"] = 9
+			character.fort_save["racial"] = 9
+			character.ref_save["racial"] = 5
+			character.will_save["racial"] = 7
 			character.ac_list["natural"] += 8
 			FeatList.roll_feats(character, 5)
 			num_skills = (character.stat_mod["int"] + 2) * 15
