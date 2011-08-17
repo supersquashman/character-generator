@@ -130,14 +130,14 @@ module OutputFormat
 		out_string.puts "HD:  " + character.HD.to_s
 		template_race_list = []
 		out_string.puts "HP:  " + character.HP.to_s
-		character.racial_templateout_string.each do |tmplt|
+		character.racial_templates.each do |tmplt|
 			template_race_list.push(tmplt.to_s)
 		end
 		out_string.puts "Gender:  " + character.sex
 		out_string.puts "Race:  " + template_race_list.join(" ").to_s + " " + character.race.to_s
 		out_string.puts "Age:  " + character.age.to_s
 		out_string.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
-		out_string.puts "Weight:  " + character.weight.to_s + " lbout_string."
+		out_string.puts "Weight:  " + character.weight.to_s + " lbs."
 		out_string.puts "Alignment: " + character.alignment
 		out_string.print "Base Attack Bonus:  +" + character.BAB.to_s
 		minus = 5
@@ -147,12 +147,12 @@ module OutputFormat
 		end
 		out_string.print "\n"
 		out_string.puts "Base Land Speed:  " + character.speed.to_s + " ft."
-		out_string.print "AC:  " + character.ac_list.valueout_string.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
+		out_string.print "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|
 			separator_counter += 1
 			if bonus != 0
-				out_string.print (separator_counter == 1 ? "" : ", ") + modifier.capitalize + ": " +  bonuout_string.to_s + (separator_counter < character.ac_list.length ? "" : ")")
+				out_string.print (separator_counter == 1 ? "" : ", ") + modifier.capitalize + ": " +  bonus.to_s + (separator_counter < character.ac_list.length ? "" : ")")
 			else
 				(separator_counter < character.ac_list.length ? ", " : ")")
 				out_string.print ")" if (separator_counter >= character.ac_list.length)
@@ -163,29 +163,29 @@ module OutputFormat
 		out_string.puts ""
 		out_string.puts "Classes:  "
 		temp_classes = []
-		character.classeout_string.each {|cls| temp_classeout_string.push(clout_string.to_s)}
-		temp_classeout_string.uniq.each do |cls|
-			out_string.puts "    * " + clout_string.to_s + "(" + temp_classeout_string.count(cls).to_s + ")"
+		character.classes.each {|cls| temp_classes.push(cls.to_s)}
+		temp_classes.uniq.each do |cls|
+			out_string.puts "    * " + cls.to_s + "(" + temp_classes.count(cls).to_s + ")"
 		end
 		out_string.print "\nSkills:  \n"
 		out_string.puts character.skill_list
 		out_string.print "\nAbilities:  \n"
-		out_string.puts character.abilitieout_string.sort
+		out_string.puts character.abilities.sort
 		#out_string.puts "\nFavored Classes:  "
-		#character.race.favored_classeout_string.each {|cls| out_string.puts cls}
+		#character.race.favored_classes.each {|cls| out_string.puts cls}
 		out_string.print "\nLanguages:  \n"
 		out_string.puts character.languages
 		out_string.print "\nFeats:  \n"
 		sorted_feats = []
-		character.featout_string.each do |feat|
+		character.feats.each do |feat|
 			sorted_feats += [feat.to_s]
 		end
-		sorted_featout_string.sort.each do |feat|
+		sorted_feats.sort.each do |feat|
 			out_string.puts "    * " + feat.to_s
 		end
-		if character.spellout_string.to_s
+		if character.spells.to_s
 			out_string.puts "\nSpells:"
-			out_string.puts character.spellout_string.to_s
+			out_string.puts character.spells.to_s
 		end
 		out_string.puts "\nBackground:"
 		out_string.puts character.history
