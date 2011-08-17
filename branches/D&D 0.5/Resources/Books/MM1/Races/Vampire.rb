@@ -26,7 +26,6 @@ class Vampire < RaceModel
 		super(character)
 		@fly_speed = (character.speed.to_i) > 60 ? 120 : character.speed.to_i * 2
 		@breath_DC = 0
-		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
 		#character.final_levelup_procs.push('character.HP = Roll.new(character.HD.to_s + "d12")')
 		character.final_levelup_procs += [Proc.new {character.HP = Roll.new(character.HD.to_s + "d12")}]
 		#character.final_levelup_procs.push('@HP = Roll.new(@HD.to_s + "d12")')
@@ -52,8 +51,11 @@ class Vampire < RaceModel
 			character.ac_list["natural"] += 6
 			character.remove_ability("Low-Light Vision")
 			character.add_ability("Low-Light Vision")
-			character.remove_ability("Darkvision(60ft.)")
-			character.add_ability("Darkvision(60ft.)")
+			if (character.has_ability("Darkvision(90ft.)")) || (character.has_ability("Darkvision(120ft.)"))
+			else
+				character.remove_ability("Darkvision")
+				character.add_ability("Darkvision(60ft.)")
+			end
 			character.add_ability("Children of the Night")
 			character.add_ability("Blood Drain")
 			character.add_ability("Dominate (DC " + (character.HD/2 + 10 + character.stat_mod["cha"]).to_s + ")")
@@ -63,7 +65,7 @@ class Vampire < RaceModel
 			character.add_ability("Damage Reduction 10/silver and magic")
 			character.add_ability("Fast Healing(5)")
 			character.add_ability("Gaseous Form")
-			character.add_ability("Spiderclimb")
+			character.add_ability("Spider Climb")
 			character.add_ability("Turn Resistance (+4)")
 			character.skill_list.assign_misc("Bluff", 8)
 			character.skill_list.assign_misc("Hide", 8)
@@ -72,27 +74,25 @@ class Vampire < RaceModel
 			character.skill_list.assign_misc("Listen", 8)
 			character.skill_list.assign_misc("Move Silently", 8)
 			character.skill_list.assign_misc("Search", 8)
-=begin
 			if (!character.has_ability("Immunity to Cold"))
 				if (character.has_ability("Resistance to Cold"))
-					character.increase_ability("Resistance to Cold(5)", 10, "")
+					character.increase_ability("Resistance to Cold (5)", 10, "")
 				else
 					character.add_ability("Resistance to Cold(10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Electricity"))
 				if (character.has_ability("Resistance to Electricity"))
-					character.increase_ability("Resistance to Electricity(5)", 10, "")
+					character.increase_ability("Resistance to Electricity (5)", 10, "")
 				else
 					character.add_ability("Resistance to Electricity(10)")
 				end
 			end
-=end
 			Alertness.add(@character) if Alertness.available?(@character)
 			CombatReflexes.add(@character) if CombatReflexes.available?(@character)
 			Dodge.add(@character) if Dodge.available?(@character)
-			#ImprovedIniative.add(@character) if ImprovedInitiative.available?(@character)
-			#LightningReflexes.add(@character) if LightningReflexes.available?(@character)
+			ImprovedIniative.add(@character) if ImprovedInitiative.available?(@character)
+			LightningReflexes.add(@character) if LightningReflexes.available?(@character)
 		end
 	end
 
@@ -101,6 +101,5 @@ class Vampire < RaceModel
 	def self.is_template
 		return true
 	end
-
 end
-#RaceList.push(Vampire)
+RaceList.push(Vampire)
