@@ -42,7 +42,6 @@ class Vampire < RaceModel
 		if(character.level <= 1)
 			character.ECL += 8
 			character.CR += 2
-			character.BAB += 4
 			character.stats["str"] += 6
 			character.stats["dex"] += 4
 			character.stats["cha"] += 4
