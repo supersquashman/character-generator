@@ -40,11 +40,11 @@ class Goblin < RaceModel
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
 				character.height = Roll.new("2d12+24")
-				character.weight = (character.heigh * .91) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height * .91) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
 				character.height = Roll.new("2d12+24")
-				character.weight = (character.heigh * .91) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.weight = (character.height * .91) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL -=2
 			character.stats["dex"] += 2
