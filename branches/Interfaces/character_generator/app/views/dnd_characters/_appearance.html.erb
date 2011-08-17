@@ -1,0 +1,20 @@
+<%template_race_list = []
+@character.racial_templates.each do |tmplt|
+  template_race_list.push(tmplt.to_s)
+end %>
+<table class="appearance" style="left:<%= left-5%>px; top:<%= top-2%>px; width:<%= width+10%>px;">
+<tr>
+<td id="value"><%= "#{@character.sex}" %></td>
+<td id="value"><%= "#{template_race_list.join(" ")} #{@character.race}" %></td>
+<td id="value"><%= "#{@character.age}yrs" %></td>
+<td id="value"><%= "#{(@character.height.to_i/12).floor}' #{(@character.height.to_i%12)}\"" %></td>
+<td id="value"><%= "#{@character.weight} lbs." %></td>
+<td id="value"><%= "#{@character.alignment}"  %></td></tr>
+<tr>
+<td id="label"><%= "GENDER" %></td>
+<td id="label"><%= "RACE" %></td>
+<td id="label"><%= "AGE" %></td>
+<td id="label"><%= "HEIGHT" %></td>
+<td id="label"><%= "WEIGHT" %></td>
+<td id="label"><%= "ALIGNMENT" %></td></tr>
+</table>

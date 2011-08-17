@@ -4,9 +4,17 @@
   <b>Name:</b>
   <%= @dnd_character.name %>
 </p>
-
-<%= render :partial => "stats", :locals => { :orient => :horizontal } %>
-<%= render :partial => "classes" %>
+<% sheet_top = 0; sheet_left = 200 %>
+<%= render :partial => "appearance", :locals =>  { :left => sheet_left, :top => sheet_top, :width => 560} %>
+<%= render :partial => "aclist", :locals =>  { :left => sheet_left, :top => sheet_top + 50, :width => 560}  %>
+<%= render :partial => "stats", :locals => { :orient => :horizontal, :left => sheet_left, :top => sheet_top + 90, :width => 140 } %>
+<%= render :partial => "miscstats", :locals =>  { :left => sheet_left + 150, :top => sheet_top + 90, :width => 200} %>
+<%= render :partial => "classes", :locals =>  { :left => sheet_left + 360, :top => sheet_top + 90, :width => 200}  %>
+<%= render :partial => "abilities", :locals => { :left => sheet_left + 570, :top => sheet_top + 400, :width => 140 } %>
+<%= render :partial => "languages", :locals => { :left => sheet_left, :top => sheet_top + 400, :width => 140 } %>
+<%= next_top = (@character.languages.languages.length+1) * 17 + sheet_top + 400 + 20 %>
+<%= render :partial => "feats", :locals => { :left => sheet_left, :top => next_top, :width => 140 } %>
+<%= render :partial => "skills", :locals => { :left => sheet_left + 150, :top => sheet_top + 400, :width => 410} %>
 <p>
   <b>Seed:</b>
   <%= @dnd_character.seed %>

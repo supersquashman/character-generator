@@ -1,0 +1,6 @@
+<table class="smalltable abilities" style="left:<%= left%>px; top:<%= top%>px; width:<%= width%>px;">
+<tr id="label"><td>Abilities</td></tr>
+<% @character.abilities.collect{|ability| ability.to_s}.sort.each do |ability| %>
+<tr id="value"><td><%= ability.to_s %></td></tr>
+<% end %>
+</table>

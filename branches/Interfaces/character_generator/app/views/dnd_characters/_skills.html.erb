@@ -1,0 +1,12 @@
+<table class="skills smalltable" style="left:<%= left%>px; top:<%= top%>px; width:<%= width%>px;">
+<tr id="label"><td>Skill Name:</td><td>Total</td><td>Ranks</td><td>Stat</td><td>Bonus</td><td>Circumstance</td></tr>
+<% @character.skill_list.skills.sort{ |a,b| a.name <=> b.name }.each do |skill| 
+total = @character.stat_mod[skill.mod].to_i + skill.ranks + skill.bonus_hash.inject(0){|sum, bonus| sum += bonus[1]}%>
+<tr id="value"><td><%= skill.name %></td>
+<td><%= "#{"%+d" % total}"%></td>
+<td><%= "= #{skill.ranks}"%></td>
+<td><%= "#{"%+d" % @character.stat_mod[skill.mod].to_i} #{skill.mod.upcase}" %></td>
+<td><%= skill.bonus_hash.to_a.inject(""){|sum, bonus| sum += " " + ("%+d" % bonus[1].to_i) + " " + bonus[0].to_s } %></td>
+<td><%= skill.circumstance_hash.to_a.inject(""){|sum, bonus| sum += " " + ("%+d" % bonus[1].to_i) + " " + bonus[0].to_s } %></td></tr>
+<% end %>
+</table>

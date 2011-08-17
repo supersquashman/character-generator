@@ -1,0 +1,47 @@
+<table class="miscstats" style="left:<%= left-5%>px; top:<%= top%>px; width:<%= width+10%>px;">
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">SPEED</td><td id="value"><%= "#{@character.speed} ft." %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">SR</td><td id="value"><%= "#{@character.spell_resist}" %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">INIT</td><td id="value"><%= @character.initiative %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">FORT Save</td><td id="value" >+<%= @character.fort_save.inject(0){|sum,item| sum.to_i + item[1].to_i}.to_s  %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">REFLEX Save</td><td id="value" >+<%= @character.ref_save.inject(0){|sum,item| sum.to_i + item[1].to_i}.to_s %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">WILL Save</td><td id="value" >+<%= @character.will_save.inject(0){|sum,item| sum.to_i + item[1].to_i}.to_s %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">HD</td><td id="value"><%= @character.HD %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="topsplitbubble">
+<tr><td id="label">HP</td></tr><tr><td id="value"><%= @character.HP %></td></tr>
+</table></td>
+</tr>
+<tr>
+<td><table class="splitbubble">
+<tr><td id="label">BAB</td><td id="value">+<%= Array.new((@character.BAB/5).floor + 1){|i| (@character.BAB - i*5).to_s }.join("/+") %></td></tr>
+</table></td>
+</tr>
+</table>
