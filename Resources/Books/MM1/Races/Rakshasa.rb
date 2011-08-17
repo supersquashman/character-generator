@@ -26,7 +26,7 @@ class Rakshasa < RaceModel
 		super(character)
 		@size = "Medium"
 		@speed = 40
-		@age_roll = Roll.new("10d10+25")
+		@age_roll = Roll.new("2d6+20")
 		@favored_classes=["Sorcerer"]
 		character.languages.learn_lang("Common")
 		character.languages.learn_lang("Infernal")
@@ -40,12 +40,12 @@ class Rakshasa < RaceModel
 		super
 		if(character.level <= 1)
 			if (character.sex == "Male") #male
-				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("2d10+58")
+				character.weight = (120 +((character.height - 58) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			if (character.sex == "Female") #female
-				character.height = Roll.new("2d12+108")
-				character.weight = (character.height.to_i * 5.83) #extra weight is determined by multiplying the weight multiplier by the extra height
+				character.height = Roll.new("2d10+53")
+				character.weight = (85 +((character.height - 53) * Roll.new("2d4").to_i)) #extra weight is determined by multiplying the weight multiplier by the extra height
 			end
 			character.ECL += 7
 			character.HD += 7
@@ -73,8 +73,11 @@ class Rakshasa < RaceModel
 			character.add_ability("Darkvision(60ft.)")
 			character.add_ability("Damage Reduction 15/good and piercing")
 			character.add_ability("Change Shape")
-			character.add_ability("Darkness")
-			character.add_ability("Invisibility")
+			character.add_ability("Detect Thoughts")
+			character.add_ability("Natural Weapon:  Claws (1d6)")
+			character.add_ability("Natural Weapon:  Bite (1d4)")
+			#sorcerer spells as per 7th level...
+			character.caster_level += 7
 		end
 		character.spell_resist = character.level + 27
 	end
