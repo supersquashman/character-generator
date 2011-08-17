@@ -1,4 +1,4 @@
-# Ogre Mage - Model of D&D race and container for related information
+# Azer - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,9 +16,9 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-#--== Ogre Mage ============================================================================#
+#--== Azer ============================================================================#
 #++
-class OgreMage < RaceModel
+class Azer < RaceModel
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
@@ -73,4 +73,4 @@ class OgreMage < RaceModel
 		character.spell_resist = character.level + 13
 	end
 end
-RaceList.push(OgreMage)
+RaceList.push(Azer)
