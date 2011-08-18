@@ -50,7 +50,7 @@ class Vampire < RaceModel
 			character.ac_list["natural"] += 6
 			character.remove_ability("Low-Light Vision")
 			character.add_ability("Low-Light Vision")
-			if (character.get_ability_level("Darkvision") < 60)
+			if (character.get_ability_level("Darkvision").to_i < 60)
 				character.remove_ability("Darkvision", true)
 				character.add_ability("Darkvision(60ft.)")
 			end
@@ -73,13 +73,13 @@ class Vampire < RaceModel
 			character.skill_list.assign_misc("Move Silently", 8)
 			character.skill_list.assign_misc("Search", 8)
 			if (!character.has_ability("Immunity to Cold"))
-				if (character.get_ability_level("Resistance to Cold") < 10)
+				if (character.get_ability_level("Resistance to Cold").to_i < 10)
 					character.remove_ability("Resistance to Cold", true)
 					character.add_ability("Resistance to Cold (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Electricity"))
-				if (character.get_ability_level("Resistance to Electricity") < 10)
+				if (character.get_ability_level("Resistance to Electricity").to_i < 10)
 					character.remove_ability("Resistance to Electricity", true)
 					character.add_ability("Resistance to Electricity (10)")
 				end

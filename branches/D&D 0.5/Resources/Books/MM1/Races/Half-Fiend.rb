@@ -54,24 +54,24 @@ class HalfFiend < RaceModel
 			FeatList.roll_feats(character, 2)
 			num_skills = (character.stat_mod["int"] + 8) * (character.HD * 3)
 			character.skill_list.roll_skills(num_skills)
-			if (character.get_ability_level("Darkvision") < 60)
+			if (character.get_ability_level("Darkvision").to_i < 60)
 				character.remove_ability("Darkvision", true)
 				character.add_ability("Darkvision(60ft.)")
 			end
 			if (!character.has_ability("Immunity to Cold"))
-				if (character.get_ability_level("Resistance to Cold") < 10)
+				if (character.get_ability_level("Resistance to Cold").to_i < 10)
 					character.remove_ability("Resistance to Cold", true)
 					character.add_ability("Resistance to Cold (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Electricity"))
-				if (character.get_ability_level("Resistance to Electricity") < 10)
+				if (character.get_ability_level("Resistance to Electricity").to_i < 10)
 					character.remove_ability("Resistance to Electricity", true)
 					character.add_ability("Resistance to Electricity (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Acid"))
-				if (character.get_ability_level("Resistance to Acid") < 10)
+				if (character.get_ability_level("Resistance to Acid").to_i < 10)
 					character.remove_ability("Resistance to Acid", true)
 					character.add_ability("Resistance to Acid (10)")
 				end
@@ -80,9 +80,23 @@ class HalfFiend < RaceModel
 				character.add_ability("Fly(#{character.speed * 2}ft.)")
 			end
 			character.add_ability("Immunity to Poison")
-			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
-			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times do {|hd| character.add_ability(HalfFiend.fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			if (character.has_ability("Natural Weapon:  Claw"))
+				if (Roll.new(character.get_ability_level("Natural Weapon:  Claw")) < Roll.new(@claw_damage[character.size.downcase]))
+					character.remove_ability("Natural Weapon:  Claw", true)
+					character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+				end
+			else
+				character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+			end
+			if (character.has_ability("Natural Weapon:  Bite")) 
+				if (Roll.new(character.get_ability_level("Natural Weapon:  Bite")) < Roll.new(@bite_damage[character.size.downcase]))
+					character.remove_ability("Natural Weapon:  Bite", true)
+					character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
+				end
+			else
+				character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
+			end
+			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(HalfFiend.fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
 			character.final_levelup_procs += [Proc.new {add_ability("Smite Good (+#{character.HD} damage)")}]
 			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 5 ? 1 : (character.HD < 11 ? 2 : 3))}]
