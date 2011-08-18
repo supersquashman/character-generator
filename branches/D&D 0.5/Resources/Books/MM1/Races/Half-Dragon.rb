@@ -24,7 +24,7 @@ class HalfDragon < RaceModel
 #++
 	def initialize(character)
 		super(character)
-		@fly_speed = (character.speed.to_i) > 60 ? 120 : character.speed.to_i * 2
+		@fly_speed = (character.speed) > 60 ? 120 : [(character.speed * 2),10].max
 		@breath_DC = 0
 		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
 		if (character.race.racial_HD == "0d0")
@@ -98,7 +98,7 @@ class HalfDragon < RaceModel
 			else
 				character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
 			end
-			character.add_ability("Fly ("+ (@fly_speed).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
+			character.add_ability("Fly (#{@fly_speed}ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
 			character.add_ability("Breath Weapon:  " + @dragon_breaths[@dragon_type] + "(6d8); 1/day; DC" + (10 + (character.HD/2).floor + character.stat_mod["con"]).to_s)
 			character.add_ability("Immunity to " + @energy_type[@dragon_type])
 		end
