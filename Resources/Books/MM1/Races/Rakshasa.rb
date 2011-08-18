@@ -77,6 +77,7 @@ class Rakshasa < RaceModel
 			character.add_ability("Natural Weapon:  Claws (1d6)")
 			character.add_ability("Natural Weapon:  Bite (1d4)")
 			#sorcerer spells as per 7th level...
+			Sorcerer.increase_spells(@character,7)
 			character.caster_level += 7
 		end
 		character.spell_resist = character.level + 27
