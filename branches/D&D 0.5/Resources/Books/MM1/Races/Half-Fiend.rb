@@ -111,4 +111,4 @@ class HalfFiend < RaceModel
 	end
 	
 end
-#RaceList.push(HalfFiend)
+RaceList.push(HalfFiend)

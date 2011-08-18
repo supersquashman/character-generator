@@ -47,22 +47,24 @@ class Kobold< RaceModel
 			end
 			character.stats["dex"] += 2
 			character.stats["con"] -= 2                     
-      character.stats["str"] -= 4
+			character.stats["str"] -= 4
 			character.skill_list.assign_misc("Craft(Trapmaking)", 2)
 			character.skill_list.assign_misc("Profession(Miner)", 2)
-      character.skill_list.assign_misc("Search", 2)
+			character.skill_list.assign_misc("Search", 2)
 			character.add_ability("Light Sensitivity")
 			character.add_ability("Darkvision(60ft.)")
-      character.add_ability("Natural Weapon:  Claw (1d3)")
+			character.add_ability("Natural Weapon:  Claw (1d3)")
 			character.add_ability("Natural Weapon:  Bite (1d3)+1/2 str")
-      character.CR -= 3
-      character.ac_list["natural"] += 1
-      character.weapon_proficiencies |= ["Heavy Pick", "Light Pick"]
-      character.final_levelup_procs += [Proc.new do |char|
+			character.CR -= 3
+			character.ac_list["natural"] += 1
+=begin
+			character.weapon_proficiencies |= ["Heavy Pick", "Light Pick"]
+			character.final_levelup_procs += [Proc.new do |char|
 				if (character.weapon_proficiencies & $MARTIAL_WEAPONS) == $MARTIAL_WEAPONS
 					character.weapon_proficiencies |= ["Greatpick"]
 					end
 				end]
+=end
 		end
 	end
 end

@@ -65,7 +65,6 @@ class Ogre < RaceModel
 			character.skill_list.class_skills = ["Listen", "Climb", "Spot"]
 			character.skill_list.roll_skills(num_skills)
 			character.add_ability("Darkvision(60ft.)")
-			character.add_ability("Fly(40ft.)")
 			character.weapon_proficiencies |= $SIMPLE_WEAPONS | $MARTIAL_WEAPONS
 			character.armor_proficiencies |= $LIGHT_ARMOR | $MEDIUM_ARMOR | $SHIELDS
 		end

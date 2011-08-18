@@ -87,7 +87,7 @@ class Vampire < RaceModel
 			Alertness.add(@character) if Alertness.available?(@character)
 			CombatReflexes.add(@character) if CombatReflexes.available?(@character)
 			Dodge.add(@character) if Dodge.available?(@character)
-			ImprovedIniative.add(@character) if ImprovedInitiative.available?(@character)
+			ImprovedInitiative.add(@character) if ImprovedInitiative.available?(@character)
 			LightningReflexes.add(@character) if LightningReflexes.available?(@character)
 		end
 	end
