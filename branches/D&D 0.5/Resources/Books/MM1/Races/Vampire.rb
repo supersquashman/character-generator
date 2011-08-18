@@ -27,7 +27,7 @@ class Vampire < RaceModel
 		@fly_speed = (character.speed.to_i) > 60 ? 120 : character.speed.to_i * 2
 		@breath_DC = 0
 		#character.final_levelup_procs.push('character.HP = Roll.new(character.HD.to_s + "d12")')
-		character.final_levelup_procs += [Proc.new {character.HP = Roll.new(character.HD.to_s + "d12")}]
+		character.final_levelup_procs += [Proc.new {character.HP = Roll.new(character.HD.to_s + "d12" + (character.HD * character.stat_mod["con"])}]
 		#character.final_levelup_procs.push('@HP = Roll.new(@HD.to_s + "d12")')
 	end
 #-- self.apply(character) --------------------------------------------------------------#
