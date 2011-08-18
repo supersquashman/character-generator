@@ -19,7 +19,7 @@
 #--== Half-Celestial ============================================================================#
 #++
 class HalfCelestial < RaceModel
-	attr_accessor :Celestial_abilities
+	attr_accessor :celestial_abilities
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
@@ -30,8 +30,9 @@ class HalfCelestial < RaceModel
 		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
-		@Celestial_abilities = {1 => ["Darkness (3/day)"], 2 => ["Desecrate (1/day)"], 3 => ["Unholy Blight (1/day)"], 4 => ["Poison (3/day)"], 5 => ["Contagion (1/day)"], 6 => ["Blasphemy (1/day)"], 
-							7 => ["Unholy Aura (3/day)", "Unhallow (1/day)"], 8 => ["Horrid Wilting (1/day)"], 9 => ["Summon Monster IX (Celestials only) (1/day)"], 10 => ["Destruction (1/day)"]}
+		@celestial_abilities = {1 => ["Protection from Evil (3/day)", "Bless (1/day)"], 2 => ["Aid (1/day)", "Detect Evil (1/day)"], 3 => ["Cure Serious Wounds (1/day)", "Neutralize Poison (1/day)"], 
+				4 => ["Holy Smite (1/day)", "Remove Disease (1/day)"], 5 => ["Dispel Evil (1/day)"], 6 => ["Holy Word (1/day)"], 
+				7 => ["Holy Aura (3/day)", "Hallow (1/day)"], 8 => ["Mass Charm Monster (1/day)"], 9 => ["Summon Monster IX (Celestials only) (1/day)"], 10 => ["Resurrection (1/day)"]}
 	end
 #-- self.apply(character) --------------------------------------------------------------#
 #++
@@ -44,16 +45,16 @@ class HalfCelestial < RaceModel
 	def apply_level
 		if(character.level <= 1)
 			character.ECL += 4
-			character.CR += 2
-			character.HP += Roll.new(@racial_HD).to_i
+			#character.HP += Roll.new(@racial_HD).to_i
 			character.stats["str"] += 4
-			character.stats["dex"] += 4
-			character.stats["con"] += 2
-			character.stats["int"] += 4
-			character.stats["cha"] += 2
+			character.stats["dex"] += 2
+			character.stats["con"] += 4
+			character.stats["int"] += 2
+			character.stats["wis"] += 4
+			character.stats["cha"] += 4
 			character.ac_list["natural"] += 1
 			FeatList.roll_feats(character, 2)
-			num_skills = (character.stat_mod["int"] + 6) * (character.HD * 3)
+			num_skills = (character.stat_mod["int"] + 8) * (character.HD * 3)
 			character.skill_list.roll_skills(num_skills)
 			if (character.get_ability_level("Darkvision") < 60)
 				character.remove_ability("Darkvision", true)
@@ -88,12 +89,11 @@ class HalfCelestial < RaceModel
 				character.add_ability("Fly(#{character.speed}ft.)")
 			end
 			character.add_ability("Immunity to Disease")
-			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
-			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			character.final_levelup_procs += [Proc.new {(character.HD/2).min.times do {|hd| character.add_ability(HalfCelestial.Celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
-			character.final_levelup_procs += [Proc.new {add_ability("Smite Good (+#{character.HD} damage)")}]
+			character.add_ability("Daylight")
+			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times do {|hd| character.add_ability(HalfCelestial.celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			character.final_levelup_procs += [Proc.new {add_ability("Smite Evil (+#{character.HD} damage)")}]
 			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
-			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 5 ? 1 : (character.HD < 11 ? 2 : 3))}]
+			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 6 ? 1 : (character.HD < 11 ? 2 : 3))}]
 		end
 		character.spell_resist = [(character.HD+1) + 10, 35].min
 	end
