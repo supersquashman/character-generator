@@ -53,8 +53,10 @@ class Kobold< RaceModel
 			character.skill_list.assign_misc("Search", 2)
 			character.add_ability("Light Sensitivity")
 			character.add_ability("Darkvision(60ft.)")
+=begin
 			character.add_ability("Natural Weapon:  Claw (1d3)")
 			character.add_ability("Natural Weapon:  Bite (1d3)+1/2 str")
+=end
 			character.CR -= 3
 			character.ac_list["natural"] += 1
 =begin
