@@ -1,4 +1,4 @@
-# Half-Fiend - Model of D&D race and container for related information
+# Half-Celestial - Model of D&D race and container for related information
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -16,10 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-#--== Half-Fiend ============================================================================#
+#--== Half-Celestial ============================================================================#
 #++
-class HalfFiend < RaceModel
-	attr_accessor :fiend_abilities
+class HalfCelestial < RaceModel
+	attr_accessor :Celestial_abilities
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
@@ -30,8 +30,8 @@ class HalfFiend < RaceModel
 		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
-		@fiend_abilities = {1 => ["Darkness (3/day)"], 2 => ["Desecrate (1/day)"], 3 => ["Unholy Blight (1/day)"], 4 => ["Poison (3/day)"], 5 => ["Contagion (1/day)"], 6 => ["Blasphemy (1/day)"], 
-							7 => ["Unholy Aura (3/day)", "Unhallow (1/day)"], 8 => ["Horrid Wilting (1/day)"], 9 => ["Summon Monster IX (fiends only) (1/day)"], 10 => ["Destruction (1/day)"]}
+		@Celestial_abilities = {1 => ["Darkness (3/day)"], 2 => ["Desecrate (1/day)"], 3 => ["Unholy Blight (1/day)"], 4 => ["Poison (3/day)"], 5 => ["Contagion (1/day)"], 6 => ["Blasphemy (1/day)"], 
+							7 => ["Unholy Aura (3/day)", "Unhallow (1/day)"], 8 => ["Horrid Wilting (1/day)"], 9 => ["Summon Monster IX (Celestials only) (1/day)"], 10 => ["Destruction (1/day)"]}
 	end
 #-- self.apply(character) --------------------------------------------------------------#
 #++
@@ -87,10 +87,10 @@ class HalfFiend < RaceModel
 				character.remove_ability("Fly",true)
 				character.add_ability("Fly(#{character.speed}ft.)")
 			end
-			character.add_ability("Immunity to Poison")
+			character.add_ability("Immunity to Disease")
 			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
 			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
-			character.final_levelup_procs += [Proc.new {(character.HD/2).min.times do {|hd| character.add_ability(HalfFiend.fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			character.final_levelup_procs += [Proc.new {(character.HD/2).min.times do {|hd| character.add_ability(HalfCelestial.Celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
 			character.final_levelup_procs += [Proc.new {add_ability("Smite Good (+#{character.HD} damage)")}]
 			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 5 ? 1 : (character.HD < 11 ? 2 : 3))}]
@@ -105,4 +105,4 @@ class HalfFiend < RaceModel
 	end
 	
 end
-#RaceList.push(HalfFiend)
+#RaceList.push(HalfCelestial)
