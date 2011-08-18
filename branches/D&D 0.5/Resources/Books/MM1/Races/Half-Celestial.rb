@@ -90,6 +90,7 @@ class HalfCelestial < RaceModel
 			end
 			character.add_ability("Immunity to Disease")
 			character.add_ability("Daylight")
+			character.add_ability("+4 on Fortitude saves vs. Poison")
 			character.final_levelup_procs += [Proc.new {(1..((character.HD/2).floor)).each {|hd| @celestial_abilities[hd].each {|ability| character.add_ability(ability)}}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
 			#character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(@celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
 			character.final_levelup_procs += [Proc.new {character.add_ability("Smite Evil (+#{character.HD} damage)")}]
