@@ -64,7 +64,7 @@ class HalfDragon < RaceModel
 			character.ECL += 3
 			character.CR += 2
 			character.BAB += 4
-			character.HP += Roll.new(@racial_HD).to_i
+			character.HP += Roll.new(@racial_HD).to_i + (character.HD * character.stat_mod["con"])
 			character.stats["str"] += 8
 			character.stats["cha"] += 2
 			character.stats["con"] += 2
