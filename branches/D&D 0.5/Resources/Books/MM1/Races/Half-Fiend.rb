@@ -19,6 +19,7 @@
 #--== Half-Fiend ============================================================================#
 #++
 class HalfFiend < RaceModel
+	attr_accessor :fiend_abilities
 
 #-- initialize(character) --------------------------------------------------------------#
 #++
@@ -27,22 +28,10 @@ class HalfFiend < RaceModel
 		@fly_speed = (character.speed.to_i) > 60 ? 120 : character.speed.to_i * 2
 		@breath_DC = 0
 		#@racial_HD = (character.race.racial_HD == "0d0") ? character.race.racial_HD : (temp_HD = character.race.racial_HD[character.race.racial_HD.index("d")+1, character.race.racial_HD.length].to_i + 2) < 12 ? temp_HD : 12
-		if (character.race.racial_HD == "0d0")
-			@racial_HD = character.race.racial_HD
-			@breath_DC = (10 + character.stat_mod["con"])
-		else
-			race_hd = character.race.racial_HD
-			temp_HD = race_hd[race_hd.index("d")+1, race_hd.length].to_i + 2
-			if (temp_HD > 12)
-				@racial_HD = "1d12"
-			else
-				@racial_HD = "1d"+ temp_HD.to_s
-			end
-			@breath_DC = (10 + (character.HD/2).floor + character.stat_mod["con"])
-		end
 		@bite_damage = {"fine" => "1", "diminutive" => "1d2", "tiny" => "1d3", "small" => "1d4", "medium" => "1d6", "large" => "1d8", "huge" => "2d6", "gargantuan" => "3d6", "colossal" => "4d6"}
 		@claw_damage = {"diminutive" => "1", "tiny" => "1d2", "small" => "1d3", "medium" => "1d4", "large" => "1d6", "huge" => "1d8", "gargantuan" => "2d6", "colossal" => "3d6"}
-		@fiend_abilities = {1 => "Darkness (3/day)", 2 => "", 3 => "", 4 => "", 5 => "", 6 => "", 7 => "", 8 => ""}
+		@fiend_abilities = {1 => ["Darkness (3/day)"], 2 => ["Desecrate (1/day)"], 3 => ["Unholy Blight (1/day)"], 4 => ["Poison (3/day)"], 5 => ["Contagion (1/day)"], 6 => ["Blasphemy (1/day)"], 
+							7 => ["Unholy Aura (3/day)", "Unhallow (1/day)"], 8 => ["Horrid Wilting (1/day)"], 9 => ["Summon Monster IX (fiends only) (1/day)"], 10 => ["Destruction (1/day)"]}
 	end
 #-- self.apply(character) --------------------------------------------------------------#
 #++
@@ -54,28 +43,28 @@ class HalfFiend < RaceModel
 #++
 	def apply_level
 		if(character.level <= 1)
-			character.ECL += 3
+			character.ECL += 4
 			character.CR += 2
-			character.BAB += 4
 			character.HP += Roll.new(@racial_HD).to_i
-			character.stats["str"] += 8
-			character.stats["cha"] += 2
+			character.stats["str"] += 4
+			character.stats["dex"] += 4
 			character.stats["con"] += 2
-			character.stats["int"] += 2
-			character.fort_save["racial"] = 5
-			character.ref_save["racial"] = 2
-			character.will_save["racial"] = 2
+			character.stats["int"] += 4
+			character.stats["cha"] += 2
 			character.ac_list["natural"] += 1
 			FeatList.roll_feats(character, 2)
 			num_skills = (character.stat_mod["int"] + 6) * (character.HD * 3)
 			character.skill_list.roll_skills(num_skills)
-			character.remove_ability("Low-Light Vision")
-			character.add_ability("Low-Light Vision")
 			character.remove_ability("Darkvision(60ft.)")
 			character.add_ability("Darkvision(60ft.)")
+			character.add_ability("Immunity to Poison")
 			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
 			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
 		end
+		character.spell_resist = [(character.HD+1) + 10, 35].min
+		character.final_levelup_procs += [Proc.new {(character.HD/2).min.times do {|hd| character.add_ability(HalfFiend.fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+		character.final_levelup_procs += [Proc.new {add_ability("Smite Good (+#{character.HD} damage)")}]
+		character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 	end
 
 #-- self.is_template ------------------------------------------------------------------------#
