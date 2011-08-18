@@ -185,14 +185,37 @@ class Roll
 		["int","wis","cha","dex","str","con"].each {|k| stats[k] = Roll.best(3,4)}
 		return stats
 	end
+#-- <=> (o) ------------------------------------------------------------------------------#
+#++
+# compares two Roll objects ex: 2d6 > 1d12
+	def <=>(o)
+    ret = 0
+    if o.class == Roll
+      ret = self.max.result <=> o.max.result
+      ret = self.min.result <=> o.min.result if ret == 0
+    else
+      ret = self.to_i <=> o
+    end
+    return ret
+	end
+  def >(o) (self <=> o) == 1 end
+  def <(o) (self <=> o) == -1 end
+  def >=(o) [0,1].include?(self <=> o) end
+  def <=(o) [0,-1].include?(self <=> o) end
+  def ==(o) (self <=> o) == 0 end  
 end
 
 
         ##-------------##
         ##-- EXAMPLE --##
         ##-------------##
-# r1 = Roll.new("2d6+3d6 -10d2 -5")
-# r2 = Roll.new("2d8+3d10 -10d2 -5")
+# r1 = Roll.new("2d6")
+# r2 = Roll.new("2d8")
+# r3 = Roll.new("3d5")
+# a = [r1,r2,r3].sort.collect{|b| b.original}
+# puts a
+# puts "2d6 > 2d8 #{ r1 > r2 ? 'TRUE' : 'FALSE' }"
+# puts "3d5 > 2d8 #{ r3 > r2 ? 'TRUE' : 'FALSE' }"
 # print r1 +"\n"
 # print r2 +"\n"
 # print (r1+r2) +"\n"
