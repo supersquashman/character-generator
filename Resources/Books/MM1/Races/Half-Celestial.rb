@@ -84,15 +84,16 @@ class HalfCelestial < RaceModel
 					character.add_ability("Resistance to Fire (10)")
 				end
 			end
-			if (character.get_ability_level("Fly") < character.speed)
+			if (character.get_ability_level("Fly").to_i < character.speed)
 				character.remove_ability("Fly",true)
 				character.add_ability("Fly(#{character.speed}ft.)")
 			end
 			character.add_ability("Immunity to Disease")
 			character.add_ability("Daylight")
-			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(HalfCelestial.celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
-			character.final_levelup_procs += [Proc.new {add_ability("Smite Evil (+#{character.HD} damage)")}]
-			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
+			character.final_levelup_procs += [Proc.new {(1..((character.HD/2).floor)).each {|hd| @celestial_abilities[hd].each {|ability| character.add_ability(ability)}}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			#character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(@celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			character.final_levelup_procs += [Proc.new {character.add_ability("Smite Evil (+#{character.HD} damage)")}]
+			character.final_levelup_procs += [Proc.new {character.add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 6 ? 1 : (character.HD < 11 ? 2 : 3))}]
 		end
 		character.spell_resist = [(character.HD+1) + 10, 35].min

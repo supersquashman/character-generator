@@ -83,10 +83,10 @@ class HalfFiend < RaceModel
 			if (character.has_ability("Natural Weapon:  Claw"))
 				if (Roll.new(character.get_ability_level("Natural Weapon:  Claw")) < Roll.new(@claw_damage[character.size.downcase]))
 					character.remove_ability("Natural Weapon:  Claw", true)
-					character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+					character.add_ability("Natural Weapon:  Claw (#{@claw_damage[character.size.downcase]})")
 				end
 			else
-				character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+				character.add_ability("Natural Weapon:  Claw (#{@claw_damage[character.size.downcase]})")
 			end
 			if (character.has_ability("Natural Weapon:  Bite")) 
 				if (Roll.new(character.get_ability_level("Natural Weapon:  Bite")) < Roll.new(@bite_damage[character.size.downcase]))
@@ -96,9 +96,10 @@ class HalfFiend < RaceModel
 			else
 				character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
 			end
-			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(HalfFiend.fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
-			character.final_levelup_procs += [Proc.new {add_ability("Smite Good (+#{character.HD} damage)")}]
-			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
+			character.final_levelup_procs += [Proc.new {(1..((character.HD/2).floor)).each {|hd| @fiend_abilities[hd].each {|ability| character.add_ability(ability)}}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			#character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(@fiend_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			character.final_levelup_procs += [Proc.new {character.add_ability("Smite Good (+#{character.HD} damage)")}]
+			character.final_levelup_procs += [Proc.new {character.add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 5 ? 1 : (character.HD < 11 ? 2 : 3))}]
 		end
 		character.spell_resist = [(character.HD+1) + 10, 35].min
