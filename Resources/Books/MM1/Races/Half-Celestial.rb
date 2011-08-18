@@ -56,7 +56,7 @@ class HalfCelestial < RaceModel
 			FeatList.roll_feats(character, 2)
 			num_skills = (character.stat_mod["int"] + 8) * (character.HD * 3)
 			character.skill_list.roll_skills(num_skills)
-			if (character.get_ability_level("Darkvision") < 60)
+			if (character.get_ability_level("Darkvision").to_i < 60)
 				character.remove_ability("Darkvision", true)
 				character.add_ability("Darkvision(60ft.)")
 			end
@@ -105,4 +105,4 @@ class HalfCelestial < RaceModel
 	end
 	
 end
-#RaceList.push(HalfCelestial)
+RaceList.push(HalfCelestial)

@@ -215,14 +215,14 @@ class Character
 		self.abilities.each do |ability|
 			if ability.to_s.include? text.scan(/\D+/)[0]
 				if ability.to_s.scan(/\d{1,}(d)\d{1,}/)
-					ability_level = ability.sub(/\d{1,}(d)\d{1,}/)
+					ability_level = ability.scan(/\d{1,}(d)\d{1,}/)
 				else
-					ability_level = ability.sub(/\d{1,}/)
+					ability_level = ability.scan(/\d{1,}/)
 				end
 			end
 		end
 		
-		return ability_level
+		return ability_level.to_s
 	end
 	
 #-- get_stat ---------------------------------------------------------------------------#
