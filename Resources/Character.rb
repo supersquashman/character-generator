@@ -211,10 +211,14 @@ class Character
 #-- get_ability_level (text) -----------------------------------------------------------------#
 #++
 	def get_ability_level (text)
-		ability_level = 0
+		ability_level = "0"
 		self.abilities.each do |ability|
 			if ability.to_s.include? text.scan(/\D+/)[0]
-				ability_level = ability.sub(/\d{1,}/)
+				if ability.to_s.scan(/\d{1,}(d)\d{1,}/)
+					ability_level = ability.sub(/\d{1,}(d)\d{1,}/)
+				else
+					ability_level = ability.sub(/\d{1,}/)
+				end
 			end
 		end
 		

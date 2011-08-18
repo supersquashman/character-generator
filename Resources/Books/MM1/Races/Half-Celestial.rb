@@ -61,25 +61,25 @@ class HalfCelestial < RaceModel
 				character.add_ability("Darkvision(60ft.)")
 			end
 			if (!character.has_ability("Immunity to Cold"))
-				if (character.get_ability_level("Resistance to Cold") < 10)
+				if (character.get_ability_level("Resistance to Cold").to_i < 10)
 					character.remove_ability("Resistance to Cold", true)
 					character.add_ability("Resistance to Cold (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Electricity"))
-				if (character.get_ability_level("Resistance to Electricity") < 10)
+				if (character.get_ability_level("Resistance to Electricity").to_i < 10)
 					character.remove_ability("Resistance to Electricity", true)
 					character.add_ability("Resistance to Electricity (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Acid"))
-				if (character.get_ability_level("Resistance to Acid") < 10)
+				if (character.get_ability_level("Resistance to Acid").to_i < 10)
 					character.remove_ability("Resistance to Acid", true)
 					character.add_ability("Resistance to Acid (10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Fire"))
-				if (character.get_ability_level("Resistance to Fire") < 10)
+				if (character.get_ability_level("Resistance to Fire").to_i < 10)
 					character.remove_ability("Resistance to Fire", true)
 					character.add_ability("Resistance to Fire (10)")
 				end
@@ -90,7 +90,7 @@ class HalfCelestial < RaceModel
 			end
 			character.add_ability("Immunity to Disease")
 			character.add_ability("Daylight")
-			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times do {|hd| character.add_ability(HalfCelestial.celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
+			character.final_levelup_procs += [Proc.new {(character.HD/2).floor.times {|hd| character.add_ability(HalfCelestial.celestial_abilities[hd])}}] if (character.stats["int"] >= 8 || character.stats["dex"] >= 8)
 			character.final_levelup_procs += [Proc.new {add_ability("Smite Evil (+#{character.HD} damage)")}]
 			character.final_levelup_procs += [Proc.new {add_ability((character.HD < 12) ? "5/magic" : "10/magic")}]
 			character.final_levelup_procs += [Proc.new {character.CR += (character.HD < 6 ? 1 : (character.HD < 11 ? 2 : 3))}]

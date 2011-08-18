@@ -78,12 +78,26 @@ class HalfDragon < RaceModel
 			character.skill_list.roll_skills(num_skills)
 			#character.remove_ability("Low-Light Vision")
 			character.add_ability("Low-Light Vision") if !character.has_ability("Low-Light Vision")
-			if (character.get_ability_level("Darkvision") < 60)
+			if (character.get_ability_level("Darkvision").to_i < 60)
 				character.remove_ability("Darkvision", true)
 				character.add_ability("Darkvision(60ft.)")
 			end
-			character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Claw"))
-			character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")") if (!character.has_ability("Natural Weapon:  Bite"))
+			if (character.has_ability("Natural Weapon:  Claw"))
+				if (Roll.new(character.get_ability_level("Natural Weapon:  Claw")) < Roll.new(@claw_damage[character.size.downcase]))
+					character.remove_ability("Natural Weapon:  Claw", true)
+					character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+				end
+			else
+				character.add_ability("Natural Weapon:  Claw ("+ @claw_damage[character.size.downcase] +")")
+			end
+			if (character.has_ability("Natural Weapon:  Bite"))
+				if (Roll.new(character.get_ability_level("Natural Weapon:  Bite")) < Roll.new(@bite_damage[character.size.downcase]))
+					character.remove_ability("Natural Weapon:  Bite", true)
+					character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
+				end
+			else
+				character.add_ability("Natural Weapon:  Bite ("+ @bite_damage[character.size.downcase] +")")
+			end
 			character.add_ability("Fly ("+ (@fly_speed).to_s + "ft.)") if (["large","huge","gargantuan","colossal"].include?(character.size.downcase) && !character.has_ability("Fly"))
 			character.add_ability("Breath Weapon:  " + @dragon_breaths[@dragon_type] + "(6d8); 1/day; DC" + (10 + (character.HD/2).floor + character.stat_mod["con"]).to_s)
 			character.add_ability("Immunity to " + @energy_type[@dragon_type])
