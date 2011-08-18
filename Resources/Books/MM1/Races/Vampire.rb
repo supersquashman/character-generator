@@ -75,14 +75,14 @@ class Vampire < RaceModel
 			character.skill_list.assign_misc("Search", 8)
 			if (!character.has_ability("Immunity to Cold"))
 				if (character.has_ability("Resistance to Cold"))
-					character.increase_ability("Resistance to Cold (5)", 10, "")
+					#character.increase_ability("Resistance to Cold (5)", 10, "")
 				else
 					character.add_ability("Resistance to Cold(10)")
 				end
 			end
 			if (!character.has_ability("Immunity to Electricity"))
 				if (character.has_ability("Resistance to Electricity"))
-					character.increase_ability("Resistance to Electricity (5)", 10, "")
+					#character.increase_ability("Resistance to Electricity (5)", 10, "")
 				else
 					character.add_ability("Resistance to Electricity(10)")
 				end
