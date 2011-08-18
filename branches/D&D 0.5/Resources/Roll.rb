@@ -193,6 +193,7 @@ class Roll
     if o.class == Roll
       ret = self.max.result <=> o.max.result
       ret = self.min.result <=> o.min.result if ret == 0
+      ret = self.result <=> o.result if ret == 0
     else
       ret = self.to_i <=> o
     end
@@ -209,13 +210,13 @@ end
         ##-------------##
         ##-- EXAMPLE --##
         ##-------------##
-# r1 = Roll.new("2d6")
-# r2 = Roll.new("2d8")
-# r3 = Roll.new("3d5")
-# a = [r1,r2,r3].sort.collect{|b| b.original}
-# puts a
-# puts "2d6 > 2d8 #{ r1 > r2 ? 'TRUE' : 'FALSE' }"
-# puts "3d5 > 2d8 #{ r3 > r2 ? 'TRUE' : 'FALSE' }"
+r1 = Roll.new("2d6")
+r2 = Roll.new("2d6")
+r3 = Roll.new("3d5")
+a = [r1,r2,r3].sort.collect{|b| b.original}
+puts a
+puts "2d6 > 2d8 #{ r1 > r2 ? 'TRUE' : 'FALSE' }"
+puts "3d5 > 2d8 #{ r3 > r2 ? 'TRUE' : 'FALSE' }"
 # print r1 +"\n"
 # print r2 +"\n"
 # print (r1+r2) +"\n"
