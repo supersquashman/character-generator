@@ -60,7 +60,7 @@ class Minotaur < RaceModel
 			character.add_ability("Scent")
 			character.add_ability("Natural Weapons:  Horns - Gore(1d8)")
 			character.weapon_proficiencies |= $SIMPLE_WEAPONS
-			character.weapon_proficiencies |= "Greateaxe"
+			character.weapon_proficiencies |= ["Greateaxe"]
 			num_skills = (character.stat_mod["int"] + 2) * 9
 			character.skill_list.class_skills = ["Intimidate","Jump","Listen","Search","Spot"]
 			character.skill_list.roll_skills(num_skills)
