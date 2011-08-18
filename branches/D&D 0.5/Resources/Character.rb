@@ -208,6 +208,19 @@ class Character
 		return included
 	end
 	
+#-- get_ability_level (text) -----------------------------------------------------------------#
+#++
+	def get_ability_level (text)
+		ability_level = 0
+		self.abilities.each do |ability|
+			if ability.to_s.include? text.scan(/\D+/)[0]
+				ability_level = ability.sub(/\d{1,}/)
+			end
+		end
+		
+		return ability_level
+	end
+	
 #-- get_stat ---------------------------------------------------------------------------#
 #++
 	def get_stat
