@@ -32,6 +32,7 @@ class Character
 	attr_accessor :size, :skill_list, :BAB, :caster_level, :race, :age, :classes, :abilities, :level, :level_up, :stat_mod, :armor_check, :languages, :feats, :secondary_motivation
 	attr_accessor :max_classes, :grapple, :extra_levelup_procs, :final_levelup_procs, :armor_proficiencies, :weapon_proficiencies, :history, :primary_motivation
 	attr_accessor :CR, :ECL, :alignment, :initiative, :racial_templates, :name, :forbidden_spell_types, :seed
+	
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
 	def initialize (sources, seed = 0)
@@ -85,16 +86,15 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		#@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		#@race = RaceList.select_race("Aasimar")
+		#@temp_templates.push(RaceList.select_race("HalfFiend"))
 		while (@race.is_template)
 			#@race.apply(self) if !@templates.include?(@race)
 			@temp_templates.push(@race) if !@temp_templates.include?(@race)
 			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
 		end
 		#@race = RaceList.select_race("Human")
-		#@temp_templates.push(RaceList.select_race("Vampire"))
 		@race.apply(self)
 		#RaceList.select_race("Vampire").apply(self)
 		@temp_templates.each {|template| template.apply(self)} if @temp_templates.length > 0
