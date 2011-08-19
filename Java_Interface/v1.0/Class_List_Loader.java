@@ -17,8 +17,8 @@ public class Class_List_Loader extends Array
 			/*
 				 
 			*/
-			rbEngine.eval(new BufferedReader(new FileReader("Character_Generator.rb")));
-			this = rbEngine.eval("get_measure(5, 7, "+ data.getBeatsPerMeasure() +", "+ data.getNoteValue() +", "+ data.getKeySig() +")");
+			rbEngine.eval(new BufferedReader(new FileReader("List_Loader.rb")));
+			//this = rbEngine.eval("get_measure(5, 7, "+ data.getBeatsPerMeasure() +", "+ data.getNoteValue() +", "+ data.getKeySig() +")");
 		}
 		catch (Exception d)
 		{
