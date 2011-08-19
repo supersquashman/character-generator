@@ -5,9 +5,9 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.script.*;
 
-public class Character_Display extends JPanel
+public class Class_List_Loader extends Array
 {
-	public Character_Display()
+	public Class_List_Loader()
 	{
 		
 	}
