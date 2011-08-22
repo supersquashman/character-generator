@@ -21,7 +21,7 @@ public class Class_List_Loader
 		File tempFile = new File(".");
 		String filePath = tempFile.getAbsoluteFile().getParent().replace('\\','/');
 		
-		JOptionPane.showMessageDialog(null, "load_classes(\"" + filePath + "\")");
+		//JOptionPane.showMessageDialog(null, "load_classes(\"" + filePath + "\")");
 		
 		try
 		{
