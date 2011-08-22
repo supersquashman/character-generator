@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with FishTornado D&D Character Generator.  If not, see <http://www.gnu.org/licenses/>.
 
-require_relative "#{File.dirname(__FILE__)}/../Magic/Spells/WizardSpells"
+require "#{File.dirname(__FILE__)}/../Magic/Spells/WizardSpells"
 
 #--== Wizard ===========================================================================#
 #++
