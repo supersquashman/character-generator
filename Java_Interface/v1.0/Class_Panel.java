@@ -9,7 +9,7 @@ public class Class_Panel
 {
 	public JPanel getPanel()
 	{
-		//Array classes = new Class_List_Loader();
+		Array classes = new Class_List_Loader();
 		classPanel = new JPanel();
 		
 		return classPanel;
