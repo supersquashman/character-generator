@@ -1,3 +1,6 @@
+Dir.glob(File.join("#{File.dirname(__FILE__)}", "/", "jruby-complete-1.6.3.jar")).each do |file|
+	require file
+end
 class List_Loader
 	def load_classes(sources = ["PHB"])
 		Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(File.dirname(__FILE__))))}", "/D&D 0.5/Resources/Lists/", "ClassList.rb")).each do |file|
