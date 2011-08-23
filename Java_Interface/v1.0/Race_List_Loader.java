@@ -8,12 +8,12 @@ import java.io.*;
 import org.jruby.*;
 import org.jruby.util.*;
 
-public class Class_List_Loader 
+public class Race_List_Loader
 {
-	String classList[] = new String[1];
+	String raceList[] = new String[1];
 	Object rubyArray = new Object();
 	
-	public Class_List_Loader()
+	public Race_List_Loader()
 	{
 		ScriptEngineManager mgr = new ScriptEngineManager();
 		ScriptEngine rbEngine = mgr.getEngineByExtension("rb");
@@ -25,7 +25,7 @@ public class Class_List_Loader
 		try
 		{
 			rbEngine.eval(new BufferedReader(new FileReader("List_Loader.rb")));
-			rubyArray = rbEngine.eval("load_classes(\"" + filePath.trim() + "\")");
+			rubyArray = rbEngine.eval("load_races(\"" + filePath.trim() + "\")");
 		}
 		catch (Exception d)
 		{
@@ -33,7 +33,7 @@ public class Class_List_Loader
 		}
 	}
 	
-	public Class_List_Loader(Object[] sources)
+	public Race_List_Loader(Object[] sources)
 	{
 		ScriptEngineManager mgr = new ScriptEngineManager();
 		ScriptEngine rbEngine = mgr.getEngineByExtension("rb");
@@ -42,15 +42,10 @@ public class Class_List_Loader
 		
 		String sourceList = "";
 		
-		/*for (i = 0; i < sources.length; i++)
-		{
-			source
-		}*/
-		
 		try
 		{
-			rbEngine.eval(new BufferedReader(new FileReader("List_Loader.rb")));
-			rubyArray = rbEngine.eval("load_classes(\"" + filePath.trim() + "\"," + sources + " )");
+			rbEngine.eval(new BufferedReader(new FileReader("Race_Loader.rb")));
+			rubyArray = rbEngine.eval("load_races(\"" + filePath.trim() + "\"," + sources + " )");
 		}
 		catch (Exception d)
 		{
@@ -58,10 +53,10 @@ public class Class_List_Loader
 		}
 	}
 	
-	public String[] getClasses()
+	public String[] getRaces()
 	{
-		classList = rubyArray.toString().split(";");
+		raceList = rubyArray.toString().split(";");
 		
-		return classList;
+		return raceList;
 	}
 }
