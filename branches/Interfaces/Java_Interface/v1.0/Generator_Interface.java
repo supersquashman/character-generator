@@ -22,11 +22,15 @@ public class Generator_Interface extends JFrame
 		setLocation(screenX, screenY);
 		
 		Class_Panel classes = new Class_Panel();
+		JScrollPane classScroller = new JScrollPane(classes);
+		String sources[] = {"PHB","MM1"};
+		Race_Panel races = new Race_Panel();
+		JScrollPane raceScroller = new JScrollPane(races);
 		
 		Container contentPane = getContentPane();
-		JScrollPane classScroller = new JScrollPane(classes);
 		
 		contentPane.add(classScroller, BorderLayout.PAGE_START);
+		contentPane.add(raceScroller, BorderLayout.CENTER);
 		
 		setVisible(true);
 	}
