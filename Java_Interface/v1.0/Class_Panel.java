@@ -9,6 +9,7 @@ public class Class_Panel extends JPanel implements ActionListener
 {
 	String classes[] = new String[0];
 	JCheckBox controls[] = new JCheckBox[0];
+	JCheckBox selectAll = new JCheckBox("Any", true);
 	List selection = new List();
 	
 	public Class_Panel()
@@ -16,6 +17,7 @@ public class Class_Panel extends JPanel implements ActionListener
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		Class_List_Loader loader = new Class_List_Loader();
 		classes = loader.getClasses();
+		addControls(selectAll);
 		drawControls();
 	}
 	
@@ -24,6 +26,7 @@ public class Class_Panel extends JPanel implements ActionListener
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		Class_List_Loader loader = new Class_List_Loader(sources);
 		classes = loader.getClasses();
+		addControls(selectAll);
 		drawControls();
 	}
 	
@@ -40,11 +43,21 @@ public class Class_Panel extends JPanel implements ActionListener
 	public List getSelection()
 	{
 		selection = new List();
-		for (int i = 0; i < controls.length; i++)
+		if (!selectAll.isSelected())
 		{
-			if (controls[i].isSelected())
+			for (int i = 0; i < controls.length; i++)
 			{
-				selection.add(controls[i].getText());
+				if (controls[i].isSelected())
+				{
+					selection.add(controls[i].getText());
+				}
+			}
+		}
+		else
+		{
+			for (int i = 0; i < classes.length; i++)
+			{
+				selection.add(classes[i]);
 			}
 		}
 		
@@ -72,6 +85,6 @@ public class Class_Panel extends JPanel implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-	
+		
 	}
 }
