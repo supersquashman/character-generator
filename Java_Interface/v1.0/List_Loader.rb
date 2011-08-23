@@ -17,7 +17,7 @@ def load_classes(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	end
 	sources.each do |book|
 		Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Books/#{book}/Classes/", "*.rb")).each do |file|
-			puts file
+			#puts file
 			require file
 		end
 	end
@@ -25,4 +25,4 @@ def load_classes(file_path = File.dirname(__FILE__), sources = ["PHB"])
 end
 
 #loader = List_Loader.new
-puts load_classes
+#puts load_classes

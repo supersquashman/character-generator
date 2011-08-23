@@ -58,33 +58,10 @@ public class Class_List_Loader
 		}
 	}
 	
-	public static void main(String[] args)
-	{
-		String sources[] = {"PHB"};
-		Class_List_Loader blargh = new Class_List_Loader();
-		blargh.test();
-	}
-	
 	public String[] getClasses()
 	{
 		classList = rubyArray.toString().split(";");
 		
 		return classList;
-	}
-	
-	public void test()
-	{
-		String classes = "";
-		
-		//Class_List_Loader test = new Class_List_Loader();
-		
-		/*for (int i = 0; i < classList.length; i++)
-		{
-			classes += classList[i] + ", ";
-		}*/
-		
-		String topato[] = getClasses();//{"pants", "potato", "ham"};
-		
-		JOptionPane.showMessageDialog(null, topato);
 	}
 }
