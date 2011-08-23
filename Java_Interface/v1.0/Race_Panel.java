@@ -9,12 +9,15 @@ public class Race_Panel extends JPanel
 {
 	String races[] = new String[0];
 	JCheckBox controls[] = new JCheckBox[0];
+	JCheckBox selectAll = new JCheckBox("Any", true);
+	List selection = new List();
 	
 	public Race_Panel()
 	{
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		Race_List_Loader loader = new Race_List_Loader();
 		races = loader.getRaces();
+		addControls(selectAll);
 		drawControls();
 	}
 	
@@ -23,6 +26,7 @@ public class Race_Panel extends JPanel
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		Race_List_Loader loader = new Race_List_Loader(sources);
 		races = loader.getRaces();
+		addControls(selectAll);
 		drawControls();
 	}
 	
@@ -34,6 +38,30 @@ public class Race_Panel extends JPanel
 		JPanel racePanel = new JPanel();
 		
 		return racePanel;
+	}
+	
+	public List getSelection()
+	{
+		selection = new List();
+		if (!selectAll.isSelected())
+		{
+			for (int i = 0; i < controls.length; i++)
+			{
+				if (controls[i].isSelected())
+				{
+					selection.add(controls[i].getText());
+				}
+			}
+		}
+		else
+		{
+			for (int i = 0; i < races.length; i++)
+			{
+				selection.add(races[i]);
+			}
+		}
+		
+		return selection;
 	}
 	
 	private void drawControls()

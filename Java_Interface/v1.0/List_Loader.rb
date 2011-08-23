@@ -61,6 +61,7 @@ def load_sources(file_path = File.dirname(__FILE__), sources = ["PHB"])
 		#puts file
 		tempList.push(file.basename)
 	end
+	tempList.join(";")
 end
 
 #loader = List_Loader.new
