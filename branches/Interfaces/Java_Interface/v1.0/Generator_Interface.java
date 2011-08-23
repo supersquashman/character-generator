@@ -1,4 +1,4 @@
-package org.JavaInterface;
+//package org.JavaInterface;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -21,8 +21,12 @@ public class Generator_Interface extends JFrame
 		int screenY = (screenSize.height - getHeight())/2;
 		setLocation(screenX, screenY);
 		
+		Class_Panel classes = new Class_Panel();
 		
+		Container contentPane = getContentPane();
+		JScrollPane classScroller = new JScrollPane(classes);
 		
+		contentPane.add(classScroller, BorderLayout.PAGE_START);
 		
 		setVisible(true);
 	}
