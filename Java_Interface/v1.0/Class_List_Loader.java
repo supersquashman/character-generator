@@ -11,7 +11,8 @@ import org.jruby.RubyArray;
 
 public class Class_List_Loader 
 {
-	Object classList = new Object();//[1];
+	String classList[] = new String[1];
+	Object rubyArray = new Object();
 	
 	public Class_List_Loader()
 	{
@@ -26,7 +27,7 @@ public class Class_List_Loader
 		try
 		{
 			rbEngine.eval(new BufferedReader(new FileReader("List_Loader.rb")));
-			classList = rbEngine.eval("load_classes(\"" + filePath.trim() + "\")");
+			rubyArray = rbEngine.eval("load_classes(\"" + filePath.trim() + "\")");
 		}
 		catch (Exception d)
 		{
@@ -49,7 +50,7 @@ public class Class_List_Loader
 		try
 		{
 			rbEngine.eval(new BufferedReader(new FileReader("List_Loader.rb")));
-			classList = rbEngine.eval("load_classes(" + sources + " )");
+			rubyArray = rbEngine.eval("load_classes(" + sources + " )");
 		}
 		catch (Exception d)
 		{
@@ -64,6 +65,13 @@ public class Class_List_Loader
 		blargh.test();
 	}
 	
+	public String[] getClasses()
+	{
+		classList = rubyArray.toString().split(";");
+		
+		return classList;
+	}
+	
 	public void test()
 	{
 		String classes = "";
@@ -75,8 +83,8 @@ public class Class_List_Loader
 			classes += classList[i] + ", ";
 		}*/
 		
+		String topato[] = getClasses();//{"pants", "potato", "ham"};
 		
-		
-		JOptionPane.showMessageDialog(null, classList);
+		JOptionPane.showMessageDialog(null, topato);
 	}
 }
