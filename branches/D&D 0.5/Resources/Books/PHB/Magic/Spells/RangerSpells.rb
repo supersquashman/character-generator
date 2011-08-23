@@ -1,4 +1,4 @@
-﻿# RangerSpells - List of D&D Spells[SpellModel] for Ranger
+# RangerSpells - List of D&D Spells[SpellModel] for Ranger
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.

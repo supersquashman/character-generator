@@ -1,4 +1,4 @@
-﻿# PaladinSpells - List of D&D Spells[SpellModel] for Paladin
+# PaladinSpells - List of D&D Spells[SpellModel] for Paladin
 # Copyright (C) 2011  Cody Garrett, Josh Murphy, and Matt Ingram
 
 # This file is part of FishTornado D&D Character Generator.
@@ -23,7 +23,7 @@ SpellList.load_spells("1", "Paladin", [
 ["Create Water", "", "PH p215", "Creates 2 gallons/level of pure water."],
 ["Cure Light Wounds", "", "PH p215", "Cures 1d8 + 1 per level damage (max +5)."],
 ["Detect Poison", "", "PH p219", "Detects poison in one creature or small object."],
-["Detect Undead", "", "PH p220", "Reveals undead within 60'."],
+["Detect Undead", "", "PH p220", "Reveals undead within 60 ft."],
 ["Divine Favor", "", "PH p224", "You gain +1 per three levels on attack and damage rolls."],
 ["Endure Elements", "", "PH p226", "Exist comfortably in hot or cold environments."],
 ["Magic Weapon", "", "PH p251", "Weapon gains +1 enhancement bonus."],
