@@ -61,7 +61,7 @@ public class Class_List_Loader
 	{
 		String sources[] = {"PHB"};
 		Class_List_Loader blargh = new Class_List_Loader();
-		//blargh.test();
+		blargh.test();
 	}
 	
 	public void test()
