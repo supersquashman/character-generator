@@ -5,10 +5,11 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.script.*;
 
-public class Class_Panel extends JPanel
+public class Class_Panel extends JPanel implements ActionListener
 {
 	String classes[] = new String[0];
 	JCheckBox controls[] = new JCheckBox[0];
+	List selection = new List();
 	
 	public Class_Panel()
 	{
@@ -36,6 +37,20 @@ public class Class_Panel extends JPanel
 		return classPanel;
 	}
 	
+	public List getSelection()
+	{
+		selection = new List();
+		for (int i = 0; i < controls.length; i++)
+		{
+			if (controls[i].isSelected())
+			{
+				selection.add(controls[i].getText());
+			}
+		}
+		
+		return selection;
+	}
+	
 	private void drawControls()
 	{
 		controls = new JCheckBox[classes.length];
@@ -55,5 +70,8 @@ public class Class_Panel extends JPanel
 		add(pnlTemp);
 	}
 	
+	public void actionPerformed(ActionEvent e)
+	{
 	
+	}
 }
