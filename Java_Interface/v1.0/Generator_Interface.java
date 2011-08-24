@@ -24,19 +24,23 @@ public class Generator_Interface extends JFrame implements ActionListener
 		setLocation(screenX, screenY);
 		setTitle("D&D 3.5 Character Generator");
 		
-		pnlClasses = new Class_Panel();
-		JScrollPane classScroller = new JScrollPane(pnlClasses);
-		String sources[] = {"PHB","MM1"};
-		Race_Panel pnlRaces = new Race_Panel();
-		JScrollPane raceScroller = new JScrollPane(pnlRaces);
-		Source_Panel pnlSources = new Source_Panel();
-		JScrollPane sourceScroller = new JScrollPane(pnlSources);
+		//pnlClasses = new Class_Panel();
+		//JScrollPane classScroller = new JScrollPane(pnlClasses);
+		//String sources[] = {"PHB","MM1"};
+		//Race_Panel pnlRaces = new Race_Panel();
+		//JScrollPane raceScroller = new JScrollPane(pnlRaces);
+		//Source_Panel pnlSources = new Source_Panel();
+		//JScrollPane sourceScroller = new JScrollPane(pnlSources);
 		
 		Container contentPane = getContentPane();
 		
-		contentPane.add(classScroller, BorderLayout.PAGE_START);
-		contentPane.add(raceScroller, BorderLayout.CENTER);
-		contentPane.add(sourceScroller, BorderLayout.CENTER);
+		//contentPane.add(classScroller, BorderLayout.PAGE_START);
+		//contentPane.add(raceScroller, BorderLayout.CENTER);
+		//contentPane.add(sourceScroller, BorderLayout.CENTER);
+		
+		Controls_Panel controlPanel = new Controls_Panel();
+		
+		contentPane.add(controlPanel, BorderLayout.PAGE_START);
 		
 		JButton btnTest = new JButton("Test");
 		contentPane.add(btnTest, BorderLayout.PAGE_END);
@@ -47,6 +51,6 @@ public class Generator_Interface extends JFrame implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		JOptionPane.showMessageDialog(null, pnlClasses.getSelection());
+		//JOptionPane.showMessageDialog(null, pnlClasses.getSelection());
 	}
 }
