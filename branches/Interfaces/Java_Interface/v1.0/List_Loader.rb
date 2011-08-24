@@ -1,5 +1,6 @@
 def load_classes(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	tempFile = "#{file_path}"
+	tempList = Hash.new
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
 		#puts file
@@ -25,6 +26,7 @@ end
 
 def load_races(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	tempFile = "#{file_path}"
+	tempList = Hash.new
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
 		#puts file
@@ -49,7 +51,7 @@ def load_races(file_path = File.dirname(__FILE__), sources = ["PHB"])
 end
 
 def load_sources(file_path = File.dirname(__FILE__), sources = ["PHB"])
-	tempfile = "#{file_path}"
+	tempFile = "#{file_path}"
 	tempList = Array.new
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
@@ -57,12 +59,14 @@ def load_sources(file_path = File.dirname(__FILE__), sources = ["PHB"])
 		require file
 	end
 	
-	Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Books/")).each do |file|
+	Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Books/", "*")).each do |file|
 		#puts file
-		tempList.push(file.basename)
+		tempList.push(File.basename(file))
 	end
-	tempList.join(";")
+	return tempList.join(";")
 end
 
 #loader = List_Loader.new
-#puts load_classes
+puts load_classes
+puts load_races
+puts load_sources
