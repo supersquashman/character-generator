@@ -54,7 +54,7 @@ SpellList.load_spells("3", "Paladin", [
 ["Magic Circle against Chaos", "", "PH p249", "As Protection from Chaos, but 10' radius and 10 minutes per level."],
 ["Magic Circle against Evil", "", "PH p249", "As Protection from Evil, but 10' radius and 10 minutes per level."],
 ["Magic Weapon, Greater", "", "PH p251", "+1 bonus per four levels (max +5)."],
-["Prayer", "", "PH p264", "Allies gain +1 bonus on most rolls, enemies suffer –1 penalty."],
+["Prayer", "", "PH p264", "Allies gain +1 bonus on most rolls, enemies suffer -1 penalty."],
 ["Remove Blindness/Deafness", "", "PH p270", "Cures normal or magical conditions."],
 ["Remove Curse", "", "PH p270", "Frees person or object from a curse."]])
 

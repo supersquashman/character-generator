@@ -58,7 +58,7 @@ SpellList.load_spells("3", "Ranger", [
 ["Cure Moderate Wounds", "", "PH p216", "Cures 2d8 damage +1 per level (max +10)."],
 ["Darkvision", "", "PH p216", "See 60' in total darkness."],
 ["Diminish Plants", "", "PH p221", "Reduces size or blights growth of normal plants."],
-["Magic Fang, Greater", "", "PH p250", "One natural weapon of subject creature gets +1 per three levels to attack and damage rolls –or– all the subject's natural weapons get a +1 bonus."],
+["Magic Fang, Greater", "", "PH p250", "One natural weapon of subject creature gets +1 per three levels to attack and damage rolls -or- all the subject's natural weapons get a +1 bonus."],
 ["Neutralize Poison", "", "PH p257", "Immunizes subject against poison, detoxifies venom in or on subject."],
 ["Plant Growth", "", "PH p262", "Grows vegetation, improves crops."],
 ["Reduce Animal", "", "PH p269", "Shrinks one willing animal."],
