@@ -18,6 +18,8 @@ public class Class_Panel extends JPanel implements ActionListener
 		Class_List_Loader loader = new Class_List_Loader();
 		classes = loader.getClasses();
 		addControls(selectAll);
+		selectAll.addActionListener(this);
+		selectAll.setActionCommand("0");
 		drawControls();
 	}
 	
@@ -72,6 +74,8 @@ public class Class_Panel extends JPanel implements ActionListener
 		{
 			controls[i] = new JCheckBox(classes[i], false);
 			addControls(controls[i]);
+			controls[i].addActionListener(this);
+			controls[i].setActionCommand("1");
 		}
 	}
 	
@@ -85,6 +89,18 @@ public class Class_Panel extends JPanel implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		int option = Integer.parseInt(e.getActionCommand());
 		
+		if (option == 0)
+		{
+			for (int i = 0; i < controls.length; i++)
+			{
+				
+			}
+		}
+		else if (option == 1)
+		{
+		
+		}
 	}
 }
