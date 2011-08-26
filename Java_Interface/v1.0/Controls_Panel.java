@@ -27,6 +27,7 @@ public class Controls_Panel extends JPanel
 		setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		pnlRow1.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		
+		setPreferredSize(new Dimension(150,150));
 		
 		add(sourceScroller);
 		add(raceScroller);
