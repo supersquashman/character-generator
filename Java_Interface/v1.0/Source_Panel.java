@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.*;
 import javax.script.*;
 
-public class Source_Panel extends JPanel
+public class Source_Panel extends JPanel implements ActionListener
 {
 	String sources[] = new String[0];
 	JCheckBox controls[] = new JCheckBox[0];
@@ -18,6 +18,8 @@ public class Source_Panel extends JPanel
 		Source_List_Loader loader = new Source_List_Loader();
 		sources = loader.getSources();
 		addControls(selectAll);
+		selectAll.addActionListener(this);
+		selectAll.setActionCommand("0");
 		drawControls();
 	}
 	
@@ -27,6 +29,8 @@ public class Source_Panel extends JPanel
 		Source_List_Loader loader = new Source_List_Loader(sources);
 		sources = loader.getSources();
 		addControls(selectAll);
+		selectAll.addActionListener(this);
+		selectAll.setActionCommand("0");
 		drawControls();
 	}
 	
@@ -72,6 +76,8 @@ public class Source_Panel extends JPanel
 		{
 			controls[i] = new JCheckBox(sources[i], false);
 			addControls(controls[i]);
+			controls[i].addActionListener(this);
+			controls[i].setActionCommand("1");
 		}
 	}
 	
@@ -83,5 +89,21 @@ public class Source_Panel extends JPanel
 		add(pnlTemp);
 	}
 	
-	
+	public void actionPerformed(ActionEvent e)
+	{
+		int option = Integer.parseInt(e.getActionCommand());
+		
+		if (option == 0)
+		{
+			for (int i = 0; i < controls.length; i++)
+			{
+				controls[i].setSelected(false);
+			}
+			selectAll.setSelected(true);
+		}
+		else if (option == 1)
+		{
+			selectAll.setSelected(false);
+		}
+	}
 }
