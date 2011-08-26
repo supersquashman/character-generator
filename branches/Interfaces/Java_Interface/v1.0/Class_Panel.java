@@ -20,6 +20,7 @@ public class Class_Panel extends JPanel implements ActionListener
 		addControls(selectAll);
 		selectAll.addActionListener(this);
 		selectAll.setActionCommand("0");
+		//setPreferredSize(new Dimension(800,800));
 		drawControls();
 	}
 	
@@ -29,6 +30,9 @@ public class Class_Panel extends JPanel implements ActionListener
 		Class_List_Loader loader = new Class_List_Loader(sources);
 		classes = loader.getClasses();
 		addControls(selectAll);
+		selectAll.addActionListener(this);
+		selectAll.setActionCommand("0");
+		//setPreferredSize(new Dimension(200,200));
 		drawControls();
 	}
 	
@@ -95,12 +99,13 @@ public class Class_Panel extends JPanel implements ActionListener
 		{
 			for (int i = 0; i < controls.length; i++)
 			{
-				
+				controls[i].setSelected(false);
 			}
+			selectAll.setSelected(true);
 		}
 		else if (option == 1)
 		{
-		
+			selectAll.setSelected(false);
 		}
 	}
 }
