@@ -14,7 +14,8 @@ public class Source_Panel extends JPanel implements ActionListener
 	
 	public Source_Panel()
 	{
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		//setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		setLayout(new GridLayout(1,4));
 		Source_List_Loader loader = new Source_List_Loader();
 		sources = loader.getSources();
 		addControls(selectAll);
