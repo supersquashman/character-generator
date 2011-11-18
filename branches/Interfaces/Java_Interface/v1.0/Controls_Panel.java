@@ -14,7 +14,7 @@ public class Controls_Panel extends JPanel
 	{
 		pnlClasses = new Class_Panel();
 		JScrollPane classScroller = new JScrollPane(pnlClasses);
-		String sources[] = {"PHB","MM1"};
+		String sources[] = {"PHB"};
 		pnlRaces = new Race_Panel();
 		JScrollPane raceScroller = new JScrollPane(pnlRaces);
 		pnlSources = new Source_Panel();

@@ -4,7 +4,7 @@ def load_classes(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
 		#puts file
-		require file
+		#require file
 	end
 	Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Models/", "ClassModel.rb")).each do |file|
 		#puts file
@@ -30,7 +30,7 @@ def load_races(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
 		#puts file
-		require file
+		#require file
 	end
 	Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Models/", "RaceModel.rb")).each do |file|
 		#puts file
@@ -56,7 +56,7 @@ def load_sources(file_path = File.dirname(__FILE__), sources = ["PHB"])
 	
 	Dir.glob(File.join("#{tempFile}", "/", "jruby-complete-1.6.3.jar")).each do |file|
 		#puts file
-		require file
+		#require file
 	end
 	
 	Dir.glob(File.join("#{File.dirname(File.dirname(File.dirname(tempFile)))}", "/D&D 0.5/Resources/Books/", "*")).each do |file|
@@ -67,6 +67,6 @@ def load_sources(file_path = File.dirname(__FILE__), sources = ["PHB"])
 end
 
 #loader = List_Loader.new
-puts load_classes
-puts load_races
-puts load_sources
+#puts load_classes
+#puts load_races
+#puts load_sources
