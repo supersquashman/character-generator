@@ -31,7 +31,7 @@ public class Controls_Panel extends JPanel
 		pnlChkBoxColumn.setLayout(new BoxLayout(pnlChkBoxColumn, BoxLayout.PAGE_AXIS));
 		
 		setPreferredSize(new Dimension(200,200));
-		pnlRow1.setPreferredSize(new Dimension(100,75));
+		pnlRow1.setPreferredSize(new Dimension(100,150));
 		
 		add(sourceScroller);
 		pnlChkBoxColumn.add(raceScroller);
@@ -41,5 +41,24 @@ public class Controls_Panel extends JPanel
 		pnlRow1.add(pnlChkBoxColumn);
 		add(pnlRow1);
 		
+	}
+	
+	public String getRequirements()
+	{
+		String reqs = "";
+		
+		//JOptionPane.showMessageDialog(null, "Controls Panel");
+		
+		String specs = pnlSpecifics.getSpecifics();
+		if (!specs.equals("error"))
+		{
+			reqs += pnlSpecifics.getSpecifics();
+		}
+		else
+		{
+			reqs = "Invalid Character Count";
+		}
+		
+		return reqs;
 	}
 }

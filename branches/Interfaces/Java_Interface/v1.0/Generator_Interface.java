@@ -8,6 +8,7 @@ import javax.script.*;
 public class Generator_Interface extends JFrame implements ActionListener
 {
 	Class_Panel pnlClasses;
+	Controls_Panel controlPanel;
 	
 	public static void main(String[] args)
 	{
@@ -38,7 +39,7 @@ public class Generator_Interface extends JFrame implements ActionListener
 		//contentPane.add(raceScroller, BorderLayout.CENTER);
 		//contentPane.add(sourceScroller, BorderLayout.CENTER);
 		
-		Controls_Panel controlPanel = new Controls_Panel();
+		controlPanel = new Controls_Panel();
 		
 		contentPane.add(controlPanel, BorderLayout.PAGE_START);
 		
@@ -52,5 +53,7 @@ public class Generator_Interface extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e)
 	{
 		//JOptionPane.showMessageDialog(null, pnlClasses.getSelection());
+		//String derp = controlPanel.getRequirements();
+		JOptionPane.showMessageDialog(null, controlPanel.getRequirements());
 	}
 }
