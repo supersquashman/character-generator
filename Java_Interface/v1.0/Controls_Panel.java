@@ -30,17 +30,26 @@ public class Controls_Panel extends JPanel
 		pnlRow1.setLayout(new BoxLayout(pnlRow1, BoxLayout.LINE_AXIS));
 		pnlChkBoxColumn.setLayout(new BoxLayout(pnlChkBoxColumn, BoxLayout.PAGE_AXIS));
 		
-		setPreferredSize(new Dimension(200,200));
-		pnlRow1.setPreferredSize(new Dimension(100,150));
+		setPreferredSize(new Dimension(200,220));
+		pnlRow1.setPreferredSize(new Dimension(100,160));
 		
-		add(sourceScroller);
-		pnlChkBoxColumn.add(raceScroller);
-		pnlChkBoxColumn.add(classScroller);
+		add(titleScroller("Sources",sourceScroller));
+		pnlChkBoxColumn.add(titleScroller("Races",raceScroller));
+		pnlChkBoxColumn.add(titleScroller("Classes",classScroller));
 		//pnlRow1.add(Box.createRigidArea(new Dimension(250,100)));
 		pnlRow1.add(pnlSpecifics);
 		pnlRow1.add(pnlChkBoxColumn);
 		add(pnlRow1);
+	}
+	
+	public JPanel titleScroller(String title, JScrollPane pane)
+	{
+		JPanel titledPanel = new JPanel();
+		titledPanel.setLayout(new BoxLayout(titledPanel, BoxLayout.PAGE_AXIS));
+		titledPanel.setBorder(BorderFactory.createTitledBorder(title));
+		titledPanel.add(pane);
 		
+		return titledPanel;
 	}
 	
 	public String getRequirements()
