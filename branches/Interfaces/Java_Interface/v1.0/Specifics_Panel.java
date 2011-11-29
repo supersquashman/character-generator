@@ -18,8 +18,8 @@ public class Specifics_Panel extends JPanel implements ActionListener
 		JLabel lblCharCount = new JLabel("Number of Characters:  ");
 		txtCharCount = new JTextField(1);
 		
-		txtCharCount.setPreferredSize(new Dimension(40,25));
-		txtCharCount.setMaximumSize(new Dimension(40,25));
+		txtCharCount.setPreferredSize(new Dimension(35,25));
+		txtCharCount.setMaximumSize(new Dimension(35,25));
 		
 		pnlLevel = new Level_Panel();
 		
@@ -29,6 +29,8 @@ public class Specifics_Panel extends JPanel implements ActionListener
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		pnlRow1.setLayout(new BoxLayout(pnlRow1, BoxLayout.LINE_AXIS));
 		pnlRow2.setLayout(new BoxLayout(pnlRow2, BoxLayout.LINE_AXIS));
+		
+		pnlRow1.setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
 		
 		pnlRow1.add(lblCharCount);
 		pnlRow1.add(Box.createRigidArea(new Dimension(5,5)));
