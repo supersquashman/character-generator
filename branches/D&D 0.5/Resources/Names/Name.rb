@@ -23,7 +23,7 @@ attr_accessor :name, :pre, :post
 		@alignment= character.alignment
 		@gender = rand(20)!=0 ? character.sex : ["Male","Female"][(rand(2))] #gender confusion?
 		@race = character.race.to_s
-		@name_token_categories = ["[General]", "[" + @race + "]"]
+		["Human","Elf","Dwarf","Gnome","Halfling"].include?(@race.include?("Elf") ? "Elf" : @race.include?("Dwarf") ? "Dwarf" : @race) ? @name_token_categories = ["[" + @race + "]", "[General]"] : @name_token_categories = ["[Monster]", "[General]"]
 		@name = ""
 		@pre = ""
 		@post = ""
@@ -32,7 +32,7 @@ attr_accessor :name, :pre, :post
 
 	def generate(alignment=@alignment)
 		begin 
-			choice=@name_token_categories[rand(@name_token_categories.length)] 
+			choice=@name_token_categories[rand(@name_token_categories.length+1)] 
 		end while(@@tokens[choice].length < 1)
 		@name = pick_line(choice,"[rules]").split(" ").each{|word| word.capitalize!}.join(" ")
 		@pre = pick_line(choice,"[pretitle]").split(" ").each{|word| word.capitalize!}.join(" ")
