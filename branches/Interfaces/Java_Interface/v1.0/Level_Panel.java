@@ -8,7 +8,7 @@ import javax.swing.event.*;
 
 public class Level_Panel extends JPanel implements ActionListener
 {
-	JRadioButton rdbLow, rdbLMid, rdbHMid, rdbHigh, rdbCust, rdbClass, rdbECL, rdbCR;
+	JRadioButton rdbLow, rdbLMid, rdbHMid, rdbHigh, rdbCust, rdbLVL, rdbECL, rdbCR;
 	JTextField txtFrom, txtTo;
 	int selectedTab = 0;
 	
@@ -98,16 +98,16 @@ public class Level_Panel extends JPanel implements ActionListener
 		pnlType.setLayout(new GridLayout(1,4));
 		//pnlType.setBorder(BorderFactory.createEtchedBorder());
 		
-		rdbClass = new JRadioButton("Levels", true);
+		rdbLVL = new JRadioButton("Levels", true);
 		rdbECL = new JRadioButton("ECL");
 		rdbCR = new JRadioButton("CR");
 		
 		ButtonGroup btngType = new ButtonGroup();
-		btngType.add(rdbClass);
+		btngType.add(rdbLVL);
 		btngType.add(rdbECL);
 		btngType.add(rdbCR);
 		
-		pnlType.add(rdbClass);
+		pnlType.add(rdbLVL);
 		pnlType.add(rdbECL);
 		pnlType.add(rdbCR);
 		
@@ -117,8 +117,62 @@ public class Level_Panel extends JPanel implements ActionListener
 	public String getRange()
 	{
 		String range = "";
-		int option = 0;
 		int from = -1, to = -1;
+		
+		if (rdbLVL.isSelected())
+		{
+			range += "LVL;";
+		}
+		else if (rdbECL.isSelected())
+		{
+			range += "ECL;";
+		}
+		else if (rdbCR.isSelected())
+		{
+			range += "CR;";
+		}
+		
+		if (rdbLow.isSelected())
+		{
+			range += "1;";
+			range += "5;";
+		}
+		else if (rdbLMid.isSelected())
+		{
+			range += "6;";
+			range += "10;";
+		}
+		else if (rdbHMid.isSelected())
+		{
+			range += "11;";
+			range += "15;";
+		}
+		else if (rdbHigh.isSelected())
+		{
+			range += "16;";
+			range += "20;";
+		}
+		else if (rdbCust.isSelected())
+		{
+			try
+			{
+				from = Integer.parseInt(txtFrom.getText());
+				to = Integer.parseInt(txtTo.getText());
+				if ((from > -1) && (to >= from))
+				{
+					range += Integer.toString(from)+";";
+					range += Integer.toString(to)+";";
+				}
+				else
+				{
+					range = "error";
+				}
+			}
+			catch (Exception e)
+			{
+				range = "error";
+			}
+		}
 		
 		return range;
 	}

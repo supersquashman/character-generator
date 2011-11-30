@@ -46,9 +46,10 @@ public class Class_Panel extends JPanel implements ActionListener
 		return classPanel;
 	}
 	
-	public List getSelection()
+	public String getSelection()
 	{
 		selection = new List();
+		String parsed = "";
 		if (!selectAll.isSelected())
 		{
 			for (int i = 0; i < controls.length; i++)
@@ -67,7 +68,14 @@ public class Class_Panel extends JPanel implements ActionListener
 			}
 		}
 		
-		return selection;
+		for (int i = 0; i < selection.getItemCount(); i++)
+		{
+			parsed += selection.getItem(i)+",";
+		}
+		
+		parsed += ";";
+		
+		return parsed;
 	}
 	
 	private void drawControls()
