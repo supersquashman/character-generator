@@ -50,6 +50,7 @@ public class Specifics_Panel extends JPanel implements ActionListener
 		
 		int charCount = -1;
 		
+		
 		try
 		{
 			charCount = Integer.parseInt(txtCharCount.getText());
@@ -66,6 +67,15 @@ public class Specifics_Panel extends JPanel implements ActionListener
 		catch (Exception e)
 		{
 			specifics = "error";
+		}
+		
+		if (levelRange.equals("error"))
+		{
+			specifics = "error";
+		}
+		else
+		{
+			specifics += levelRange;
 		}
 		
 		return specifics;

@@ -57,6 +57,13 @@ public class Controls_Panel extends JPanel
 		String reqs = "";
 		
 		//JOptionPane.showMessageDialog(null, "Controls Panel");
+		//List lstClasses = pnlClasses.getSelection();
+		//List lstRaces = pnlRaces.getSelection();
+		//reqs += lstRaces.toString()+";";
+		//reqs += lstClasses.toString()+";";
+		
+		reqs += pnlClasses.getSelection();
+		reqs += pnlRaces.getSelection();
 		
 		String specs = pnlSpecifics.getSpecifics();
 		if (!specs.equals("error"))
