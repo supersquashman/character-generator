@@ -121,7 +121,7 @@ class CharacterGenerator
 		end
 		file.print "\n"
 		file.puts "Base Land Speed:  " + character.speed.to_s + " ft."
-		file.puts "Saves:  fort("+ character.fort_save+"), ref("+ character.ref_save +"), will("+ character.will_save")"
+		file.print "Saves:  fort("+ character.fort_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+"), ref("+ character.ref_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+"), will("+ character.will_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+")"
 		file.print "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|

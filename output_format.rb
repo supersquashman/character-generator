@@ -139,7 +139,7 @@ module OutputFormat
 		out_string.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
 		out_string.puts "Weight:  " + character.weight.to_s + " lbs."
 		out_string.puts "Alignment: " + character.alignment
-		out_string.puts "Initative: " + character.initiative
+		out_string.puts "Initative: " + character.initiative.to_s
 		out_string.print "Base Attack Bonus:  +" + character.BAB.to_s
 		minus = 5
 		while (minus < character.BAB)
@@ -148,7 +148,7 @@ module OutputFormat
 		end
 		out_string.print "\n"
 		out_string.puts "Base Land Speed:  " + character.speed.to_s + " ft."
-		out_string.puts "Saves:  fort("+ character.fort_save+"), ref("+ character.ref_save +"), will("+ character.will_save")"
+		out_string.puts "Saves:  fort("+ character.fort_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+"), ref("+ character.ref_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+"), will("+ character.will_save.values.inject(0){|sum,bonus| sum.to_i+bonus.to_i}.to_s+")"
 		out_string.print "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|
