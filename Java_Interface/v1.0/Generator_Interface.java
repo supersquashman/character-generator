@@ -54,6 +54,8 @@ public class Generator_Interface extends JFrame implements ActionListener
 	{
 		//JOptionPane.showMessageDialog(null, pnlClasses.getSelection());
 		//String derp = controlPanel.getRequirements();
-		JOptionPane.showMessageDialog(null, controlPanel.getRequirements());
+		//JOptionPane.showMessageDialog(null, controlPanel.getRequirements());
+		Generator_Caller generator = new Generator_Caller();
+		generator.generate(controlPanel.getRequirements());
 	}
 }

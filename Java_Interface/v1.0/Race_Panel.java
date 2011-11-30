@@ -67,9 +67,11 @@ public class Race_Panel extends JPanel implements ActionListener
 			}
 		}
 		
-		for (int i = 0; i < selection.getItemCount(); i++)
+		parsed += selection.getItem(0);
+		
+		for (int i = 1; i < selection.getItemCount(); i++)
 		{
-			parsed += selection.getItem(i)+",";
+			parsed += "," + selection.getItem(i);
 		}
 		
 		parsed += ";";
