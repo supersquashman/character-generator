@@ -112,6 +112,7 @@ class CharacterGenerator
 		file.puts "Height:  " + ((character.height.to_i/12).floor).to_s + "'" + ((character.height.to_i%12)).to_s + "\""
 		file.puts "Weight:  " + character.weight.to_s + " lbs."
 		file.puts "Alignment: " + character.alignment
+		file.puts "Initative: " + character.initiative
 		file.print "Base Attack Bonus:  +" + character.BAB.to_s
 		minus = 5
 		while (minus < character.BAB)
@@ -120,6 +121,7 @@ class CharacterGenerator
 		end
 		file.print "\n"
 		file.puts "Base Land Speed:  " + character.speed.to_s + " ft."
+		file.puts "Saves:  fort("+ character.fort_save+"), ref("+ character.ref_save +"), will("+ character.will_save")"
 		file.print "AC:  " + character.ac_list.values.inject(0){|sum,item| sum.to_i + item.to_i}.to_s + " ("
 		separator_counter = 0
 		character.ac_list.each do |modifier, bonus|
