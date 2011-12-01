@@ -12,14 +12,14 @@ require_relative "#{File.dirname(__FILE__)}/output_format"
 class CharacterGenerator
 	@@character_list = []
 
-	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, sources = ["PHB"])
+	def generate_specific_level_characters(char_count = 1, char_level = 1, num_classes = 1, sources = ["PHB"], race_selection=[], class_selection[])
 				
 		if (char_level < num_classes)
 			num_classes = char_level
 		end
 		
 		char_count.times do
-			@@character_list.push(generate_specific_level_character(char_level, num_classes, sources))
+			@@character_list.push(generate_specific_level_character(char_level, num_classes, sources, race_selection, class_selection))
 		end
 		# @@character_list.each do |character|
 			# character.max_classes = num_classes
@@ -29,12 +29,12 @@ class CharacterGenerator
 			# character.final_levelup
 		# end
 	end
-	
-	def regenerate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
-		generate_specific_level_character(char_level, num_classes, sources, seed)
+
+	def regenerate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"],race_selection, class_selection, seed = 0)
+		generate_specific_level_character(char_level, num_classes, sources, race_selection, class_selection, seed)
 	end
   
-	def generate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], seed = 0)
+	def generate_specific_level_character(char_level = 1, num_classes = 1, sources = ["PHB"], race_selection=[], class_selection[], seed = 0)
 		seed = (seed == 0) ? Random.new_seed : seed
 		srand(seed)
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Races/*.rb").each {|file| require file} }
@@ -42,7 +42,7 @@ class CharacterGenerator
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
     
-		char = Character.new(["Orc","Troll","Human"], ["Rogue","Wizard","Monk","Sorcerer"],seed)
+		char = Character.new(race_selection, class_selection,seed)
 		char.max_classes = num_classes
 		char_level.times do
 			char.level_up
@@ -51,9 +51,9 @@ class CharacterGenerator
 		return char
 	end
 	
-	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"])
+	def generate_level_range_characters(char_count = 1, char_low_level =1, char_high_level = 20, num_classes = 1, sources = ["PHB"], race_selection = [], class_selection = [])
 		char_count.times do
-			@@character_list.push(generate_specific_level_character(rand(char_high_level-char_low_level) + char_low_level, num_classses, sources))
+			@@character_list.push(generate_specific_level_character(rand(char_high_level-char_low_level) + char_low_level, num_classses, sources, race_selection, class_selection))
 		end
 		# @@character_list.times do |character|
 			# character.max_classes = num_classes
