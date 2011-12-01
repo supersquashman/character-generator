@@ -23,7 +23,7 @@ attr_accessor :name, :pre, :post
 		@alignment= character.alignment
 		@gender = rand(20)!=0 ? character.sex : ["Male","Female"][(rand(2))] #gender confusion?
 		@race = character.race.to_s
-		["Human","Elf","Dwarf","Gnome","Halfling"].include?(@race.include?("Elf") ? "Elf" : @race.include?("Dwarf") ? "Dwarf" : @race) ? @name_token_categories = ["[" + @race + "]", "[General]"] : @name_token_categories = ["[Monster]", "[General]"]
+		["Human","Elf","Dwarf","Gnome","Halfling"].include?(@race.include?("Elf") ? "Elf" : @race.include?("Dwarf") ? "Dwarf" : @race) ? @name_token_categories = ["[" + @race + "]", "[" + @race + "]","[General]"] : @name_token_categories = ["[Monster]", "[General]"]
 		@name = ""
 		@pre = ""
 		@post = ""

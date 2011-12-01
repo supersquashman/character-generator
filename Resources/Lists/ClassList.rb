@@ -39,4 +39,14 @@ class ClassList
 	def self.list
 		return @@list
 	end
+	
+#-- self.select_class --------------------------------------------------------------------------#
+#++
+	def self.select_class(selection="")
+		char_class = ClassList.list.values[rand(ClassList.list.length)]
+		if (selection.strip != "")
+			char_class = @@list[selection]
+		end
+		return char_class
+	end
 end
