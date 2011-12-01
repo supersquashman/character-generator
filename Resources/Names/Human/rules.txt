@@ -1,0 +1,6 @@
+M|[mfname]
+M|[mfname] [occupation]
+M|[mfname] [mfname]son
+F|[ffname]
+F|[ffname] [occupation]
+F|[ffname] [mfname]son
