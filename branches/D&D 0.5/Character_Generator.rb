@@ -42,7 +42,7 @@ class CharacterGenerator
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Feats/*.rb").each {|file| require file} }
 		sources.each { |book| Dir.glob("#{File.dirname(__FILE__)}/*Resources/*Books/"+book+"/*Items/*.rb").each {|file| require file} }
     
-		char = Character.new(sources, seed)
+		char = Character.new(["Orc","Troll","Human"], ["Rogue","Wizard","Monk","Sorcerer"],seed)
 		char.max_classes = num_classes
 		char_level.times do
 			char.level_up

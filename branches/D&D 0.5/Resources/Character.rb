@@ -35,8 +35,11 @@ class Character
 	
 #-- initialize (sources) ---------------------------------------------------------------#
 #++
-	def initialize (sources, seed = 0)
+	def initialize (races=[], class_input=[], seed = 0)
 		@seed = seed
+		#@race_options = get_races(races)
+		#@class_options = get_classes(classes)
+		@class_options = class_input
 		@extra_levelup_procs = []
 		@final_levelup_procs = []
 		@armor_proficiencies = []
@@ -86,13 +89,14 @@ class Character
 		#initialize stats
 		calculate_mods
 		#get race from race list
-		@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
+		races.length < 1 ? @race = RaceList.select_race : @race = RaceList.select_race(races[rand(races.length)]) #RaceList.list.values[rand(RaceList.list.length)] #[CLEAN UP]?  RaceList.select_race ?
 		#@race = RaceList.select_race("Aasimar")
 		#@temp_templates.push(RaceList.select_race("HalfFiend"))
 		while (@race.is_template)
 			#@race.apply(self) if !@templates.include?(@race)
 			@temp_templates.push(@race) if !@temp_templates.include?(@race)
-			@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
+			#@race = RaceList.select_race #RaceList.list.values[rand(RaceList.list.length)]
+			races.length < 1 ? @race = RaceList.select_race : @race = RaceList.select_race(races[rand(races.length)])
 		end
 		#@race = RaceList.select_race("Human")
 		@race.apply(self)
@@ -118,7 +122,8 @@ class Character
 		if @number_of_classes < @max_classes
 			i=0
 			begin
-				selected=ClassList.list.values[rand(ClassList.list.length)].new(self)
+				#selected=ClassList.list.values[rand(ClassList.list.length)].new(self)
+				selected= @class_options.length < 1 ? ClassList.select_class : ClassList.select_class(@class_options[rand(@class_options.length)]).new(self)
 				i +=1
 				raise "Can't find an available class" if (i >= 100) 
 			end while(!selected.available?)
@@ -243,6 +248,26 @@ class Character
 			sum += i.to_i
 		end
 		return sum
+	end
+	
+#-- get_classes ---------------------------------------------------------------------------#
+#++
+
+
+#-- get_races ---------------------------------------------------------------------------#
+#++
+	def get_races(races=[])
+		race_hash = Hash.new()
+		if (races.size() < 1)
+			RaceList.keys.each do |key,value|
+				race_hash[key] = value
+			end
+		else
+			races.each do |race|
+				race_hash[race] = RaceList[race]
+			end
+		end
+		return race_hash
 	end
 
 #-- apply_size -------------------------------------------------------------------------#
