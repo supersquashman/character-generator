@@ -1,0 +1,80 @@
+Name:  Wo-gyrk
+
+str	17 (+3)
+dex	13 (+1)
+con	10 (+0)
+int	9 (-1)
+wis	15 (+2)
+cha	12 (+1)
+
+Level:  2
+HD:  4
+HP:  31
+Gender:  Male
+Race:   Gnoll
+Age:  20
+Height:  6'1"
+Weight:  235 lbs.
+Alignment: Lawful Evil
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  40 ft.
+Saves:  fort(5), ref(2), will(4)
+AC:  12 (Base: 10, Dex: 1, Natural: 1)
+
+Classes:  
+    * Barbarian(1)
+    * Cleric(1)
+
+Skills:  
+Craft(Trapmaking)    +3 (+4 ranks, -1 Int)
+Listen  +6.5 (+4.5 ranks, +2 Wis)
+Sleight of Hand  +5.5 (+4.5 ranks, +1 Dex)
+Spot    +6 (+4 ranks, +2 Wis)
+Swim    +5 (+2 ranks, +3 Str)
+
+Abilities:  
+Aura(Lawful Evil)
+Darkvision(60ft.)
+Fast movement
+Rage 1/day
+Spontaneous Casting(Cure or Inflict)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Gnoll
+
+Feats:  
+    * Iron Will
+    * Point Blank Shot
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+ * Create Water (PH p215) - Creates 2 gallons/level of pure water.
+ * Guidance (PH p238) - +1 on one attack roll, saving throw, or skill check.
+
+Level 1 Cleric Spells:
+ * Protection from Chaos (PH p266) - +2 bonus to AC & saves against chaos, counters mind control, & hedges out elementals & outsiders.
+ * Cure Light Wounds (PH p215) - Cures 1d8 + 1 per level damage (max +5).
+
+Cleric Evil Domain:
+Granted Powers: You cast evil spells at +1 caster level.
+ 1) Protection from Good (PH p266) - +2 bonus to AC & saves against good, counters mind control, & hedges out elementals & outsiders.
+
+Cleric Water Domain:
+Granted Powers: Turn or destroy fire creatures as a good cleric turns undead. Rebuke, command, or bolster water creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+
+Background:
+History: The character has just come from Greyhawk.
+
+Primary Motivation: A desire to be a powerful leader. The character feels they can bring about change as strong leader.
+
+Secondary Motivation:  A need to defend themself from the Lawful. The character feels continually threatened, and defense is their priority.
+
+
+
+Seed: 68727163598222741080529986399845593394

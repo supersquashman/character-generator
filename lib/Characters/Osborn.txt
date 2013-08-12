@@ -1,0 +1,92 @@
+Name:  Osborn
+
+str	24 (+7)
+dex	16 (+3)
+con	24 (+7)
+int	7 (-2)
+wis	15 (+2)
+cha	8 (-1)
+
+Level:  2
+HD:  8
+HP:  58
+Gender:  Male
+Race:   Troll
+Age:  91
+Height:  8'11"
+Weight:  492 lbs.
+Alignment: Neutral Good
+Initative: 0
+Base Attack Bonus:  +4
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(4), will(6)
+AC:  17 (Base: 10, Dex: 3, Size: -1, Natural: 5)
+
+Classes:  
+    * Cleric(1)
+    * Wizard(1)
+
+Skills:  
+Bluff    +3 (+4 ranks, -1 Cha)
+Heal  +5.5 (+3.5 ranks, +2 Wis)
+Hide    -1 (+0 ranks, +3 Dex, -4 Misc)
+Knowldege(The Planes)    -1 (+1 ranks, -2 Int)
+Listen  +5.5 (+3.5 ranks, +2 Wis)
+Perform(Wind)    +1 (+2 ranks, -1 Cha)
+Spot    +3 (+1 ranks, +2 Wis)
+
+Abilities:  
+Aura(Good)
+Darkvision(60ft.)
+Low-Light Vision
+Natural Weapon:  Bite (1d6)
+Natural Weapon:  Claw (1d6)
+Regeneration (5)
+Scent
+Scribe Scroll
+Special Attack: Rend - 2d6+(1.5*strength modifier)
+Spontaneous Casting(Cure or Inflict)
+Summon Familiar
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Giant
+    * Orc
+    * Gnome
+    * Aquan(Speak Only)
+
+Feats:  
+    * Eschew Materials
+    * Extra Turning
+    * Weapon Finesse
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Purify Food and Drink (PH p267) - Purifies 1 cubic foot per level of food or water.
+ * Guidance (PH p238) - +1 on one attack roll, saving throw, or skill check.
+
+Level 1 Cleric Spells:
+ * Protection from Evil (PH p266) - +2 bonus to AC & saves against evil, counters mind control, & hedges out elementals & outsiders.
+ * Inflict Light Wounds (PH p244) - Touch deals 1d8 damage +1 per level (max +5).
+
+Cleric Destruction Domain:
+Granted Powers: You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+
+Cleric Strength Domain:
+Granted Powers: You can perform a feat of strength as a supernatural ability. You gain an enhancement bonus to Strength equal to your cleric level. Activating the power is a free action, the power lasts 1 round, and it is usable once per day.
+ 1) Enlarge Person (PH p226) - Humanoid creature doubles in size.
+
+
+Background:
+History: The character has just come from Crossroads.
+
+Primary Motivation: Thrill seeking.  The character has passion for adventuring and risk.
+
+Secondary Motivation:  A need for knowledge about _____________ (person). The character feels than an understanding will solve their problems.
+
+
+
+Seed: 260392424349369899657998376537433199038

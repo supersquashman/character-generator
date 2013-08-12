@@ -1,0 +1,96 @@
+Name:  Jillian
+
+str	11 (+0)
+dex	17 (+3)
+con	12 (+1)
+int	16 (+3)
+wis	11 (+0)
+cha	11 (+0)
+
+Level:  2
+HD:  2
+HP:  15
+Gender:  Female
+Race:   Elf
+Age:  144
+Height:  5'4"
+Weight:  102 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(2), will(4)
+AC:  13 (Base: 10, Dex: 3)
+
+Classes:  
+    * Monk(1)
+    * Druid(1)
+
+Skills:  
+Balance    +7 (+4 ranks, +3 Dex)
+Climb  +2.5 (+2.5 ranks, +0 Str)
+Concentraion    +2 (+2 ranks, +0 )
+Concentration    +5 (+4 ranks, +1 Con)
+Craft(Weaponsmithing)  +3.5 (+0.5 ranks, +3 Int)
+Handle Animal    +4 (+4 ranks, +0 Cha)
+Heal    +2 (+2 ranks, +0 Wis)
+Hide    +6 (+3 ranks, +3 Dex)
+Jump  +0.5 (+0.5 ranks, +0 Str)
+Knowldege(Nature)    +6 (+3 ranks, +3 Int)
+Knowldege(Nobility and Royalty)  +4.5 (+1.5 ranks, +3 Int)
+Knowldege(Psionics)  +4.5 (+1.5 ranks, +3 Int)
+Knowledge (arcana)  +2.5 (+2.5 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +3 (+1 ranks, +0 Wis, +2 Misc)
+Perform(Act)  +0.5 (+0.5 ranks, +0 Cha)
+Perform(Dance)    +3 (+3 ranks, +0 Cha)
+Profession    +1 (+1 ranks, +0 Wis)
+Ride    +4 (+1 ranks, +3 Dex)
+Search    +5 (+0 ranks, +3 Int, +2 Misc)
+Spot    +6 (+4 ranks, +0 Wis, +2 Misc)
+Survival    +3 (+1 ranks, +0 Wis, +2 Misc)
+Tumble    +7 (+4 ranks, +3 Dex)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Animal Companion
+Flurry of Blows
+Immune to magic sleep effects
+Low-Light Vision
+Spontaneous Casting(Summon Nature's Ally)
+Unnarmed Strike
+Wild Empathy
+
+Languages:  
+    * Common
+    * Elven
+    * Sylvan
+    * Orc
+    * Draconic
+    * Druidic
+
+Feats:  
+    * Improved Grapple
+    * Improved Unarmed Strike
+
+Spells:
+
+Level 0 Druid Spells:
+ * Detect Magic (PHB 219) - Detect spells and magic items within 60 ft.
+ * Flare (PHB 232) - Dazzles one creature (-1 penalty on attack rolls)
+ * Light (PHB 248) - Object shines like a torch
+
+Level 1 Druid Spells:
+ * Pass without Trace (PHB 259) - One subject/level leaves no tracks
+
+
+Background:
+History: The character is originally from The Duchy of Urnst, but now spends most of their time in Dapple Wood.
+
+Primary Motivation: A deep fear of druids. The character is terrified, and will act out of fear.
+
+Secondary Motivation:  A need to defend themself from the Lawful. The character feels continually threatened, and defense is their priority.
+
+
+
+Seed: 76274629220328352365902125569201946970

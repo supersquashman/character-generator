@@ -1,0 +1,83 @@
+Name:  Roscoe
+
+str	11 (+0)
+dex	16 (+3)
+con	10 (+0)
+int	13 (+1)
+wis	16 (+3)
+cha	18 (+4)
+
+Level:  2
+HD:  2
+HP:  14
+Gender:  Male
+Race:   Aasimar
+Age:  23
+Height:  5'8"
+Weight:  180 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  40 ft.
+Saves:  fort(2), ref(0), will(2)
+AC:  13 (Base: 10, Dex: 3)
+
+Classes:  
+    * Barbarian(1)
+    * Sorcerer(1)
+
+Skills:  
+Bluff    +5 (+1 ranks, +4 Cha)
+Climb  +2.5 (+2.5 ranks, +0 Str)
+Handle Animal    +5 (+1 ranks, +4 Cha)
+Intimidate  +8.5 (+4.5 ranks, +4 Cha)
+Knowledge(Arcana)    +2 (+2 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +8 (+3 ranks, +3 Wis, +2 Misc)
+Profession    +5 (+2 ranks, +3 Wis)
+Ride  +6.5 (+3.5 ranks, +3 Dex)
+Spot    +5 (+0 ranks, +3 Wis, +2 Misc)
+Survival    +8 (+5 ranks, +3 Wis)
+Swim    +4 (+4 ranks, +0 Str)
+
+Abilities:  
+Darkvision(60ft.)
+Daylight (1/day)
+Fast movement
+Rage 1/day
+Resistance to Cold (5)
+Resistance to Electricity (5)
+Resistance to Fire (5)
+Summon Familiar
+
+Languages:  
+    * Common
+    * Celestial
+    * Sylvan
+
+Feats:  
+    * Weapon Finesse
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Open/Close (PH p258) - Opens or closes small or light things.
+ * Prestidigitation (PH p264) - Performs minor tricks
+ * Resistance (PH p272) - Subject gains +1 resistance bonus on all saving throws.
+ * Mage Hand (PH p249) - 5 pound telekinesis.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Ray of Enfeeblement (PH p260) - Ray reduces Strength by 1d6 points +1 per 2 levels (max +5).
+ * Animate Rope (PH p199) - Makes a rope move at your command.
+
+
+Background:
+History: The character is originally from Onnwal, but now spends most of their time in Orsht. The character had a recent run in with followers of Kord.
+
+Primary Motivation: A desire for money/treasure.
+
+Secondary Motivation:  A deep hatred of _____________ (person). The character's hate runs deep, and dominates their personality.
+
+
+
+Seed: 219900348792268849359692053320517102168

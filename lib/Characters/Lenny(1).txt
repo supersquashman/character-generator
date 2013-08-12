@@ -1,0 +1,81 @@
+Name:  Lenny
+
+str	12 (+1)
+dex	11 (+0)
+con	10 (+0)
+int	13 (+1)
+wis	14 (+2)
+cha	14 (+2)
+
+Level:  2
+HD:  4
+HP:  23
+Gender:  Male
+Race:   Gnoll
+Age:  21
+Height:  5'9"
+Weight:  215 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  40 ft.
+Saves:  fort(5), ref(2), will(0)
+AC:  11 (Base: 10, Natural: 1)
+
+Classes:  
+    * Barbarian(1)
+    * Rogue(1)
+
+Skills:  
+Climb    +3 (+2 ranks, +1 Str)
+Concentration  +4.5 (+4.5 ranks, +0 Con)
+Craft    +2 (+2 ranks, +0 )
+Craft(Alchemy)    +3 (+2 ranks, +1 Int)
+Craft(Weaponsmithing)    +2 (+1 ranks, +1 Int)
+Disguise    +5 (+3 ranks, +2 Cha)
+Escape Artist    +1 (+1 ranks, +0 Dex)
+Handle Animal  +3.5 (+1.5 ranks, +2 Cha)
+Hide    +3 (+3 ranks, +0 Dex)
+Jump  +6.5 (+3.5 ranks, +1 Str, +2 Misc)
+Knowldege(Geography)  +5.5 (+4.5 ranks, +1 Int)
+Knowledge(Local)    +3 (+3 ranks, +0 )
+Listen    +7 (+5 ranks, +2 Wis)
+Open Lock    +1 (+1 ranks, +0 Dex)
+Perform    +3 (+3 ranks, +0 )
+Profession    +3 (+1 ranks, +2 Wis)
+Ride  +4.5 (+4.5 ranks, +0 Dex)
+Search    +4 (+3 ranks, +1 Int)
+Sense Motive    +3 (+1 ranks, +2 Wis)
+Sleight of Hand    +1 (+1 ranks, +0 Dex)
+Spot    +7 (+5 ranks, +2 Wis)
+Swim    +5 (+4 ranks, +1 Str)
+Tumble    +3 (+1 ranks, +0 Dex, +2 Misc)
+Use Rope    +1 (+1 ranks, +0 Dex)
+
+Abilities:  
+Darkvision(60ft.)
+Fast movement
+Rage 1/day
+Sneak Attack +1d6
+Trapfinding
+
+Languages:  
+    * Common
+    * Gnoll
+    * Draconic
+    * Orc
+
+Feats:  
+    * Acrobatic
+    * Weapon Proficiency (Composite Shortbow)
+
+Background:
+History: The character is from Safeton, but spends most of their time in Safeton, now.
+
+Primary Motivation: The character is being coerced by gnomes. The character would not normally act this way, but is being blackmailed/forced/etc.
+
+Secondary Motivation:  A need for knowledge about inhabitants of Ahlissa. The character feels than an understanding will solve their problems.
+
+
+
+Seed: 281974019979009588858747304947125656581

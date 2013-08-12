@@ -1,0 +1,75 @@
+Name:  Gilbert
+
+str	14 (+2)
+dex	12 (+1)
+con	12 (+1)
+int	15 (+2)
+wis	8 (-1)
+cha	8 (-1)
+
+Level:  2
+HD:  2
+HP:  11
+Gender:  Male
+Race:   Elf
+Age:  143
+Height:  4'10"
+Weight:  90 lbs.
+Alignment: Chaotic Neutral
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(4), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Rogue(1)
+    * Sorcerer(1)
+
+Skills:  
+Appraise    +4 (+2 ranks, +2 Int)
+Balance  +4.5 (+3.5 ranks, +1 Dex)
+Bluff    +0 (+1 ranks, -1 Cha)
+Climb    +4 (+2 ranks, +2 Str)
+Concentraion    +2 (+2 ranks, +0 )
+Escape Artist  +5.5 (+4.5 ranks, +1 Dex)
+Gather Information    +5 (+4 ranks, -1 Cha, +2 Misc)
+Jump    +3 (+1 ranks, +2 Str)
+Knowldege(Psionics)    +7 (+5 ranks, +2 Int)
+Knowledge(Local)    +5 (+5 ranks, +0 )
+Listen    +1 (+0 ranks, -1 Wis, +2 Misc)
+Profession    +2 (+3 ranks, -1 Wis)
+Search    +4 (+0 ranks, +2 Int, +2 Misc)
+Sense Motive  +3.5 (+4.5 ranks, -1 Wis)
+Sleight of Hand  +5.5 (+4.5 ranks, +1 Dex)
+Spot    +1 (+0 ranks, -1 Wis, +2 Misc)
+Use Magic Device  +2.5 (+3.5 ranks, -1 Cha)
+Use Rope    +3 (+2 ranks, +1 Dex)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Immune to magic sleep effects
+Low-Light Vision
+Sneak Attack +1d6
+Summon Familiar
+Trapfinding
+
+Languages:  
+    * Common
+    * Elven
+    * Draconic
+    * Gnoll
+
+Feats:  
+    * Lightning Reflexes
+
+Background:
+History: The character had a recent encounter with one or more bears.
+
+Primary Motivation: Boredom. The character has no other reason than their life is otherwise uninteresting.
+
+Secondary Motivation:  A need for knowledge about the religious and pious. The character feels than an understanding will solve their problems.
+
+
+
+Seed: 23348826077984221416382968007610927052

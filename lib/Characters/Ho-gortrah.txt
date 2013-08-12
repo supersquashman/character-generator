@@ -1,0 +1,80 @@
+Name:  Ho-gortrah
+
+str	13 (+1)
+dex	12 (+1)
+con	13 (+1)
+int	13 (+1)
+wis	14 (+2)
+cha	15 (+2)
+
+Level:  2
+HD:  2
+HP:  11
+Gender:  Female
+Race:   Tiefling
+Age:  23
+Height:  5'0"
+Weight:  120 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(4), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Rogue(1)
+    * Ranger(1)
+
+Skills:  
+Bluff    +4 (+0 ranks, +2 Cha, +2 Misc)
+Craft    +5 (+5 ranks, +0 )
+Escape Artist    +4 (+3 ranks, +1 Dex)
+Forgery  +4.5 (+3.5 ranks, +1 Int)
+Gather Information    +4 (+2 ranks, +2 Cha)
+Handle Animal    +3 (+1 ranks, +2 Cha)
+Heal    +4 (+2 ranks, +2 Wis)
+Hide    +8 (+5 ranks, +1 Dex, +2 Misc)
+Intimidate    +6 (+4 ranks, +2 Cha)
+Jump    +6 (+5 ranks, +1 Str)
+Knowldege(Dungeoneering)    +3 (+2 ranks, +1 Int)
+Knowldege(Geography)    +3 (+2 ranks, +1 Int)
+Move Silently    +3 (+2 ranks, +1 Dex)
+Open Lock  +4.5 (+3.5 ranks, +1 Dex)
+Profession    +5 (+3 ranks, +2 Wis)
+Search    +4 (+3 ranks, +1 Int)
+Sleight of Hand    +3 (+2 ranks, +1 Dex)
+Spot    +3 (+1 ranks, +2 Wis)
+Swim    +2 (+1 ranks, +1 Str)
+Tumble  +5.5 (+2.5 ranks, +1 Dex, +2 Misc)
+
+Abilities:  
+Darkness (1/day)
+Darkvision(60ft.)
+Favored Enemy (Construct +2)
+Resistance to Cold (5)
+Resistance to Electricity (5)
+Resistance to Fire (5)
+Sneak Attack +1d6
+Track
+Trapfinding
+Wild Empathy
+
+Languages:  
+    * Common
+    * Infernal
+    * Orc
+
+Feats:  
+    * Iron Will
+
+Background:
+History: The character has spent most of their life in Willip. The character has just come from Sifber.
+
+Primary Motivation: A sense of duty to members of The Knights of the Hart. The character feels a moral obligation to fulfill this duty.
+
+Secondary Motivation:  A sense of guilt for local brigands. The character feels that past wrongs leave them morally obligated to help them if they can.
+
+
+
+Seed: 248425111897522527475419973358885690003

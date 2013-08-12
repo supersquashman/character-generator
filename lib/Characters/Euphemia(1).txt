@@ -1,0 +1,62 @@
+Name:  Euphemia
+
+str	17 (+3)
+dex	14 (+2)
+con	5 (-3)
+int	4 (-3)
+wis	10 (+0)
+cha	13 (+1)
+
+Level:  2
+HD:  2
+HP:  12
+Gender:  Female
+Race:   Wild Elf
+Age:  153
+Height:  5'1"
+Weight:  104 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(2), will(2)
+AC:  12 (Base: 10, Dex: 2)
+
+Classes:  
+    * Monk(1)
+    * Fighter(1)
+
+Skills:  
+Concentration    -1 (+2 ranks, -3 Con)
+Diplomacy    +2 (+1 ranks, +1 Cha)
+Jump    +4 (+1 ranks, +3 Str)
+Listen    +2 (+0 ranks, +0 Wis, +2 Misc)
+Search    -1 (+0 ranks, -3 Int, +2 Misc)
+Spot  +6.5 (+4.5 ranks, +0 Wis, +2 Misc)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Flurry of Blows
+Immune to magic sleep effects
+Low-Light Vision
+Unnarmed Strike
+
+Languages:  
+    * Common
+    * Elven
+
+Feats:  
+    * Blind Fight
+    * Stunning Fist
+    * Track
+
+Background:
+History: The character has spent most of their life in Narwell. The character had a recent run in with local brigands.
+
+Primary Motivation: Compassion for members of The Circle of Eight. The character feels a strong desire to help the object of this compassion.
+
+Secondary Motivation:  Compassion for the Good. The character feels a strong desire to help the object of this compassion.
+
+
+
+Seed: 151076244095457176802653980823011786813

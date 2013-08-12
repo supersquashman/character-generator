@@ -1,0 +1,49 @@
+.container
+  %form{:method=>"get", :action=>"/create"}
+    %fieldset
+      %legend Create New Character
+      .controls-row
+        %button.btn.btn-primary.btn-large{:type=>"submit"} Create
+      .controls-row
+        .span3
+          %label 
+            %h4 Level
+          %label.checkbox
+            %input{:type=>"checkbox",:name=>"upto"} random <= ?
+          %select{:name=>"level"}
+            -20.times do |lev|
+              %option= lev+1
+          %label 
+            %h4 # of Classes
+          %select{:name=>"multiclass"}
+            -6.times do |lev|
+              %option= lev+1
+        .span3
+          %label 
+            %h4 Classes
+          -ClassList.blist.each do |book, cls|
+            -unless cls.empty?
+              %label
+                %h5= book
+              -cls.each do |k, v|
+                %label.checkbox
+                  %input{:type=>"checkbox",:name=>"class[#{k}]",:checked=>"checked"}= k
+          %label 
+            %h4 Races
+          -RaceList.blist.each do |book, cls|
+            -unless cls.empty?
+              %label
+                %h5= book
+              -cls.each do |k, v|
+                %label.checkbox
+                  %input{:type=>"checkbox",:name=>"race[#{k}]",:checked=>"checked"}= k
+        .span3
+          %label 
+            %h4 Feats
+          -FeatList.blist.each do |book, cls|
+            -unless cls.empty?
+              %label
+                %h5= book
+              -cls.each do |k, v|
+                %label.checkbox
+                  %input{:type=>"checkbox",:name=>"feat[#{k}]",:checked=>"checked"}= k

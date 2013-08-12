@@ -1,0 +1,88 @@
+%html
+  %head
+    %meta{:charset => "utf-8"}
+    %title Fish Tornado DM Tools
+    %meta{:name => "description", :content => ""}
+    %meta{:name => "author", :content => ""}
+
+    :plain
+      <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+      <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn  runk/html5.js"></script>
+      <![endif]-->
+
+    / Le styles
+    %link{ :href => "/bootstrap/css/bootstrap.css", :type => "text/css", :rel => "stylesheet" }
+    %link{ :href => "/bootstrap-editable/css/bootstrap-editable.css", :type => "text/css", :rel => "stylesheet" }
+    %link{ :href => "/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.css", :type => "text/css", :rel => "stylesheet" }
+    %link{ :href => "/bootstrap/css/bootstrap-responsive.css", :type => "text/css", :rel => "stylesheet" }  
+
+    / add body padding styles
+    %link{ :href => "/css/styles.css", :type => "text/css", :rel => "stylesheet" }
+
+
+    / Le fav and touch icons
+    %link{ :rel => "apple-touch-icon", :href => "/bootstrap/images/apple-touch-icon.png"}
+    %link{ :rel => "shortcut icon", :href => "/bootstrap/images/favicon.ico"}
+    %link{ :rel => "apple-touch-icon", :sizes => "72x72", :href => "/bootstrap/images/apple-touch-icon-72x72.png"}
+    %link{ :rel => "apple-touch-icon", :sizes =>"114x114", :href => "/bootstrap/images/apple-touch-icon-114x114.png"}
+    
+    %script{ :type => "text/javascript", :src =>"/bootstrap/js/jquery.js"}
+    %script{ :type => "text/javascript", :src =>"/bootstrap/js/bootstrap.js"}
+    %script{ :type => "text/javascript", :src =>"/bootstrap-editable/js/bootstrap-editable.js"}
+    %script{ :type => "text/javascript", :src =>"/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/wysihtml5-0.3.0.min.js"}
+    %script{ :type => "text/javascript", :src =>"/inputs-ext/wysihtml5/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.min.js"}
+    %script{ :type => "text/javascript", :src =>"/inputs-ext/wysihtml5/wysihtml5.js"}
+    %script{ :type => "text/javascript", :src =>"/js/jsdice.js"}
+    :javascript
+      $.fn.editable.defaults.mode = 'inline'
+
+  %body
+    %div= haml :navbar
+    .container-fluid
+      .row-fluid
+        -if current_user
+          .span3
+            =haml :sidebar
+        #main.span9
+          = haml :flash
+          %div= yield
+        #jsdice.well.container{:style=>"display: none;"}
+          /
+            Copyright 2009 jsdice.com. All rights reserved.
+
+            Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+            1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+            2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+            THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+            INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+            AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE
+            LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+            (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+            OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER 
+            IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY 
+            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.    
+          #jsdice-close
+            %a{:href=>"#"}X
+          #results
+          #inp
+            .row-fluid
+              %small Dice to roll: 
+            .row-fluid
+              .input-append.span12
+                %input.span12#inp_text{:type=>"text", :onkeypress=>"return jsdice.inp_keydown(event);", :style=>"width: 80%"}
+                %button.btn#inp_go{:onclick=>"jsdice.go();", :style=>"width: 20%"}Go!
+            .row-fluid
+              .btn-group.span12
+                %button.btn{:onclick=>"jsdice.doRoll('1d4');", :style=>"width: 14%"}d4
+                %button.btn{:onclick=>"jsdice.doRoll('1d6');", :style=>"width: 14%"}d6
+                %button.btn{:onclick=>"jsdice.doRoll('1d8');", :style=>"width: 14%"}d8
+                %button.btn{:onclick=>"jsdice.doRoll('1d10');", :style=>"width: 14%"}d10
+                %button.btn{:onclick=>"jsdice.doRoll('1d12');", :style=>"width: 15%"}d12
+                %button.btn{:onclick=>"jsdice.doRoll('1d20');", :style=>"width: 15%"}d20
+                %button.btn{:onclick=>"jsdice.doRoll('1d100');", :style=>"width: 15%"}d100
+            .row-fluid.btn-group
+              %button.btn-block#jsdice-clear.btn{:onclick=>"jsdice.doClear();"}Clear
+

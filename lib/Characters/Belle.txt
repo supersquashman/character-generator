@@ -1,0 +1,107 @@
+Name:  Belle
+
+str	15 (+2)
+dex	12 (+1)
+con	16 (+3)
+int	17 (+3)
+wis	10 (+0)
+cha	11 (+0)
+
+Level:  2
+HD:  2
+HP:  18
+Gender:  Female
+Race:   Half Elf
+Age:  30
+Height:  5'6"
+Weight:  119 lbs.
+Alignment: Chaotic Evil
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(4), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Cleric(1)
+    * Rogue(1)
+
+Skills:  
+Appraise    +6 (+3 ranks, +3 Int)
+Balance    +2 (+1 ranks, +1 Dex)
+Climb    +3 (+1 ranks, +2 Str)
+Concentraion    +5 (+5 ranks, +0 )
+Craft    +2 (+2 ranks, +0 )
+Craft(Alchemy)  +3.5 (+0.5 ranks, +3 Int)
+Craft(Carpentry)  +3.5 (+0.5 ranks, +3 Int)
+Decipher Script    +4 (+1 ranks, +3 Int)
+Diplomacy    +2 (+0 ranks, +0 Cha, +2 Misc)
+Disguise    +2 (+2 ranks, +0 Cha)
+Escape Artist    +2 (+1 ranks, +1 Dex)
+Forgery    +6 (+3 ranks, +3 Int)
+Gather Information    +3 (+1 ranks, +0 Cha, +2 Misc)
+Heal    +3 (+3 ranks, +0 Wis)
+Hide    +2 (+1 ranks, +1 Dex)
+Intimidate    +2 (+2 ranks, +0 Cha)
+Knowldege(Arcana)  +6.5 (+3.5 ranks, +3 Int)
+Knowldege(Geography)  +4.5 (+1.5 ranks, +3 Int)
+Knowldege(History)    +4 (+1 ranks, +3 Int)
+Knowldege(Religion)    +4 (+1 ranks, +3 Int)
+Knowldege(The Planes)  +7.5 (+4.5 ranks, +3 Int)
+Knowledge(Local)    +2 (+2 ranks, +0 )
+Listen    +2 (+1 ranks, +0 Wis, +1 Misc)
+Perform(Percussion)  +0.5 (+0.5 ranks, +0 Cha)
+Perform(Wind)    +1 (+1 ranks, +0 Cha)
+Profession    +3 (+3 ranks, +0 Wis)
+Search    +4 (+0 ranks, +3 Int, +1 Misc)
+Sense Motive    +2 (+2 ranks, +0 Wis)
+Spellcraft    +7 (+4 ranks, +3 Int)
+Spot    +2 (+1 ranks, +0 Wis, +1 Misc)
+Swim    +3 (+1 ranks, +2 Str)
+Tumble    +2 (+1 ranks, +1 Dex)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Aura(Chaotic Evil)
+Immune to magic sleep effects
+Low-Light Vision
+Sneak Attack +1d6
+Spontaneous Casting(Cure or Inflict)
+Trapfinding
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Elven
+    * Halfling
+    * Sylvan
+    * Celestial
+
+Feats:  
+    * Track
+    * Weapon Focus(Siangham)
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Cure Minor Wounds (PH p216) - Cures 1 point of damage.
+ * Cure Minor Wounds (PH p216) - Cures 1 point of damage.
+
+Cleric Protection Domain:
+Granted Powers: You can generate a protective ward as a supernatural ability. Grant someone you touch a resistance bonus equal to your cleric level on his or her next saving throw. Activating this power is a standard action. The protective ward is an abjuration effect with a duration of 1 hour that is usable once per day.
+
+Cleric War Domain:
+Granted Powers: Free Martial Weapon Proficiency with deity's favored weapon (if necessary) and Weapon Focus with the deity's favored weapon.
+
+
+Background:
+History: The character had a recent encounter with one or more minotaurs.
+
+Primary Motivation: Survival. The character feels the way they act is they only way to get by in the world.
+
+Secondary Motivation:  Divine. The character is compelled to act according to their religious beliefs.
+
+
+
+Seed: 142712332686406493433924239431993572717

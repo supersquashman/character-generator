@@ -1,0 +1,20 @@
+-if [:notice,:err,:ok].any?{|a| flash.has?(a)}
+  .container-fluid
+    -if flash.has?(:notice)
+      .alert
+        .button.close{:type=>"button", "data-dismiss"=>"alert"} &times;
+        %strong> 
+          Notice!
+          =flash[:notice]
+    -if flash.has?(:err)
+      .alert.alert-danger
+        .button.close{:type=>"button", "data-dismiss"=>"alert"} &times;
+        %strong> 
+          Error!
+          =flash[:err]
+    -if flash.has?(:ok)
+      .alert.alert-success
+        .button.close{:type=>"button", "data-dismiss"=>"alert"} &times;
+        %strong> 
+          Success!
+          =flash[:ok]

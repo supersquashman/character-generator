@@ -1,0 +1,87 @@
+Name:  Ho-bruuzzk
+
+str	21 (+5)
+dex	17 (+3)
+con	10 (+0)
+int	15 (+2)
+wis	6 (-2)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  7
+Gender:  Male
+Race:   Orc
+Age:  20
+Height:  5'10"
+Weight:  222 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(4), will(2)
+AC:  13 (Base: 10, Dex: 3)
+
+Classes:  
+    * Rogue(1)
+    * Cleric(1)
+
+Skills:  
+Appraise    +6 (+4 ranks, +2 Int)
+Balance    +6 (+3 ranks, +3 Dex)
+Bluff    +4 (+3 ranks, +1 Cha)
+Climb    +5 (+0 ranks, +5 Str [+2 Synergy[Rope]])
+Craft    +5 (+5 ranks, +0 )
+Decipher Script    +4 (+2 ranks, +2 Int)
+Disguise    +5 (+4 ranks, +1 Cha)
+Escape Artist    +3 (+0 ranks, +3 Dex [+2 Synergy[Rope]])
+Gather Information  +4.5 (+3.5 ranks, +1 Cha)
+Intimidate  +4.5 (+3.5 ranks, +1 Cha)
+Knowldege(Religion)    +3 (+1 ranks, +2 Int)
+Knowldege(The Planes)    +3 (+1 ranks, +2 Int)
+Listen    +1 (+3 ranks, -2 Wis)
+Open Lock    +8 (+5 ranks, +3 Dex)
+Perform  +4.5 (+4.5 ranks, +0 )
+Profession    +0 (+2 ranks, -2 Wis)
+Sleight of Hand    +8 (+5 ranks, +3 Dex)
+Use Rope    +8 (+5 ranks, +3 Dex)
+
+Abilities:  
+Aura(Neutral)
+Darkvision(60ft.)
+Light Sensitivity
+Sneak Attack +1d6
+Spontaneous Casting(Cure or Inflict)
+Trapfinding
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Orc
+    * Giant
+    * Goblin
+    * Undercommon
+
+Feats:  
+    * Combat Expertise
+    * Weapon Focus(Scimitar)
+
+Spells:
+
+Cleric Earth Domain:
+Granted Powers: Turn or destroy air creatures as a good cleric turns undead. Rebuke, command, or bolster earth creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+Cleric War Domain:
+Granted Powers: Free Martial Weapon Proficiency with deity's favored weapon (if necessary) and Weapon Focus with the deity's favored weapon.
+
+
+Background:
+History: The character has spent most of their life in Orsht. The character had a recent encounter with one or more dryads.
+
+Primary Motivation: Compassion for _____________ (person). The character feels a strong desire to help the object of this compassion.
+
+Secondary Motivation:  Compassion for the weak. The character feels a strong desire to help the object of this compassion.
+
+
+
+Seed: 329237189652653939905526240204281778170

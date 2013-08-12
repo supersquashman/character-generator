@@ -1,0 +1,87 @@
+Name:  Lilly
+
+str	8 (-1)
+dex	18 (+4)
+con	15 (+2)
+int	14 (+2)
+wis	14 (+2)
+cha	14 (+2)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Female
+Race:   Halfling
+Age:  25
+Height:  3'1"
+Weight:  32 lbs.
+Alignment: Chaotic Evil
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  20 ft.
+Saves:  fort(2), ref(4), will(2)
+AC:  15 (Base: 10, Dex: 4, Size: 1)
+
+Classes:  
+    * Ranger(1)
+    * Wizard(1)
+
+Skills:  
+Climb    +1 (+0 ranks, -1 Str, +2 Misc)
+Concentraion    +5 (+5 ranks, +0 )
+Handle Animal  +6.5 (+4.5 ranks, +2 Cha)
+Heal    +7 (+5 ranks, +2 Wis)
+Hide +10.5 (+2.5 ranks, +4 Dex, +4 Misc)
+Jump    +1 (+0 ranks, -1 Str, +2 Misc)
+Knowldege(Arcana)    +4 (+2 ranks, +2 Int)
+Knowldege(Dungeoneering)    +7 (+5 ranks, +2 Int)
+Knowldege(Nature)    +7 (+5 ranks, +2 Int)
+Knowldege(Psionics)    +3 (+1 ranks, +2 Int)
+Listen    +4 (+0 ranks, +2 Wis, +2 Misc)
+Move Silently   +10 (+4 ranks, +4 Dex, +2 Misc)
+Search    +5 (+3 ranks, +2 Int)
+Spellcraft    +3 (+1 ranks, +2 Int)
+Survival  +6.5 (+4.5 ranks, +2 Wis)
+Use Rope    +6 (+2 ranks, +4 Dex)
+
+Abilities:  
++1 on all Saves
++1 on attacks with thrown weapons and slings
++2 Morale vs Fear (Stacks with +1 racial bonus)
+Favored Enemy (Humanoid (elf) +2)
+Scribe Scroll
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Halfling
+    * Dwarven
+    * Goblin
+
+Feats:  
+    * Lightning Reflexes
+
+Spells:
+
+Level 0 Wizard Spells:
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+ * Open/Close (PH p258) - Opens or closes small or light things.
+
+Level 1 Wizard Spells:
+ * Ventriloquism (PH p298) - Throws voice for 1 minute per level.
+ * Obscuring Mist (PH p258) - Fog surrounds you.
+
+
+Background:
+History: Nothing of interest has happened recently to the character.
+
+Primary Motivation: The character is innately evil, and will not knowingly do any good. Evil is all they know.
+
+Secondary Motivation:  A desire for power and/or immortality.
+
+
+
+Seed: 149343277082539140402657405576849081447

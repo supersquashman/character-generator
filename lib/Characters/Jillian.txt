@@ -1,0 +1,81 @@
+Name:  Jillian
+
+str	8 (-1)
+dex	12 (+1)
+con	11 (+0)
+int	6 (-2)
+wis	15 (+2)
+cha	10 (+0)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Female
+Race:   Goblin
+Age:  21
+Height:  3'0"
+Weight:  32.76 lbs.
+Alignment: Lawful Neutral
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(2), will(4)
+AC:  14 (Base: 10, Dex: 1, Size: 1, Wis: 2)
+
+Classes:  
+    * Monk(1)
+    * Druid(1)
+
+Skills:  
+Diplomacy    +4 (+0 ranks, +0 Cha, +4 Misc)
+Escape Artist  +2.5 (+1.5 ranks, +1 Dex)
+Heal    +3 (+1 ranks, +2 Wis)
+Hide    +5 (+0 ranks, +1 Dex, +4 Misc)
+Knowledge (arcana)    +3 (+3 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Move Silently    +5 (+0 ranks, +1 Dex, +4 Misc)
+Ride    +5 (+0 ranks, +1 Dex, +4 Misc)
+Sense Motive    +9 (+5 ranks, +2 Wis, +2 Misc)
+Spot    +4 (+2 ranks, +2 Wis)
+Survival    +4 (+0 ranks, +2 Wis, +2 Misc)
+Swim    +1 (+2 ranks, -1 Str)
+
+Abilities:  
+Animal Companion
+Darkvision(60ft.)
+Flurry of Blows
+Spontaneous Casting(Summon Nature's Ally)
+Unnarmed Strike
+Wild Empathy
+
+Languages:  
+    * Common
+    * Goblin
+    * Druidic
+
+Feats:  
+    * Improved Grapple
+    * Negotiator
+
+Spells:
+
+Level 0 Druid Spells:
+ * Know Direction (PHB 246) - You discern North
+ * Mending (PHB 253) - Makes minor repairs on an object
+ * Detect Poison (PHB 219) - Detects poison in one creature or object
+
+Level 1 Druid Spells:
+ * Produce Flame (PHB 265) - 1d6 damage +1/level; touch or thrown
+ * Magic Fang (PHB 250) - One natural weapon of subject creature gets +1 on attack and damage rolls
+
+
+Background:
+History: The character has been visting a friend in Verbobonc.
+
+Primary Motivation: A need to defend themself from followers of Erythnul. The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A desire to be a powerful leader. The character feels they can bring about change as strong leader.
+
+
+
+Seed: 250753166664236058783404589125120888842

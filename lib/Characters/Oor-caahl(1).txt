@@ -1,0 +1,68 @@
+Name:  Oor-caahl
+
+str	9 (-1)
+dex	9 (-1)
+con	14 (+2)
+int	11 (+0)
+wis	16 (+3)
+cha	15 (+2)
+
+Level:  2
+HD:  6
+HP:  27
+Gender:  Female
+Race:   Doppleganger
+Age:  51
+Height:  10'1"
+Weight:  663.08 lbs.
+Alignment: Chaotic Neutral
+Initative: 0
+Base Attack Bonus:  +5
+Base Land Speed:  30 ft.
+Saves:  fort(3), ref(6), will(4)
+AC:  13 (Base: 10, Dex: -1, Natural: 4)
+
+Classes:  
+    * Rogue(1)
+    * Fighter(1)
+
+Skills:  
+Bluff +10.5 (+4.5 ranks, +2 Cha, +4 Misc)
+Disguise    +6 (+0 ranks, +2 Cha, +4 Misc [+10 (Shape Changed), +4 (Reading Thoughts)])
+Forgery  +4.5 (+4.5 ranks, +0 Int)
+Listen  +7.5 (+4.5 ranks, +3 Wis)
+Open Lock    +4 (+5 ranks, -1 Dex)
+Perform    +4 (+4 ranks, +0 )
+Spellcraft    +2 (+0 ranks, +0 Int, +2 Misc [+2 Synergy[Scrolls]])
+Spot    +7 (+4 ranks, +3 Wis)
+Swim    +3 (+4 ranks, -1 Str)
+Use Magic Device    +9 (+5 ranks, +2 Cha, +2 Misc)
+Use Rope    +3 (+4 ranks, -1 Dex)
+
+Abilities:  
+Change Shape
+Darkvision(60ft.)
+Detect Thoughts
+Immunity to Charm Effects
+Immunity to Sleep Effects
+Sneak Attack +1d6
+Trapfinding
+
+Languages:  
+    * Common
+
+Feats:  
+    * Magical Aptitude
+    * Rapid Reload(Heavy Crossbow)
+    * Run
+
+Background:
+History: The character is originally from Geoff, but now spends most of their time in Iron Wood. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A need to defend themself from _____________ (a loved one). The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  Survival. The character feels the way they act is they only way to get by in the world.
+
+
+
+Seed: 278668886351250263286077987701276670735

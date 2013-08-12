@@ -1,0 +1,92 @@
+Name:  Kenneth
+
+str	15 (+2)
+dex	17 (+3)
+con	11 (+0)
+int	15 (+2)
+wis	8 (-1)
+cha	14 (+2)
+
+Level:  2
+HD:  2
+HP:  12
+Gender:  Male
+Race:   Half Elf
+Age:  29
+Height:  5'2"
+Weight:  149 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(2), will(6)
+AC:  13 (Base: 10, Dex: 3)
+
+Classes:  
+    * Sorcerer(1)
+    * Cleric(1)
+
+Skills:  
+Bluff    +4 (+2 ranks, +2 Cha)
+Concentraion    +4 (+4 ranks, +0 )
+Craft    +3 (+3 ranks, +0 )
+Diplomacy    +5 (+1 ranks, +2 Cha, +2 Misc)
+Forgery  +2.5 (+0.5 ranks, +2 Int)
+Gather Information    +4 (+0 ranks, +2 Cha, +2 Misc)
+Heal    +1 (+2 ranks, -1 Wis)
+Knowldege(Arcana)    +6 (+4 ranks, +2 Int)
+Knowldege(Religion)    +3 (+1 ranks, +2 Int)
+Knowledge(Arcana)    +5 (+5 ranks, +0 )
+Listen    +0 (+0 ranks, -1 Wis, +1 Misc)
+Profession    +4 (+5 ranks, -1 Wis)
+Search    +3 (+0 ranks, +2 Int, +1 Misc)
+Spellcraft    +6 (+2 ranks, +2 Int, +2 Misc)
+Spot  +0.5 (+0.5 ranks, -1 Wis, +1 Misc)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Aura(Chaotic Good)
+Immune to magic sleep effects
+Low-Light Vision
+Spontaneous Casting(Cure or Inflict)
+Summon Familiar
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Elven
+    * Infernal
+    * Halfling
+
+Feats:  
+    * Iron Will
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Touch of Fatigue (PH p294) - Touch attack fatigues target.
+ * Ghost Sound (PH p235) - Figment sounds.
+ * Prestidigitation (PH p264) - Performs minor tricks
+ * Dancing Lights (PH p216) - Creates torches or other lights.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Mount (PH p256) - Summons riding horse for 2 hours per level.
+ * True Strike (PH p296) - Add +20 insight bonus to your next attack roll.
+
+Cleric Death Domain:
+Granted Powers: You may use a death touch once per day. Your death touch is a supernatural ability that produces a death effect. You must succeed on a melee touch attack against a living creature (using the rules for touch spells). When you touch, roll 1d6 per cleric level you possess. If the total at least equals the creature's current hit points, it dies (no save).
+
+Cleric Fire Domain:
+Granted Powers: Turn or destroy water creatures as a good cleric turns undead. Rebuke, command, or bolster fire creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+
+Background:
+History: The character had a recent run in with inhabitants of Ganwood.
+
+Primary Motivation: A sense of guilt for _____________ (a close friend/associate). The character feels that past wrongs leave them morally obligated to help them if they can.
+
+Secondary Motivation:  A need for knowledge about inhabitants of Gnarley Forest. The character feels than an understanding will solve their problems.
+
+
+
+Seed: 149901846202951671356995556414565999356

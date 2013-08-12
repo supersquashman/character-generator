@@ -1,0 +1,67 @@
+Name:  Wo-caa-bruu-nyabrah
+
+str	19 (+4)
+dex	17 (+3)
+con	20 (+5)
+int	6 (-2)
+wis	13 (+1)
+cha	11 (+0)
+
+Level:  2
+HD:  8
+HP:  45
+Gender:  Female
+Race:   Minotaur
+Age:  63
+Height:  8'8"
+Weight:  867.36 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +8/+3
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(5), will(5)
+AC:  17 (Base: 10, Dex: 3, Size: -1, Natural: 5)
+
+Classes:  
+    * Fighter(2)
+
+Skills:  
+Diplomacy    +2 (+0 ranks, +0 Cha, +2 Misc)
+Handle Animal  +3.5 (+3.5 ranks, +0 Cha)
+Hide    +1 (+0 ranks, +3 Dex, -2 Misc)
+Intimidate    +4 (+4 ranks, +0 Cha)
+Jump    +9 (+5 ranks, +4 Str)
+Listen    +9 (+4 ranks, +1 Wis, +4 Misc)
+Move Silently    +5 (+0 ranks, +3 Dex, +2 Misc)
+Search    +2 (+0 ranks, -2 Int, +4 Misc)
+Sense Motive    +3 (+0 ranks, +1 Wis, +2 Misc)
+Spot    +9 (+4 ranks, +1 Wis, +4 Misc)
+Swim    +5 (+1 ranks, +4 Str)
+Tumble    +5 (+0 ranks, +3 Dex, +2 Misc)
+
+Abilities:  
+Natural Cunning
+Natural Weapons:  Horns - Gore(1d8)
+Powerful Charge
+Scent
+
+Languages:  
+    * Common
+    * Giant
+
+Feats:  
+    * Blind Fight
+    * Negotiator
+    * Point Blank Shot
+    * Stealthy
+
+Background:
+History: The character is originally from Blackmoor, but now spends most of their time in Hardby. The character has just come from Narwell.
+
+Primary Motivation: A sense of guilt for _____________ (a loved one). The character feels that past wrongs leave them morally obligated to help them if they can.
+
+Secondary Motivation:  Love for _____________ (a close friend/associate). The character puts the object of their love's welfare before their own.
+
+
+
+Seed: 117087226824569410967213552466666335974

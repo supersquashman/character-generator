@@ -1,0 +1,99 @@
+Name:  Lenny
+
+str	16 (+3)
+dex	18 (+4)
+con	11 (+0)
+int	14 (+2)
+wis	13 (+1)
+cha	10 (+0)
+
+Level:  2
+HD:  4
+HP:  17
+Gender:  Male
+Race:   Azer
+Age:  88
+Height:  4'1"
+Weight:  154 lbs.
+Alignment: Neutral Good
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(7), ref(5), will(7)
+AC:  20 (Base: 10, Dex: 4, Natural: 6)
+Spell Resistance:  15
+
+Classes:  
+    * Monk(1)
+    * Druid(1)
+
+Skills:  
+Appraise    +5 (+3 ranks, +2 Int)
+Bluff    +4 (+4 ranks, +0 Cha)
+Climb    +7 (+4 ranks, +3 Str)
+Concentraion    +1 (+1 ranks, +0 )
+Craft    +1 (+1 ranks, +0 )
+Handle Animal    +1 (+1 ranks, +0 Cha)
+Heal  +3.5 (+2.5 ranks, +1 Wis)
+Hide  +8.5 (+4.5 ranks, +4 Dex)
+Knowldege(Architecture and Engineering)  +6.5 (+4.5 ranks, +2 Int)
+Knowldege(Nature)    +3 (+1 ranks, +2 Int)
+Knowldege(Religion)    +3 (+1 ranks, +2 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +4 (+3 ranks, +1 Wis)
+Perform(Oratory)  +4.5 (+4.5 ranks, +0 Cha)
+Perform(Percussion)    +5 (+5 ranks, +0 Cha)
+Profession    +4 (+3 ranks, +1 Wis)
+Ride    +6 (+2 ranks, +4 Dex)
+Search    +6 (+4 ranks, +2 Int)
+Sleight of Hand  +7.5 (+3.5 ranks, +4 Dex)
+Spellcraft    +3 (+1 ranks, +2 Int)
+Spot    +4 (+3 ranks, +1 Wis)
+Survival    +3 (+0 ranks, +1 Wis, +2 Misc)
+Swim    +4 (+1 ranks, +3 Str)
+Tumble  +6.5 (+2.5 ranks, +4 Dex)
+
+Abilities:  
+Animal Companion
+Darkvision(60ft.)
+Flurry of Blows
+Heat
+Immunity to Fire
+Spontaneous Casting(Summon Nature's Ally)
+Unnarmed Strike
+Vulnerability to Cold
+Wild Empathy
+
+Languages:  
+    * Common
+    * Ignan
+    * Auran
+    * Aquan
+    * Druidic
+
+Feats:  
+    * Improved Grapple
+    * Run
+
+Spells:
+
+Level 0 Druid Spells:
+ * Create Water (PHB 215) - Creates 2gal/level of pure water
+ * Light (PHB 248) - Object shines like a torch
+ * Know Direction (PHB 246) - You discern North
+
+Level 1 Druid Spells:
+ * Hide from Animals (PHB 241) - Animals can't percieveone subject/level
+ * Magic Fang (PHB 250) - One natural weapon of subject creature gets +1 on attack and damage rolls
+
+
+Background:
+History: The character has been visting a friend in Orsht.
+
+Primary Motivation: Clearing their name.  The character's name or reputation has been wronged in the past by the rulers of Gorsend, and they desire to right it.
+
+Secondary Motivation:  Thrill seeking.  The character has passion for adventuring and risk.
+
+
+
+Seed: 125450225438157659492158516756472563884

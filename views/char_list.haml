@@ -1,0 +1,12 @@
+.containter-fluid
+  .span5
+    %h3 List
+    %form.form-inline{:onsubmit=>"return confirm('Are you sure you want to delete?');", :method=>"post", :action=>"/delete"}
+      %legend
+        Characters
+        %button.btn.btn-warning.pull-right{:type=>"submit"} Delete
+      %ul
+        - current_user.game_entitys.sort(:updated_at.desc).each do |ent|
+          %li
+            %a{href: "/character/#{ent.entity_id}"}= ent.name
+            %input.pull-right{:type=>"checkbox", :name=>"delete[#{ent.entity_id}]"}

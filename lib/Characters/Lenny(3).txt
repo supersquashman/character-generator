@@ -1,0 +1,70 @@
+Name:  Lenny
+
+str	17 (+3)
+dex	9 (-1)
+con	15 (+2)
+int	11 (+0)
+wis	9 (-1)
+cha	13 (+1)
+
+Level:  2
+HD:  4
+HP:  23
+Gender:  Male
+Race:   Lizardfolk
+Age:  21
+Height:  6'10"
+Weight:  168 lbs.
+Alignment: Chaotic Evil
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  40 ft.
+Saves:  fort(4), ref(5), will(2)
+AC:  13 (Base: 10, Dex: -1, Natural: 5, Wis: -1)
+
+Classes:  
+    * Monk(1)
+    * Barbarian(1)
+
+Skills:  
+Balance    +5 (+2 ranks, -1 Dex, +4 Misc)
+Climb    +4 (+1 ranks, +3 Str)
+Concentration    +5 (+3 ranks, +2 Con)
+Craft(Blacksmithing)    +1 (+1 ranks, +0 Int)
+Hide    +4 (+5 ranks, -1 Dex)
+Intimidate    +2 (+1 ranks, +1 Cha)
+Jump   +11 (+4 ranks, +3 Str, +4 Misc)
+Move Silently  +3.5 (+4.5 ranks, -1 Dex)
+Perform    +3 (+3 ranks, +0 )
+Survival    +1 (+2 ranks, -1 Wis)
+Swim   +10 (+3 ranks, +3 Str, +4 Misc)
+Tumble  +1.5 (+2.5 ranks, -1 Dex)
+
+Abilities:  
+Fast movement
+Flurry of Blows
+Hold Breath
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d4)
+Rage 1/day
+Unnarmed Strike
+
+Languages:  
+    * Common
+    * Draconic
+    * Goblin
+
+Feats:  
+    * Improved Grapple
+    * Point Blank Shot
+
+Background:
+History: The character has just come from Ganwood.
+
+Primary Motivation: A deep fear of a local guild or group. The character is terrified, and will act out of fear.
+
+Secondary Motivation:  A rivalry with inhabitants of The Tiger Nomads. The character's history is dominated by an ongoing struggle with them.
+
+
+
+Seed: 326434551735179586646897231947804376814

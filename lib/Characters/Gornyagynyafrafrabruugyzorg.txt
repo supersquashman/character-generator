@@ -1,0 +1,133 @@
+Name:  Gornyagynyafrafrabruugyzorg
+
+str	17 (+3)
+dex	15 (+2)
+con	22 (+6)
+int	16 (+3)
+wis	9 (-1)
+cha	21 (+5)
+
+Level:  2
+HD:  9
+HP:  47
+Gender:  Female
+Race:   Rakshasa
+Age:  26
+Height:  5'6"
+Weight:  150 lbs.
+Alignment: Lawful Evil
+Initative: 0
+Base Attack Bonus:  +8/+3
+Base Land Speed:  40 ft.
+Saves:  fort(7), ref(9), will(5)
+AC:  21 (Base: 10, Dex: 2, Natural: 9)
+Spell Resistance:  29
+
+Classes:  
+    * Ranger(1)
+    * Rogue(1)
+
+Skills:  
+Appraise    +4 (+1 ranks, +3 Int)
+Bluff   +14 (+5 ranks, +5 Cha, +4 Misc [+4 (Detect Thoughts)])
+Climb    +8 (+5 ranks, +3 Str)
+Concentraion  +1.5 (+1.5 ranks, +0 )
+Craft(Armorsmithing)    +7 (+4 ranks, +3 Int)
+Craft(Carpentry)  +3.5 (+0.5 ranks, +3 Int)
+Craft(Trapmaking)    +6 (+3 ranks, +3 Int)
+Decipher Script    +4 (+1 ranks, +3 Int)
+Diplomacy  +8.5 (+1.5 ranks, +5 Cha, +2 Misc)
+Disable Device    +5 (+2 ranks, +3 Int)
+Disguise   +14 (+5 ranks, +5 Cha, +4 Misc [+10 (Change Shape), +4 (Detect Thoughts), +2 Synergy[Act in Character]])
+Escape Artist    +6 (+4 ranks, +2 Dex)
+Forgery    +4 (+1 ranks, +3 Int)
+Gather Information +10.5 (+3.5 ranks, +5 Cha, +2 Misc)
+Handle Animal   +10 (+5 ranks, +5 Cha)
+Hide    +7 (+5 ranks, +2 Dex)
+Intimidate   +12 (+5 ranks, +5 Cha, +2 Misc)
+Knowldege(Geography)  +7.5 (+4.5 ranks, +3 Int)
+Knowldege(Nobility and Royalty)    +7 (+4 ranks, +3 Int)
+Knowldege(Religion)  +7.5 (+4.5 ranks, +3 Int)
+Knowledge(Local)    +2 (+2 ranks, +0 )
+Listen    +4 (+5 ranks, -1 Wis)
+Move Silently    +6 (+4 ranks, +2 Dex)
+Open Lock    +3 (+1 ranks, +2 Dex)
+Perform    +5 (+5 ranks, +0 )
+Perform(Act)  +9.5 (+4.5 ranks, +5 Cha)
+Perform(Comedy)    +6 (+1 ranks, +5 Cha)
+Perform(Sing)  +7.5 (+2.5 ranks, +5 Cha)
+Perform(String)   +10 (+5 ranks, +5 Cha)
+Perform(Wind)    +9 (+4 ranks, +5 Cha)
+Profession  +3.5 (+4.5 ranks, -1 Wis)
+Ride    +4 (+0 ranks, +2 Dex, +2 Misc)
+Search    +6 (+1 ranks, +3 Int, +2 Misc)
+Sense Motive    +3 (+4 ranks, -1 Wis)
+Sleight of Hand    +6 (+2 ranks, +2 Dex, +2 Misc)
+Spot    +2 (+3 ranks, -1 Wis)
+Swim    +5 (+2 ranks, +3 Str)
+Tumble    +3 (+1 ranks, +2 Dex)
+Use Magic Device    +8 (+3 ranks, +5 Cha)
+Use Rope    +3 (+1 ranks, +2 Dex)
+
+Abilities:  
+Change Shape
+Damage Reduction 15/good and piercing
+Darkvision(60ft.)
+Detect Thoughts
+Favored Enemy (Outsider (chaotic) +2)
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d6)
+Sneak Attack +1d6
+Track
+Trapfinding
+Wild Empathy
+
+Languages:  
+    * Common
+    * Infernal
+    * Sylvan
+    * Undercommon
+
+Feats:  
+    * Investigator
+    * Still Spell
+    * Tower Shield Proficiency
+
+Spells:
+
+Level 0 Sorcerer Spells (6/ Day):
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Open/Close (PH p258) - Opens or closes small or light things.
+ * Dancing Lights (PH p216) - Creates torches or other lights.
+ * Mage Hand (PH p249) - 5 pound telekinesis.
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Arcane Mark (PH p201) - Inscribes a personal rune (visible or invisible).
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+
+Level 1 Sorcerer Spells (7/ Day):
+ * Disguise Self (PH p222) - Changes your appearance.
+ * Grease (PH p237) - Makes 10' square or 1 object slippery.
+ * Silent Image (PH p279) - Creates a minor illusion of your design.
+ * Detect Secret Doors (PH p220) - Reveals hidden doors within 60'.
+ * Erase (PH p227) - Mundane or magical writing vanishes.
+
+Level 2 Sorcerer Spells (7/ Day):
+ * Summon Swarm (PH p289) - Summons a swarm of bats, rats, or spiders.
+ * False Life (PH p229) - Gain 1d10 +1 per level (max +10) temporary hit points.
+ * Flaming Sphere (PH p232) - Creates a ball of fire, 2d6 damage, lasts 1 round per level.
+
+Level 3 Sorcerer Spells (4/ Day):
+ * Nondetection (PH p257) - Hides subject from divination and scrying.
+ * Wind Wall (PH p302) - Deflects arrows, smaller creatures, and gases.
+
+
+Background:
+History: The character is from Narwell, but spends most of their time in Hardby, now. The character had a recent run in with barbarians.
+
+Primary Motivation: A rivalry with humans. The character's history is dominated by an ongoing struggle with them.
+
+Secondary Motivation:  A need to defend themself from the Evil. The character feels continually threatened, and defense is their priority.
+
+
+
+Seed: 61122081859524240852366955254819470829

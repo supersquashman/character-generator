@@ -1,0 +1,88 @@
+Name:  Lewis
+
+str	9 (-1)
+dex	15 (+2)
+con	15 (+2)
+int	13 (+1)
+wis	10 (+0)
+cha	15 (+2)
+
+Level:  2
+HD:  2
+HP:  17
+Gender:  Male
+Race:   Half Elf
+Age:  36
+Height:  5'1"
+Weight:  148 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  40 ft.
+Saves:  fort(4), ref(0), will(2)
+AC:  12 (Base: 10, Dex: 2)
+
+Classes:  
+    * Druid(1)
+    * Barbarian(1)
+
+Skills:  
+Climb    +1 (+2 ranks, -1 Str)
+Concentraion  +2.5 (+2.5 ranks, +0 )
+Craft    +4 (+4 ranks, +0 )
+Craft(Stoneworking)    +3 (+2 ranks, +1 Int)
+Diplomacy    +4 (+0 ranks, +2 Cha, +2 Misc)
+Disguise  +2.5 (+0.5 ranks, +2 Cha)
+Gather Information  +4.5 (+0.5 ranks, +2 Cha, +2 Misc)
+Handle Animal    +7 (+5 ranks, +2 Cha)
+Heal    +1 (+1 ranks, +0 Wis)
+Hide    +3 (+1 ranks, +2 Dex)
+Intimidate    +3 (+1 ranks, +2 Cha)
+Jump    +0 (+1 ranks, -1 Str)
+Knowldege(Nature)    +3 (+2 ranks, +1 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +1 (+0 ranks, +0 Wis, +1 Misc)
+Ride    +6 (+2 ranks, +2 Dex, +2 Misc)
+Search    +2 (+0 ranks, +1 Int, +1 Misc)
+Spellcraft  +4.5 (+3.5 ranks, +1 Int)
+Spot  +5.5 (+4.5 ranks, +0 Wis, +1 Misc)
+Survival    +3 (+1 ranks, +0 Wis, +2 Misc)
+Swim    +0 (+1 ranks, -1 Str)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Animal Companion
+Fast movement
+Immune to magic sleep effects
+Low-Light Vision
+Rage 1/day
+Spontaneous Casting(Summon Nature's Ally)
+Wild Empathy
+
+Languages:  
+    * Common
+    * Elven
+    * Ignan
+    * Druidic
+
+Feats:  
+    * Spell Mastery
+
+Spells:
+
+Level 0 Druid Spells:
+ * Read Magic (PHB 269) - Read scrolls and scrollbooks
+ * Detect Magic (PHB 219) - Detect spells and magic items within 60 ft.
+ * Read Magic (PHB 269) - Read scrolls and scrollbooks
+
+
+Background:
+History: The character has been visting a friend in Welkwood.
+
+Primary Motivation: Survival. The character feels the way they act is they only way to get by in the world.
+
+Secondary Motivation:  A deep fear of members of The Circle of Eight. The character is terrified, and will act out of fear.
+
+
+
+Seed: 22834673587171264390811853087692420138

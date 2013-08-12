@@ -1,0 +1,68 @@
+Name:  Milton
+
+str	10 (+0)
+dex	12 (+1)
+con	20 (+5)
+int	9 (-1)
+wis	15 (+2)
+cha	14 (+2)
+
+Level:  2
+HD:  4
+HP:  22
+Gender:  Male
+Race:   Troglodyte
+Age:  20
+Height:  5'0"
+Weight:  150.0 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(2), will(2)
+AC:  17 (Base: 10, Dex: 1, Natural: 6)
+
+Classes:  
+    * Ranger(1)
+    * Wizard(1)
+
+Skills:  
+Hide    +5 (+0 ranks, +1 Dex, +4 Misc [+4 (rocky or underground surroundings)])
+Jump    +5 (+5 ranks, +0 Str)
+Knowldege(Dungeoneering)    +3 (+4 ranks, -1 Int)
+Knowldege(Geography)    +2 (+3 ranks, -1 Int)
+Listen  +5.5 (+3.5 ranks, +2 Wis)
+Profession    +4 (+2 ranks, +2 Wis)
+Search  +2.5 (+3.5 ranks, -1 Int)
+Survival    +6 (+4 ranks, +2 Wis)
+Swim    +1 (+1 ranks, +0 Str)
+Tumble    +3 (+0 ranks, +1 Dex, +2 Misc)
+
+Abilities:  
+Darkvision(90ft.)
+Favored Enemy (Humanoid (reptilian) +2)
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d4)
+Scribe Scroll
+Stench (DC 13)
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Draconic
+
+Feats:  
+    * Weapon Proficiency (Dire Flail)
+
+Background:
+History: The character has spent most of their life in Narwell. The character has been visting a friend in Gorsend.
+
+Primary Motivation: Revenge against inhabitants of The Principality of Ulek. The character feels an overwhelming need to exact revenge.
+
+Secondary Motivation:  Thrill seeking.  The character has passion for adventuring and risk.
+
+
+
+Seed: 265194090265744405730013598076157729416

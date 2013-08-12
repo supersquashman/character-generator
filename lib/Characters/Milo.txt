@@ -1,0 +1,85 @@
+Name:  Milo
+
+str	10 (+0)
+dex	10 (+0)
+con	20 (+5)
+int	10 (+0)
+wis	18 (+4)
+cha	17 (+3)
+
+Level:  2
+HD:  4
+HP:  33
+Gender:  Male
+Race:   Troglodyte
+Age:  21
+Height:  4'8"
+Weight:  140.0 lbs.
+Alignment: Chaotic Neutral
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(2), will(2)
+AC:  16 (Base: 10, Natural: 6)
+
+Classes:  
+    * Fighter(1)
+    * Cleric(1)
+
+Skills:  
+Climb    +2 (+2 ranks, +0 Str)
+Concentraion    +3 (+3 ranks, +0 )
+Craft    +4 (+4 ranks, +0 )
+Handle Animal  +5.5 (+2.5 ranks, +3 Cha)
+Hide    +4 (+0 ranks, +0 Dex, +4 Misc [+4 (rocky or underground surroundings)])
+Intimidate    +4 (+1 ranks, +3 Cha)
+Knowldege(Arcana)    +1 (+1 ranks, +0 Int)
+Ride    +5 (+5 ranks, +0 Dex)
+
+Abilities:  
+Aura(Chaotic)
+Darkvision(90ft.)
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d4)
+Spontaneous Casting(Cure or Inflict)
+Stench (DC 13)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Draconic
+    * Goblin
+
+Feats:  
+    * Combat Reflexes
+    * Weapon Finesse
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+ * Cure Minor Wounds (PH p216) - Cures 1 point of damage.
+ * Purify Food and Drink (PH p267) - Purifies 1 cubic foot per level of food or water.
+
+Level 1 Cleric Spells:
+ * Detect Good (PH p219) - Reveals good creatures, spells, or objects.
+ * Cause Fear (PH p208) - One creature of 5HD or less flees for 1d4 rounds.
+
+Cleric Healing Domain:
+Granted Powers: You cast healing spells at +1 caster level.
+
+Cleric Destruction Domain:
+Granted Powers: You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+ 1) Inflict Light Wounds ( p244) - Touch deals 1d8 damage +1 per level (max +5).
+
+
+Background:
+History: The character is from Iron Wood, but spends most of their time in Safeton, now. The character had a recent run in with dwarves.
+
+Primary Motivation: A desire for money/treasure.
+
+Secondary Motivation:  Thrill seeking.  The character has passion for adventuring and risk.
+
+
+
+Seed: 199743494604740357572029258712593547416

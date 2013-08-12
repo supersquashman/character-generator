@@ -1,0 +1,102 @@
+Name:  D'frahl
+
+str	23 (+6)
+dex	15 (+2)
+con	17 (+3)
+int	13 (+1)
+wis	10 (+0)
+cha	8 (-1)
+
+Level:  2
+HD:  8
+HP:  39
+Gender:  Female
+Race:   Minotaur
+Age:  56
+Height:  8'6"
+Weight:  850.68 lbs.
+Alignment: Chaotic Neutral
+Initative: 4
+Base Attack Bonus:  +6/+1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(7), will(9)
+AC:  16 (Base: 10, Dex: 2, Size: -1, Natural: 5)
+
+Classes:  
+    * Cleric(1)
+    * Wizard(1)
+
+Skills:  
+Craft(Armorsmithing)  +1.5 (+0.5 ranks, +1 Int)
+Gather Information  +3.5 (+4.5 ranks, -1 Cha)
+Hide    -2 (+0 ranks, +2 Dex, -4 Misc)
+Intimidate    +4 (+5 ranks, -1 Cha)
+Jump   +11 (+5 ranks, +6 Str)
+Knowldege(Architecture and Engineering)    +3 (+2 ranks, +1 Int)
+Knowldege(History)    +2 (+1 ranks, +1 Int)
+Knowldege(Nature)  +4.5 (+3.5 ranks, +1 Int)
+Knowldege(Nobility and Royalty)  +3.5 (+2.5 ranks, +1 Int)
+Listen    +9 (+5 ranks, +0 Wis, +4 Misc)
+Open Lock  +4.5 (+2.5 ranks, +2 Dex)
+Perform(Percussion)    +3 (+4 ranks, -1 Cha)
+Search  +9.5 (+4.5 ranks, +1 Int, +4 Misc)
+Spot    +8 (+4 ranks, +0 Wis, +4 Misc)
+Survival  +4.5 (+4.5 ranks, +0 Wis)
+Tumble    +4 (+0 ranks, +2 Dex, +2 Misc)
+
+Abilities:  
+Aura(Chaotic)
+Natural Cunning
+Natural Weapons:  Horns - Gore(1d8)
+Powerful Charge
+Scent
+Scribe Scroll
+Spontaneous Casting(Cure or Inflict)
+Summon Familiar
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Giant
+    * Goblin
+    * Draconic
+    * Elven
+
+Feats:  
+    * Extra Turning
+    * Improved Initiative
+    * Still Spell
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Light (PH p248) - Object shines like a torch.
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Mending (PH p253) - Makes minor repairs on an object.
+
+Cleric Air Domain:
+Granted Powers: Turn or destroy earth creatures as a good cleric turns undead.Rebuke, command, or bolster air creatures as an evil cleric rebukes undead.Use these abilities a total number of times per day equal to 3 + your Charisma modifier.
+
+Cleric Chaos Domain:
+Granted Powers: You cast chaos spells at +1 caster level.
+
+Level 0 Wizard Spells:
+ * Dancing Lights (PH p216) - Creates torches or other lights.
+ * Touch of Fatigue (PH p294) - Touch attack fatigues target.
+ * Acid Splash (PH p196) - Orb deals 1d3 damage.
+
+Level 1 Wizard Spells:
+ * Feather Fall (PH p229) - Objects or creatures fall slowly.
+ * Ventriloquism (PH p298) - Throws voice for 1 minute per level.
+
+
+Background:
+History: The character has travelled to Bright Lands and The Scarlet Brotherhood, but is originally from Sterich.
+
+Primary Motivation: Divine. The character is compelled to act according to their religious beliefs.
+
+Secondary Motivation:  A desire for power and/or immortality.
+
+
+
+Seed: 12319945814825174615728380531747847746

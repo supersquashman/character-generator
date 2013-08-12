@@ -1,0 +1,82 @@
+Name:  Kenneth
+
+str	14 (+2)
+dex	15 (+2)
+con	14 (+2)
+int	11 (+0)
+wis	14 (+2)
+cha	14 (+2)
+
+Level:  2
+HD:  2
+HP:  16
+Gender:  Male
+Race:   Half Elf
+Age:  27
+Height:  5'6"
+Weight:  155 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(2), will(2)
+AC:  12 (Base: 10, Dex: 2)
+
+Classes:  
+    * Ranger(1)
+    * Sorcerer(1)
+
+Skills:  
+Diplomacy    +4 (+0 ranks, +2 Cha, +2 Misc)
+Gather Information    +4 (+0 ranks, +2 Cha, +2 Misc)
+Handle Animal  +6.5 (+4.5 ranks, +2 Cha)
+Heal  +6.5 (+4.5 ranks, +2 Wis)
+Knowldege(Dungeoneering)  +2.5 (+2.5 ranks, +0 Int)
+Knowldege(Geography)    +3 (+3 ranks, +0 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +3 (+0 ranks, +2 Wis, +1 Misc)
+Profession    +4 (+2 ranks, +2 Wis)
+Ride    +6 (+4 ranks, +2 Dex)
+Search    +1 (+0 ranks, +0 Int, +1 Misc)
+Spot  +5.5 (+2.5 ranks, +2 Wis, +1 Misc)
+Survival    +7 (+5 ranks, +2 Wis)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Favored Enemy (Humanoid (gnoll) +2)
+Immune to magic sleep effects
+Low-Light Vision
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Elven
+
+Feats:  
+    * Weapon Proficiency (Repeating Heavy Crossbow)
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Flare (PH p232) - Dazzles one creature (-1 on attack rolls).
+ * Open/Close (PH p258) - Opens or closes small or light things.
+ * Arcane Mark (PH p201) - Inscribes a personal rune (visible or invisible).
+ * Ghost Sound (PH p235) - Figment sounds.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Detect Undead (PH p220) - Reveals undead within 60'.
+ * Endure Elements (PH p226) - Exist comfortably in hot or cold environments.
+
+
+Background:
+History: The character is originally from Plains of the Paynims, but now spends most of their time in Willip.
+
+Primary Motivation: Thrill seeking.  The character has passion for adventuring and risk.
+
+Secondary Motivation:  Divine. The character is compelled to act according to their religious beliefs.
+
+
+
+Seed: 253851092421953321047322776099465101467

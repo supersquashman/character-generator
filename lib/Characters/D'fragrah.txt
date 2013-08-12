@@ -1,0 +1,86 @@
+Name:  D'fragrah
+
+str	28 (+9)
+dex	7 (-2)
+con	16 (+3)
+int	12 (+1)
+wis	13 (+1)
+cha	9 (-1)
+
+Level:  2
+HD:  14
+HP:  85
+Gender:  Male
+Race:   Hill Giant
+Age:  70
+Height:  11'2"
+Weight:  1206 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +10/+5
+Base Land Speed:  50 ft.
+Saves:  fort(11), ref(4), will(6)
+AC:  16 (Base: 10, Dex: -2, Size: -1, Natural: 9)
+
+Classes:  
+    * Barbarian(2)
+
+Skills:  
+Balance  +0.5 (+2.5 ranks, -2 Dex)
+Bluff    +1 (+0 ranks, -1 Cha, +2 Misc)
+Climb   +14 (+5 ranks, +9 Str)
+Craft(Alchemy)  +3.5 (+2.5 ranks, +1 Int)
+Craft(Bowmaking)    +3 (+2 ranks, +1 Int)
+Disable Device    +3 (+2 ranks, +1 Int)
+Handle Animal  +2.5 (+3.5 ranks, -1 Cha)
+Heal    +3 (+2 ranks, +1 Wis)
+Hide    -6 (+0 ranks, -2 Dex, -4 Misc)
+Intimidate    +5 (+4 ranks, -1 Cha, +2 Misc)
+Jump   +12 (+3 ranks, +9 Str)
+Knowldege(Architecture and Engineering)  +2.5 (+1.5 ranks, +1 Int)
+Knowldege(Local)  +2.5 (+1.5 ranks, +1 Int)
+Knowldege(Religion)    +5 (+4 ranks, +1 Int)
+Listen    +6 (+5 ranks, +1 Wis)
+Open Lock    +2 (+4 ranks, -2 Dex)
+Perform(Comedy)    +3 (+4 ranks, -1 Cha)
+Perform(Oratory)    +3 (+4 ranks, -1 Cha)
+Perform(Sing)    +3 (+4 ranks, -1 Cha)
+Spot    +5 (+4 ranks, +1 Wis)
+Survival    +5 (+4 ranks, +1 Wis)
+Swim +12.5 (+3.5 ranks, +9 Str)
+
+Abilities:  
+Fast movement
+Illiteracy
+Low-Light Vision
+Rage 1/day
+Rock Catching
+Uncanny Dodge
+
+Languages:  
+    * Common
+    * Giant
+    * Orc
+    * Elven
+    * Goblin
+    * Draconic
+    * Dwarven
+    * Gnome(Speak Only)
+
+Feats:  
+    * Endurance
+    * Improved Turning
+    * Iron Will
+    * Persuasive
+    * Power Attack
+
+Background:
+History: The character has travelled to The Wolf Nomads and The Frost Barbarians, but is originally from Geoff. The character has been visting a friend in Narwell.
+
+Primary Motivation: Survival. The character feels the way they act is they only way to get by in the world.
+
+Secondary Motivation:  Sadism.  The character is a sadist and enjoys harming others and inflicting pain and misery.
+
+
+
+Seed: 91001737445931927750591044423933642232
