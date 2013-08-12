@@ -1,0 +1,28 @@
+.well
+  %ul.nav.nav-list
+    %li.nav-header
+      %a{href: "/encounters"} Encounters
+    - current_user.encounters.sort(:updated_at.desc).each do |enc|
+      -if @encounter == enc
+        %li.active
+          %a{href: "/encounter/#{enc.encounter_id}"}= enc.name
+        %ul.nav.nav-list
+          -enc.game_entitys.each do |ent|
+            -if @entity == ent
+              %li.active
+                %a{href: "/encounter/#{enc.encounter_id}/#{ent.entity_id}"}= ent.name
+            -else
+              %li
+                %a{href: "/character/#{enc.encounter_id}/#{ent.entity_id}"}= ent.name
+      -else
+        %li
+          %a{href: "/encounter/#{enc.encounter_id}"}= enc.name
+    %li.nav-header
+      %a{href: "/list/"} Characters
+    - current_user.game_entitys.sort(:updated_at.desc).each do |ent|
+      -if @entity == ent
+        %li.active
+          %a{href: "/character/#{ent.entity_id}"}= ent.name
+      -else
+        %li
+          %a{href: "/character/#{ent.entity_id}"}= ent.name

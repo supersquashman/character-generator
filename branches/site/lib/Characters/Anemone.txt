@@ -1,0 +1,80 @@
+Name:  Anemone
+
+str	26 (+8)
+dex	8 (-1)
+con	19 (+4)
+int	8 (-1)
+wis	15 (+2)
+cha	12 (+1)
+
+Level:  2
+HD:  14
+HP:  66
+Gender:  Female
+Race:   Hill Giant
+Age:  65
+Height:  10'2"
+Weight:  1098 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +9/+4
+Base Land Speed:  40 ft.
+Saves:  fort(12), ref(6), will(6)
+AC:  19 (Base: 10, Dex: -1, Size: -1, Natural: 9, Wis: 2)
+
+Classes:  
+    * Fighter(1)
+    * Monk(1)
+
+Skills:  
+Balance    +1 (+0 ranks, -1 Dex, +2 Misc)
+Climb   +13 (+5 ranks, +8 Str)
+Craft(Blacksmithing)    +1 (+2 ranks, -1 Int)
+Diplomacy    +4 (+3 ranks, +1 Cha)
+Escape Artist    +1 (+0 ranks, -1 Dex, +2 Misc)
+Handle Animal  +3.5 (+2.5 ranks, +1 Cha)
+Hide    -5 (+0 ranks, -1 Dex, -4 Misc)
+Intimidate    +4 (+3 ranks, +1 Cha)
+Jump   +14 (+4 ranks, +8 Str, +2 Misc)
+Knowldege(History)  +0.5 (+1.5 ranks, -1 Int)
+Knowldege(Local)  +2.5 (+3.5 ranks, -1 Int)
+Knowldege(Military)  +1.5 (+2.5 ranks, -1 Int)
+Listen    +7 (+5 ranks, +2 Wis)
+Perform(Keyboard)  +5.5 (+4.5 ranks, +1 Cha)
+Perform(Wind)    +4 (+3 ranks, +1 Cha)
+Search  +0.5 (+1.5 ranks, -1 Int)
+Spellcraft    +1 (+0 ranks, -1 Int, +2 Misc)
+Spot    +7 (+5 ranks, +2 Wis)
+Tumble    +1 (+0 ranks, -1 Dex, +2 Misc)
+Use Magic Device    +3 (+0 ranks, +1 Cha, +2 Misc)
+
+Abilities:  
+Flurry of Blows
+Low-Light Vision
+Rock Catching
+Unnarmed Strike
+
+Languages:  
+    * Common
+    * Giant
+    * Orc
+
+Feats:  
+    * Acrobatic
+    * Agile
+    * Combat Casting
+    * Endurance
+    * Improved Shield Bash
+    * Magical Aptitude
+    * Stunning Fist
+
+Background:
+History: The character has travelled to The County of Urnst and The Scarlet Brotherhood, but is originally from The Scarlet Brotherhood. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A sense of duty to local brigands. The character feels a moral obligation to fulfill this duty.
+
+Secondary Motivation:  Chivalry.  The character believes that helping others is an end in and of itself.
+
+
+
+Seed: 115400284960265198328040734818440632362

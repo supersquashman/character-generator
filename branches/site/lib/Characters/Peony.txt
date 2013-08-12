@@ -1,0 +1,78 @@
+Name:  Peony
+
+str	26 (+8)
+dex	20 (+5)
+con	21 (+5)
+int	9 (-1)
+wis	15 (+2)
+cha	14 (+2)
+
+Level:  2
+HD:  8
+HP:  43
+Gender:  Female
+Race:   Troll
+Age:  82
+Height:  9'0"
+Weight:  507 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +4
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(6), will(4)
+AC:  19 (Base: 10, Dex: 5, Size: -1, Natural: 5)
+
+Classes:  
+    * Rogue(1)
+    * Wizard(1)
+
+Skills:  
+Appraise  +3.5 (+4.5 ranks, -1 Int)
+Bluff    +4 (+0 ranks, +2 Cha, +2 Misc)
+Concentration    +9 (+4 ranks, +5 Con)
+Disguise    +6 (+4 ranks, +2 Cha)
+Forgery    +3 (+4 ranks, -1 Int)
+Hide    +1 (+0 ranks, +5 Dex, -4 Misc)
+Intimidate    +4 (+0 ranks, +2 Cha, +2 Misc)
+Jump   +12 (+4 ranks, +8 Str)
+Knowldege(Architecture and Engineering)    +3 (+4 ranks, -1 Int)
+Listen    +6 (+4 ranks, +2 Wis)
+Perform    +1 (+1 ranks, +0 )
+Perform(String)    +6 (+4 ranks, +2 Cha)
+Profession    +7 (+5 ranks, +2 Wis)
+Spot  +6.5 (+4.5 ranks, +2 Wis)
+Use Magic Device    +6 (+4 ranks, +2 Cha)
+
+Abilities:  
+Darkvision(60ft.)
+Low-Light Vision
+Natural Weapon:  Bite (1d6)
+Natural Weapon:  Claw (1d6)
+Regeneration (5)
+Scent
+Scribe Scroll
+Sneak Attack +1d6
+Special Attack: Rend - 2d6+(1.5*strength modifier)
+Summon Familiar
+Trapfinding
+
+Languages:  
+    * Common
+    * Giant
+    * Orc
+
+Feats:  
+    * Lightning Reflexes
+    * Persuasive
+    * Power Attack
+
+Background:
+History: The character is originally from Bone March, but now spends most of their time in Gnarley Forest. The character had a recent encounter with one or more celestials.
+
+Primary Motivation: A deep fear of the Lawful. The character is terrified, and will act out of fear.
+
+Secondary Motivation:  Boredom. The character has no other reason than their life is otherwise uninteresting.
+
+
+
+Seed: 225595419557290827176807024459111683674

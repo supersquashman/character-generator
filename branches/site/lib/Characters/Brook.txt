@@ -1,0 +1,95 @@
+Name:  Brook
+
+str	14 (+2)
+dex	16 (+3)
+con	15 (+2)
+int	12 (+1)
+wis	16 (+3)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  18
+Gender:  Female
+Race:   Aquatic Elf
+Age:  152
+Height:  5'2"
+Weight:  89 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(4), will(4)
+AC:  16 (Base: 10, Dex: 3, Wis: 3)
+
+Classes:  
+    * Monk(1)
+    * Cleric(1)
+
+Skills:  
+Balance    +7 (+4 ranks, +3 Dex)
+Concentraion    +2 (+2 ranks, +0 )
+Craft    +4 (+4 ranks, +0 )
+Diplomacy    +6 (+5 ranks, +1 Cha)
+Escape Artist  +4.5 (+1.5 ranks, +3 Dex)
+Jump  +5.5 (+3.5 ranks, +2 Str)
+Knowldege(The Planes)    +2 (+1 ranks, +1 Int)
+Listen  +9.5 (+4.5 ranks, +3 Wis, +2 Misc)
+Profession    +6 (+3 ranks, +3 Wis)
+Search    +3 (+0 ranks, +1 Int, +2 Misc)
+Spellcraft    +3 (+2 ranks, +1 Int)
+Spot    +5 (+0 ranks, +3 Wis, +2 Misc)
+Swim  +4.5 (+2.5 ranks, +2 Str)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Aquatic Subtype
+Aura(Evil)
+Flurry of Blows
+Gills
+Immune to magic sleep effects
+Low-Light Vision
+Spontaneous Casting(Cure or Inflict)
+Swim Speed (40)
+Turn or Rebuke Undead
+Unnarmed Strike
+
+Languages:  
+    * Common
+    * Elven
+    * Gnome
+    * Goblin
+
+Feats:  
+    * Improved Grapple
+    * Track
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+ * Virtue (PH p289) - Subject gains 1 temporary hp. 
+ * Light (PH p248) - Object shines like a torch.
+
+Level 1 Cleric Spells:
+ * Magic Weapon (PH p251) - Weapon gains +1 enhancement bonus.
+ * Protection from Chaos (PH p266) - +2 bonus to AC & saves against chaos, counters mind control, & hedges out elementals & outsiders.
+
+Cleric Plant Domain:
+Granted Powers: Rebuke or command plant creatures as an evil cleric rebukes or commands undead. Use this ability a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+ 1) Entangle (PH p227) - Plants entangle everyone in a 40' radius.
+
+Cleric Strength Domain:
+Granted Powers: You can perform a feat of strength as a supernatural ability. You gain an enhancement bonus to Strength equal to your cleric level. Activating the power is a free action, the power lasts 1 round, and it is usable once per day.
+
+
+Background:
+History: The character is from Hardby, but spends most of their time in Willip, now. The character had a recent run in with followers of Garl Glittergold.
+
+Primary Motivation: A need for knowledge about _____________ (a close friend/associate). The character feels than an understanding will solve their problems.
+
+Secondary Motivation:  A desire for money/treasure.
+
+
+
+Seed: 136722025883379937927220502912910092800

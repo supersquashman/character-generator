@@ -1,0 +1,89 @@
+Name:  Rosemary
+
+str	12 (+1)
+dex	13 (+1)
+con	14 (+2)
+int	12 (+1)
+wis	12 (+1)
+cha	5 (-3)
+
+Level:  2
+HD:  2
+HP:  20
+Gender:  Female
+Race:   Half Orc
+Age:  20
+Height:  5'7"
+Weight:  166 lbs.
+Alignment: Lawful Evil
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(4), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Ranger(1)
+    * Cleric(1)
+
+Skills:  
+Diplomacy    -2 (+1 ranks, -3 Cha)
+Handle Animal    +2 (+5 ranks, -3 Cha)
+Heal    +5 (+4 ranks, +1 Wis)
+Knowldege(Dungeoneering)    +5 (+4 ranks, +1 Int)
+Knowldege(History)    +2 (+1 ranks, +1 Int)
+Knowldege(Nature)  +2.5 (+1.5 ranks, +1 Int)
+Move Silently    +5 (+4 ranks, +1 Dex)
+Ride  +6.5 (+3.5 ranks, +1 Dex, +2 Misc)
+Search    +5 (+4 ranks, +1 Int)
+Spot    +5 (+4 ranks, +1 Wis)
+Survival  +4.5 (+3.5 ranks, +1 Wis)
+Use Rope    +5 (+4 ranks, +1 Dex)
+
+Abilities:  
+Aura(Lawful Evil)
+Darkvision(60)
+Favored Enemy (Undead +2)
+Spontaneous Casting(Cure or Inflict)
+Track
+Turn or Rebuke Undead
+Wild Empathy
+
+Languages:  
+    * Common
+    * Orc
+    * Goblin
+    * Abyssal
+
+Feats:  
+    * Great Fortitude
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Virtue (PH p289) - Subject gains 1 temporary hp. 
+ * Create Water (PH p215) - Creates 2 gallons/level of pure water.
+ * Purify Food and Drink (PH p267) - Purifies 1 cubic foot per level of food or water.
+
+Level 1 Cleric Spells:
+ * Doom (PH p225) - One subject takes -2 on attack rolls, damage rolls, saves, and checks.
+ * Sanctuary (PH p274) - Opponents can't attack you and you can't attack.
+
+Cleric Sun Domain:
+Granted Powers: Once per day, you can perform a greater turning against undead in place of a regular turning. The greater turning is like a normal turning except that the undead creatures that would be turned are destroyed instead.
+
+Cleric Animal Domain:
+Granted Powers: You can use speak with animals once per day as a spell-like ability.
+ 1) Calm Animals (PH p207) - Calms (2d4 + level) HD of animals.
+
+
+Background:
+History: The character has spent most of their life in Ganwood.
+
+Primary Motivation: A sense of duty to _____________ (a close friend/associate). The character feels a moral obligation to fulfill this duty.
+
+Secondary Motivation:  The character is innately evil, and will not knowingly do any good. Evil is all they know.
+
+
+
+Seed: 9733759381949293737064293309630835446

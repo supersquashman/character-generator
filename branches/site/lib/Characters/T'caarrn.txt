@@ -1,0 +1,94 @@
+Name:  T'caarrn
+
+str	13 (+1)
+dex	16 (+3)
+con	15 (+2)
+int	8 (-1)
+wis	14 (+2)
+cha	10 (+0)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Male
+Race:   Goblin
+Age:  24
+Height:  3'4"
+Weight:  36.4 lbs.
+Alignment: Neutral Good
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(2), will(4)
+AC:  14 (Base: 10, Dex: 3, Size: 1)
+
+Classes:  
+    * Druid(1)
+    * Cleric(1)
+
+Skills:  
+Diplomacy    +1 (+1 ranks, +0 Cha)
+Heal    +7 (+5 ranks, +2 Wis)
+Hide    +7 (+0 ranks, +3 Dex, +4 Misc)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen  +6.5 (+4.5 ranks, +2 Wis)
+Move Silently    +7 (+0 ranks, +3 Dex, +4 Misc)
+Ride    +7 (+0 ranks, +3 Dex, +4 Misc)
+Survival    +4 (+0 ranks, +2 Wis, +2 Misc)
+Swim  +5.5 (+4.5 ranks, +1 Str)
+
+Abilities:  
+Animal Companion
+Aura(Good)
+Darkvision(60ft.)
+Spontaneous Casting(Cure or Inflict)
+Spontaneous Casting(Summon Nature's Ally)
+Turn or Rebuke Undead
+Wild Empathy
+
+Languages:  
+    * Common
+    * Goblin
+    * Druidic
+
+Feats:  
+    * Point Blank Shot
+
+Spells:
+
+Level 0 Druid Spells:
+ * Guidance (PHB 238) - +1 on one attack roll, saving throw, or skill check
+ * Create Water (PHB 215) - Creates 2gal/level of pure water
+ * Mending (PHB 253) - Makes minor repairs on an object
+
+Level 1 Druid Spells:
+ * Shillelagh (PHB 278) - Cudgel or quarterstaff becomes +1 weapon and deals damage as if two sizes larger
+ * Pass without Trace (PHB 259) - One subject/level leaves no tracks
+
+Level 0 Cleric Spells:
+ * Resistance (PH p272) - Subject gains +1 resistance bonus on all saving throws.
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Purify Food and Drink (PH p267) - Purifies 1 cubic foot per level of food or water.
+
+Level 1 Cleric Spells:
+ * Obscuring Mist (PH p258) - Fog surrounds you.
+ * Sanctuary (PH p274) - Opponents can't attack you and you can't attack.
+
+Cleric Destruction Domain:
+Granted Powers: You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+ 1) Inflict Light Wounds ( p244) - Touch deals 1d8 damage +1 per level (max +5).
+
+Cleric Healing Domain:
+Granted Powers: You cast healing spells at +1 caster level.
+
+
+Background:
+History: The character is from Gorsend, but spends most of their time in Narwell, now.
+
+Primary Motivation: A need to defend themself from _____________ (a close friend/associate). The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A rivalry with the Chaotic. The character's history is dominated by an ongoing struggle with them.
+
+
+
+Seed: 241405683780675588134485111137942574544

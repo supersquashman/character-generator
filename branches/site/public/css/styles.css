@@ -1,0 +1,123 @@
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+/**
+ * Copyright 2009 jsdice.com. All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+ * 
+ * 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+ * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER 
+ * IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY 
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.    
+ */
+#jsdice {
+  position: fixed;
+  width: 400px;
+  right: 10px;
+  bottom: 10px;
+}
+
+#jsdice-close {
+  text-align: right;
+}
+
+#jsdice-close a {
+  padding: 3px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #ff0000;
+}
+
+#jsdice-close a:hover {
+  color: #fff;
+  background: #ff0000;
+}
+
+#results {
+  margin: 5px 10px 5px 10px;
+  padding: 8px;
+  border: 1px solid #fff;
+  height: 20em;
+  overflow: auto;
+  background-color: #505048;
+  color: #ffe;
+}
+
+.roll_source {
+  margin-top: .3em;
+  margin-bottom: 3px;
+}
+
+.roll_source em {
+  color: #ff0;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.roll_source a {
+  color: #8ee;
+  font-family: monospace;
+}
+
+.roll_result {
+  margin: 0 1em;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.roll_result strong {
+  font-size: 1.2em;
+  color: white;
+  background: #111;
+  padding: 1px .5em;
+  -moz-border-radius: 1em;
+}
+
+.roll_result sub {
+  font-size: .6em;
+}
+
+.roll_help {
+  margin: 0 1em;
+  padding: 0.3em;
+  text-align: justify;
+  color: #ffa;
+  font-size: .85em;
+}
+
+.roll_help strong {
+  color: #ffe;
+}
+
+.roll_help hr {
+  border: none;
+  border-bottom: 1px solid #777;
+}
+
+.roll_help a {
+  color: #8ee;
+}
+
+.roll_help ul {
+  padding: 0 1em;
+  margin: 0 1em;
+}

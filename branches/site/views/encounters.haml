@@ -1,0 +1,12 @@
+.containter-fluid
+  .span5
+    %h3 List
+    %form.form-inline{:onsubmit=>"return confirm('Are you sure you want to delete?');", :method=>"post", :action=>"/encounter_delete"}
+      %legend
+        Encounters
+        %button.btn.btn-warning.pull-right{:type=>"submit"} Delete
+      %ul
+        - current_user.encounters.sort(:updated_at.desc).each do |enc|
+          %li
+            %a{href: "/encounter/#{ent.encounter_id}"}= enc.name
+            %input.pull-right{:type=>"checkbox", :name=>"delete[#{enc.entity_id}]"}

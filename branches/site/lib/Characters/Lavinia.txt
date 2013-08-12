@@ -1,0 +1,80 @@
+Name:  Lavinia
+
+str	16 (+3)
+dex	14 (+2)
+con	13 (+1)
+int	15 (+2)
+wis	10 (+0)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  10
+Gender:  Female
+Race:   Half Elf
+Age:  32
+Height:  5'5"
+Weight:  140 lbs.
+Alignment: Neutral Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(0), will(3)
+AC:  12 (Base: 10, Dex: 2)
+
+Classes:  
+    * Wizard(2)
+
+Skills:  
+Concentraion    +3 (+3 ranks, +0 )
+Decipher Script    +4 (+2 ranks, +2 Int)
+Diplomacy    +3 (+0 ranks, +1 Cha, +2 Misc)
+Gather Information    +3 (+0 ranks, +1 Cha, +2 Misc)
+Knowldege(Dungeoneering)    +6 (+4 ranks, +2 Int)
+Knowldege(Military)    +7 (+5 ranks, +2 Int)
+Knowldege(Religion)    +4 (+2 ranks, +2 Int)
+Listen    +1 (+0 ranks, +0 Wis, +1 Misc)
+Search    +3 (+0 ranks, +2 Int, +1 Misc)
+Spellcraft    +6 (+4 ranks, +2 Int)
+Spot    +1 (+0 ranks, +0 Wis, +1 Misc)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Immune to magic sleep effects
+Low-Light Vision
+Scribe Scroll
+Summon Familiar
+
+Languages:  
+    * Common
+    * Elven
+    * Aquan
+    * Dwarven
+
+Feats:  
+    * Toughness
+
+Spells:
+
+Level 0 Wizard Spells:
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+ * Prestidigitation (PH p264) - Performs minor tricks
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Ghost Sound (PH p235) - Figment sounds.
+
+Level 1 Wizard Spells:
+ * Detect Secret Doors (PH p220) - Reveals hidden doors within 60'.
+ * Shield (PH p278) - Invisible disc gives +4 Shield bonus to AC and blocks Magic Missiles.
+ * Magic Weapon (PH p251) - Weapon gains +1 enhancement bonus.
+
+
+Background:
+History: The character is originally from Greyhawk, but now spends most of their time in Gnarley Forest. The character has just come from Ganwood.
+
+Primary Motivation: A rivalry with _____________ (person). The character's history is dominated by an ongoing struggle with them.
+
+Secondary Motivation:  A sense of guilt for _____________ (a close friend/associate). The character feels that past wrongs leave them morally obligated to help them if they can.
+
+
+
+Seed: 121511788704106556814366104928503089805

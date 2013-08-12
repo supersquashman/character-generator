@@ -1,0 +1,100 @@
+Name:  Milton
+
+str	13 (+1)
+dex	14 (+2)
+con	8 (-1)
+int	19 (+4)
+wis	17 (+3)
+cha	11 (+0)
+
+Level:  2
+HD:  4
+HP:  12
+Gender:  Male
+Race:   Azer
+Age:  91
+Height:  4'2"
+Weight:  175 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(5), ref(5), will(7)
+AC:  21 (Base: 10, Dex: 2, Natural: 6, Wis: 3)
+Spell Resistance:  15
+
+Classes:  
+    * Wizard(1)
+    * Monk(1)
+
+Skills:  
+Appraise  +8.5 (+4.5 ranks, +4 Int)
+Balance  +4.5 (+2.5 ranks, +2 Dex)
+Climb    +6 (+3 ranks, +1 Str, +2 Misc)
+Craft    +3 (+3 ranks, +0 )
+Craft(Alchemy)  +5.5 (+1.5 ranks, +4 Int)
+Craft(Armorsmithing)    +5 (+1 ranks, +4 Int)
+Decipher Script    +8 (+4 ranks, +4 Int)
+Escape Artist    +5 (+3 ranks, +2 Dex)
+Heal  +3.5 (+0.5 ranks, +3 Wis)
+Hide    +4 (+2 ranks, +2 Dex)
+Knowldege(Dungeoneering)  +8.5 (+4.5 ranks, +4 Int)
+Knowldege(Geography)    +8 (+4 ranks, +4 Int)
+Knowldege(Local)  +7.5 (+3.5 ranks, +4 Int)
+Knowldege(Nobility and Royalty)  +8.5 (+4.5 ranks, +4 Int)
+Knowledge (religion)    +1 (+1 ranks, +0 )
+Listen    +8 (+5 ranks, +3 Wis)
+Perform    +1 (+1 ranks, +0 )
+Profession    +5 (+2 ranks, +3 Wis)
+Search    +8 (+4 ranks, +4 Int)
+Sense Motive    +7 (+4 ranks, +3 Wis)
+Spellcraft  +8.5 (+4.5 ranks, +4 Int)
+Spot    +8 (+5 ranks, +3 Wis)
+Survival    +4 (+1 ranks, +3 Wis)
+Swim    +6 (+3 ranks, +1 Str, +2 Misc)
+Tumble    +4 (+2 ranks, +2 Dex)
+Use Magic Device    +4 (+4 ranks, +0 Cha)
+
+Abilities:  
+Darkvision(60ft.)
+Flurry of Blows
+Heat
+Immunity to Fire
+Scribe Scroll
+Summon Familiar
+Unnarmed Strike
+Vulnerability to Cold
+
+Languages:  
+    * Common
+    * Ignan
+    * Abyssal
+    * Aquan
+    * Terran
+
+Feats:  
+    * Athletic
+    * Improved Grapple
+
+Spells:
+
+Level 0 Wizard Spells:
+ * Mage Hand (PH p249) - 5 pound telekinesis.
+ * Message (PH p253) - Whispered conversation at distance.
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+
+Level 1 Wizard Spells:
+ * Protection from Evil (PH p266) - +2 bonus to AC & saves against evil, counters mind control, & hedges out elementals & outsiders.
+ * Identify (PH p243) - Determines properties of a magic item.
+
+
+Background:
+History: The character is originally from Plains of the Paynims, but now spends most of their time in Willip. The character had a recent encounter with one or more teiflings.
+
+Primary Motivation: A sense of guilt for _____________ (a loved one). The character feels that past wrongs leave them morally obligated to help them if they can.
+
+Secondary Motivation:  A need for knowledge about the rulers of Iron Wood. The character feels than an understanding will solve their problems.
+
+
+
+Seed: 190114291309753346352151006098998487109

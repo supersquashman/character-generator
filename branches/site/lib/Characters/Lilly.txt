@@ -1,0 +1,77 @@
+Name:  Lilly
+
+str	33 (+11)
+dex	11 (+0)
+con	25 (+7)
+int	8 (-1)
+wis	12 (+1)
+cha	15 (+2)
+
+Level:  2
+HD:  17
+HP:  85
+Gender:  Female
+Race:   Fire Giant
+Age:  119
+Height:  11'11"
+Weight:  6872.58 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +13/+8/+3
+Base Land Speed:  50 ft.
+Saves:  fort(13), ref(7), will(7)
+AC:  17 (Base: 10, Size: -1, Natural: 8)
+
+Classes:  
+    * Ranger(1)
+    * Barbarian(1)
+
+Skills:  
+Climb   +16 (+5 ranks, +11 Str)
+Craft    +1 (+1 ranks, +0 )
+Handle Animal    +5 (+1 ranks, +2 Cha, +2 Misc)
+Hide    -4 (+0 ranks, +0 Dex, -4 Misc)
+Intimidate    +6 (+4 ranks, +2 Cha)
+Jump   +15 (+4 ranks, +11 Str)
+Knowldege(Nobility and Royalty)    +4 (+5 ranks, -1 Int)
+Listen    +2 (+1 ranks, +1 Wis)
+Move Silently    +5 (+5 ranks, +0 Dex)
+Ride    +3 (+1 ranks, +0 Dex, +2 Misc)
+Search  +3.5 (+4.5 ranks, -1 Int)
+Spot    +5 (+4 ranks, +1 Wis)
+Survival    +3 (+2 ranks, +1 Wis)
+Swim   +12 (+1 ranks, +11 Str)
+
+Abilities:  
+Fast movement
+Favored Enemy (Outsider (evil) +2)
+Immunity to Fire
+Low-Light Vision
+Rage 1/day
+Rock Catching
+Track
+Vulnerability to Cold
+Wild Empathy
+
+Languages:  
+    * Common
+    * Giant
+
+Feats:  
+    * Animal Affinity
+    * Armor Proficiency (Light)
+    * Blind Fight
+    * Combat Reflexes
+    * Endurance
+    * Quick Draw
+
+Background:
+History: The character is originally from Ratik, but now spends most of their time in Iron Wood. The character had a recent encounter with one or more aasimars.
+
+Primary Motivation: A need to defend themself from _____________ (person). The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  The character is being coerced by _____________ (person). The character would not normally act this way, but is being blackmailed/forced/etc.
+
+
+
+Seed: 51035094286505825115382324255517589426

@@ -1,0 +1,71 @@
+.container-fluid
+  .hero-unit
+    %h1
+      Character Generator
+    %p
+      Welcome to the Fish Tornado D&D character generator site. This is a current work in progress. 
+      
+      PLEASE LOG IN FIRST
+    %p
+      %a.btn.btn-primary.btn-large{:href=>"/create"} Feeling Lucky
+    %p
+      %a.btn.btn-large.btn-danger{:href=>"/new_character/"} Big Form Character Creation
+    -if current_user
+      %p
+        %form.form-inline{:method=>"get", :action=>"/add_monster"}
+          .input-append
+            %select{:name=>"id"}
+              -@@monsterlist = Monster.where({:source=>"SRD"}).sort(:name).inject(Hash.new){|mon,n| mon[n.monster_id]= n.name; mon} unless @@monsterlist
+              -@@monsterlist.each do |i,m|
+                %option{:value =>i}= m
+            %button.btn{:type=>"submit"} Add Monster
+    -if current_user
+      %p
+        %form.form-inline{:method=>"get", :action=>"/add_monster"}
+          .input-append
+            %select{:name=>"id"}
+              -@@pfmonsterlist = Monster.where({:source=>"PFSRD"}).sort(:name).inject(Hash.new){|mon,n| mon[n.monster_id]= n.name; mon} unless @@pfmonsterlist
+              -@@pfmonsterlist.each do |i,m|
+                %option{:value =>i}= m
+            %button.btn{:type=>"submit"} Add Pathfinder Monster
+    .well
+      %form.form-inline{:method=>"get", :action=>"/create"}
+        %label Class
+        %select{:name=>"class"}
+          -@@classlist = ClassList.list unless @@classlist
+          -@@classlist.each do |classname,v|
+            %option= classname
+        %label Race
+        %select{:name=>"race"}
+          -@@racelist = RaceList.list unless @@racelist
+          -@@racelist.each do |racename,v|
+            %option= racename
+        %label Level
+        %select{:name=>"level"}
+          -20.times do |lev|
+            %option= lev+1
+        %button.btn.btn-primary.btn-large{:type=>"submit"} Create
+          
+
+  .row
+    .span4
+      %h2
+        TODO
+      %ul
+        %li Encounter generation/ Multiple Characters at once. 
+        %li Monsters added to encounters. 
+        %li Random encounter based on CR
+    .span4
+      %h2
+        Derps Ahoy
+      %p
+        3 starting options for character generation. Sign in for storage
+    .span4
+      %h2
+        Formatting
+      %p
+        Lots of formatting changes to come
+
+  %hr
+
+  %div= haml :footer

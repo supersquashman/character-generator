@@ -1,0 +1,107 @@
+Name:  Rose
+
+str	23 (+6)
+dex	14 (+2)
+con	22 (+6)
+int	13 (+1)
+wis	15 (+2)
+cha	12 (+1)
+
+Level:  2
+HD:  8
+HP:  43
+Gender:  Female
+Race:   Minotaur
+Age:  61
+Height:  8'1"
+Weight:  808.98 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +7/+2
+Base Land Speed:  30 ft.
+Saves:  fort(6), ref(7), will(7)
+AC:  16 (Base: 10, Dex: 2, Size: -1, Natural: 5)
+
+Classes:  
+    * Fighter(1)
+    * Bard(1)
+
+Skills:  
+Balance    +4 (+2 ranks, +2 Dex)
+Bluff    +3 (+2 ranks, +1 Cha)
+Climb   +10 (+4 ranks, +6 Str)
+Diplomacy    +3 (+2 ranks, +1 Cha)
+Disguise    +2 (+1 ranks, +1 Cha)
+Escape Artist    +3 (+1 ranks, +2 Dex)
+Handle Animal  +4.5 (+3.5 ranks, +1 Cha)
+Hide    +0 (+0 ranks, +2 Dex, -2 Misc)
+Intimidate    +5 (+4 ranks, +1 Cha)
+Jump    +9 (+3 ranks, +6 Str)
+Knowldege(Geography)    +2 (+1 ranks, +1 Int)
+Knowldege(History)    +5 (+4 ranks, +1 Int)
+Knowldege(Local)  +4.5 (+3.5 ranks, +1 Int)
+Knowldege(Nature)  +2.5 (+1.5 ranks, +1 Int)
+Knowldege(The Planes)    +2 (+1 ranks, +1 Int)
+Listen   +11 (+5 ranks, +2 Wis, +4 Misc)
+Move Silently    +4 (+0 ranks, +2 Dex, +2 Misc)
+Perform(Comedy)    +5 (+4 ranks, +1 Cha)
+Perform(Dance)  +5.5 (+4.5 ranks, +1 Cha)
+Perform(Wind)    +3 (+2 ranks, +1 Cha)
+Ride  +4.5 (+2.5 ranks, +2 Dex)
+Search   +10 (+5 ranks, +1 Int, +4 Misc)
+Spellcraft    +4 (+3 ranks, +1 Int)
+Spot   +10 (+4 ranks, +2 Wis, +4 Misc)
+Survival    +2 (+0 ranks, +2 Wis [+2 Synergy[Following Tracks]])
+Use Magic Device    +2 (+1 ranks, +1 Cha)
+
+Abilities:  
+Bardic Knowledge
+Bardic Music
+Countersong
+Fascinate
+Inspire Courage +1
+Natural Cunning
+Natural Weapons:  Horns - Gore(1d8)
+Powerful Charge
+Scent
+
+Languages:  
+    * Common
+    * Giant
+    * Draconic
+    * Orc
+    * Goblin
+    * Elven
+    * Ignan
+    * Terran
+
+Feats:  
+    * Combat Reflexes
+    * Great Fortitude
+    * Stealthy
+    * Weapon Finesse
+
+Spells:
+
+Level 0 Bard Spells (3/ Day):
+ * Read Magic (PH p269) - Read scrolls and spellbooks.
+ * Daze (PH p217) - Humanoid creature of 4 HD or less loses next action.
+ * Summon Instrument (PH p285) - Summons one instrument of the caster's choice.
+ * Ghost Sound (PH p235) - Figment sounds.
+ * Message (PH p253) - Whispered conversation at distance.
+
+Level 1 Bard Spells (1/ Day):
+ * Confusion, Lesser (PH p212) - One creature is confused for 1 round.
+ * Erase (PH p227) - Mundane or magical writing vanishes.
+
+
+Background:
+History: The character is originally from Tusmit, but now spends most of their time in Ganwood. The character had a recent encounter with one or more goblins.
+
+Primary Motivation: Survival. The character feels the way they act is they only way to get by in the world.
+
+Secondary Motivation:  Revenge against _____________ (a loved one). The character feels an overwhelming need to exact revenge.
+
+
+
+Seed: 331004157483476169800821419928022069415

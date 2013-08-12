@@ -1,0 +1,71 @@
+Name:  D'gyblam
+
+str	15 (+2)
+dex	12 (+1)
+con	11 (+0)
+int	8 (-1)
+wis	8 (-1)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  19
+Gender:  Female
+Race:   Half Orc
+Age:  18
+Height:  5'6"
+Weight:  227 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  40 ft.
+Saves:  fort(2), ref(2), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Barbarian(1)
+    * Cleric(1)
+
+Skills:  
+Climb    +5 (+3 ranks, +2 Str)
+Craft    +4 (+4 ranks, +0 )
+Jump    +3 (+1 ranks, +2 Str)
+Knowldege(History)    +0 (+1 ranks, -1 Int)
+Listen    +3 (+4 ranks, -1 Wis)
+Ride    +4 (+3 ranks, +1 Dex)
+Survival  +2.5 (+3.5 ranks, -1 Wis)
+
+Abilities:  
+Aura(Chaotic Good)
+Darkvision(60)
+Fast movement
+Rage 1/day
+Spontaneous Casting(Cure or Inflict)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Orc
+
+Feats:  
+    * Run
+
+Spells:
+
+Cleric Destruction Domain:
+Granted Powers: You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+
+Cleric Fire Domain:
+Granted Powers: Turn or destroy water creatures as a good cleric turns undead. Rebuke, command, or bolster fire creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+
+Background:
+History: The character is originally from The Frost Barbarians, but now spends most of their time in Narwell. The character had a recent encounter with one or more wraiths.
+
+Primary Motivation: A deep fear of _____________ (person). The character is terrified, and will act out of fear.
+
+Secondary Motivation:  Boredom. The character has no other reason than their life is otherwise uninteresting.
+
+
+
+Seed: 285090568588164056234513881234844209884

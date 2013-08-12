@@ -1,0 +1,96 @@
+Name:  Lenny
+
+str	18 (+4)
+dex	8 (-1)
+con	12 (+1)
+int	8 (-1)
+wis	13 (+1)
+cha	13 (+1)
+
+Level:  2
+HD:  2
+HP:  11
+Gender:  Male
+Race:   Aasimar
+Age:  22
+Height:  5'7"
+Weight:  183 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(4), will(2)
+AC:  9 (Base: 10, Dex: -1)
+
+Classes:  
+    * Rogue(1)
+    * Bard(1)
+
+Skills:  
+Appraise    +4 (+5 ranks, -1 Int)
+Balance    +6 (+5 ranks, -1 Dex, +2 Misc)
+Bluff    +5 (+4 ranks, +1 Cha)
+Climb    +9 (+5 ranks, +4 Str)
+Decipher Script    +0 (+1 ranks, -1 Int)
+Diplomacy    +2 (+1 ranks, +1 Cha)
+Disable Device    +3 (+4 ranks, -1 Int)
+Disguise    +7 (+4 ranks, +1 Cha, +2 Misc)
+Forgery    +1 (+0 ranks, -1 Int, +2 Misc)
+Gather Information    +4 (+3 ranks, +1 Cha)
+Hide    +2 (+3 ranks, -1 Dex)
+Jump    +7 (+1 ranks, +4 Str, +2 Misc)
+Knowldege(Geography)    +1 (+2 ranks, -1 Int)
+Knowldege(History)    +0 (+1 ranks, -1 Int)
+Knowldege(Military)    +0 (+1 ranks, -1 Int)
+Listen    +3 (+0 ranks, +1 Wis, +2 Misc)
+Sleight of Hand    +0 (+1 ranks, -1 Dex)
+Spot    +3 (+0 ranks, +1 Wis, +2 Misc)
+Tumble    +4 (+5 ranks, -1 Dex)
+Use Magic Device    +2 (+1 ranks, +1 Cha)
+
+Abilities:  
+Bardic Knowledge
+Bardic Music
+Countersong
+Darkvision(60ft.)
+Daylight (1/day)
+Fascinate
+Inspire Courage +1
+Resistance to Cold (5)
+Resistance to Electricity (5)
+Resistance to Fire (5)
+Sneak Attack +1d6
+Trapfinding
+
+Languages:  
+    * Common
+    * Celestial
+    * Sylvan
+
+Feats:  
+    * Deceitful
+
+Spells:
+
+Level 0 Bard Spells (3/ Day):
+ * Daze (PH p217) - Humanoid creature of 4 HD or less loses next action.
+ * Resistance (PH p264) - Subject gains +1 on saving throws.
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Detect Magic (PH p219) - Detects spells and magic items within 60 ft.
+ * Light (PH p248) - Object shines like a torch.
+
+Level 1 Bard Spells (1/ Day):
+ * Animate Rope (PH p199) - Makes a rope move at your command.
+ * Silent Image (PH p279) - Creates minor illusion of your design.
+
+
+Background:
+History: The character is originally from Bright Lands, but now spends most of their time in Furyondy.
+
+Primary Motivation: A need to defend themself from fighters. The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  The character is being coerced by inhabitants of Tusmit. The character would not normally act this way, but is being blackmailed/forced/etc.
+
+
+
+Seed: 59497450648180508926849271860697690714

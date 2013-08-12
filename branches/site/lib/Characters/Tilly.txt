@@ -1,0 +1,88 @@
+Name:  Tilly
+
+str	27 (+8)
+dex	12 (+1)
+con	13 (+1)
+int	12 (+1)
+wis	14 (+2)
+cha	10 (+0)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Female
+Race:  Half Dragon(Blue) Half Orc
+Age:  21
+Height:  5'3"
+Weight:  230 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +5
+Base Land Speed:  30 ft.
+Saves:  fort(7), ref(6), will(2)
+AC:  15 (Base: 10, Dex: 1, Natural: 4)
+
+Classes:  
+    * Rogue(1)
+    * Ranger(1)
+
+Skills:  
+Climb   +10 (+2 ranks, +8 Str)
+Decipher Script    +5 (+4 ranks, +1 Int)
+Disable Device    +3 (+0 ranks, +1 Int, +2 Misc)
+Forgery    +5 (+4 ranks, +1 Int)
+Gather Information  +4.5 (+4.5 ranks, +0 Cha)
+Handle Animal    +1 (+1 ranks, +0 Cha)
+Heal    +3 (+1 ranks, +2 Wis)
+Hide    +6 (+5 ranks, +1 Dex)
+Jump   +10 (+0 ranks, +8 Str, +2 Misc)
+Knowldege(Geography)    +2 (+1 ranks, +1 Int)
+Knowledge(Local)  +4.5 (+4.5 ranks, +0 )
+Listen    +3 (+1 ranks, +2 Wis)
+Move Silently    +2 (+1 ranks, +1 Dex)
+Open Lock  +7.5 (+4.5 ranks, +1 Dex, +2 Misc)
+Perform    +5 (+5 ranks, +0 )
+Perform(Act)    +1 (+1 ranks, +0 Cha)
+Profession    +3 (+1 ranks, +2 Wis)
+Ride    +4 (+3 ranks, +1 Dex)
+Search    +2 (+1 ranks, +1 Int)
+Sleight of Hand  +5.5 (+4.5 ranks, +1 Dex)
+Spot    +3 (+1 ranks, +2 Wis)
+Survival    +5 (+3 ranks, +2 Wis)
+Swim    +9 (+1 ranks, +8 Str)
+Tumble  +7.5 (+4.5 ranks, +1 Dex, +2 Misc)
+Use Rope    +2 (+1 ranks, +1 Dex)
+
+Abilities:  
+Breath Weapon:  60-foot line of lightning(6d8); 1/day; DC10
+Darkvision(60ft.)
+Favored Enemy (Outsider (good) +2)
+Immunity to Electricity
+Low-Light Vision
+Natural Weapon:  Bite (1d6)
+Natural Weapon:  Claw (1d4)
+Sneak Attack +1d6
+Track
+Trapfinding
+Wild Empathy
+
+Languages:  
+    * Common
+    * Orc
+    * Goblin
+
+Feats:  
+    * Acrobatic
+    * Improved Turning
+    * Nimble Fingers
+
+Background:
+History: The character has travelled to Bright Lands and The Shield Lands, but is originally from Bone March. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A need for knowledge about the Evil. The character feels than an understanding will solve their problems.
+
+Secondary Motivation:  A rivalry with half-elves. The character's history is dominated by an ongoing struggle with them.
+
+
+
+Seed: 243434157593027295165607852642977087901

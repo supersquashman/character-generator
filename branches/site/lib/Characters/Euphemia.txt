@@ -1,0 +1,97 @@
+Name:  Euphemia
+
+str	10 (+0)
+dex	13 (+1)
+con	9 (-1)
+int	17 (+3)
+wis	16 (+3)
+cha	10 (+0)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Female
+Race:   Gray Elf
+Age:  143
+Height:  5'0"
+Weight:  94 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  40 ft.
+Saves:  fort(2), ref(2), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Barbarian(1)
+    * Cleric(1)
+
+Skills:  
+Climb    +4 (+4 ranks, +0 Str)
+Concentraion    +2 (+2 ranks, +0 )
+Craft    +3 (+3 ranks, +0 )
+Craft(Blacksmithing)  +3.5 (+0.5 ranks, +3 Int)
+Diplomacy    +1 (+1 ranks, +0 Cha)
+Gather Information    +2 (+2 ranks, +0 Cha)
+Handle Animal    +5 (+5 ranks, +0 Cha)
+Heal    +4 (+1 ranks, +3 Wis)
+Knowldege(Arcana)    +5 (+2 ranks, +3 Int)
+Knowldege(The Planes)    +4 (+1 ranks, +3 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +5 (+0 ranks, +3 Wis, +2 Misc)
+Open Lock  +2.5 (+1.5 ranks, +1 Dex)
+Ride  +7.5 (+4.5 ranks, +1 Dex, +2 Misc)
+Search    +5 (+0 ranks, +3 Int, +2 Misc)
+Spot    +5 (+0 ranks, +3 Wis, +2 Misc)
+Survival    +8 (+5 ranks, +3 Wis)
+Swim    +3 (+3 ranks, +0 Str)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Aura(Chaotic Good)
+Fast movement
+Immune to magic sleep effects
+Low-Light Vision
+Rage 1/day
+Spontaneous Casting(Cure or Inflict)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Elven
+    * Draconic
+    * Goblin
+
+Feats:  
+    * Combat Expertise
+    * Weapon Focus(Battleaxe)
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Resistance (PH p272) - Subject gains +1 resistance bonus on all saving throws.
+ * Purify Food and Drink (PH p267) - Purifies 1 cubic foot per level of food or water.
+
+Level 1 Cleric Spells:
+ * Obscuring Mist (PH p258) - Fog surrounds you.
+ * Obscuring Mist (PH p258) - Fog surrounds you.
+
+Cleric Animal Domain:
+Granted Powers: You can use speak with animals once per day as a spell-like ability.
+ 1) Calm Animals (PH p207) - Calms (2d4 + level) HD of animals.
+
+Cleric War Domain:
+Granted Powers: Free Martial Weapon Proficiency with deity's favored weapon (if necessary) and Weapon Focus with the deity's favored weapon.
+
+
+Background:
+History: The character is originally from Stonehold, but now spends most of their time in Orsht.
+
+Primary Motivation: Compassion for followers of Erythnul. The character feels a strong desire to help the object of this compassion.
+
+Secondary Motivation:  Insanity. The character is not mentally stable, and does not behave rationally.
+
+
+
+Seed: 4546296306759542571149805370343875119

@@ -1,0 +1,83 @@
+Name:  Joey
+
+str	10 (+0)
+dex	17 (+3)
+con	6 (-2)
+int	9 (-1)
+wis	13 (+1)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  9
+Gender:  Male
+Race:   Wild Elf
+Age:  144
+Height:  5'3"
+Weight:  125 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(0), ref(2), will(4)
+AC:  13 (Base: 10, Dex: 3)
+
+Classes:  
+    * Cleric(1)
+    * Wizard(1)
+
+Skills:  
+Concentraion    +4 (+4 ranks, +0 )
+Heal    +4 (+3 ranks, +1 Wis)
+Listen    +3 (+0 ranks, +1 Wis, +2 Misc)
+Profession    +3 (+2 ranks, +1 Wis)
+Search    +1 (+0 ranks, -1 Int, +2 Misc)
+Spellcraft    +1 (+2 ranks, -1 Int)
+Spot    +3 (+0 ranks, +1 Wis, +2 Misc)
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Aura(Chaotic Good)
+Immune to magic sleep effects
+Low-Light Vision
+Scribe Scroll
+Spontaneous Casting(Cure or Inflict)
+Summon Familiar
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Elven
+
+Feats:  
+    * Spell Focus(Evocation)
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+
+Level 1 Cleric Spells:
+ * Deathwatch (PH p217) - Reveals how near death subjects within 30' area.
+ * Detect Law (PH p219) - Reveals lawful creatures, spells, or objects.
+
+Cleric Luck Domain:
+Granted Powers: You gain the power of good fortune, which is usable once per day. This extraordinary ability allows you to reroll one roll that you have just made before the game master declares whether the roll results in success or failure. You must take the result of the reroll, even if it's worse than the original roll.
+
+Cleric Good Domain:
+Granted Powers: You cast good spells at +1 caster level.
+ 1) Protection from Evil (PH p266) - +2 bonus to AC & saves against evil, counters mind control, & hedges out elementals & outsiders.
+
+
+Background:
+History: Nothing of interest has happened recently to the character.
+
+Primary Motivation: Love for the Chaotic. The character puts the object of their love's welfare before their own.
+
+Secondary Motivation:  Compassion for _____________ (a close friend/associate). The character feels a strong desire to help the object of this compassion.
+
+
+
+Seed: 294371477767648706382779067474087410884

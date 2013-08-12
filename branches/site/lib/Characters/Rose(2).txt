@@ -1,0 +1,72 @@
+Name:  Rose
+
+str	10 (+0)
+dex	17 (+3)
+con	12 (+1)
+int	12 (+1)
+wis	17 (+3)
+cha	16 (+3)
+
+Level:  2
+HD:  2
+HP:  13
+Gender:  Female
+Race:   Halfling
+Age:  32
+Height:  3'1"
+Weight:  32 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(0), will(0)
+AC:  14 (Base: 10, Dex: 3, Size: 1)
+
+Classes:  
+    * Fighter(1)
+    * Barbarian(1)
+
+Skills:  
+Climb    +5 (+3 ranks, +0 Str, +2 Misc)
+Craft    +3 (+3 ranks, +0 )
+Craft(Alchemy)    +2 (+1 ranks, +1 Int)
+Craft(Carpentry)    +2 (+1 ranks, +1 Int)
+Decipher Script  +1.5 (+0.5 ranks, +1 Int)
+Hide    +7 (+0 ranks, +3 Dex, +4 Misc)
+Intimidate    +5 (+2 ranks, +3 Cha)
+Jump    +7 (+5 ranks, +0 Str, +2 Misc)
+Knowldege(Geography)  +2.5 (+1.5 ranks, +1 Int)
+Listen    +7 (+2 ranks, +3 Wis, +2 Misc)
+Move Silently    +7 (+2 ranks, +3 Dex, +2 Misc)
+Perform(Sing)  +3.5 (+0.5 ranks, +3 Cha)
+Perform(String)  +3.5 (+0.5 ranks, +3 Cha)
+Ride    +5 (+2 ranks, +3 Dex)
+Survival    +4 (+1 ranks, +3 Wis)
+Tumble    +5 (+0 ranks, +3 Dex, +2 Misc)
+
+Abilities:  
++1 on all Saves
++1 on attacks with thrown weapons and slings
++2 Morale vs Fear (Stacks with +1 racial bonus)
+Fast movement
+Rage 1/day
+
+Languages:  
+    * Common
+    * Halfling
+    * Gnome
+
+Feats:  
+    * Dodge
+    * Rapid Reload(Light Crossbow)
+
+Background:
+History: The character is originally from North Kingdom, but now spends most of their time in Orsht. The character had a recent encounter with one or more snakes.
+
+Primary Motivation: A need to defend themself from the government of The Duchy of Urnst. The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A need for knowledge about a local guild or group. The character feels than an understanding will solve their problems.
+
+
+
+Seed: 280185201905233278820668350732106171856

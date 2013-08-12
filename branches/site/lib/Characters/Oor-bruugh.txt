@@ -1,0 +1,60 @@
+Name:  Oor-bruugh
+
+str	18 (+4)
+dex	12 (+1)
+con	11 (+0)
+int	7 (-2)
+wis	10 (+0)
+cha	11 (+0)
+
+Level:  2
+HD:  2
+HP:  16
+Gender:  Female
+Race:   Orc
+Age:  20
+Height:  6'1"
+Weight:  230 lbs.
+Alignment: Neutral Evil
+Initative: 4
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(6), ref(2), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Fighter(1)
+    * Monk(1)
+
+Skills:  
+Climb    +7 (+3 ranks, +4 Str)
+Concentration    +3 (+3 ranks, +0 Con)
+Move Silently    +3 (+2 ranks, +1 Dex)
+Ride    +3 (+2 ranks, +1 Dex)
+Spot    +2 (+2 ranks, +0 Wis)
+
+Abilities:  
+Darkvision(60ft.)
+Flurry of Blows
+Light Sensitivity
+Unnarmed Strike
+
+Languages:  
+    * Common
+    * Orc
+
+Feats:  
+    * Great Fortitude
+    * Improved Grapple
+    * Improved Initiative
+
+Background:
+History: The character has travelled to The Shield Lands and The Snow Barbarians, but is originally from The Shield Lands. The character has been visting a friend in Narwell.
+
+Primary Motivation: A deep fear of the non-believers in their faith. The character is terrified, and will act out of fear.
+
+Secondary Motivation:  A desire for money/treasure.
+
+
+
+Seed: 82517748148907618442067530966966554899

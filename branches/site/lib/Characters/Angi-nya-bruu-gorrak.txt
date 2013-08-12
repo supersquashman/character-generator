@@ -1,0 +1,113 @@
+Name:  Angi-nya-bruu-gorrak
+
+str	12 (+1)
+dex	13 (+1)
+con	17 (+3)
+int	19 (+4)
+wis	11 (+0)
+cha	12 (+1)
+
+Level:  2
+HD:  4
+HP:  23
+Gender:  Male
+Race:   Azer
+Age:  90
+Height:  4'1"
+Weight:  170 lbs.
+Alignment: Lawful Evil
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  30 ft.
+Saves:  fort(3), ref(5), will(7)
+AC:  17 (Base: 10, Dex: 1, Natural: 6)
+Spell Resistance:  15
+
+Classes:  
+    * Wizard(1)
+    * Cleric(1)
+
+Skills:  
+Appraise    +7 (+3 ranks, +4 Int)
+Concentraion    +4 (+4 ranks, +0 )
+Craft(Mechanical)  +6.5 (+2.5 ranks, +4 Int)
+Craft(Weaponsmithing)    +7 (+3 ranks, +4 Int)
+Decipher Script  +6.5 (+2.5 ranks, +4 Int)
+Disable Device  +7.5 (+3.5 ranks, +4 Int)
+Handle Animal  +4.5 (+1.5 ranks, +1 Cha, +2 Misc)
+Hide    +6 (+5 ranks, +1 Dex)
+Knowldege(Arcana)    +5 (+1 ranks, +4 Int)
+Knowldege(Dungeoneering)    +9 (+5 ranks, +4 Int)
+Knowldege(History)    +6 (+2 ranks, +4 Int)
+Knowldege(Military)    +7 (+3 ranks, +4 Int)
+Knowldege(Nature)    +8 (+4 ranks, +4 Int)
+Knowldege(Psionics)  +7.5 (+3.5 ranks, +4 Int)
+Knowldege(Religion)  +7.5 (+3.5 ranks, +4 Int)
+Knowldege(The Planes)  +8.5 (+4.5 ranks, +4 Int)
+Listen  +4.5 (+4.5 ranks, +0 Wis)
+Profession    +1 (+1 ranks, +0 Wis)
+Ride    +3 (+0 ranks, +1 Dex, +2 Misc)
+Search    +7 (+3 ranks, +4 Int)
+Spellcraft    +5 (+1 ranks, +4 Int)
+Spot  +2.5 (+2.5 ranks, +0 Wis)
+Tumble  +4.5 (+3.5 ranks, +1 Dex)
+
+Abilities:  
+Aura(Lawful Evil)
+Darkvision(60ft.)
+Heat
+Immunity to Fire
+Scribe Scroll
+Spontaneous Casting(Cure or Inflict)
+Summon Familiar
+Turn or Rebuke Undead
+Vulnerability to Cold
+
+Languages:  
+    * Common
+    * Ignan
+    * Auran
+    * Abyssal
+    * Celestial
+
+Feats:  
+    * Animal Affinity
+    * Weapon Focus(Kukri)
+
+Spells:
+
+Level 0 Wizard Spells:
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Ghost Sound (PH p235) - Figment sounds.
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+
+Level 1 Wizard Spells:
+ * Hold Portal (PH p241) - Holds one door shut.
+ * Protection from Good (PH p266) - +2 bonus to AC & saves against good, counters mind control, & hedges out elementals & outsiders.
+
+Level 0 Cleric Spells:
+ * Create Water (PH p215) - Creates 2 gallons/level of pure water.
+ * Light (PH p248) - Object shines like a torch.
+ * Mending (PH p253) - Makes minor repairs on an object.
+
+Level 1 Cleric Spells:
+ * Endure Elements (PH p226) - Exist comfortably in hot or cold environments.
+
+Cleric Death Domain:
+Granted Powers: You may use a death touch once per day. Your death touch is a supernatural ability that produces a death effect. You must succeed on a melee touch attack against a living creature (using the rules for touch spells). When you touch, roll 1d6 per cleric level you possess. If the total at least equals the creature's current hit points, it dies (no save).
+
+Cleric War Domain:
+Granted Powers: Free Martial Weapon Proficiency with deity's favored weapon (if necessary) and Weapon Focus with the deity's favored weapon.
+ 1) Magic Weapon (PH p251) - Weapon gains +1 enhancement bonus.
+
+
+Background:
+History: The character has travelled to Irongate and The Valley of the Mage, but is originally from Bone March. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A desire to be a powerful leader. The character feels they can bring about change as strong leader.
+
+Secondary Motivation:  A desire for money/treasure.
+
+
+
+Seed: 239870167452286337317798425377649705464

@@ -1,0 +1,102 @@
+Name:  G'zowar
+
+str	30 (+10)
+dex	13 (+1)
+con	22 (+6)
+int	12 (+1)
+wis	15 (+2)
+cha	16 (+3)
+
+Level:  2
+HD:  16
+HP:  76
+Gender:  Male
+Race:   Stone Giant
+Age:  339
+Height:  11'10"
+Weight:  1478 lbs.
+Alignment: Neutral Evil
+Initative: 0
+Base Attack Bonus:  +10/+5
+Base Land Speed:  40 ft.
+Saves:  fort(9), ref(6), will(6)
+AC:  21 (Base: 10, Dex: 1, Size: -1, Natural: 11)
+
+Classes:  
+    * Sorcerer(1)
+    * Rogue(1)
+
+Skills:  
+Appraise    +6 (+3 ranks, +1 Int, +2 Misc)
+Balance    +3 (+2 ranks, +1 Dex)
+Bluff    +4 (+1 ranks, +3 Cha)
+Climb   +15 (+5 ranks, +10 Str)
+Craft    +2 (+2 ranks, +0 )
+Craft(Armorsmithing)    +4 (+3 ranks, +1 Int)
+Craft(Stoneworking)    +5 (+4 ranks, +1 Int)
+Decipher Script    +5 (+2 ranks, +1 Int, +2 Misc)
+Diplomacy    +7 (+2 ranks, +3 Cha, +2 Misc)
+Disable Device    +3 (+2 ranks, +1 Int)
+Escape Artist    +5 (+4 ranks, +1 Dex)
+Forgery    +2 (+1 ranks, +1 Int)
+Handle Animal    +4 (+1 ranks, +3 Cha)
+Hide    +1 (+4 ranks, +1 Dex, -4 Misc)
+Intimidate    +4 (+1 ranks, +3 Cha)
+Jump   +11 (+1 ranks, +10 Str)
+Knowldege(Local)  +2.5 (+1.5 ranks, +1 Int)
+Knowldege(The Planes)    +6 (+5 ranks, +1 Int)
+Knowledge(Local)    +1 (+1 ranks, +0 )
+Listen    +9 (+5 ranks, +2 Wis, +2 Misc)
+Perform    +2 (+2 ranks, +0 )
+Perform(Act)  +4.5 (+1.5 ranks, +3 Cha)
+Perform(Keyboard)  +7.5 (+4.5 ranks, +3 Cha)
+Profession    +3 (+1 ranks, +2 Wis)
+Sense Motive    +6 (+2 ranks, +2 Wis, +2 Misc)
+Spot    +8 (+4 ranks, +2 Wis, +2 Misc)
+Swim   +15 (+5 ranks, +10 Str)
+Use Magic Device    +4 (+1 ranks, +3 Cha)
+Use Rope    +2 (+1 ranks, +1 Dex)
+
+Abilities:  
+Darkvision(60ft.)
+Low-Light Vision
+Rock Catching
+Sneak Attack +1d6
+Summon Familiar
+Trapfinding
+
+Languages:  
+    * Common
+    * Giant
+    * Goblin
+
+Feats:  
+    * Alertness
+    * Diligent
+    * Endurance
+    * Negotiator
+    * Weapon Proficiency (Dire Flail)
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Flare (PH p232) - Dazzles one creature (-1 on attack rolls).
+ * Message (PH p253) - Whispered conversation at distance.
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Prestidigitation (PH p264) - Performs minor tricks
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Obscuring Mist (PH p258) - Fog surrounds you.
+ * Mage Armor (PH p249) - Gives subject +4 armor bonus.
+
+
+Background:
+History: The character has spent most of their life in Orsht.
+
+Primary Motivation: Boredom. The character has no other reason than their life is otherwise uninteresting.
+
+Secondary Motivation:  Thrill seeking.  The character has passion for adventuring and risk.
+
+
+
+Seed: 318853530766571017057327683083801676563

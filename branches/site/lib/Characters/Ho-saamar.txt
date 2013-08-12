@@ -1,0 +1,97 @@
+Name:  Ho-saamar
+
+str	36 (+13)
+dex	13 (+1)
+con	20 (+5)
+int	15 (+2)
+wis	18 (+4)
+cha	18 (+4)
+
+Level:  2
+HD:  17
+HP:  103
+Gender:  Male
+Race:   Fire Giant
+Age:  126
+Height:  13'2"
+Weight:  7595.06 lbs.
+Alignment: Chaotic Good
+Initative: 0
+Base Attack Bonus:  +12/+7/+2
+Base Land Speed:  40 ft.
+Saves:  fort(11), ref(7), will(9)
+AC:  18 (Base: 10, Dex: 1, Size: -1, Natural: 8)
+
+Classes:  
+    * Ranger(1)
+    * Sorcerer(1)
+
+Skills:  
+Appraise  +5.5 (+3.5 ranks, +2 Int)
+Balance  +1.5 (+0.5 ranks, +1 Dex)
+Climb +17.5 (+4.5 ranks, +13 Str)
+Concentration  +9.5 (+4.5 ranks, +5 Con)
+Craft(Blacksmithing)    +5 (+3 ranks, +2 Int)
+Disguise  +7.5 (+3.5 ranks, +4 Cha)
+Handle Animal  +7.5 (+3.5 ranks, +4 Cha)
+Hide    -3 (+0 ranks, +1 Dex, -4 Misc)
+Intimidate    +8 (+4 ranks, +4 Cha)
+Jump   +17 (+4 ranks, +13 Str)
+Knowldege(Nobility and Royalty)  +6.5 (+4.5 ranks, +2 Int)
+Move Silently  +5.5 (+4.5 ranks, +1 Dex)
+Perform(Act)    +8 (+4 ranks, +4 Cha)
+Perform(Dance)    +8 (+4 ranks, +4 Cha)
+Perform(Sing)    +6 (+2 ranks, +4 Cha)
+Profession    +5 (+1 ranks, +4 Wis)
+Spot    +9 (+5 ranks, +4 Wis)
+Swim   +16 (+3 ranks, +13 Str)
+Tumble    +5 (+4 ranks, +1 Dex)
+Use Rope    +5 (+4 ranks, +1 Dex)
+
+Abilities:  
+Favored Enemy (Outsider (chaotic) +2)
+Immunity to Fire
+Low-Light Vision
+Rock Catching
+Summon Familiar
+Track
+Vulnerability to Cold
+Wild Empathy
+
+Languages:  
+    * Common
+    * Giant
+    * Orc
+    * Elven
+
+Feats:  
+    * Extra Turning
+    * Improved Unarmed Strike
+    * Run
+    * Toughness
+    * Tower Shield Proficiency
+    * Weapon Proficiency (Net)
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Light (PH p248) - Object shines like a torch.
+ * Mage Hand (PH p249) - 5 pound telekinesis.
+ * Open/Close (PH p258) - Opens or closes small or light things.
+ * Flare (PH p232) - Dazzles one creature (-1 on attack rolls).
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Nystul's Magic Aura (PH p257) - Alters object's magic aura.
+ * Protection from Chaos (PH p266) - +2 bonus to AC & saves against chaos, counters mind control, & hedges out elementals & outsiders.
+
+
+Background:
+History: The character is originally from The Shield Lands, but now spends most of their time in Safeton.
+
+Primary Motivation: A rivalry with _____________ (person). The character's history is dominated by an ongoing struggle with them.
+
+Secondary Motivation:  The character is being coerced by _____________ (a family member). The character would not normally act this way, but is being blackmailed/forced/etc.
+
+
+
+Seed: 241694959058024127068387601865900690022

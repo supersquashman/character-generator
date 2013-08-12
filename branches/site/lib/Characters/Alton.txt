@@ -1,0 +1,124 @@
+Name:  Alton
+
+str	10 (+0)
+dex	22 (+6)
+con	20 (+5)
+int	10 (+0)
+wis	8 (-1)
+cha	23 (+6)
+
+Level:  2
+HD:  9
+HP:  40
+Gender:  Male
+Race:   Rakshasa
+Age:  26
+Height:  6'0"
+Weight:  204 lbs.
+Alignment: Chaotic Evil
+Initative: 0
+Base Attack Bonus:  +8/+3
+Base Land Speed:  40 ft.
+Saves:  fort(5), ref(8), will(8)
+AC:  25 (Base: 10, Dex: 6, Natural: 9)
+Spell Resistance:  29
+
+Classes:  
+    * Bard(2)
+
+Skills:  
+Bluff   +14 (+4 ranks, +6 Cha, +4 Misc [+4 (Detect Thoughts)])
+Climb    +4 (+4 ranks, +0 Str)
+Concentration  +9.5 (+4.5 ranks, +5 Con)
+Craft    +4 (+4 ranks, +0 )
+Craft(Trapmaking)    +2 (+2 ranks, +0 Int)
+Craft(Weaponsmithing)    +1 (+1 ranks, +0 Int)
+Diplomacy   +13 (+5 ranks, +6 Cha, +2 Misc)
+Disguise   +14 (+4 ranks, +6 Cha, +4 Misc [+10 (Change Shape), +4 (Detect Thoughts)])
+Escape Artist   +10 (+4 ranks, +6 Dex)
+Intimidate  +8.5 (+2.5 ranks, +6 Cha)
+Knowldege(Geography)    +5 (+5 ranks, +0 Int)
+Knowldege(Nature)    +3 (+3 ranks, +0 Int)
+Knowldege(Religion)    +1 (+1 ranks, +0 Int)
+Knowldege(The Planes)    +2 (+2 ranks, +0 Int)
+Listen    +3 (+4 ranks, -1 Wis)
+Move Silently   +10 (+4 ranks, +6 Dex)
+Perform    +4 (+4 ranks, +0 )
+Perform(Oratory)    +7 (+1 ranks, +6 Cha)
+Sense Motive    +4 (+5 ranks, -1 Wis)
+Spot  +3.5 (+4.5 ranks, -1 Wis)
+Swim    +3 (+3 ranks, +0 Str)
+
+Abilities:  
+Bardic Knowledge
+Bardic Music
+Change Shape
+Countersong
+Damage Reduction 15/good and piercing
+Darkvision(60ft.)
+Detect Thoughts
+Fascinate
+Inspire Courage +1
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d6)
+
+Languages:  
+    * Common
+    * Infernal
+
+Feats:  
+    * Blind Fight
+    * Eschew Materials
+    * Weapon Proficiency (Simple)
+
+Spells:
+
+Level 0 Sorcerer Spells (6/ Day):
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+ * Light (PH p248) - Object shines like a torch.
+ * Ghost Sound (PH p235) - Figment sounds.
+ * Detect Magic (PH p219) - Detects spells and magic items within 60'.
+ * Disrupt Undead (PH p223) - Deals 1d6 damage to one undead.
+ * Flare (PH p232) - Dazzles one creature (-1 on attack rolls).
+ * Acid Splash (PH p196) - Orb deals 1d3 damage.
+
+Level 1 Sorcerer Spells (7/ Day):
+ * Sleep (PH p280) - Puts 4HD of creatures into magical slumber.
+ * Disguise Self (PH p222) - Changes your appearance.
+ * Detect Secret Doors (PH p220) - Reveals hidden doors within 60'.
+ * True Strike (PH p296) - Add +20 insight bonus to your next attack roll.
+ * Protection from Good (PH p266) - +2 bonus to AC & saves against good, counters mind control, & hedges out elementals & outsiders.
+
+Level 2 Sorcerer Spells (7/ Day):
+ * Melf's Acid Arrow (PH p253) - Ranged touch attack; 2d4 acid damage for 1 round + 1 round per 3 levels (7 rounds max).
+ * Magic Mouth (PH p251) - Speaks once when triggered.
+ * Scare (PH p274) - Panics creatures up to 5HD.
+
+Level 3 Sorcerer Spells (5/ Day):
+ * Fireball (PH p231) - 1d6 fire damage per level, 20' radius.
+ * Dispel Magic (PH p223) - Cancels magical spells and effects.
+
+Level 0 Bard Spells (3/ Day):
+ * Detect Magic (PH p219) - Detects spells and magic items within 60 ft.
+ * Resistance (PH p264) - Subject gains +1 on saving throws.
+ * Read Magic (PH p269) - Read scrolls and spellbooks.
+ * Mage Hand (PH p249) - 5-pound telekinesis.
+ * Prestidigitation (PH p264) - Performs minor tricks.
+ * Daze (PH p217) - Humanoid creature of 4 HD or less loses next action.
+
+Level 1 Bard Spells (3/ Day):
+ * Animate Rope (PH p199) - Makes a rope move at your command.
+ * Obscure Object (PH p258) - Masks object against scrying.
+ * Summon Monster I (PH p285) - Calls extraplanar creature to fight for you.
+
+
+Background:
+History: The character is originally from Blackmoor, but now spends most of their time in Vorden. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A need to defend themself from _____________ (a family member). The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  Insanity. The character is not mentally stable, and does not behave rationally.
+
+
+
+Seed: 270268054436332253125790903026609947106

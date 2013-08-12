@@ -1,0 +1,97 @@
+Name:  Jim
+
+str	15 (+2)
+dex	16 (+3)
+con	19 (+4)
+int	13 (+1)
+wis	14 (+2)
+cha	6 (-2)
+
+Level:  2
+HD:  4
+HP:  25
+Gender:  Male
+Race:   Troglodyte
+Age:  24
+Height:  4'9"
+Weight:  142.5 lbs.
+Alignment: Neutral
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  40 ft.
+Saves:  fort(5), ref(2), will(2)
+AC:  19 (Base: 10, Dex: 3, Natural: 6)
+
+Classes:  
+    * Cleric(1)
+    * Barbarian(1)
+
+Skills:  
+Craft    +4 (+4 ranks, +0 )
+Diplomacy  +1.5 (+3.5 ranks, -2 Cha)
+Disguise    +0 (+0 ranks, -2 Cha, +2 Misc)
+Forgery    +3 (+0 ranks, +1 Int, +2 Misc)
+Handle Animal    +0 (+2 ranks, -2 Cha)
+Heal  +6.5 (+4.5 ranks, +2 Wis)
+Hide    +7 (+0 ranks, +3 Dex, +4 Misc [+4 (rocky or underground surroundings)])
+Intimidate    -1 (+1 ranks, -2 Cha)
+Jump    +3 (+1 ranks, +2 Str)
+Knowldege(Arcana)    +4 (+3 ranks, +1 Int)
+Knowldege(Geography)  +1.5 (+0.5 ranks, +1 Int)
+Listen    +3 (+1 ranks, +2 Wis)
+Perform(Comedy)  -1.5 (+0.5 ranks, -2 Cha)
+Perform(Oratory)    -1 (+1 ranks, -2 Cha)
+Profession    +6 (+4 ranks, +2 Wis)
+Ride    +5 (+2 ranks, +3 Dex)
+Sleight of Hand  +3.5 (+0.5 ranks, +3 Dex)
+Swim    +4 (+2 ranks, +2 Str)
+
+Abilities:  
+Aura(Neutral)
+Darkvision(90ft.)
+Fast movement
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d4)
+Rage 1/day
+Spontaneous Casting(Cure or Inflict)
+Stench (DC 13)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Draconic
+    * Orc
+    * Giant
+
+Feats:  
+    * Deceitful
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Virtue (PH p289) - Subject gains 1 temporary hp. 
+ * Light (PH p248) - Object shines like a torch.
+ * Virtue (PH p289) - Subject gains 1 temporary hp. 
+
+Level 1 Cleric Spells:
+ * Protection from Chaos (PH p266) - +2 bonus to AC & saves against chaos, counters mind control, & hedges out elementals & outsiders.
+ * Detect Law (PH p219) - Reveals lawful creatures, spells, or objects.
+
+Cleric Good Domain:
+Granted Powers: You cast good spells at +1 caster level.
+ 1) Protection from Evil (PH p266) - +2 bonus to AC & saves against evil, counters mind control, & hedges out elementals & outsiders.
+
+Cleric Destruction Domain:
+Granted Powers: You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+
+
+Background:
+History: The character has spent most of their life in Safeton. Nothing of interest has happened recently to the character.
+
+Primary Motivation: A need to defend themself from crocodiles. The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A deep fear of the Chaotic. The character is terrified, and will act out of fear.
+
+
+
+Seed: 182947398773438046017426575037140958849

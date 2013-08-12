@@ -1,0 +1,105 @@
+Name:  Pansy
+
+str	13 (+1)
+dex	13 (+1)
+con	12 (+1)
+int	15 (+2)
+wis	15 (+2)
+cha	13 (+1)
+
+Level:  2
+HD:  2
+HP:  7
+Gender:  Female
+Race:   Half Elf
+Age:  32
+Height:  4'11"
+Weight:  110 lbs.
+Alignment: Lawful Neutral
+Initative: 0
+Base Attack Bonus:  +0
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(2), will(4)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Sorcerer(1)
+    * Druid(1)
+
+Skills:  
+Bluff  +5.5 (+4.5 ranks, +1 Cha)
+Climb    +2 (+1 ranks, +1 Str)
+Concentraion    +1 (+1 ranks, +0 )
+Craft    +1 (+1 ranks, +0 )
+Craft(Blacksmithing)    +3 (+1 ranks, +2 Int)
+Craft(Bowmaking)    +3 (+1 ranks, +2 Int)
+Craft(Stoneworking)    +3 (+1 ranks, +2 Int)
+Craft(Weaponsmithing)  +2.5 (+0.5 ranks, +2 Int)
+Diplomacy    +3 (+0 ranks, +1 Cha, +2 Misc)
+Gather Information    +3 (+0 ranks, +1 Cha, +2 Misc)
+Handle Animal    +4 (+3 ranks, +1 Cha)
+Heal    +4 (+2 ranks, +2 Wis)
+Knowldege(Nature)    +3 (+1 ranks, +2 Int)
+Knowledge(Arcana)    +2 (+2 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +5 (+2 ranks, +2 Wis, +1 Misc)
+Perform(Keyboard)    +2 (+1 ranks, +1 Cha)
+Perform(Percussion)    +2 (+1 ranks, +1 Cha)
+Profession    +7 (+5 ranks, +2 Wis)
+Search    +3 (+0 ranks, +2 Int, +1 Misc)
+Spellcraft    +7 (+5 ranks, +2 Int)
+Spot    +3 (+0 ranks, +2 Wis, +1 Misc)
+Survival    +4 (+0 ranks, +2 Wis, +2 Misc)
+Use Magic Device    +1 (+0 ranks, +1 Cha [+2 Synergy[Scrolls]])
+
+Abilities:  
++2 Saves vs Enchantment Spells/Effects
+Animal Companion
+Immune to magic sleep effects
+Low-Light Vision
+Spontaneous Casting(Summon Nature's Ally)
+Summon Familiar
+Wild Empathy
+
+Languages:  
+    * Common
+    * Elven
+    * Auran
+    * Goblin
+    * Druidic
+
+Feats:  
+    * Lightning Reflexes
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Light (PH p248) - Object shines like a torch.
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Acid Splash (PH p196) - Orb deals 1d3 damage.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Magic Weapon (PH p251) - Weapon gains +1 enhancement bonus.
+ * Identify (PH p243) - Determines properties of a magic item.
+
+Level 0 Druid Spells:
+ * Mending (PHB 253) - Makes minor repairs on an object
+ * Detect Magic (PHB 219) - Detect spells and magic items within 60 ft.
+ * Cure Minor Wounds (PHB 216) - Cures 1 point of dmg
+
+Level 1 Druid Spells:
+ * Shillelagh (PHB 278) - Cudgel or quarterstaff becomes +1 weapon and deals damage as if two sizes larger
+ * Detect Animals or Plants (PHB 218) - Detects kinds of animals or plants
+
+
+Background:
+History: The character has spent most of their life in Gorsend. Nothing of interest has happened recently to the character.
+
+Primary Motivation: Compassion for some local authority figure. The character feels a strong desire to help the object of this compassion.
+
+Secondary Motivation:  A desire for money/treasure.
+
+
+
+Seed: 203442271849352150393376503875442112526

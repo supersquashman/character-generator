@@ -1,0 +1,65 @@
+Name:  Cade
+
+str	11 (+0)
+dex	9 (-1)
+con	11 (+0)
+int	11 (+0)
+wis	18 (+4)
+cha	14 (+2)
+
+Level:  2
+HD:  2
+HP:  23
+Gender:  Male
+Race:   Aasimar
+Age:  23
+Height:  6'3"
+Weight:  171 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +2
+Base Land Speed:  40 ft.
+Saves:  fort(3), ref(0), will(0)
+AC:  9 (Base: 10, Dex: -1)
+
+Classes:  
+    * Barbarian(2)
+
+Skills:  
+Craft    +4 (+4 ranks, +0 )
+Handle Animal    +6 (+4 ranks, +2 Cha)
+Jump    +3 (+3 ranks, +0 Str)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +6 (+0 ranks, +4 Wis, +2 Misc)
+Spot    +6 (+0 ranks, +4 Wis, +2 Misc)
+Survival    +9 (+5 ranks, +4 Wis)
+Swim    +4 (+4 ranks, +0 Str)
+
+Abilities:  
+Darkvision(60ft.)
+Daylight (1/day)
+Fast movement
+Illiteracy
+Rage 1/day
+Resistance to Cold (5)
+Resistance to Electricity (5)
+Resistance to Fire (5)
+Uncanny Dodge
+
+Languages:  
+    * Common
+    * Celestial
+
+Feats:  
+    * Combat Reflexes
+
+Background:
+History: The character has just come from Greyhawk.
+
+Primary Motivation: Clearing their name.  The character's name or reputation has been wronged in the past by the Lawful, and they desire to right it.
+
+Secondary Motivation:  A deep fear of inhabitants of Narwell. The character is terrified, and will act out of fear.
+
+
+
+Seed: 186078925968001103262954764085447509650

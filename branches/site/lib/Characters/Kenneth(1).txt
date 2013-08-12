@@ -1,0 +1,98 @@
+Name:  Kenneth
+
+str	21 (+5)
+dex	10 (+0)
+con	11 (+0)
+int	15 (+2)
+wis	14 (+2)
+cha	12 (+1)
+
+Level:  2
+HD:  2
+HP:  12
+Gender:  Male
+Race:   Orc
+Age:  25
+Height:  6'7"
+Weight:  297 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(4), will(2)
+AC:  10 (Base: 10)
+
+Classes:  
+    * Sorcerer(1)
+    * Ranger(1)
+
+Skills:  
+Bluff    +6 (+5 ranks, +1 Cha)
+Concentraion    +4 (+4 ranks, +0 )
+Craft    +4 (+4 ranks, +0 )
+Craft(Alchemy)    +3 (+1 ranks, +2 Int)
+Craft(Blacksmithing)    +3 (+1 ranks, +2 Int)
+Diplomacy    +3 (+0 ranks, +1 Cha, +2 Misc)
+Disable Device  +2.5 (+0.5 ranks, +2 Int)
+Disguise    +1 (+0 ranks, +1 Cha [+2 Synergy[Act in Character]])
+Handle Animal    +3 (+2 ranks, +1 Cha)
+Heal    +3 (+1 ranks, +2 Wis)
+Hide    +1 (+1 ranks, +0 Dex)
+Intimidate    +3 (+0 ranks, +1 Cha, +2 Misc)
+Jump    +7 (+2 ranks, +5 Str)
+Knowldege(Dungeoneering)    +4 (+2 ranks, +2 Int)
+Knowldege(Geography)    +4 (+2 ranks, +2 Int)
+Knowldege(Psionics)  +2.5 (+0.5 ranks, +2 Int)
+Knowledge(Arcana)    +2 (+2 ranks, +0 )
+Move Silently    +1 (+1 ranks, +0 Dex)
+Profession    +6 (+4 ranks, +2 Wis)
+Ride    +1 (+1 ranks, +0 Dex)
+Search    +4 (+2 ranks, +2 Int)
+Sleight of Hand    +2 (+0 ranks, +0 Dex, +2 Misc)
+Spellcraft    +7 (+5 ranks, +2 Int)
+Spot    +3 (+1 ranks, +2 Wis)
+Swim    +6 (+1 ranks, +5 Str)
+Use Magic Device    +1 (+0 ranks, +1 Cha [+2 Synergy[Scrolls]])
+Use Rope    +3 (+3 ranks, +0 Dex)
+
+Abilities:  
+Darkvision(60ft.)
+Favored Enemy (Outsider (chaotic) +2)
+Light Sensitivity
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Orc
+    * Undercommon
+    * Giant
+    * Goblin
+
+Feats:  
+    * Lightning Reflexes
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Ray of Frost (PH p269) - Ray deals 1d3 Cold damage.
+ * Disrupt Undead (PH p223) - Deals 1d6 damage to one undead.
+ * Acid Splash (PH p196) - Orb deals 1d3 damage.
+ * Open/Close (PH p258) - Opens or closes small or light things.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Jump (PH p246) - Subject gains bonus on Jump checks.
+ * Shield (PH p278) - Invisible disc gives +4 Shield bonus to AC and blocks Magic Missiles.
+
+
+Background:
+History: The character is from Ganwood, but spends most of their time in Safeton, now. The character had a recent encounter with one or more minotaurs.
+
+Primary Motivation: Divine. The character is compelled to act according to their religious beliefs.
+
+Secondary Motivation:  Love for a local guild or group. The character puts the object of their love's welfare before their own.
+
+
+
+Seed: 115152423080400093781426622607300214278

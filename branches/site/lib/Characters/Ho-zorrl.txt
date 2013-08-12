@@ -1,0 +1,92 @@
+Name:  Ho-zorrl
+
+str	31 (+10)
+dex	17 (+3)
+con	14 (+2)
+int	11 (+0)
+wis	13 (+1)
+cha	16 (+3)
+
+Level:  2
+HD:  16
+HP:  75
+Gender:  Male
+Race:   Stone Giant
+Age:  361
+Height:  12'0"
+Weight:  1499 lbs.
+Alignment: Lawful Neutral
+Initative: 0
+Base Attack Bonus:  +10/+5
+Base Land Speed:  40 ft.
+Saves:  fort(15), ref(6), will(8)
+AC:  24 (Base: 10, Dex: 3, Size: -1, Natural: 11, Wis: 1)
+
+Classes:  
+    * Druid(1)
+    * Monk(1)
+
+Skills:  
+Appraise    +2 (+0 ranks, +0 Int, +2 Misc)
+Climb   +15 (+5 ranks, +10 Str)
+Craft    +4 (+4 ranks, +0 )
+Craft(Stoneworking)  +1.5 (+1.5 ranks, +0 Int)
+Craft(Weaponsmithing)  +4.5 (+4.5 ranks, +0 Int)
+Decipher Script    +2 (+0 ranks, +0 Int, +2 Misc)
+Handle Animal    +7 (+4 ranks, +3 Cha)
+Heal    +5 (+4 ranks, +1 Wis)
+Hide    +4 (+5 ranks, +3 Dex, -4 Misc)
+Knowldege(Geography)    +3 (+3 ranks, +0 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +6 (+5 ranks, +1 Wis)
+Perform    +1 (+1 ranks, +0 )
+Perform(Dance)    +5 (+2 ranks, +3 Cha)
+Profession    +2 (+1 ranks, +1 Wis)
+Ride  +5.5 (+2.5 ranks, +3 Dex)
+Spot    +6 (+5 ranks, +1 Wis)
+Survival    +3 (+0 ranks, +1 Wis, +2 Misc)
+
+Abilities:  
+Animal Companion
+Darkvision(60ft.)
+Flurry of Blows
+Low-Light Vision
+Rock Catching
+Spontaneous Casting(Summon Nature's Ally)
+Unnarmed Strike
+Wild Empathy
+
+Languages:  
+    * Common
+    * Giant
+    * Druidic
+
+Feats:  
+    * Blind Fight
+    * Diligent
+    * Dodge
+    * Great Fortitude
+    * Improved Unarmed Strike
+    * Stunning Fist
+
+Spells:
+
+Level 0 Druid Spells:
+ * Detect Poison (PHB 219) - Detects poison in one creature or object
+ * Know Direction (PHB 246) - You discern North
+ * Create Water (PHB 215) - Creates 2gal/level of pure water
+
+Level 1 Druid Spells:
+ * Longstrider (PHB 249) - Your speed increases by 10ft
+
+
+Background:
+History: The character has spent most of their life in Gnarley Forest.
+
+Primary Motivation: A desire for power and/or immortality.
+
+Secondary Motivation:  A desire for power and/or immortality.
+
+
+
+Seed: 144826664377438854800087731338420945947

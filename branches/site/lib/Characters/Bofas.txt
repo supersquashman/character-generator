@@ -1,0 +1,100 @@
+Name:  Bofas
+
+str	10 (+0)
+dex	12 (+1)
+con	17 (+3)
+int	16 (+3)
+wis	12 (+1)
+cha	13 (+1)
+
+Level:  2
+HD:  2
+HP:  19
+Gender:  Female
+Race:   Dwarf
+Age:  66
+Height:  4'3"
+Weight:  180 lbs.
+Alignment: Lawful Good
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(0), will(2)
+AC:  11 (Base: 10, Dex: 1)
+
+Classes:  
+    * Sorcerer(1)
+    * Barbarian(1)
+
+Skills:  
+Appraise    +5 (+0 ranks, +3 Int, +2 Misc)
+Bluff  +4.5 (+3.5 ranks, +1 Cha)
+Climb    +1 (+1 ranks, +0 Str)
+Concentraion  +3.5 (+3.5 ranks, +0 )
+Craft    +5 (+5 ranks, +0 )
+Craft(Armorsmithing)  +3.5 (+0.5 ranks, +3 Int)
+Craft(Blacksmithing)    +6 (+1 ranks, +3 Int, +2 Misc)
+Craft(Stoneworking)    +5 (+0 ranks, +3 Int, +2 Misc)
+Decipher Script  +3.5 (+0.5 ranks, +3 Int)
+Disable Device  +4.5 (+1.5 ranks, +3 Int)
+Escape Artist    +2 (+1 ranks, +1 Dex)
+Handle Animal    +2 (+1 ranks, +1 Cha)
+Knowldege(Military)  +3.5 (+0.5 ranks, +3 Int)
+Knowldege(Nobility and Royalty)    +4 (+1 ranks, +3 Int)
+Knowledge(Arcana)    +4 (+4 ranks, +0 )
+Listen    +3 (+2 ranks, +1 Wis)
+Perform(Act)    +2 (+1 ranks, +1 Cha)
+Perform(Comedy)  +1.5 (+0.5 ranks, +1 Cha)
+Perform(Dance)    +2 (+1 ranks, +1 Cha)
+Profession    +5 (+4 ranks, +1 Wis)
+Ride    +2 (+1 ranks, +1 Dex)
+Search    +3 (+0 ranks, +3 Int [+2 Stonecunning])
+Spellcraft  +5.5 (+2.5 ranks, +3 Int)
+Use Rope    +2 (+1 ranks, +1 Dex)
+
+Abilities:  
++1 attack vs orcs and goblins
++2 Saves vs Poision
++2 Saves vs Spells
++4 Ability vs Bull Rush or Trip [Ground]
++4 Dodge(Giant)
+Darkvision(60ft.)
+Fast movement
+Rage 1/day
+Summon Familiar
+Weapon Familiarity (Dwarven Waraxe)
+Weapon Familiartiy (Urgrosh)
+
+Languages:  
+    * Common
+    * Dwarven
+    * Goblin
+    * Terran
+    * Undercommon
+
+Feats:  
+    * Run
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Touch of Fatigue (PH p294) - Touch attack fatigues target.
+ * Ghost Sound (PH p235) - Figment sounds.
+ * Disrupt Undead (PH p223) - Deals 1d6 damage to one undead.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Ventriloquism (PH p298) - Throws voice for 1 minute per level.
+ * Shield (PH p278) - Invisible disc gives +4 Shield bonus to AC and blocks Magic Missiles.
+
+
+Background:
+History: The character is from Mistmarsh, but spends most of their time in Greyhawk, now. The character had a recent run in with followers of Wee Jas.
+
+Primary Motivation: A need to defend themself from _____________ (person). The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A desire for power and/or immortality.
+
+
+
+Seed: 111603865132350410194413058293390116330

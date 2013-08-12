@@ -1,0 +1,136 @@
+Name:  T'nyagrah
+
+str	9 (-1)
+dex	19 (+4)
+con	16 (+3)
+int	18 (+4)
+wis	13 (+1)
+cha	18 (+4)
+
+Level:  2
+HD:  9
+HP:  36
+Gender:  Male
+Race:   Rakshasa
+Age:  25
+Height:  5'11"
+Weight:  185 lbs.
+Alignment: Lawful Neutral
+Initative: 0
+Base Attack Bonus:  +7/+2
+Base Land Speed:  40 ft.
+Saves:  fort(7), ref(5), will(9)
+AC:  23 (Base: 10, Dex: 4, Natural: 9)
+Spell Resistance:  29
+
+Classes:  
+    * Druid(1)
+    * Sorcerer(1)
+
+Skills:  
+Balance    +9 (+5 ranks, +4 Dex)
+Bluff   +12 (+4 ranks, +4 Cha, +4 Misc [+4 (Detect Thoughts)])
+Concentration    +6 (+3 ranks, +3 Con)
+Craft    +4 (+4 ranks, +0 )
+Craft(Blacksmithing)    +7 (+3 ranks, +4 Int)
+Craft(Bowmaking)    +7 (+3 ranks, +4 Int)
+Craft(Mechanical)  +6.5 (+2.5 ranks, +4 Int)
+Decipher Script    +5 (+1 ranks, +4 Int)
+Disguise +12.5 (+4.5 ranks, +4 Cha, +4 Misc [+10 (Change Shape), +4 (Detect Thoughts)])
+Heal    +3 (+0 ranks, +1 Wis, +2 Misc)
+Hide    +5 (+1 ranks, +4 Dex)
+Knowldege(Arcana)  +8.5 (+4.5 ranks, +4 Int)
+Knowldege(Architecture and Engineering)  +7.5 (+3.5 ranks, +4 Int)
+Knowldege(Dungeoneering)    +6 (+2 ranks, +4 Int)
+Knowldege(Military)  +5.5 (+1.5 ranks, +4 Int)
+Knowldege(Nature)  +5.5 (+1.5 ranks, +4 Int)
+Knowldege(Psionics)  +8.5 (+4.5 ranks, +4 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen  +5.5 (+4.5 ranks, +1 Wis)
+Move Silently  +8.5 (+4.5 ranks, +4 Dex)
+Open Lock    +9 (+5 ranks, +4 Dex)
+Perform    +4 (+4 ranks, +0 )
+Perform(Comedy)  +6.5 (+2.5 ranks, +4 Cha)
+Perform(Oratory)  +6.5 (+2.5 ranks, +4 Cha)
+Perform(String)  +8.5 (+4.5 ranks, +4 Cha)
+Ride  +7.5 (+3.5 ranks, +4 Dex)
+Search  +7.5 (+3.5 ranks, +4 Int)
+Sense Motive    +5 (+4 ranks, +1 Wis)
+Sleight of Hand  +6.5 (+2.5 ranks, +4 Dex)
+Spellcraft  +9.5 (+3.5 ranks, +4 Int, +2 Misc)
+Spot  +4.5 (+3.5 ranks, +1 Wis)
+Survival    +5 (+0 ranks, +1 Wis, +4 Misc)
+Tumble    +5 (+1 ranks, +4 Dex)
+Use Magic Device    +6 (+0 ranks, +4 Cha, +2 Misc)
+
+Abilities:  
+Animal Companion
+Change Shape
+Damage Reduction 15/good and piercing
+Darkvision(60ft.)
+Detect Thoughts
+Natural Weapon:  Bite (1d4)
+Natural Weapon:  Claws (1d6)
+Spontaneous Casting(Summon Nature's Ally)
+Summon Familiar
+Wild Empathy
+
+Languages:  
+    * Common
+    * Infernal
+    * Sylvan
+    * Undercommon
+    * Aquan
+    * Druidic
+
+Feats:  
+    * Dodge
+    * Magical Aptitude
+    * Self-Sufficient
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Light (PH p248) - Object shines like a torch.
+ * Mending (PH p253) - Makes minor repairs on an object.
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Open/Close (PH p258) - Opens or closes small or light things.
+ * Read Magic (PH p269) - Reads scrolls and spellbooks.
+ * Arcane Mark (PH p201) - Inscribes a personal rune (visible or invisible).
+ * Flare (PH p232) - Dazzles one creature (-1 on attack rolls).
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Mage Armor (PH p249) - Gives subject +4 armor bonus.
+ * Summon Monster I (PH p285) - Summons an extraplanar creature to fight for you.
+ * Chill Touch (PH p209) - 1 touch per level deals 1d6 damage and possibly 1 Strength damage.
+ * Endure Elements (PH p226) - Exist comfortably in hot or cold environments.
+ * Charm Person (PH p209) - Make one person your friend.
+
+Level 2 Sorcerer Spells (1/ Day):
+ * Eagle's Splendor (PH p225) - Subject gains +4 Charisma for 1 minute per level.
+ * Scare (PH p274) - Panics creatures up to 5HD.
+ * Arcane Lock (PH p200) - Magically locks a portal or chest.
+
+Level 3 Sorcerer Spells (1/ Day):
+ * Stinking Cloud (PH p284) - Nauseating vapors, 1 round per level.
+ * Gaseous Form (PH p234) - Subject becomes insubstantial and can fly slowly.
+
+Level 0 Druid Spells:
+ * Read Magic (PHB 269) - Read scrolls and scrollbooks
+ * Flare (PHB 232) - Dazzles one creature (-1 penalty on attack rolls)
+ * Create Water (PHB 215) - Creates 2gal/level of pure water
+
+Level 1 Druid Spells:
+ * Pass without Trace (PHB 259) - One subject/level leaves no tracks
+
+
+Background:
+History: The character had a recent encounter with one or more celestials.
+
+Primary Motivation: A need to defend themself from dwarves. The character feels continually threatened, and defense is their priority.
+
+Secondary Motivation:  A strong sense of loyalty to the government of Pomarj. The character feels that they owe them much, and will act to help them.
+
+
+
+Seed: 275330317315296585429898142076259796310

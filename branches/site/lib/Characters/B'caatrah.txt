@@ -1,0 +1,87 @@
+Name:  B'caatrah
+
+str	16 (+3)
+dex	11 (+0)
+con	18 (+4)
+int	9 (-1)
+wis	13 (+1)
+cha	7 (-2)
+
+Level:  2
+HD:  8
+HP:  36
+Gender:  Male
+Race:   Minotaur
+Age:  58
+Height:  7'10"
+Weight:  783.96 lbs.
+Alignment: Lawful Neutral
+Initative: 0
+Base Attack Bonus:  +6/+1
+Base Land Speed:  30 ft.
+Saves:  fort(4), ref(5), will(9)
+AC:  14 (Base: 10, Size: -1, Natural: 5)
+
+Classes:  
+    * Sorcerer(1)
+    * Druid(1)
+
+Skills:  
+Concentraion    +5 (+5 ranks, +0 )
+Craft(Mechanical)  +1.5 (+2.5 ranks, -1 Int)
+Diplomacy    +3 (+5 ranks, -2 Cha)
+Hide    -4 (+0 ranks, +0 Dex, -4 Misc)
+Intimidate    +3 (+5 ranks, -2 Cha)
+Jump  +7.5 (+4.5 ranks, +3 Str)
+Knowledge(Arcana)  +2.5 (+2.5 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +7 (+2 ranks, +1 Wis, +4 Misc)
+Search  +7.5 (+4.5 ranks, -1 Int, +4 Misc)
+Sleight of Hand  +5.5 (+3.5 ranks, +0 Dex, +2 Misc)
+Spot    +8 (+3 ranks, +1 Wis, +4 Misc)
+Survival    +3 (+0 ranks, +1 Wis, +2 Misc)
+Use Rope    +2 (+0 ranks, +0 Dex, +2 Misc)
+
+Abilities:  
+Animal Companion
+Natural Cunning
+Natural Weapons:  Horns - Gore(1d8)
+Powerful Charge
+Scent
+Spontaneous Casting(Summon Nature's Ally)
+Summon Familiar
+Wild Empathy
+
+Languages:  
+    * Common
+    * Giant
+    * Elven
+    * Druidic
+
+Feats:  
+    * Deft Hands
+    * Endurance
+    * Extra Turning
+
+Spells:
+
+Level 0 Druid Spells:
+ * Flare (PHB 232) - Dazzles one creature (-1 penalty on attack rolls)
+ * Flare (PHB 232) - Dazzles one creature (-1 penalty on attack rolls)
+ * Guidance (PHB 238) - +1 on one attack roll, saving throw, or skill check
+
+Level 1 Druid Spells:
+ * Magic Stone (PHB 251) - Three stones gain +1 on attack rolls, deal 1d6+1 damage
+ * Speak with Animals (PHB 281) - You can communicate with animals
+
+
+Background:
+History: The character is from Iron Wood, but spends most of their time in Hardby, now. The character had a recent run in with dwarves.
+
+Primary Motivation: Compassion for _____________ (a loved one). The character feels a strong desire to help the object of this compassion.
+
+Secondary Motivation:  A deep fear of _____________ (a close friend/associate). The character is terrified, and will act out of fear.
+
+
+
+Seed: 158085539048518270194712227446022650197

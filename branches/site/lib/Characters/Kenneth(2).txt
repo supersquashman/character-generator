@@ -1,0 +1,108 @@
+Name:  Kenneth
+
+str	32 (+11)
+dex	17 (+3)
+con	21 (+5)
+int	16 (+3)
+wis	16 (+3)
+cha	18 (+4)
+
+Level:  2
+HD:  16
+HP:  96
+Gender:  Male
+Race:   Stone Giant
+Age:  355
+Height:  11'7"
+Weight:  1446 lbs.
+Alignment: Chaotic Neutral
+Initative: 0
+Base Attack Bonus:  +11/+6/+1
+Base Land Speed:  40 ft.
+Saves:  fort(13), ref(6), will(6)
+AC:  23 (Base: 10, Dex: 3, Size: -1, Natural: 11)
+
+Classes:  
+    * Fighter(1)
+    * Cleric(1)
+
+Skills:  
+Appraise    +5 (+0 ranks, +3 Int, +2 Misc)
+Climb +15.5 (+4.5 ranks, +11 Str)
+Craft(Blacksmithing)    +7 (+4 ranks, +3 Int)
+Craft(Bowmaking)    +5 (+2 ranks, +3 Int)
+Craft(Weaponsmithing)    +4 (+1 ranks, +3 Int)
+Decipher Script    +5 (+0 ranks, +3 Int, +2 Misc)
+Disguise    +6 (+2 ranks, +4 Cha)
+Gather Information    +7 (+3 ranks, +4 Cha)
+Handle Animal  +8.5 (+4.5 ranks, +4 Cha)
+Hide    +4 (+5 ranks, +3 Dex, -4 Misc)
+Knowldege(Architecture and Engineering)    +7 (+4 ranks, +3 Int)
+Knowldege(Dungeoneering)  +5.5 (+2.5 ranks, +3 Int)
+Knowldege(Geography)    +7 (+4 ranks, +3 Int)
+Knowldege(Nature)    +5 (+2 ranks, +3 Int)
+Knowldege(Nobility and Royalty)    +5 (+2 ranks, +3 Int)
+Knowldege(The Planes)    +6 (+3 ranks, +3 Int)
+Perform(Act)    +6 (+2 ranks, +4 Cha)
+Perform(Dance)    +7 (+3 ranks, +4 Cha)
+Perform(Keyboard)    +8 (+4 ranks, +4 Cha)
+Ride    +6 (+3 ranks, +3 Dex)
+Sleight of Hand    +8 (+3 ranks, +3 Dex, +2 Misc)
+Spot  +7.5 (+4.5 ranks, +3 Wis)
+Survival    +5 (+2 ranks, +3 Wis)
+Swim   +15 (+4 ranks, +11 Str)
+Tumble    +6 (+3 ranks, +3 Dex)
+Use Rope    +6 (+1 ranks, +3 Dex, +2 Misc)
+
+Abilities:  
+Aura(Chaotic)
+Darkvision(60ft.)
+Low-Light Vision
+Rock Catching
+Spontaneous Casting(Cure or Inflict)
+Turn or Rebuke Undead
+
+Languages:  
+    * Common
+    * Giant
+    * Draconic
+    * Goblin
+    * Orc
+
+Feats:  
+    * Blind Fight
+    * Deft Hands
+    * Diligent
+    * Great Fortitude
+    * Shield Proficiency
+    * Two-Weapon Fighting
+
+Spells:
+
+Level 0 Cleric Spells:
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+ * Create Water (PH p215) - Creates 2 gallons/level of pure water.
+
+Level 1 Cleric Spells:
+ * Bless Water (PH p205) - Makes Holy Water.
+ * Divine Favor (PH p224) - You gain +1 per three levels on attack and damage rolls.
+
+Cleric Protection Domain:
+Granted Powers: You can generate a protective ward as a supernatural ability. Grant someone you touch a resistance bonus equal to your cleric level on his or her next saving throw. Activating this power is a standard action. The protective ward is an abjuration effect with a duration of 1 hour that is usable once per day.
+
+Cleric Sun Domain:
+Granted Powers: Once per day, you can perform a greater turning against undead in place of a regular turning. The greater turning is like a normal turning except that the undead creatures that would be turned are destroyed instead.
+ 1) Endure Elements (PH p226) - Exist comfortably in hot or cold environments.
+
+
+Background:
+History: The character had a recent run in with followers of Fharlanghn.
+
+Primary Motivation: A desire for power and/or immortality.
+
+Secondary Motivation:  The character is being coerced by _____________ (a family member). The character would not normally act this way, but is being blackmailed/forced/etc.
+
+
+
+Seed: 146211467333587941691210125690821466395

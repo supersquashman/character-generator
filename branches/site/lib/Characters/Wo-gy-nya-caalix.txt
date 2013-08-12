@@ -1,0 +1,95 @@
+Name:  Wo-gy-nya-caalix
+
+str	10 (+0)
+dex	13 (+1)
+con	12 (+1)
+int	14 (+2)
+wis	13 (+1)
+cha	16 (+3)
+
+Level:  2
+HD:  2
+HP:  8
+Gender:  Female
+Race:   Kobold
+Age:  13
+Height:  2'5"
+Weight:  37 lbs.
+Alignment: Chaotic Neutral
+Initative: 0
+Base Attack Bonus:  +1
+Base Land Speed:  30 ft.
+Saves:  fort(2), ref(2), will(2)
+AC:  13 (Base: 10, Dex: 1, Size: 1, Natural: 1)
+
+Classes:  
+    * Wizard(1)
+    * Ranger(1)
+
+Skills:  
+Concentraion    +3 (+3 ranks, +0 )
+Craft(Carpentry)    +3 (+1 ranks, +2 Int)
+Craft(Stoneworking)  +2.5 (+0.5 ranks, +2 Int)
+Craft(Trapmaking)    +5 (+1 ranks, +2 Int, +2 Misc)
+Decipher Script  +5.5 (+3.5 ranks, +2 Int)
+Disable Device    +3 (+1 ranks, +2 Int)
+Disguise    +5 (+0 ranks, +3 Cha, +2 Misc)
+Forgery    +4 (+0 ranks, +2 Int, +2 Misc)
+Hide    +6 (+1 ranks, +1 Dex, +4 Misc)
+Jump    +1 (+1 ranks, +0 Str)
+Knowldege(Arcana)    +5 (+3 ranks, +2 Int)
+Knowldege(Architecture and Engineering)  +5.5 (+3.5 ranks, +2 Int)
+Knowldege(Dungeoneering)    +5 (+3 ranks, +2 Int)
+Knowldege(Geography)    +3 (+1 ranks, +2 Int)
+Knowldege(Nature)    +6 (+4 ranks, +2 Int)
+Knowldege(Religion)    +3 (+1 ranks, +2 Int)
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen    +2 (+1 ranks, +1 Wis)
+Profession(Miner)    +2 (+0 ranks, +0 , +2 Misc)
+Ride    +2 (+1 ranks, +1 Dex)
+Search    +8 (+4 ranks, +2 Int, +2 Misc)
+Spellcraft  +2.5 (+0.5 ranks, +2 Int)
+Survival    +6 (+5 ranks, +1 Wis)
+Swim    +1 (+1 ranks, +0 Str)
+Use Rope    +3 (+2 ranks, +1 Dex)
+
+Abilities:  
+Darkvision(60ft.)
+Favored Enemy (Humanoid (reptilian) +2)
+Light Sensitivity
+Scribe Scroll
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Draconic
+    * Undercommon
+    * Celestial
+
+Feats:  
+    * Deceitful
+
+Spells:
+
+Level 0 Wizard Spells:
+ * Daze (PH p217) - Humanoid creature of 4HD or less loses next action.
+ * Arcane Mark (PH p201) - Inscribes a personal rune (visible or invisible).
+ * Detect Poison (PH p219) - Detects poison in one creature or small object.
+
+Level 1 Wizard Spells:
+ * Protection from Evil (PH p266) - +2 bonus to AC & saves against evil, counters mind control, & hedges out elementals & outsiders.
+ * Identify (PH p243) - Determines properties of a magic item.
+
+
+Background:
+History: The character has been visting a friend in Greyhawk.
+
+Primary Motivation: The character is being coerced by inhabitants of Keoland. The character would not normally act this way, but is being blackmailed/forced/etc.
+
+Secondary Motivation:  A deep hatred of local brigands. The character's hate runs deep, and dominates their personality.
+
+
+
+Seed: 73780037186617084818340573820606121735

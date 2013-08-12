@@ -1,0 +1,25 @@
+.container
+  .row
+    .span6.offset3
+      %form{"accept-charset"=>"UTF-8", :action=>"/auth/identity/register", :method=>"post"}
+        %fieldset
+          %legend New Account 
+          -if @identity && @identity.errors.any?
+            #error_explanation
+              .alert.alert-error<
+                =@identity.errors.count
+                =@identity.errors.count>1 ? "errors" : "error"
+                prohibited this account from being saved:
+              %ul
+                -@identity.errors.full_messages.each do |msg|
+                  %li= msg
+          .form-group
+            %input.form-control{:id=>"name", :type=>"text", :value=>@identity.try(:name), :placeholder=>"Name", :name=>"name"}
+          .form-group
+            %input.form-control{:id=>"email", :type=>"text", :value=>@identity.try(:email), :placeholder=>"Email", :name=>"email"}
+          .form-group
+            %input.form-control{:id=>"password", :type=>"password", :placeholder=>"Password", :name=>"password"}
+          .form-group
+            %input.form-control{:id=>"password_confirmation", :type=>"password", :placeholder=>"Password Confirmation", :name=>"password_confirmation"}
+          %input.btn.btn-primary{:name=>"commit", :type=>"submit", :value=>"Register",}
+    .span4

@@ -1,0 +1,106 @@
+Name:  Jim
+
+str	24 (+7)
+dex	16 (+3)
+con	17 (+3)
+int	21 (+5)
+wis	18 (+4)
+cha	13 (+1)
+
+Level:  2
+HD:  7
+HP:  30
+Gender:  Male
+Race:   Ogre Mage
+Age:  78
+Height:  10'4"
+Weight:  722.92 lbs.
+Alignment: Lawful Evil
+Initative: 0
+Base Attack Bonus:  +6/+1
+Base Land Speed:  40 ft.
+Saves:  fort(6), ref(3), will(3)
+AC:  17 (Base: 10, Dex: 3, Size: -1, Natural: 5)
+Spell Resistance:  19
+
+Classes:  
+    * Ranger(1)
+    * Sorcerer(1)
+
+Skills:  
+Bluff    +2 (+1 ranks, +1 Cha)
+Climb   +12 (+5 ranks, +7 Str)
+Concentration  +7.5 (+4.5 ranks, +3 Con)
+Craft    +5 (+5 ranks, +0 )
+Craft(Stoneworking)  +8.5 (+3.5 ranks, +5 Int)
+Handle Animal    +2 (+1 ranks, +1 Cha)
+Heal    +5 (+1 ranks, +4 Wis)
+Hide    +1 (+2 ranks, +3 Dex, -4 Misc)
+Intimidate  +5.5 (+4.5 ranks, +1 Cha)
+Knowldege(Arcana)  +5.5 (+0.5 ranks, +5 Int)
+Knowldege(Dungeoneering)    +9 (+4 ranks, +5 Int)
+Knowledge(Arcana)    +1 (+1 ranks, +0 )
+Knowledge(Nature)    +2 (+0 ranks, +0 , +2 Misc)
+Listen  +8.5 (+4.5 ranks, +4 Wis)
+Move Silently  +6.5 (+3.5 ranks, +3 Dex)
+Perform(Comedy)  +5.5 (+4.5 ranks, +1 Cha)
+Perform(Sing)    +3 (+2 ranks, +1 Cha)
+Ride    +8 (+5 ranks, +3 Dex)
+Search    +7 (+2 ranks, +5 Int)
+Sleight of Hand  +3.5 (+0.5 ranks, +3 Dex)
+Spellcraft   +10 (+5 ranks, +5 Int)
+Spot  +8.5 (+4.5 ranks, +4 Wis)
+Survival    +9 (+5 ranks, +4 Wis)
+Use Magic Device    +1 (+0 ranks, +1 Cha [+2 Synergy[Scrolls]])
+Use Rope  +3.5 (+0.5 ranks, +3 Dex)
+
+Abilities:  
+Change Shape
+Charm Person (1/day)
+Cone of Cold (1/day)
+Darkness
+Darkvision(60ft.)
+Favored Enemy (Humanoid (reptilian) +2)
+Fly(40ft.)
+Gaseous Form (1/day)
+Invisibility
+Regeneration (5)
+Sleep (1/day)
+Summon Familiar
+Track
+Wild Empathy
+
+Languages:  
+    * Common
+    * Giant
+    * Infernal
+    * Goblin
+    * Orc
+
+Feats:  
+    * Two-Weapon Fighting
+    * Weapon Proficiency (Hand Crossbow)
+
+Spells:
+
+Level 0 Sorcerer Spells (5/ Day):
+ * Mage Hand (PH p249) - 5 pound telekinesis.
+ * Resistance (PH p272) - Subject gains +1 resistance bonus on all saving throws.
+ * Message (PH p253) - Whispered conversation at distance.
+ * Ghost Sound (PH p235) - Figment sounds.
+
+Level 1 Sorcerer Spells (4/ Day):
+ * Detect Secret Doors (PH p220) - Reveals hidden doors within 60'.
+ * Erase (PH p227) - Mundane or magical writing vanishes.
+
+
+Background:
+History: The character has just come from Crossroads.
+
+Primary Motivation: Boredom. The character has no other reason than their life is otherwise uninteresting.
+
+Secondary Motivation:  A strong sense of loyalty to half-elves. The character feels that they owe them much, and will act to help them.
+
+
+
+Seed: 280800780431208694865146491061198923750
