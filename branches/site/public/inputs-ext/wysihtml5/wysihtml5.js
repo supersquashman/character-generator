@@ -31,7 +31,7 @@ $(function(){
         this.init('wysihtml5', options, Wysihtml5.defaults);
         
         //extend wysihtml5 manually as $.extend not recursive 
-        this.options.wysihtml5 = $.extend({}, Wysihtml5.defaults.wysihtml5, options.wysihtml5);
+        this.options.wysihtml5 = $.extend(true, {}, Wysihtml5.defaults.wysihtml5, options.wysihtml5);
     };
 
     $.fn.editableutils.inherit(Wysihtml5, $.fn.editabletypes.abstractinput);
@@ -56,7 +56,7 @@ $(function(){
                 }
             });
             
-            this.$input.wysihtml5(this.options.wysihtml5);
+            this.$input.wysihtml5('deepExtend', this.options.wysihtml5);
             
             /*
              In IE8 wysihtml5 iframe stays on the same line with buttons toolbar (inside popover).
@@ -87,7 +87,7 @@ $(function(){
         }
     });
 
-    Wysihtml5.defaults = $.extend({}, $.fn.editabletypes.abstractinput.defaults, {
+    Wysihtml5.defaults = $.extend(true, {}, $.fn.editabletypes.abstractinput.defaults, {
         /**
         @property tpl
         @default <textarea></textarea>

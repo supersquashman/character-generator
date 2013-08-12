@@ -15,7 +15,47 @@
     $(function(){
       $('#content').editable({
         url: '/change',
-        title: 'Edit Content' 
+        title: 'Edit Content',
+        wysihtml5: {
+        stylesheets: false, "color": true, "html": true,
+        parserRules: {
+          classes: {
+            "middle": 1,
+            "alignleft": 1,
+            "alignright": 1,
+            "heading": 1
+          },
+          tags: {
+            link: {
+              "check_attributes": {
+                  "rel": "alt",
+                  "href": "href"
+                  }
+            },
+            table: {
+              "check_attributes": {
+                  "cellpadding": "numbers",
+                  "cellspacing": "numbers",
+                  "width": "numbers",
+                  "border": "numbers",
+                  "frame": "alt",
+                  "rules": "alt"
+              }},
+            "td": {
+              "check_attributes": {
+                  "rowspan": "numbers",
+                  "colspan": "numbers"
+              },
+              "add_class": {
+                  "align": "align_text"
+              }},
+            tr: {},
+            th: {},
+            hr: {},
+            p: {},
+            h5: {"rename_tag": "div"},
+            tbody:{}
+          }}}
       });
       $('#name').editable({
         url: '/change',
