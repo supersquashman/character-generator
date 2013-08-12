@@ -5061,9 +5061,33 @@ wysihtml5.dom.parse = (function() {
         });
       };
     })(),
+
+    src: (function() {
+      var REG_EXP = /^(\/|https?:\/\/)/i;
+      return function(attributeValue) {
+        if (!attributeValue || !attributeValue.match(REG_EXP)) {
+          return null;
+        }
+        return attributeValue.replace(REG_EXP, function(match) {
+          return match.toLowerCase();
+        });
+      };
+    })(),
+
+    href: (function() {
+      var REG_EXP = /^(\/|https?:\/\/|mailto:)/i;
+      return function(attributeValue) {
+        if (!attributeValue || !attributeValue.match(REG_EXP)) {
+          return null;
+        }
+        return attributeValue.replace(REG_EXP, function(match) {
+          return match.toLowerCase();
+        });
+      };
+    })(),
     
     alt: (function() {
-      var REG_EXP = /[^ a-z0-9_\-]/gi;
+      var REG_EXP = /[^ A-Za-z0-9_\-]/gi;
       return function(attributeValue) {
         if (!attributeValue) {
           return "";
@@ -5073,7 +5097,7 @@ wysihtml5.dom.parse = (function() {
     })(),
     
     numbers: (function() {
-      var REG_EXP = /\D/g;
+      var REG_EXP = /[^0-9%]/g;
       return function(attributeValue) {
         attributeValue = (attributeValue || "").replace(REG_EXP, "");
         return attributeValue || null;
